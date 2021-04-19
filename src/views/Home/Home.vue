@@ -3,6 +3,8 @@
         <pageHeader />
         <subNavs />
         <noticeBar />
+
+        <router-view />
     </div>
 </template>
 

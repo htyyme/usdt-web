@@ -16,7 +16,21 @@ const routes = [
         meta:{
             title:"Home",
             showTabbar:true
-        }
+        },
+        children:[
+            {
+                path:"",
+                redirect:'OrderFinance'
+            },
+            {
+                path:'OrderFinance',
+                name:'OrderFinance',
+                component:()=>import('@/views/Home/subpages/OrderFinance'),
+                meta:{
+                    title:"Order Finance",
+                },
+            }
+        ]
     },
     {
         path:"/Login",
