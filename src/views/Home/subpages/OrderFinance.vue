@@ -5,16 +5,21 @@
 
     <div class="seat"></div>
 
+    <productList />
+
+    <div class="seat2"></div>
   </div>
 </template>
 
 <script>
     import swiper from "../cpns/swiper";
+    import productList from "../cpns/productList";
 
     export default {
         name: "OrderFinance",
         components: {
-            swiper
+            swiper,
+            productList
         }
     }
 </script>
@@ -25,6 +30,11 @@
     .seat{
       background-color: #f4f4f4;
       height: 11px;
+      width: 100vw;
+    }
+    .seat2{
+      background-color: #f4f4f4;
+      height: 20px;
       width: 100vw;
     }
   }
