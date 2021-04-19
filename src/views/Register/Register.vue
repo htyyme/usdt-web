@@ -1,22 +1,20 @@
 <template>
     <div class="login">
         <div class="wrapper">
-            <div class="form-title">login</div>
-            <field4 :left-icon="require('@/assets/icon/phone-icon.png')" :placeholder="$t('Phone Number')"></field4>
+            <div class="form-title">register</div>
+            <field4 :left-icon="require('@/assets/icon/phone-icon.png')" :placeholder="$t('Phone Number')">
+                <template #left>+91</template>
+            </field4>
+            <field4 :left-icon="require('@/assets/icon/sms-icon.png')" :placeholder="$t('SMS Code')"></field4>
             <field4 :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('Password')"></field4>
-
+            <field4 :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('Repeat Password')"></field4>
+            <field4 :left-icon="require('@/assets/icon/invite-icon.png')" :placeholder="$t('Repeat Password')"></field4>
             <van-button class="submit-btn" block>Register</van-button>
             <p class="bottom-info">
-                <span>Not have account yet?</span>
-                <router-link :to="{name:'Register'}">Register Now</router-link>
+                <span>Already have account?</span>
+                <router-link :to="{name:'Login'}">Login Now</router-link>
             </p>
-
         </div>
-
-        <a href="javascript:;" class="down-app">
-            <van-icon :name="require('@/assets/icon/download-icon.png')" size="25"></van-icon>
-            <span>Download App</span>
-        </a>
     </div>
 </template>
 
@@ -31,17 +29,19 @@
         width: 100vw;
         height: 100vh;
         background: url(~assets/img/login-bg.png) no-repeat;
-        background-size: cover;
-        overflow: hidden;
+        background-size: 375px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
 
         .wrapper {
             width: 322px;
             border: 1px solid #FFFFFF;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+            /*opacity: .7;*/
             border-radius: 20px;
             padding: 0 23px 20px 23px;
-            margin: 140px auto 0;
 
             .form-title {
                 font-size: 20px;
@@ -52,43 +52,27 @@
                 text-transform: uppercase;
             }
 
-            .submit-btn {
+            .submit-btn{
                 width: 201px;
                 height: 50px;
                 background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
                 opacity: 1;
                 border-radius: 25px;
                 border: none;
-                color: #fff;
+                color:#fff;
                 text-transform: capitalize;
                 margin: 0 auto;
             }
 
-            .bottom-info {
+            .bottom-info{
                 font-size: 12px;
                 color: #666;
                 text-align: center;
                 padding-top: 12px;
-
-                a {
+                a{
                     color: #FF00E6;
                     padding-left: 7px;
                 }
-            }
-        }
-
-        .down-app{
-            display: flex;
-            background-color: #fff;
-            margin: 50px 23px 0;
-            height: 60px;
-            border-radius: 30px;
-            color: #2073E0;
-            font-size: 20px;
-            align-items: center;
-            justify-content: center;
-            span{
-                padding-left: 10px;
             }
         }
     }

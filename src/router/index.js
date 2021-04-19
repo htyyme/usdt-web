@@ -12,6 +12,14 @@ const routes = [
         meta:{
             title:"Login"
         }
+    },
+    {
+        path:"/Register",
+        name:'Register',
+        component:()=>import('@/views/Register/Register'),
+        meta:{
+            title:"Register"
+        }
     }
 ]
 

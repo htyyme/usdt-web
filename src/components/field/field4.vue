@@ -59,11 +59,11 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 58px;
+  height: 50px;
   position: relative;
-  background-color: rgba(255,255,255,.58);
+  background-color: #fff;
   border-radius: 30px;
-  margin: 30px 0;
+  margin: 15px 0;
   padding-right: 25px;
 
   .left {
@@ -96,9 +96,6 @@ export default {
     background-color: transparent;
 
 
-    &::placeholder {
-      color: #EFEFEF;
-    }
   }
 
 
