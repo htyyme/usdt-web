@@ -2,6 +2,9 @@
   <div class="OrderFinance">
 
     <swiper />
+
+    <div class="seat"></div>
+
   </div>
 </template>
 
@@ -19,6 +22,11 @@
 <style scoped lang="scss">
   .OrderFinance {
 
+    .seat{
+      background-color: #f4f4f4;
+      height: 11px;
+      width: 100vw;
+    }
   }
 
 </style>
