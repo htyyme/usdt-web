@@ -18,6 +18,7 @@ export default {
 
 #app{
   font-family: PingFang SC;
+  font-size: 16px;
 }
 
 </style>
