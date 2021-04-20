@@ -71,7 +71,7 @@ export default {
       this.$store.commit('user/setToken',token)
       this.$store.commit('system/setContactInfo',contact)
       this.$store.dispatch('user/loadUserInfo')
-      // this.$router.replace('/')
+      this.$router.replace('/')
     },
     changePwdType(){
       if (this.pwdType === 'password'){
