@@ -39,11 +39,11 @@ export default {
 
 
         {
-          name: 'UsdtTrading',
+          name: 'Usdt',
           title: this.$t('usdt'),
           icon: require('@/assets/tabbar/play.png'),
           activeIcon: require('@/assets/tabbar/play.blue.png'),
-          url: '/UsdtTrading'
+          url: '/Usdt'
         },
 
         {

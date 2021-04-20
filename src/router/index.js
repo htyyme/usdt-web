@@ -35,6 +35,42 @@ const routes = [
         ]
     },
     {
+        path:"/Order",
+        name:'Order',
+        component:()=>import('@/views/Order/Order'),
+        meta:{
+            title:"Order",
+            showTabbar:true
+        }
+    },
+    {
+        path:"/Usdt",
+        name:'Usdt',
+        component:()=>import('@/views/Usdt/Usdt'),
+        meta:{
+            title:"Usdt",
+            showTabbar:true
+        }
+    },
+    {
+        path:"/Team",
+        name:'Team',
+        component:()=>import('@/views/Team/Team'),
+        meta:{
+            title:"Team",
+            showTabbar:true
+        }
+    },
+    {
+        path:"/Me",
+        name:'Me',
+        component:()=>import('@/views/Me/Me'),
+        meta:{
+            title:"Me",
+            showTabbar:true
+        }
+    },
+    {
         path:"/Login",
         name:'Login',
         component:()=>import('@/views/Login/Login'),
@@ -56,6 +92,9 @@ const router = new VueRouter({
     routes
 })
 router.beforeEach(((to, from, next) => {
+    if (!checkAuth(to)) {
+        return next({name: 'Login'})
+    }
     setTitle(to)
     setTabbar(to)
     next()
@@ -72,12 +111,27 @@ function setTitle(route) {
 
 //保存tabbar
 function setTabbar(route) {
-    const names = ['Home','Order','Team','Me','UsdtTrading']
+    const names = ['Home','Order','Team','Me','Usdt']
     // console.log('-------',route)
 
     if (route.matched[0] && names.indexOf(route.matched[0].name) !== -1) {
         store.commit('system/setTabbar', route.matched[0].name)
     }
+}
+
+//检查权限
+function checkAuth(route){
+    const arr = [
+        'Register',
+        'Login',
+        'ForgetPassword'
+    ]
+    const routeName = route.name
+    if (arr.includes(routeName)) {
+        return true
+    }
+    const token = store.getters['user/token']
+    return !!token
 }
 
 export default router
