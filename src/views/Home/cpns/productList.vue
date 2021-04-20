@@ -1,7 +1,7 @@
 <template>
   <div class="productList">
 
-    <div class="product-item" v-for="item in productList" :key="item.id">
+    <div class="product-item" v-for="item in productList" :key="item.id" :style="{backgroundImage:backgroundImage(item)}">
       <div class="left">
         <div class="lv">
           <van-icon :name="require('@/assets/icon/lv-icon.png')" size="22"></van-icon>
@@ -50,6 +50,11 @@ export default {
   created() {
     this.loadProducts()
   },
+  computed:{
+    backgroundImage(){
+      return item => `url(${this.$tools.getImage(item.goods_desc)})`
+    }
+  },
   methods:{
     async loadProducts(){
       const resp = await this.$http.post('/v1/business/matches',{
@@ -79,7 +84,7 @@ export default {
 
   .product-item {
     background-color: rgba(175, 232, 251, .4);
-    background-image: url(~assets/temp/shopee.png);
+    //background-image: url(~assets/temp/shopee.png);
     background-size: 150px;
     height: 175px;
     margin-bottom: 10px;
