@@ -20,6 +20,8 @@ export default {
 #app{
   font-family: PingFang SC;
   font-size: 16px;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 </style>

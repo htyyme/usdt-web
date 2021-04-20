@@ -7,7 +7,7 @@ import messages from "@/assets/lang/messages";
  * 获取语言包里的某个值
  * @param key
  */
-export function getLangField(key){
+export function getLangField(key) {
     let locale = store.state.system.locale || appConfig.locale
     let lang = messages[locale]
     return lang[key]
@@ -21,12 +21,12 @@ export function random(min, max) {
 }
 
 //验证手机号格式
-export function checkMobile(mobile){
+export function checkMobile(mobile) {
     return /^[0-9]{9,12}$/.test(mobile)
 }
 
 //验证邮箱格式
-export function checkEmail(email){
+export function checkEmail(email) {
     let extArr = [
         '@gmail.com',
         '@yahoo.com',
@@ -45,7 +45,7 @@ export function checkEmail(email){
     let valid = false
     for (let i = 0; i < extArr.length; i++) {
         let index = email.indexOf(extArr[i])
-        if (index !== -1){
+        if (index !== -1) {
             valid = true
             break
         }
@@ -54,14 +54,14 @@ export function checkEmail(email){
 }
 
 //验证银行卡格式
-export function checkBankcardNo(cardNo){
+export function checkBankcardNo(cardNo) {
     return /^[0-9]{10,25}$/.test(cardNo)
 }
 
 //打开一个链接
-export function openUrl(url){
+export function openUrl(url) {
     if (!url) return
-    console.log('url',url)
+    console.log('url', url)
     /*
     * TODO
     * */
@@ -87,4 +87,11 @@ export function decryptBy3DES(ciphertext, key = config.encryptKey) {
         padding: CryptoJS.pad.Pkcs7
     });
     return decrypted.toString(CryptoJS.enc.Utf8);
+}
+
+//获取后台上传的图片
+export function getImage(url) {
+    if (!url) return ''
+    if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) return url
+    return store.getters['system/config']['pic_service_address'] + '/' + url
 }

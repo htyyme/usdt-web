@@ -7,6 +7,7 @@ export default {
         gloading:false,
         config: {},
         contactInfo:{},
+        banners1:[],
     },
     mutations: {
         setLocale(state, payload) {
@@ -20,6 +21,9 @@ export default {
         },
         setContactInfo(state,payload){
             state.contactInfo = payload
+        },
+        setBanners1(state,payload){
+            state.banners1 = payload
         }
     },
     actions: {
@@ -57,6 +61,12 @@ export default {
             }
             commit('setConfig',config)
             return config
+        },
+        async loadBanners1({commit, state}, payload){
+            const r = await request.post('/v1/banners',{type:1})
+            let banners = r.data || []
+            commit('setBanners1',r.data || [])
+            return banners
         }
     },
     getters: {
@@ -64,6 +74,7 @@ export default {
         config: state => state.config,
         gloading: state => state.gloading,
         contactInfo: state => state.contactInfo,
+        banners1: state => state.banners1,
 
     },
 }
