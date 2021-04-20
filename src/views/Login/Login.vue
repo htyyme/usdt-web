@@ -29,7 +29,7 @@
 <script>
 import appConfig from "@/config";
 export default {
-  name: "Register",
+  name: "Login",
   data() {
     return {
       form: {
@@ -46,7 +46,7 @@ export default {
     },
     //是否 发送短信
     isSendSms(){
-      return this.$store.state["system/config"].isSendSms
+      return this.$store.getters['system/config'].isSendSms
     },
     //提交按钮的禁用状态
     btnDisabled() {
