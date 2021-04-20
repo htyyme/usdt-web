@@ -68,7 +68,7 @@ export function openUrl(url) {
 
 }
 
-export function encryptBy3DES(message, key = config.encryptKey) {
+export function encryptBy3DES(message, key = appConfig.encryptKey) {
     const keyHex = CryptoJS.enc.Utf8.parse(key);
     const encrypted = CryptoJS.TripleDES.encrypt(message, keyHex, {
         mode: CryptoJS.mode.ECB,
@@ -77,7 +77,7 @@ export function encryptBy3DES(message, key = config.encryptKey) {
     return encrypted.toString();
 }
 
-export function decryptBy3DES(ciphertext, key = config.encryptKey) {
+export function decryptBy3DES(ciphertext, key = appConfig.encryptKey) {
     const keyHex = CryptoJS.enc.Utf8.parse(key);
     // direct decrypt ciphertext
     const decrypted = CryptoJS.TripleDES.decrypt({
