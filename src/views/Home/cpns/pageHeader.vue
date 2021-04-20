@@ -3,7 +3,8 @@
     <header>
       <div class="user">
         <span class="hi">hi</span>
-        <span class="name">88888899999</span>
+        <span class="name">{{userInfo.member_name}}</span>
+        <van-icon :name="require('@/assets/icon/lv-icon.png')" size="24" class="lv-icon"></van-icon>
         <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message"></van-icon>
       </div>
 
@@ -41,8 +42,14 @@
 </template>
 
 <script>
+
 export default {
-  name: "pageHeader"
+  name: "pageHeader",
+  computed:{
+    userInfo(){
+      return this.$store.getters['user/userInfo']
+    }
+  }
 }
 </script>
 
@@ -71,7 +78,9 @@ export default {
         font-size: 14px;
         padding-left: 10px;
       }
-
+      .lv-icon{
+        padding-left: 3px;
+      }
       .message {
         position: absolute;
         right: 16px;
