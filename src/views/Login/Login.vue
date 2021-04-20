@@ -62,7 +62,7 @@ export default {
   methods:{
     //下载app
     downloadApp(){
-      this.$tools.openUrl(this.$store.state["system/config"].android_app_url)
+      this.$tools.openUrl(this.$store.getters["system/config"].android_app_url)
     },
     //提交登录
     async doLogin(){
