@@ -1,3 +1,17 @@
+import CryptoJS from 'crypto-js'
+import store from "@/store";
+import appConfig from "@/config";
+import messages from "@/assets/lang/messages";
+
+/**
+ * 获取语言包里的某个值
+ * @param key
+ */
+export function getLangField(key){
+    let locale = store.state.system.locale || appConfig.locale
+    let lang = messages[locale]
+    return lang[key]
+}
 
 /*
 * 生成一个随机数
@@ -52,4 +66,25 @@ export function openUrl(url){
     * TODO
     * */
 
+}
+
+export function encryptBy3DES(message, key = config.encryptKey) {
+    const keyHex = CryptoJS.enc.Utf8.parse(key);
+    const encrypted = CryptoJS.TripleDES.encrypt(message, keyHex, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return encrypted.toString();
+}
+
+export function decryptBy3DES(ciphertext, key = config.encryptKey) {
+    const keyHex = CryptoJS.enc.Utf8.parse(key);
+    // direct decrypt ciphertext
+    const decrypted = CryptoJS.TripleDES.decrypt({
+        ciphertext: CryptoJS.enc.Base64.parse(ciphertext)
+    }, keyHex, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return decrypted.toString(CryptoJS.enc.Utf8);
 }

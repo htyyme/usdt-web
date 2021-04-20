@@ -8,8 +8,9 @@
 <script>
 export default {
   name:'App',
-  created() {
-    // this.$store.commit('system/setLocale','aaa')
+  async created() {
+    await this.$store.dispatch('system/loadConfig')
+    //todo 根据版本信息 判断是否需要更新App
   }
 }
 </script>

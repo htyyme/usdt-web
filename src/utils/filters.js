@@ -4,16 +4,8 @@ import timezone from 'dayjs/plugin/timezone'
 import dayjs from "dayjs"
 import appConfig from "@/config";
 import messages from "@/assets/lang/messages";
+import {getLangField} from "@/utils/tools";
 
-/**
- * 获取语言包里的某个值
- * @param key
- */
-export function getLangField(key){
-    let locale = store.state.system.locale || appConfig.locale
-    let lang = messages[locale]
-    return lang[key]
-}
 
 /**
  * 时间格式化
