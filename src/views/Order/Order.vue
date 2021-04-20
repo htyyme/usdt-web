@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: "Order"
+  name: "Order",
+  async created() {
+    // const r = await this.$jconfirm("asdasdasd").catch(err=>err)
+    // console.log(r)
+
+    // this.$jconfirm("asdasdasd").then(a=>{
+    //   console.log(a)
+    // })
+  }
 }
 </script>
 

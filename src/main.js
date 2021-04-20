@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import config from "@/config";
 Vue.config.productionTip = false
+import '@/plugin'
 
 import "amfe-flexible"
 import '@/assets/css/base.css'
@@ -37,6 +38,10 @@ Vue.prototype.$tools = tools
 Vue.prototype.$http = service
 import {payNotify} from "@/utils/pay";
 window.payNotify = payNotify
+
+//插件
+import jconfirm from "@/components/jconfirm/jconfirm";
+Vue.prototype.$jconfirm = jconfirm.install
 
 new Vue({
   router,
