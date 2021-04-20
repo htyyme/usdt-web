@@ -3,6 +3,7 @@ import request from "@/utils/request";
 export default {
     namespaced: true,
     state: {
+        tabbar: 'Home',
         locale: '',
         gloading:false,
         config: {},
@@ -24,6 +25,9 @@ export default {
         },
         setBanners1(state,payload){
             state.banners1 = payload
+        },
+        setTabbar(state,payload){
+            state.tabbar = payload
         }
     },
     actions: {
@@ -75,6 +79,7 @@ export default {
         gloading: state => state.gloading,
         contactInfo: state => state.contactInfo,
         banners1: state => state.banners1,
+        tabbar: state => state.tabbar,
 
     },
 }

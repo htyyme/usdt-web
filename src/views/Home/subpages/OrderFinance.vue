@@ -7,7 +7,7 @@
 
     <productList />
 
-    <div class="seat2"></div>
+
   </div>
 </template>
 

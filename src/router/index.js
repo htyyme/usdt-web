@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import appConfig from "@/config";
+import store from '@/store'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,7 @@ const routes = [
                 component:()=>import('@/views/Home/subpages/OrderFinance'),
                 meta:{
                     title:"Order Finance",
+                    showTabbar:true
                 },
             }
         ]
@@ -55,6 +57,7 @@ const router = new VueRouter({
 })
 router.beforeEach(((to, from, next) => {
     setTitle(to)
+    setTabbar(to)
     next()
 }))
 
@@ -64,6 +67,16 @@ function setTitle(route) {
         document.title = route.meta.title + ' | ' + appConfig.appName
     } else {
         document.title = appConfig.appName
+    }
+}
+
+//保存tabbar
+function setTabbar(route) {
+    const names = ['Home','Order','Team','Me','UsdtTrading']
+    // console.log('-------',route)
+
+    if (route.matched[0] && names.indexOf(route.matched[0].name) !== -1) {
+        store.commit('system/setTabbar', route.matched[0].name)
     }
 }
 
