@@ -109,6 +109,9 @@ export default {
         align-items: center;
         padding-left: 8px;
       }
+      .pro-rate{
+        color: #f00;
+      }
     }
 
     .right {

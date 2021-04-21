@@ -9,6 +9,7 @@ export default {
         config: {},
         contactInfo:{},
         banners1:[],
+        gcointype:'usdt',
     },
     mutations: {
         setLocale(state, payload) {
@@ -28,6 +29,9 @@ export default {
         },
         setTabbar(state,payload){
             state.tabbar = payload
+        },
+        setGcointype(state,payload){
+            state.gcointype = payload
         }
     },
     actions: {
@@ -80,6 +84,7 @@ export default {
         contactInfo: state => state.contactInfo,
         banners1: state => state.banners1,
         tabbar: state => state.tabbar,
+        gcointype: state => state.gcointype,
 
     },
 }

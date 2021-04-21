@@ -92,10 +92,10 @@ export default {
     margin: 18px 15px 0;
     height: 200px;
     border: 1px solid #FFFFFF;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
     border-radius: 20px;
     position: relative;
-    overflow: hidden;
+    //overflow: hidden;
     .coin-icon{
       position: absolute;
       width: 33px;
