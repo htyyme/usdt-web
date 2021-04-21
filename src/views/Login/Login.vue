@@ -11,10 +11,17 @@
 
       <van-button class="submit-btn" block @click="doLogin" :disabled="btnDisabled" >Login</van-button>
 
-      <p class="bottom-info">
-        <span>Not have account yet?</span>
-        <router-link :to="{name:'Register'}" >Register Now</router-link>
-      </p>
+      <div class="bottom-info">
+        <p>
+          <span>Not have account yet?</span>
+          <router-link :to="{name:'Register'}" >Register Now</router-link>
+        </p>
+
+        <p v-if="isSendSms">
+          <router-link :to="{name:'ForgetPass'}" >Forget your password</router-link>
+        </p>
+      </div>
+
 
     </div>
 
@@ -133,6 +140,9 @@ export default {
       a {
         color: #FF00E6;
         padding-left: 7px;
+      }
+      p{
+        line-height: 1.7;
       }
     }
   }
