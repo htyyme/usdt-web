@@ -25,7 +25,7 @@
       </field4>
 
       <field4 :left-icon="require('@/assets/icon/invite-icon.png')" :placeholder="$t('Repeat Password')" v-model="registerForm.invitation_code" :readonly="invitationCodeReadonly"></field4>
-      <van-button class="submit-btn" block @click="doRegister">Register</van-button>
+      <van-button class="submit-btn" block @click="doRegister" :loading="$store.getters['system/gloading']">Register</van-button>
 
       <p class="bottom-info">
         <span>Already have account?</span>

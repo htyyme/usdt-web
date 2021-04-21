@@ -9,7 +9,7 @@
         </template>
       </field4>
 
-      <van-button class="submit-btn" block @click="doLogin" :disabled="btnDisabled" >Login</van-button>
+      <van-button class="submit-btn" block @click="doLogin" :disabled="btnDisabled" :loading="$store.getters['system/gloading']">Login</van-button>
 
       <div class="bottom-info">
         <p>
