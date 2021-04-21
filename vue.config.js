@@ -14,7 +14,10 @@ module.exports = {
             '/v1': {
                 target: 'http://192.168.2.49:8087',
                 changeOrigin: true,
-                ws: true,
+            },
+            '/api': {
+                target: 'http://192.168.2.25:7777',
+                changeOrigin: true,
             }
         }
     },

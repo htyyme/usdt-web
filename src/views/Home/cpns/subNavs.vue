@@ -61,6 +61,7 @@
         padding: 0 23px;
        span{
          font-size:18px;
+         text-transform: capitalize;
        }
         .van-icon{
           padding-right: 5px;

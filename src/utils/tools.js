@@ -96,6 +96,11 @@ export function getImage(url) {
     return store.getters['system/config']['pic_service_address'] + '/' + url
 }
 
+export function getAvatar(url) {
+    if (!url) return require('@/assets/icon/default_avatar.png')
+    return getImage(url)
+}
+
 //切换全局的货币类型
 export function toggleGlobalCoinType(){
     let gcointype = store.getters['system/gcointype']
