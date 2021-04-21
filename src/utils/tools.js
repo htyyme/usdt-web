@@ -95,3 +95,13 @@ export function getImage(url) {
     if (url.indexOf('http://') === 0 || url.indexOf('https://') === 0) return url
     return store.getters['system/config']['pic_service_address'] + '/' + url
 }
+
+//切换全局的货币类型
+export function toggleGlobalCoinType(){
+    let gcointype = store.getters['system/gcointype']
+    if (gcointype === 'coin') {
+        store.commit('system/setGcointype','usdt')
+    } else {
+        store.commit('system/setGcointype','coin')
+    }
+}

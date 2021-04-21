@@ -8,8 +8,9 @@
         <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message"></van-icon>
       </div>
 
-      <div class="assets">
-        <i class="coin-icon">U</i>
+      <div class="assets" :class="assetsClass">
+<!--        <i class="coin-icon">U</i>-->
+        <van-icon :name="require('@/assets/icon/toggle.png')" size="20" class="toggle" @click="toggleCoinType"></van-icon>
         <div class="balance">
           <dl>
             <dt>935.67U</dt>
@@ -48,6 +49,28 @@ export default {
   computed:{
     userInfo(){
       return this.$store.getters['user/userInfo']
+    },
+    gcointype(){
+      return this.$store.getters['system/gcointype']
+    },
+    assetsClass(){
+      if (this.gcointype === 'coin') {
+        return 'type-coin'
+      } else {
+        return 'type-usdt'
+      }
+    },
+    accountinfo(){
+      if (this.gcointype === 'coin') {
+        return this.$store.getters['user/coinAccount']
+      } else {
+        return this.$store.getters['user/usdtAccount']
+      }
+    }
+  },
+  methods:{
+    toggleCoinType(){
+      this.$tools.toggleGlobalCoinType()
     }
   }
 }
@@ -92,21 +115,31 @@ export default {
     margin: 18px 15px 0;
     height: 200px;
     border: 1px solid #FFFFFF;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
+    //background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
+    background: rgba(255, 255, 255, 0.2) url(~assets/img/usdtbg.png) no-repeat;
+    background-size: contain;
     border-radius: 20px;
     position: relative;
     //overflow: hidden;
-    .coin-icon{
+    //.coin-icon{
+    //  position: absolute;
+    //  width: 33px;
+    //  height: 33px;
+    //  left: 0;
+    //  top: 0;
+    //  background: url(~assets/icon/jiaocha.png) no-repeat;
+    //  background-size: cover;
+    //  font-size: 14px;
+    //  color: #fff;
+    //  text-align: center;
+    //}
+    &.type-coin{
+      background-image: url(~assets/img/coinbg.png);
+    }
+    .toggle{
       position: absolute;
-      width: 33px;
-      height: 33px;
-      left: 0;
-      top: 0;
-      background: url(~assets/icon/jiaocha.png) no-repeat;
-      background-size: cover;
-      font-size: 14px;
-      color: #fff;
-      text-align: center;
+      right: 10px;
+      top: 10px;
     }
     &::after {
       content: "";
