@@ -85,6 +85,14 @@ const routes = [
         meta:{
             title:"Register"
         }
+    },
+    {
+        path:"/ForgetPass",
+        name:'ForgetPass',
+        component:()=>import('@/views/ForgetPass/ForgetPass'),
+        meta:{
+            title:"Forget Password"
+        }
     }
 ]
 
@@ -124,7 +132,7 @@ function checkAuth(route){
     const arr = [
         'Register',
         'Login',
-        'ForgetPassword'
+        'ForgetPass'
     ]
     const routeName = route.name
     if (arr.includes(routeName)) {
