@@ -2,6 +2,7 @@ import CryptoJS from 'crypto-js'
 import store from "@/store";
 import appConfig from "@/config";
 import messages from "@/assets/lang/messages";
+import request from "@/utils/request";
 
 /**
  * 获取语言包里的某个值

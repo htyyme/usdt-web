@@ -4,8 +4,19 @@
       <avatarUploader />
 
       <div class="userinfo">
-        <div>88889999</div>
-        <div>ID:12</div>
+        <div>{{userInfo.nickname || userInfo.member_name}}</div>
+        <div>ID：{{userInfo.id}}</div>
+      </div>
+    </div>
+    <div class="lvinfo">
+      <span>Membership level：</span>
+      <em>LV{{userInfo.lv_id}}</em>
+    </div>
+    <div class="assets">
+      <div class="tit">Your total assets:</div>
+      <div class="num">
+        <span>{{usdtAvailableBalance|moneyFormat(2,'usdt')}}</span>
+        <span>{{coinAvailableBalance|moneyFormat(2,'coin')}}</span>
       </div>
     </div>
   </div>
@@ -21,8 +32,19 @@ export default {
   computed:{
     userInfo(){
       return this.$store.getters['user/userInfo']
+    },
+    usdtAccount(){
+      return this.$store.getters['user/coinAccount']
+    },
+    coinAccount(){
+      return this.$store.getters['user/coinAccount']
+    },
+    usdtAvailableBalance(){
+      return this.usdtAccount.available_balance
+    },
+    coinAvailableBalance(){
+      return this.coinAccount.available_balance
     }
-
   },
 
 
@@ -34,16 +56,50 @@ export default {
     height: 250px;
     background: url(~assets/img/mebg.png) no-repeat;
     background-size: cover;
-    padding: 43px 0 0 40px;
+    padding: 43px 0 0 0;
     .user{
       display: flex;
       align-items: center;
+      padding-left: 40px;
 
       .userinfo{
         color: #fff;
         font-size: 17px;
         line-height: 1.7;
         padding-left: 17px;
+      }
+    }
+    .lvinfo{
+      color: #fff;
+      margin-top: 12px;
+      font-size: 17px;
+      padding-left: 40px;
+      em{
+        color: #FFEE00;
+      }
+    }
+    .assets{
+      height: 79px;
+      background: #FFFFFF;
+      border-radius: 13px;
+      margin: 14px 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 36px 0 25px;
+      text-align: right;
+      .tit{
+        color: #333;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .num{
+        color: #3799E9;
+        font-size: 21px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }

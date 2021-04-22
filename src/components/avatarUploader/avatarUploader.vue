@@ -61,12 +61,12 @@ export default {
 
 <style scoped lang="scss">
 .avatar{
-  width: 64px;
-  height: 64px;
-  //overflow: hidden;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: rgba(255,255,255,.6);
   position: relative;
+  padding: 5px;
+  width: 78px;
+  height: 78px;
 
   .van-image {
     width: 100%;

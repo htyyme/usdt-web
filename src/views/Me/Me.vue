@@ -22,7 +22,9 @@ export default {
 
 <style scoped lang="scss">
 .me{
-
+  min-height: calc(100% - 49px);
+  background-color: #f4f4f4;
+  padding-bottom: 15px;
 }
 
 </style>
