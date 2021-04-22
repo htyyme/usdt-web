@@ -24,7 +24,6 @@ export default {
   name: "payWay",
   methods:{
     getColor(text){
-      console.log(getColorByText(text))
       return getColorByText(text)
     }
   }

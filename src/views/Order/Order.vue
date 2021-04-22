@@ -1,23 +1,32 @@
 <template>
-  <div>
-    order
+  <div class="Order">
+    <navbar title="Order" :left-arrow="false"></navbar>
+
+    <pageHeader />
+
+    <orderList />
   </div>
 </template>
 
 <script>
+import pageHeader from "./cpns/pageHeader";
+import orderList from "./cpns/orderList";
 export default {
   name: "Order",
+  components:{
+    pageHeader,
+    orderList
+  },
   async created() {
-    // const r = await this.$jconfirm("asdasdasd").catch(err=>err)
-    // console.log(r)
 
-    // this.$jconfirm("asdasdasd").then(a=>{
-    //   console.log(a)
-    // })
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.Order{
+  min-height: calc(100vh - 49px);
+  background-color: #f4f4f4;
+}
 
 </style>
