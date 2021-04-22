@@ -19,6 +19,8 @@ export default {
   },
   created() {
     this.$store.dispatch('user/loadUserInfo')
+
+
   }
 }
 </script>

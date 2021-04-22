@@ -1,6 +1,7 @@
 <template>
   <van-overlay :show="visible">
 
+
     <div class="wrapper" @click.stop>
 
       <div class="content">{{content}}</div>
@@ -59,7 +60,7 @@ export default {
   width: 295px;
   //min-height: 285px;
   border: 1px solid #FFFFFF;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+
 
 
   opacity: 1;
@@ -69,6 +70,11 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   padding: 50px 19px 0;
+  //background: #7d7d7e;
+  background: rgba(125,125,126,.95);
+
+
+
   .content{
     font-size: 15px;
     font-weight: 700;
