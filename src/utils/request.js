@@ -15,6 +15,7 @@ const service = axios.create({
 
 //请求拦截
 service.interceptors.request.use(config => {
+    // console.log('request',config)
     //开启loading状态
     Toast.loading({
         duration: 0,
@@ -34,7 +35,7 @@ service.interceptors.request.use(config => {
 
     config.headers.token = store.getters['user/token']
 
-    if (appConfig.env === 'prod') {
+    if (appConfig.env === 'prod' && !config.url.startsWith('/api')) {
         config.data = encryptReqData(config.data)
     }
     return config
@@ -42,6 +43,7 @@ service.interceptors.request.use(config => {
 
 //响应拦截
 service.interceptors.response.use(resp => {
+    // console.log('resp',resp)
     Toast.clear()
     setTimeout(() => store.commit('system/setGloading', false), 500)
 
@@ -53,7 +55,7 @@ service.interceptors.response.use(resp => {
     responseId = new Date().getTime()
 
     let respData = resp.data
-    if (appConfig.env === 'prod'){
+    if (appConfig.env === 'prod' && !resp.config.url.startsWith('/api')){
         respData = decryptResData(resp.data)
     }
     const {code, message} = respData
