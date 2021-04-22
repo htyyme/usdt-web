@@ -24,10 +24,10 @@
         <van-image :src="require('@/assets/icon/invite-friends.png')"></van-image>
         <span>Invite friends</span>
       </li>
-      <li>
-        <van-image :src="require('@/assets/icon/mission.png')"></van-image>
-        <span>Mission</span>
-      </li>
+<!--      <li>-->
+<!--        <van-image :src="require('@/assets/icon/mission.png')"></van-image>-->
+<!--        <span>Mission</span>-->
+<!--      </li>-->
       <li>
         <van-image :src="require('@/assets/icon/introduction.png')"></van-image>
         <span>Introduction</span>
@@ -75,12 +75,19 @@
       li{
         flex: 1;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         .van-image{
           width: 50px;
           height: 50px;
         }
         span{
           font-size: 12px;
+          flex: 1;
+          display: flex;
+          align-items: center;
         }
       }
     }
