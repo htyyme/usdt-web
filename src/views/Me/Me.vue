@@ -16,6 +16,9 @@ export default {
     pageHeader,
     wallet,
     menuList
+  },
+  created() {
+    this.$store.dispatch('user/loadUserInfo')
   }
 }
 </script>

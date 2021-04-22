@@ -125,6 +125,22 @@ const routes = [
         meta:{
             title:"Recharge"
         }
+    },
+    {
+        path:"/bankCard",
+        name:'bankCard',
+        component:()=>import('@/views/BankCard/bankCard'),
+        meta:{
+            title:"Bank Card"
+        }
+    },
+    {
+        path:"/addBankCard",
+        name:'addBankCard',
+        component:()=>import('@/views/BankCard/addBankCard'),
+        meta:{
+            title:"Add Bank Card"
+        }
     }
 ]
 

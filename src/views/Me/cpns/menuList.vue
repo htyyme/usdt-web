@@ -7,7 +7,7 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li>
+      <li @click="toBankCardPage">
         <van-icon :name="require('@/assets/icon/bankcard.png')" size="40"></van-icon>
         <span>Bank card</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
@@ -60,6 +60,11 @@ export default {
     toPersonInfoPage(){
       this.$router.push({
         name:'Setting'
+      })
+    },
+    toBankCardPage(){
+      this.$router.push({
+        name:'bankCard'
       })
     }
   }
