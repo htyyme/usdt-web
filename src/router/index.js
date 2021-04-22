@@ -117,6 +117,14 @@ const routes = [
         meta:{
             title:"Payment Password"
         }
+    },
+    {
+        path:"/Recharge",
+        name:'Recharge',
+        component:()=>import('@/views/Recharge/Recharge'),
+        meta:{
+            title:"Recharge"
+        }
     }
 ]
 

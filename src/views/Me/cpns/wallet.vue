@@ -1,7 +1,7 @@
 <template>
   <div class="wallet">
     
-    <router-link to="/">
+    <router-link :to="{name:'Recharge'}">
       <van-icon :name="require('@/assets/icon/recharge.png')" size="26"></van-icon>
       <span>Recharge</span>
     </router-link>

@@ -111,3 +111,17 @@ export function toggleGlobalCoinType(){
         store.commit('system/setGcointype','coin')
     }
 }
+
+//根据文字生成颜色
+export function getColorByText(text){
+    //获取第一个字符
+    let firstName = text.substring(1, 0);
+
+    //根据名字生成背景色
+    let tmp = ''
+    for (let i = 0 ; i < text.length; i++){
+        tmp += parseInt(text[i].charCodeAt(0), 10).toString(16);
+    }
+    const color =  '#' + tmp.slice(1, 4)
+    return color
+}

@@ -1,6 +1,11 @@
 @charset "UTF-8";
 @import "./vars";
 
+@font-face{
+  font-family: 'imbplex';
+  src: url(../font/ibmplexmono.ttf);
+}
+
 .van-toast{
   width: unset !important;
   z-index: 999999 !important;
