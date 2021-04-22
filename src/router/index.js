@@ -93,6 +93,30 @@ const routes = [
         meta:{
             title:"Forget Password"
         }
+    },
+    {
+        path:"/Setting",
+        name:'Setting',
+        component:()=>import('@/views/Setting/Setting'),
+        meta:{
+            title:"Personal information"
+        }
+    },
+    {
+        path:"/ChangePass",
+        name:'ChangePass',
+        component:()=>import('@/views/ChangePass/ChangePass'),
+        meta:{
+            title:"Change Password"
+        }
+    },
+    {
+        path:"/PaymentPassword",
+        name:'PaymentPassword',
+        component:()=>import('@/views/PaymentPassword/PaymentPassword'),
+        meta:{
+            title:"Payment Password"
+        }
     }
 ]
 

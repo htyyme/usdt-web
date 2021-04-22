@@ -25,7 +25,7 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li>
+      <li @click="toPersonInfoPage">
         <van-icon :name="require('@/assets/icon/personalinfomation.png')" size="40"></van-icon>
         <span>Personal information</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
@@ -55,7 +55,14 @@
 
 <script>
 export default {
-  name: "menuList"
+  name: "menuList",
+  methods:{
+    toPersonInfoPage(){
+      this.$router.push({
+        name:'Setting'
+      })
+    }
+  }
 }
 </script>
 
