@@ -149,6 +149,14 @@ const routes = [
         meta:{
             title:"About"
         }
+    },
+    {
+        path:"/Withdraw",
+        name:'Withdraw',
+        component:()=>import('@/views/Withdraw/Withdraw'),
+        meta:{
+            title:"Withdraw"
+        }
     }
 ]
 

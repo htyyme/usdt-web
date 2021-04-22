@@ -7,4 +7,5 @@ export default {
     "tabBarMe":'me',
     "tabBarUsdt":'usdt',
     "curVersion":'Current version is {num}',
+    'handlefeetip':'Please check the payment information carefully This withdrawal deducts the handing fee {num}',
 }
