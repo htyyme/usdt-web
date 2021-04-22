@@ -5,15 +5,15 @@
 
       <div class="userinfo">
         <div>{{userInfo.nickname || userInfo.member_name}}</div>
-        <div>ID：{{userInfo.id}}</div>
+        <div>{{$t('ID')}}：{{userInfo.id}}</div>
       </div>
     </div>
     <div class="lvinfo">
-      <span>Membership level：</span>
-      <em>LV{{userInfo.lv_id}}</em>
+      <span>{{$t('Membership level')}}：</span>
+      <em>{{$t('lvNum',{num:userInfo.lv_id})}}</em>
     </div>
     <div class="assets">
-      <div class="tit">Your total assets:</div>
+      <div class="tit">{{$t('yourTotalAssets')}}:</div>
       <div class="num">
         <span>{{usdtAvailableBalance|moneyFormat(2,'usdt')}}</span>
         <span>{{coinAvailableBalance|moneyFormat(2,'coin')}}</span>

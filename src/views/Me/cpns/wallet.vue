@@ -3,11 +3,11 @@
     
     <router-link :to="{name:'Recharge'}">
       <van-icon :name="require('@/assets/icon/recharge.png')" size="26"></van-icon>
-      <span>Recharge</span>
+      <span>{{$t('recharge')}}</span>
     </router-link>
     <router-link :to="{name:'Withdraw'}">
       <van-icon :name="require('@/assets/icon/withdraw.png')" size="26"></van-icon>
-      <span>Withdraw</span>
+      <span>{{$t('withdraw')}}</span>
     </router-link>
     
   </div>

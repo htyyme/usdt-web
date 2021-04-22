@@ -3,26 +3,26 @@
     <div class="wallet">
       <router-link :to="{name:'Recharge'}">
         <van-icon :name="require('@/assets/icon/recharge.png')" size="25"></van-icon>
-        <span>recharge</span>
+        <span>{{$t('recharge')}}</span>
       </router-link>
       <router-link :to="{name:'Withdraw'}">
         <van-icon :name="require('@/assets/icon/withdraw.png')" size="25"></van-icon>
-        <span>withdraw</span>
+        <span>{{$t('withdraw')}}</span>
       </router-link>
     </div>
 
     <ul>
       <li>
         <van-image :src="require('@/assets/icon/order-finance.png')"></van-image>
-        <span>Order finance</span>
+        <span>{{$t('orderFinance')}}</span>
       </li>
       <li>
         <van-image :src="require('@/assets/icon/financial-product.png')"></van-image>
-        <span>Financial product</span>
+        <span>{{$t('financeProduct')}}</span>
       </li>
       <li>
         <van-image :src="require('@/assets/icon/invite-friends.png')"></van-image>
-        <span>Invite friends</span>
+        <span>{{$t('inviteFriends')}}</span>
       </li>
 <!--      <li>-->
 <!--        <van-image :src="require('@/assets/icon/mission.png')"></van-image>-->
@@ -30,7 +30,7 @@
 <!--      </li>-->
       <li>
         <van-image :src="require('@/assets/icon/introduction.png')"></van-image>
-        <span>Introduction</span>
+        <span>{{$t('introduction')}}</span>
       </li>
     </ul>
   </div>
@@ -88,6 +88,7 @@
           flex: 1;
           display: flex;
           align-items: center;
+          text-transform: capitalize;
         }
       }
     }

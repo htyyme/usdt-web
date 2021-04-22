@@ -3,49 +3,49 @@
     <ul>
       <li>
         <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
-        <span>Member system</span>
+        <span>{{$t('memberSystem')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li @click="toBankCardPage">
         <van-icon :name="require('@/assets/icon/bankcard.png')" size="40"></van-icon>
-        <span>Bank card</span>
+        <span>{{$t('Bank card')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li>
         <van-icon :name="require('@/assets/icon/withdrawrecord.png')" size="40"></van-icon>
-        <span>Withdraw record</span>
+        <span>{{$t('Withdraw record')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li>
         <van-icon :name="require('@/assets/icon/rechargerecord.png')" size="40"></van-icon>
-        <span>Recharge record</span>
+        <span>{{$t('rechargeRecord')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li @click="toPersonInfoPage">
         <van-icon :name="require('@/assets/icon/personalinfomation.png')" size="40"></van-icon>
-        <span>Personal information</span>
+        <span>{{$t('Personal information')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li>
         <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>
-        <span>Business information</span>
+        <span>{{$t('Business information')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li @click="toAboutPage">
         <van-icon :name="require('@/assets/icon/aboutus.png')" size="40"></van-icon>
-        <span>About us</span>
+        <span>{{$t('About us')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li @click="signOut">
         <van-icon :name="require('@/assets/icon/signout.png')" size="40"></van-icon>
-        <span>Sign out</span>
+        <span>{{$t('signOut')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
@@ -74,7 +74,7 @@ export default {
     },
     async signOut(){
       const confirmres = await this.$dialog.confirm({
-        message:'Do you want to logout?',
+        message: this.$t('Do you want to logout?'),
         confirmButtonText:this.$t('Confirm'),
         cancelButtonText:this.$t('Cancel')
       }).catch(err=>err)

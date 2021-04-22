@@ -438,4 +438,8 @@ export default {
     'Grab order':'Grab order',
     'Usdt transaction':'Usdt transaction',
     'trxaccount':'Trx Account',
+    'ID':'ID',
+    'Membership level':'Membership level',
+    'Personal information':'Personal information',
+    'Business information':'Business information',
 }
