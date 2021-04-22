@@ -6,4 +6,5 @@ export default {
     "tabBarTeam":'team',
     "tabBarMe":'me',
     "tabBarUsdt":'usdt',
+    "curVersion":'Current version is {num}',
 }

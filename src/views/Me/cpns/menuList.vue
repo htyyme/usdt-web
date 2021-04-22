@@ -37,13 +37,13 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li>
+      <li @click="toAboutPage">
         <van-icon :name="require('@/assets/icon/aboutus.png')" size="40"></van-icon>
         <span>About us</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li>
+      <li @click="signOut">
         <van-icon :name="require('@/assets/icon/signout.png')" size="40"></van-icon>
         <span>Sign out</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
@@ -66,6 +66,22 @@ export default {
       this.$router.push({
         name:'bankCard'
       })
+    },
+    toAboutPage(){
+      this.$router.push({
+        name:'About'
+      })
+    },
+    async signOut(){
+      const confirmres = await this.$dialog.confirm({
+        message:'Do you want to logout?',
+        confirmButtonText:this.$t('Confirm'),
+        cancelButtonText:this.$t('Cancel')
+      }).catch(err=>err)
+      if (confirmres !== 'confirm') return
+      this.$store.commit('user/setToken','')
+      this.$store.commit('system/setBanners1',[])
+      this.$router.replace({name:'Login'})
     }
   }
 }

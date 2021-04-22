@@ -141,6 +141,14 @@ const routes = [
         meta:{
             title:"Add Bank Card"
         }
+    },
+    {
+        path:"/About",
+        name:'About',
+        component:()=>import('@/views/About/About'),
+        meta:{
+            title:"About"
+        }
     }
 ]
 

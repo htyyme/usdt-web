@@ -32,14 +32,12 @@ export default {
   },
   methods: {
     confirm() {
-      console.log('confirm触发了')
       this.visible = true //显示模态框
       return new Promise(((resolve, reject) => {
         this.promiseStatus = {resolve, reject}
       }))
     },
     handleAction(action){
-      console.log('handleAction触发了',action)
       this.visible = false //关闭模态框
       if (action=="yes"){
         this.promiseStatus && this.promiseStatus.resolve('confirm')
@@ -61,8 +59,9 @@ export default {
   width: 295px;
   //min-height: 285px;
   border: 1px solid #FFFFFF;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
-  //filter: blur(80px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
+
+
   opacity: 1;
   border-radius: 13px;
   position: absolute;
