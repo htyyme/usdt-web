@@ -2,7 +2,7 @@
   <div class="productList">
 
     <div class="product-item" v-for="item in productList" :key="item.id" :style="{backgroundImage:backgroundImage(item)}">
-      <div class="left">
+      <div class="left" @click="toOrderGrabPage(item,'usdt')">
         <div class="lv">
           <van-icon :name="require('@/assets/icon/lv-icon.png')" size="22"></van-icon>
           <span>{{$t('lvMember',{num:item.extra1})}}</span>
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="right">
+      <div class="right" @click="toOrderGrabPage(item,'coin')">
         <div class="pro-rate">
           <span>{{item.extra2 | rateFormat(1)}}</span>
         </div>
@@ -73,6 +73,15 @@ export default {
         })
       })
       this.productList = productList
+    },
+    toOrderGrabPage(item,cointype){
+      this.$router.push({
+        name:'OrderGrab',
+        query:{
+          id:item.id,
+          cointype:cointype
+        }
+      })
     }
   }
 }

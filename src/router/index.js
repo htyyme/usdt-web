@@ -165,6 +165,14 @@ const routes = [
         meta:{
             title:"Vip"
         }
+    },
+    {
+        path:"/OrderGrab",
+        name:'OrderGrab',
+        component:()=>import('@/views/OrderGrab/OrderGrab'),
+        meta:{
+            title:"Order Grab"
+        }
     }
 ]
 
