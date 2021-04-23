@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <div class="prod-img">
-      <van-image></van-image>
+      <van-image :src="$tools.getImage(goodsinfo.show_pic)"></van-image>
     </div>
 
     <div class="prod-bg">
