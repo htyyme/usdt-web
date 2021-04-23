@@ -3,6 +3,7 @@
     <pageHeader :cointype="cointype" :count-data="countData"/>
     <product :goodsinfo="goodsinfo" :attr="attr" :cointype="cointype"/>
     <instructions />
+    <grabbing />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import pageHeader from "./cpns/pageHeader";
 import product from "./cpns/product";
 import instructions from "./cpns/instructions";
+import grabbing from "./cpns/grabbing";
 export default {
   name: "OrderGrab",
   components:{
     pageHeader,
     product,
-    instructions
+    instructions,
+    grabbing
   },
   data(){
     return {

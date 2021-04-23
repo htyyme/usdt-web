@@ -68,3 +68,15 @@ export function rateFormat(num,precision = 2){
     return n + '%'
 }
 
+/**
+ * 银行卡号
+ * @param val
+ * @returns {string}
+ */
+export function cardNoFormat(val) {
+    if (!val) {
+        return ''
+    }
+    let str = val.substring(val.length - 4)
+    return '**** ' + str
+}

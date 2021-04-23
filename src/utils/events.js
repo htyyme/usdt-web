@@ -1,0 +1,1 @@
+export const SHOW_GRABBING = 'show_grabbing'

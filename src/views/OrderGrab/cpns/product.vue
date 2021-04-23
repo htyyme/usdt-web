@@ -10,19 +10,26 @@
       <div class="special">{{ $t('specialArea') }}</div>
       <div class="ops">
         <van-button class="recharge" :to="{name:'Recharge'}">{{$t('recharge')}}</van-button>
-        <van-button class="grabbing" :loading="$store.getters['system/gloading']">{{$t('grabbing')}}</van-button>
+        <van-button class="grabbing" :loading="$store.getters['system/gloading']" @click="grabbing">{{$t('grabbing')}}</van-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {SHOW_GRABBING} from "@/utils/events";
+
 export default {
   name: "product",
   props:{
     goodsinfo:Object,
     attr:Object,
     cointype:String
+  },
+  methods:{
+    grabbing(){
+      this.$bus.$emit(SHOW_GRABBING)
+    }
   }
 }
 </script>

@@ -10,7 +10,18 @@
       </div>
 
       <div class="lst" v-else>
+        <div class="item" v-for="item in bankCardList" :key="item.id">
+          <div class="line">
+            <div class="tit">{{item.opening_bank}}</div>
+            <div class="card-number">{{item.withdraw_deposit | cardNoFormat}}</div>
+          </div>
 
+          <div class="line line2">
+            <div class="bank-code">{{item.username}}</div>
+
+            <div class="edit">Edit bank card <van-icon :name="require('@/assets/icon/edit.png')" :size="13"></van-icon> </div>
+          </div>
+        </div>
       </div>
 
 
@@ -67,6 +78,54 @@ export default {
       border-radius: 28px;
       color: #fff;
       margin: 20px auto;
+    }
+
+    .lst{
+      .item{
+        width: 319px;
+        height: 100px;
+        background: #09A1ED;
+        border-radius: 13px;
+        .line{
+          padding: 12px 30px 0 24px;
+          font-size: 18px;
+          color: #fff;
+          font-weight: 700;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &.line2{
+            position: relative;
+            top: -5px;
+          }
+          .card-number{
+            font-size: 12px;
+            font-weight: 400;
+          }
+          .bank-code{
+            font-size: 12px;
+            font-weight: 400;
+          }
+          .edit{
+            //width: 100px;
+            padding: 0 5px;
+            height: 21px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255,255,255,.43);
+            border-radius: 4px;
+            position: relative;
+            right: -15px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            .van-icon{
+              padding-left: 3px;
+            }
+          }
+        }
+      }
     }
   }
 }
