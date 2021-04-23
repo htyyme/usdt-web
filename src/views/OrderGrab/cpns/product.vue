@@ -5,12 +5,12 @@
     </div>
 
     <div class="prod-bg">
-      <div class="lv-tit">LV1 MEMBER</div>
-      <div class="num">100</div>
-      <div class="special">Special area</div>
+      <div class="lv-tit">{{$t('lvMember',{num:goodsinfo.extra1})}}</div>
+      <div class="num">{{ attr.unit_cost | moneyFormat(2,cointype) }}</div>
+      <div class="special">{{ $t('specialArea') }}</div>
       <div class="ops">
-        <van-button class="recharge">{{$t('recharge')}}</van-button>
-        <van-button class="grabbing">{{$t('grabbing')}}</van-button>
+        <van-button class="recharge" :to="{name:'Recharge'}">{{$t('recharge')}}</van-button>
+        <van-button class="grabbing" :loading="$store.getters['system/gloading']">{{$t('grabbing')}}</van-button>
       </div>
     </div>
   </div>
@@ -18,7 +18,12 @@
 
 <script>
 export default {
-name: "product"
+  name: "product",
+  props:{
+    goodsinfo:Object,
+    attr:Object,
+    cointype:String
+  }
 }
 </script>
 

@@ -7,27 +7,27 @@
 
     <div class="counter">
       <dl>
-        <dt>0</dt>
+        <dt>{{countData.todayorder}}</dt>
         <dd>Today's order</dd>
       </dl>
       <dl>
-        <dt>0</dt>
+        <dt>{{countData.todayearn| moneyFormat(2,cointype)}}</dt>
         <dd>Today's earnings</dd>
       </dl>
       <dl>
-        <dt>0</dt>
+        <dt>{{countData.teamtodayearn| moneyFormat(2,cointype)}}</dt>
         <dd>Team benefits today</dd>
       </dl>
       <dl>
-        <dt>0</dt>
+        <dt>{{totalAssets | moneyFormat(2,cointype)}}</dt>
         <dd>Total assets</dd>
       </dl>
       <dl>
-        <dt>0</dt>
+        <dt>{{totalAssets.yesterdayearn| moneyFormat(2,cointype)}}</dt>
         <dd>Yesterday's earnings</dd>
       </dl>
       <dl>
-        <dt>0</dt>
+        <dt>{{countData.teamyesterdayearn| moneyFormat(2,cointype)}}</dt>
         <dd>Yesterday's team earnings</dd>
       </dl>
     </div>
@@ -36,7 +36,21 @@
 
 <script>
 export default {
-  name: "pageHeader"
+  name: "pageHeader",
+  props:{
+    cointype:String,
+    countData:Object
+  },
+  computed:{
+    //总余额
+    totalAssets(){
+      if (this.cointype === 'coin'){
+        return this.$store.getters['user/coinAccount'].available_balance
+      }else{
+        return this.$store.getters['user/usdtAccount'].available_balance
+      }
+    }
+  }
 }
 </script>
 
