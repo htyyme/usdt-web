@@ -1,7 +1,7 @@
 <template>
   <div class="menuList">
     <ul>
-      <li>
+      <li @click="toVipPage">
         <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
         <span>{{$t('memberSystem')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
@@ -57,6 +57,11 @@
 export default {
   name: "menuList",
   methods:{
+    toVipPage(){
+      this.$router.push({
+        name:'Vip'
+      })
+    },
     toPersonInfoPage(){
       this.$router.push({
         name:'Setting'

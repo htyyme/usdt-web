@@ -157,6 +157,14 @@ const routes = [
         meta:{
             title:"Withdraw"
         }
+    },
+    {
+        path:"/Vip",
+        name:'Vip',
+        component:()=>import('@/views/Vip/Vip'),
+        meta:{
+            title:"Vip"
+        }
     }
 ]
 

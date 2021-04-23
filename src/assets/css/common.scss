@@ -14,3 +14,36 @@
 .van-cell__title.van-field__label{
   width: 9.2em;
 }
+
+//步骤条
+.van-step--horizontal .van-step__circle-container{
+  background-color: transparent;
+}
+.van-step__line{
+  background-color: #d4d4d4;
+  height: 4px !important;
+}
+.van-step--finish .van-step__circle, .van-step--finish .van-step__line {
+  background-color: #FEDF72;
+  height: 4px;
+}
+.van-step__circle{
+  width: 10px !important;
+  height: 10px !important;
+  position: relative;
+  top: 2px;
+}
+.van-step__icon--active{
+  top: 2px;
+}
+
+.van-step--horizontal .van-step__title {
+  position: relative;
+  top: 45px;
+}
+.van-steps--horizontal .van-steps__items{
+  padding-bottom: 1.6rem;
+}
+.van-step--finish{
+  color: #fff;
+}
