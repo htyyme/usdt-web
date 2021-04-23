@@ -1,6 +1,6 @@
 <template>
   <header>
-    <van-icon :name="require('@/assets/icon/return.png')" size="25" class="return"></van-icon>
+    <van-icon :name="require('@/assets/icon/return.png')" size="25" class="return" @click="$router.back()"></van-icon>
     <van-icon :name="require('@/assets/icon/message.png')" size="25" class="message"></van-icon>
     <div class="pagetitle">Vip</div>
     <van-image :src="require('@/assets/icon/level.png')" class="level-icon"></van-image>
