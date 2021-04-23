@@ -1,48 +1,58 @@
 <template>
   <div class="Team">
     <div class="header">
-      <div class="pagetitle">My team</div>
+      <div class="pagetitle">{{$t('My team')}}</div>
 
     </div>
 
     <div class="counter">
       <section>
-        <div class="num">233</div>
+        <div class="num">{{size}}</div>
         <div class="dt tsdt">
           <van-icon :name="require('@/assets/icon/teamsize.png')" size="20" class="tsicon"></van-icon>
-          <span class="ts">Team size</span>
+          <span class="ts">{{$t('size')}}</span>
         </div>
       </section>
       <section>
-        <div class="num">233</div>
+        <div class="num">{{usdtpromote | moneyFormat(2,'usdt')}}</div>
         <div class="dt">
           <van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>
-          <span>Total rebate</span>
+          <span>{{$t('rebate')}}(U)</span>
+        </div>
+      </section>
+      <section>
+        <div class="num">{{coinpremote  | moneyFormat(2,'coin')}}</div>
+        <div class="dt">
+          <van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>
+          <span>{{$t('rebate')}}({{$t('coin')}})</span>
         </div>
       </section>
     </div>
 
     <div class="teambg">
-      <span>Income list</span>
-      <router-link to="/">go</router-link>
+      <span>{{$t('incomeList')}}</span>
+      <router-link to="/">{{$t('go')}}</router-link>
     </div>
 
     <div class="lst">
-      <div class="item" v-for="item in 3" :key="item">
-        <van-button  class="details">details</van-button>
+      <div class="item" v-for="(item,index) in cointeams" :key="index">
+        <van-button  class="details">{{$t('levelNum',{num:item.lv_id})}}</van-button>
 
         <dl>
-          <dt>Bonus</dt>
+          <dt>{{$t('Team size')}}</dt>
           <dd>
-            <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>
-            <span>+20</span>
+            <van-icon :name="require('@/assets/icon/teamsize.png')" size="22"></van-icon>
+            <span>{{item.size}}</span>
           </dd>
         </dl>
         <dl>
-          <dt>Number of people</dt>
+          <dt>{{$t('Total rebate')}}</dt>
           <dd>
-            <van-icon :name="require('@/assets/icon/teamsize.png')" size="22"></van-icon>
-            <span>123</span>
+            <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>
+            <div class="mul">
+              <em>+{{item.promote | moneyFormat(2,'coin')}}</em>
+              <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(2,'usdt')}}</em>
+            </div>
           </dd>
         </dl>
       </div>
@@ -53,7 +63,36 @@
 
 <script>
 export default {
-  name: "Team"
+  name: "Team",
+  data(){
+    return {
+      usdtpromote:0,
+      coinpremote:0,
+      size:0,
+      usdtteams:[],
+      cointeams:[]
+    }
+  },
+  created() {
+    this.loaddata()
+  },
+  methods:{
+    async loaddata(){
+      const r = await this.$http.post('/v1/auth/team/info',{
+        coin_type:1
+      })
+
+      this.size = r.data.size
+      this.coinpremote = r.data.promote
+      this.cointeams = r.data.teams || []
+
+      const r2 = await this.$http.post('/v1/auth/team/info',{
+        coin_type:2
+      })
+      this.usdtpromote = r2.data.promote
+      this.usdtteams = r2.data.teams || []
+    }
+  }
 }
 </script>
 
@@ -87,9 +126,9 @@ export default {
       .num{
         text-align: center;
         color: #F97D1D;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 700;
-        padding-top: 12px;
+        padding-top: 16px;
       }
       .dt{
         font-size: 12px;
@@ -99,6 +138,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        text-transform: capitalize;
         //&.tsdt{
         //  position: relative;
         //  top: 5px;
@@ -111,7 +151,7 @@ export default {
           //font-size: 18px;
         }
         .van-icon{
-          padding-right: 5px;
+          padding-right: 3px;
 
         }
         span{
@@ -188,6 +228,13 @@ export default {
             font-size: 23px;
             font-weight: bold;
             color: #F97D1D;
+          }
+          .mul{
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            color: #F97D1D;
+            padding-left: 11px;
           }
         }
       }

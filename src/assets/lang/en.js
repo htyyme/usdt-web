@@ -442,4 +442,8 @@ export default {
     'Membership level':'Membership level',
     'Personal information':'Personal information',
     'Business information':'Business information',
+    'go':'go',
+    'rebate':'rebate',
+    'levelNum':"Level {num}",
+
 }
