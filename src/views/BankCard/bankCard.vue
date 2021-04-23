@@ -19,7 +19,7 @@
           <div class="line line2">
             <div class="bank-code">{{item.username}}</div>
 
-            <div class="edit">Edit bank card <van-icon :name="require('@/assets/icon/edit.png')" :size="13"></van-icon> </div>
+            <div class="edit" @click="toEditPage(item)">Edit bank card <van-icon :name="require('@/assets/icon/edit.png')" :size="13"></van-icon> </div>
           </div>
         </div>
       </div>
@@ -49,6 +49,14 @@ export default {
       const resp = await this.$http.post('/v1/auth/user/cards',)
       this.bankCardList = resp.data || []
     },
+    toEditPage(item){
+      this.$router.push({
+        name:'addBankCard',
+        query:{
+          id:item.id
+        }
+      })
+    }
   }
 
 }

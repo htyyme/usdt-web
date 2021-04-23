@@ -10,6 +10,7 @@ export default {
         contactInfo:{},
         banners1:[],
         gcointype:'usdt',
+        banklist:[]
     },
     mutations: {
         setLocale(state, payload) {
@@ -32,6 +33,9 @@ export default {
         },
         setGcointype(state,payload){
             state.gcointype = payload
+        },
+        setBanklist(state,payload){
+            state.banklist = payload
         }
     },
     actions: {
@@ -75,6 +79,11 @@ export default {
             let banners = r.data || []
             commit('setBanners1',r.data || [])
             return banners
+        },
+        async loadBankList({commit, state}, payload){
+            const resp = await request.post('/v1/banks')
+            const banklist = resp.data || []
+            commit('setBanklist',banklist)
         }
     },
     getters: {
@@ -85,6 +94,7 @@ export default {
         banners1: state => state.banners1,
         tabbar: state => state.tabbar,
         gcointype: state => state.gcointype,
+        banklist: state => state.banklist,
 
     },
 }
