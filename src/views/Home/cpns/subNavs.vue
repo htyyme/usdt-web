@@ -1,7 +1,7 @@
 <template>
   <div class="subNavs">
     <div class="wallet">
-      <router-link :to="{name:'Recharge'}">
+      <router-link :to="{name:'RechargeType'}">
         <van-icon :name="require('@/assets/icon/recharge.png')" size="25"></van-icon>
         <span>{{$t('recharge')}}</span>
       </router-link>

@@ -9,7 +9,7 @@
       <div class="num">{{ attr.unit_cost | moneyFormat(2,cointype) }}</div>
       <div class="special">{{ $t('specialArea') }}</div>
       <div class="ops">
-        <van-button class="recharge" :to="{name:'Recharge'}">{{$t('recharge')}}</van-button>
+        <van-button class="recharge" :to="{name:'RechargeType'}">{{$t('recharge')}}</van-button>
         <van-button class="grabbing" :loading="$store.getters['system/gloading']" @click="grabbing">{{$t('grabbing')}}</van-button>
       </div>
     </div>

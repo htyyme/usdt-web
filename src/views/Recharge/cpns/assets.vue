@@ -1,9 +1,9 @@
 <template>
   <div class="assets">
-    <div class="title">My total assets</div>
+    <div class="title">{{$t('myTotalAssets')}}</div>
     <div class="info">
       <van-icon :name="require('@/assets/icon/recharge.png')" size="25" class="ico"></van-icon>
-      <span>{{availableBalance | moneyFormat}}</span>
+      <span>{{availableBalance | moneyFormat(2,cointype)}}</span>
     </div>
   </div>
 </template>
@@ -11,10 +11,11 @@
 <script>
 export default {
   name: "assets",
+  props:{
+    cointype:String
+  },
   computed:{
-    gcointype(){
-      return this.$store.getters['system/gcointype']
-    },
+
     coinAccount(){
       return this.$store.getters['user/coinAccount']
     },
@@ -22,7 +23,7 @@ export default {
       return this.$store.getters['user/usdtAccount']
     },
     accountinfo(){
-      return this.gcointype==='coin' ? this.coinAccount : this.usdtAccount
+      return this.cointype==='coin' ? this.coinAccount : this.usdtAccount
     },
     availableBalance(){
       return this.accountinfo.available_balance

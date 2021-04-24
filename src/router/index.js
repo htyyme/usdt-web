@@ -173,6 +173,14 @@ const routes = [
         meta:{
             title:"Order Grab"
         }
+    },
+    {
+        path:"/RechargeType",
+        name:'RechargeType',
+        component:()=>import('@/views/RechargeType/RechargeType'),
+        meta:{
+            title:"Choose Recharge"
+        }
     }
 ]
 

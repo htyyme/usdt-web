@@ -3,14 +3,12 @@
     <div class="title">Pay way</div>
 
       <ul>
-        <li :style="{color:getColor('paytm upi')}">paytm upi</li>
-        <li :style="{color:getColor('bolt')}">bolt</li>
-        <li :style="{color:getColor('paytm upi')}">paytm upi</li>
-        <li :style="{color:getColor('bolt')}">bolt</li>
-        <li :style="{color:getColor('paytm upi')}">paytm upi</li>
-        <li :style="{color:getColor('bolt')}">bolt</li>
-        <li :style="{color:getColor('paytm upi')}">paytm upi</li>
-        <li :style="{color:getColor('bolt')}">bolt</li>
+        <li v-for="(item,index) in channellist"
+            :key="index"
+            :style="{color:getColor(item.payChannelName)}"
+            :class="{active:item.channelCode===activeChannel.channelCode}"
+            @click="chooseChannel(item)"
+        >{{item.payChannelName}}</li>
       </ul>
 
   </div>
@@ -22,9 +20,31 @@ import {getColorByText} from "@/utils/tools";
 
 export default {
   name: "payWay",
+  props:{
+    channellist:Array,
+  },
+  data(){
+    return {
+      activeChannel:{}
+    }
+  },
+  mounted() {
+    // this.$nextTick(()=>{
+    //   //默认选择第一个通道
+    //   if (this.channellist.length > 0){
+    //     this.chooseChannel(this.channellist[0])
+    //   }
+    // })
+
+  },
   methods:{
     getColor(text){
       return getColorByText(text)
+    },
+    //选择通道
+    chooseChannel(item){
+      this.activeChannel = item
+      this.$emit('chooseChannel',item)
     }
   }
 }
@@ -59,12 +79,18 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      text-transform: uppercase;
+      //text-transform: uppercase;
+      font-variant: small-caps;
+      font-style: italic;
       margin-right: 12px;
       margin-bottom: 8px;
       text-align: center;
       &:nth-child(3n){
         margin-right: 0;
+      }
+      &.active{
+        background-color: #3596E8;
+        color: #fff !important;
       }
     }
   }
