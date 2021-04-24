@@ -13,26 +13,26 @@
         <van-icon :name="require('@/assets/icon/toggle.png')" size="20" class="toggle" @click="toggleCoinType"></van-icon>
         <div class="balance">
           <dl>
-            <dt>935.67U</dt>
+            <dt>{{available_balance |moneyFormat(2,gcointype) }}</dt>
             <dd>Your Total Asets</dd>
           </dl>
           <dl>
-            <dt>935.67U</dt>
+            <dt>{{experience_amount | moneyFormat(2,gcointype)}}</dt>
             <dd>Virtual currency</dd>
           </dl>
         </div>
 
         <div class="bot-info">
           <dl>
-            <dt>91.95</dt>
+            <dt>{{countdata.yesterdayearn | moneyFormat(2,gcointype)}}</dt>
             <dd>Yesterday's earning</dd>
           </dl>
           <dl>
-            <dt>91.95</dt>
+            <dt>{{countdata.totalincome | moneyFormat(2,gcointype) }}</dt>
             <dd>Cumulative income</dd>
           </dl>
           <dl>
-            <dt>91.95</dt>
+            <dt>{{countdata.totalincome | moneyFormat(2,gcointype)}}</dt>
             <dd>Today's earning</dd>
           </dl>
         </div>
@@ -66,11 +66,41 @@ export default {
       } else {
         return this.$store.getters['user/usdtAccount']
       }
+    },
+    //体验金
+    experience_amount(){
+      return this.accountinfo.experience_amount
+    },
+    //可用余额
+    available_balance(){
+      return this.accountinfo.available_balance
+    },
+    countdata(){
+      if ( this.gcointype === 'coin'){
+        return this.coinCountData
+      }else if (this.gcointype === 'usdt'){
+        return this.usdtCountData
+      }
     }
+  },
+  data(){
+    return {
+      usdtCountData:{},
+      coinCountData:{}
+    }
+  },
+  created() {
+    this.loadData()
   },
   methods:{
     toggleCoinType(){
       this.$tools.toggleGlobalCoinType()
+    },
+    async loadData(){
+      const resp = await this.$http.post('/v1/auth/user/shuadan/income')
+      // console.log(resp)
+      this.usdtCountData = resp.data.usdt
+      this.coinCountData = resp.data.coin
     }
   }
 }

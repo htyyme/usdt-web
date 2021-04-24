@@ -82,7 +82,7 @@ export default {
 /deep/ .van-tabbar {
 
   height: 49px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #E9FFF5 100%);
+  //background: linear-gradient(180deg, #FFFFFF 0%, #E9FFF5 100%);
   box-shadow: 0px -1px 4px rgba(61, 61, 61, 0.1);
   opacity: 1;
   border-radius: 10px 10px 0px 0px;
