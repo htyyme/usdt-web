@@ -1,6 +1,6 @@
 <template>
-  <div>
-    usdt
+  <div class="usdt">
+
   </div>
 </template>
 
@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.usdt{
 
+}
 </style>

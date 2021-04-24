@@ -1,0 +1,82 @@
+<template>
+  <van-overlay :show="show">
+
+    <div class="purchase-success" style="padding-top: 90px;">
+      <van-image :src="require('@/assets/img/shuadan_dt_hezi.png')"></van-image>
+      <label>{{ $t('orderSubmitSuccess') }}</label>
+      <van-button @click="handleClose" block>{{ $t('yes') }}</van-button>
+    </div>
+
+  </van-overlay>
+</template>
+
+<script>
+import {PURCHASE_GRAB_SUCCESS} from "@/utils/events";
+
+export default {
+  name: "purchaseSuccess",
+  data(){
+    return {
+      show:false
+    }
+  },
+  created() {
+    this.$bus.$on(PURCHASE_GRAB_SUCCESS , this.handleOpen)
+  },
+  methods:{
+    handleOpen(){
+      this.show = true
+    },
+    handleClose(){
+      this.show = false
+    }
+  },
+  destroyed() {
+    this.$bus.$off(PURCHASE_GRAB_SUCCESS)
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.purchase-success {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 12px 12px 30px 12px;
+
+  .van-image {
+    width: 105px;
+    height: 110px;
+    position: absolute;
+    top: -40px;
+    right: 20px;
+  }
+
+  label {
+    font-size: 14px;
+    margin-left: 15px;
+    font-weight: bold;
+  }
+
+  .van-button {
+    width: 40%;
+    height: 45px;
+    margin: 10px auto 0;
+    //background: $mainColor;
+    background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+    border-radius: 27px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+</style>

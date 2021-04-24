@@ -3,7 +3,12 @@
     <pageHeader :cointype="cointype" :count-data="countData"/>
     <product :goodsinfo="goodsinfo" :attr="attr" :cointype="cointype"/>
     <instructions />
-    <grabbing />
+    <!--抢单倒计时-->
+    <grabbing :cointype="cointype" :goodsinfo="goodsinfo" :attr="attr"/>
+    <!--抢单详情-->
+    <grabOrderDetails />
+    <!--购买成功-->
+    <purchaseSuccess />
   </div>
 </template>
 
@@ -12,13 +17,18 @@ import pageHeader from "./cpns/pageHeader";
 import product from "./cpns/product";
 import instructions from "./cpns/instructions";
 import grabbing from "./cpns/grabbing";
+import grabOrderDetails from "./cpns/grabOrderDetails";
+import purchaseSuccess from "./cpns/purchaseSuccess";
+
 export default {
   name: "OrderGrab",
   components:{
     pageHeader,
     product,
     instructions,
-    grabbing
+    grabbing,
+    grabOrderDetails,
+    purchaseSuccess
   },
   data(){
     return {
