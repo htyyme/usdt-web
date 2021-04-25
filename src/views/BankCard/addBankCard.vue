@@ -77,7 +77,7 @@ export default {
         bank_code:"",
         upi:"",
         mobile:"",
-        sms_code:""
+        sms_code:"",
       },
       countdown: 0,
       timer:null,

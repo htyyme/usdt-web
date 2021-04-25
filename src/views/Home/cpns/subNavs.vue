@@ -5,7 +5,7 @@
         <van-icon :name="require('@/assets/icon/recharge.png')" size="25"></van-icon>
         <span>{{$t('recharge')}}</span>
       </router-link>
-      <router-link :to="{name:'Withdraw'}">
+      <router-link :to="{name:'WithdrawType'}">
         <van-icon :name="require('@/assets/icon/withdraw.png')" size="25"></van-icon>
         <span>{{$t('withdraw')}}</span>
       </router-link>

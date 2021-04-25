@@ -1,27 +1,37 @@
 <template>
   <div class="bankCardInfo card-wrapper">
-    <dl>
-      <dt>{{$t('Name')}}</dt>
-      <dd>{{ cardInfo.username }}</dd>
-    </dl>
+    <template v-if="cointype==='coin'">
+      <dl>
+        <dt>{{ $t('Name') }}</dt>
+        <dd>{{ bankcardinfo.username }}</dd>
+      </dl>
 
-    <dl>
-      <dt>{{$t('Mobile')}}</dt>
-      <dd>{{cardInfo.mobile}}</dd>
-    </dl>
+      <dl>
+        <dt>{{ $t('Mobile') }}</dt>
+        <dd>{{ bankcardinfo.mobile }}</dd>
+      </dl>
 
-    <dl>
-      <dt>{{$t('Bank Accounts')}}</dt>
-      <dd>{{cardInfo.withdraw_deposit}}</dd>
-    </dl>
+      <dl>
+        <dt>{{ $t('Bank Accounts') }}</dt>
+        <dd>{{ bankcardinfo.withdraw_deposit }}</dd>
+      </dl>
 
-    <dl>
-      <dt>{{$t('IFSC')}}</dt>
-      <dd>{{cardInfo.bank_code}}</dd>
-    </dl>
+      <dl>
+        <dt>{{ $t('IFSC') }}</dt>
+        <dd>{{ bankcardinfo.bank_code }}</dd>
+      </dl>
+    </template>
 
-    <van-button  class="modify" block color="#3596E8" >
-      {{$t('Modify')}}
+    <template v-else>
+      <dl>
+        <dt>{{ $t('trxaccount') }}</dt>
+        <dd>{{ trx_account }}</dd>
+      </dl>
+    </template>
+
+
+    <van-button class="modify" block color="#3596E8">
+      {{ $t('Modify') }}
     </van-button>
   </div>
 </template>
@@ -30,21 +40,28 @@
 
 export default {
   name: "bankCardInfo",
+  props: {
+    bankcardinfo: Object,
+    cointype: String
+  },
   computed: {
-
+    userinfo() {
+      return this.$store.getters['user/userInfo']
+    },
+    trx_account() {
+      return this.userinfo.trx_account
+    }
   },
   data() {
     return {
-      cardInfo:{}
+      cardInfo: {}
     }
   },
 
   created() {
 
   },
-  methods: {
-
-  },
+  methods: {},
   destroyed() {
 
   }
@@ -55,18 +72,20 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/css/vars";
 
-.card-wrapper{
+.card-wrapper {
   display: block;
   width: 345px;
   background-color: #fff;
   margin: 15px auto;
   border-radius: 10px;
   padding: 10px 18px;
-  .card-tit{
+
+  .card-tit {
     font-weight: 700;
     font-size: 17px;
   }
-  .card-val{
+
+  .card-val {
     //color: $mainColor;
     height: 49px;
     display: flex;
@@ -78,30 +97,34 @@ export default {
     margin-top: 10px;
     margin-bottom: 10px;
     overflow: hidden;
-    input{
+
+    input {
       flex: 1;
       height: 100%;
-      border:none;
+      border: none;
       background-color: transparent;
       font-size: 14px;
       padding-left: 26px;
       border-radius: 50px;
-      &::placeholder{
+
+      &::placeholder {
         color: #999;
       }
     }
-    .van-button{
+
+    .van-button {
       margin-left: 10px;
     }
   }
 
-  dl{
-    dt{
+  dl {
+    dt {
 
       font-size: 17px;
       color: #97B9F5;
     }
-    dd{
+
+    dd {
       height: 49px;
       display: flex;
       justify-content: flex-start;

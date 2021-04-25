@@ -4,15 +4,15 @@ import {openUrl} from "@/utils/tools";
 
 export function handlePay(orderInfo){
     const isApp = appConfig.isApp
-    const {pay_url,entity,channelCode} = orderInfo
+    const {payUrl,entity,channelCode} = orderInfo
 
     if (!isApp){
-        openUrl(pay_url)
+        openUrl(payUrl)
         return
     }
 
     if (!entity){
-        openUrl(pay_url)
+        openUrl(payUrl)
         return
     }
 

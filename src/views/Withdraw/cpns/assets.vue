@@ -1,17 +1,17 @@
 <template>
   <div class="assets">
     <div class="title">Remaining available assets</div>
-    <div class="num">{{availableBalance | moneyFormat}}</div>
+    <div class="num">{{availableBalance | moneyFormat(2,cointype)}}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "assets",
+  props:{
+    cointype:String,
+  },
   computed:{
-    gcointype(){
-      return this.$store.getters['system/gcointype']
-    },
     usdtAccount(){
       return this.$store.getters['user/usdtAccount']
     },
@@ -19,7 +19,7 @@ export default {
       return this.$store.getters['user/coinAccount']
     },
     accountinfo(){
-      return this.gcointype === 'coin' ? this.coinAccount : this.usdtAccount
+      return this.cointype === 'coin' ? this.coinAccount : this.usdtAccount
     },
     availableBalance(){
       return this.accountinfo.available_balance

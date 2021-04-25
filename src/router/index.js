@@ -181,6 +181,14 @@ const routes = [
         meta:{
             title:"Choose Recharge"
         }
+    },
+    {
+        path:"/WithdrawType",
+        name:'WithdrawType',
+        component:()=>import('@/views/WithdrawType/WithdrawType'),
+        meta:{
+            title:"Choose Withdraw"
+        }
     }
 ]
 

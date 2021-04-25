@@ -7,6 +7,7 @@
       <van-field :label="$t('Phone Number')" v-model="phone" readonly/>
       <van-field :label="$t('Nickname')" v-model="nickname"/>
       <van-field :label="$t('Real Name')" v-model="realname"/>
+      <van-field :label="$t('trxaccount')" v-model="trx_account"/>
       <van-cell :title="$t('Login Password')" is-link  :to="{name:'ChangePass'}"/>
       <van-cell :title="$t('Payment Password')" is-link  :to="{name:'PaymentPassword'}"/>
 
@@ -27,13 +28,15 @@ export default {
     return {
       nickname:"",
       realname:"",
-      phone:""
+      phone:"",
+      trx_account:''
     }
   },
   created() {
     this.nickname = this.userInfo.nickname
     this.realname = this.userInfo.extend_info.realname
     this.phone = this.userInfo.member_name
+    this.trx_account = this.userInfo.trx_account
   },
   computed: {
 
@@ -45,7 +48,8 @@ export default {
     async onSubmit() {
       const formData = {
         nickname:this.nickname,
-        extend_info: {realname:this.realname}
+        trx_account:this.trx_account,
+        extend_info: {realname:this.realname},
       }
       const resp = await this.$http.post('/v1/auth/user/modify',formData)
       // console.log(resp)

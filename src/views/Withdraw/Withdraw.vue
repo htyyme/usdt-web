@@ -2,15 +2,15 @@
   <div class="Withdraw">
     <navbar title="Withdraw"></navbar>
 
-    <assets />
+    <assets :cointype="cointype"/>
     <record />
-    <withdrawForm />
+    <withdrawForm ref="withdrawFormRef"/>
 
     <van-notice-bar scrollable :text="$t('handlefeetip',{num:0.18})" color="#CF182C" background="#e5e5e5"/>
-    <bankCardInfo />
+    <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype"/>
     <pageFooter />
 
-    <van-button  block  class="withdraw-btn" >{{$t('Withdraw')}}</van-button>
+    <van-button  block  class="withdraw-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Withdraw')}}</van-button>
   </div>
 </template>
 
@@ -28,6 +28,78 @@ export default {
     withdrawForm,
     bankCardInfo,
     pageFooter
+  },
+  data(){
+    return {
+      cointype:'',
+      bankcardinfo:{},// 银行卡信息
+    }
+  },
+  created() {
+    const {cointype} = this.$route.query
+    if (cointype !== 'usdt' && cointype !== 'coin'){
+      this.$router.back()
+    }
+    this.cointype = cointype
+
+    //获取用户余额
+    this.$store.dispatch('user/loadUserInfo')
+    if (this.cointype === 'coin') {
+      this.getBankCardInfo()
+    } else{
+      //todo 判断是否绑定账号
+    }
+
+  },
+  methods:{
+    //查询银行卡信息
+    async getBankCardInfo(){
+      const resp = await this.$http.post('/v1/auth/user/cards')
+      let bankcardlist = resp.data || []
+      if (bankcardlist.length > 0){
+        this.bankcardinfo = bankcardlist[0]
+      }else{
+        const confirmRes = await this.$dialog.confirm({
+          message:this.$t('You should bind the bank card first'),
+          confirmButtonText:this.$t('confirm'),
+          cancelButtonText:this.$t('cancel')
+        }).catch(e=>e)
+
+        if (confirmRes === "confirm") {
+          this.$router.push({name:'bankCard'})
+        }else{
+          this.$router.back()
+        }
+      }
+    },
+    //提交提现
+    async handleSubmit(){
+      const formData = this.$refs.withdrawFormRef.form
+      if (!formData.amount || !formData.password){
+        return
+      }
+
+      const submitdata = {}
+      submitdata.money = Number(formData.amount)
+      submitdata.password = formData.password
+      if (this.cointype === 'usdt'){
+        submitdata.bank_id = 0
+        submitdata.coin_type = 2
+      }else if (this.cointype === 'coin'){
+        submitdata.bank_id = this.bankcardinfo.id
+        submitdata.coin_type = 1
+      }
+
+      const resp = await this.$http.post('/v1/auth/user/withdraw',submitdata)
+
+      this.$toast.success({
+        message: this.$t('success'),
+        onClose: () => {
+          this.$router.back()
+        }
+      })
+
+    }
   }
 }
 </script>
