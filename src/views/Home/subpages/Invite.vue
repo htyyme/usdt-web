@@ -2,6 +2,8 @@
   <div class="invite">
     <div id="qrcode"></div>
 
+    <div class="line"></div>
+
     <div class="info">
       <div class="tit">Referral code</div>
       <div class="code">
@@ -95,6 +97,17 @@ export default {
     height: 150px;
     //border: 1px solid red;
     top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .line{
+    width: 273px;
+    height: 1px;
+    background-color: #707070;
+    opacity: 0.3;
+    position: absolute;
+    top: 379px;
     left: 50%;
     transform: translateX(-50%);
   }
