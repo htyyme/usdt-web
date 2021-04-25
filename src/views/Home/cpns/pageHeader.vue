@@ -1,46 +1,29 @@
 <template>
-  <div class="pageHeader">
-    <header>
-      <div class="user">
-        <span class="hi">hi</span>
-        <span class="name">{{userInfo.member_name}}</span>
-        <van-icon :name="require('@/assets/icon/lv-icon.png')" size="24" class="lv-icon"></van-icon>
-        <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message"></van-icon>
+  <header>
+    <div class="user">
+      <span class="hi">hi</span>
+      <span class="name">{{userInfo.member_name}}</span>
+      <van-icon :name="require('@/assets/icon/lv-icon.png')" size="24" class="lv-icon"></van-icon>
+      <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message"></van-icon>
+    </div>
+
+    <div class="glass"  :class="assetsClass">
+      <van-icon :name="require('@/assets/icon/toggle.png')" size="20" class="toggle" @click="toggleCoinType"></van-icon>
+
+      <div class="balance">
+        <dl>
+          <dt>{{available_balance |moneyFormat(2,gcointype) }}</dt>
+          <dd>Your Total Asets</dd>
+        </dl>
+        <dl>
+          <dt>{{experience_amount | moneyFormat(2,gcointype)}}</dt>
+          <dd>Virtual currency</dd>
+        </dl>
       </div>
-
-      <div class="assets" :class="assetsClass">
-<!--        <i class="coin-icon">U</i>-->
-        <van-icon :name="require('@/assets/icon/toggle.png')" size="20" class="toggle" @click="toggleCoinType"></van-icon>
-        <div class="balance">
-          <dl>
-            <dt>{{available_balance |moneyFormat(2,gcointype) }}</dt>
-            <dd>Your Total Asets</dd>
-          </dl>
-          <dl>
-            <dt>{{experience_amount | moneyFormat(2,gcointype)}}</dt>
-            <dd>Virtual currency</dd>
-          </dl>
-        </div>
-
-        <div class="bot-info">
-          <dl>
-            <dt>{{countdata.yesterdayearn | moneyFormat(2,gcointype)}}</dt>
-            <dd>Yesterday's earning</dd>
-          </dl>
-          <dl>
-            <dt>{{countdata.totalincome | moneyFormat(2,gcointype) }}</dt>
-            <dd>Cumulative income</dd>
-          </dl>
-          <dl>
-            <dt>{{countdata.totalincome | moneyFormat(2,gcointype)}}</dt>
-            <dd>Today's earning</dd>
-          </dl>
-        </div>
-
-      </div>
-    </header>
-  </div>
+    </div>
+  </header>
 </template>
+
 
 <script>
 
@@ -75,45 +58,24 @@ export default {
     available_balance(){
       return this.accountinfo.available_balance
     },
-    countdata(){
-      if ( this.gcointype === 'coin'){
-        return this.coinCountData
-      }else if (this.gcointype === 'usdt'){
-        return this.usdtCountData
-      }
-    }
+
   },
-  data(){
-    return {
-      usdtCountData:{},
-      coinCountData:{}
-    }
-  },
-  created() {
-    this.loadData()
-  },
+
+
   methods:{
     toggleCoinType(){
       this.$tools.toggleGlobalCoinType()
-    },
-    async loadData(){
-      const resp = await this.$http.post('/v1/auth/user/shuadan/income')
-      // console.log(resp)
-      this.usdtCountData = resp.data.usdt
-      this.coinCountData = resp.data.coin
     }
+
   }
 }
 </script>
 
 <style scoped lang="scss">
-.pageHeader {
-  height: 241px;
-
   header {
     height: 185px;
     background: #3CA1EB;
-    opacity: 1;
+    position: relative;
 
     .user {
       padding: 24px 15px 0;
@@ -139,108 +101,50 @@ export default {
         right: 16px;
       }
     }
-  }
 
-  .assets {
-    margin: 18px 15px 0;
-    height: 200px;
-    border: 1px solid #FFFFFF;
-    //background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
-    background: rgba(255, 255, 255, 0.2) url(~assets/img/usdtbg.png) no-repeat;
-    background-size: contain;
-    border-radius: 20px;
-    position: relative;
-    //overflow: hidden;
-    //.coin-icon{
-    //  position: absolute;
-    //  width: 33px;
-    //  height: 33px;
-    //  left: 0;
-    //  top: 0;
-    //  background: url(~assets/icon/jiaocha.png) no-repeat;
-    //  background-size: cover;
-    //  font-size: 14px;
-    //  color: #fff;
-    //  text-align: center;
-    //}
-    &.type-coin{
-      background-image: url(~assets/img/coinbg.png);
-    }
-    .toggle{
+    .glass{
+      height: 114px;
+      width: 340px;
+      border-radius: 20px 20px 0px 0px;
+      overflow: hidden;
       position: absolute;
-      right: 10px;
-      top: 10px;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      height: 2px;
-      width: 100vw;
-      background-color: #f4f4f4;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-    }
-
-    .balance {
-      display: flex;
-      color: #fff;
-      padding: 30px 24px 0;
-      justify-content: space-between;
-
-      dt {
-        font-size: 20px;
-        text-align: center;
-        padding-bottom: 13px;
+      background: rgba(255, 255, 255, 0.2) url(~assets/img/usdtbg.png) no-repeat;
+      background-size: cover;
+      &.type-coin{
+        background-image: url(~assets/img/coinbg.png);
+      }
+      .toggle{
+        position: absolute;
+        right: 10px;
+        top: 10px;
       }
 
-      dd {
-        width: 125px;
-        height: 22px;
-        background: #FFC543;
-        border-radius: 11px;
-        font-size: 12px;
+      .balance {
         display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    .bot-info {
-      display: flex;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      padding-bottom: 8px;
-
-      dl {
-        flex: 1;
-        text-align: center;
-        border-right: 2px solid #f4f4f4;
-
-        padding-right: 3px;
-
-        &:last-child {
-          border-right: none;
-        }
+        color: #fff;
+        padding: 30px 24px 0;
+        justify-content: space-between;
 
         dt {
           font-size: 20px;
-          font-weight: 700;
-          color: #9F58FE;
-          padding-bottom: 6px;
-
+          text-align: center;
+          padding-bottom: 13px;
         }
 
         dd {
+          width: 125px;
+          height: 22px;
+          background: #FFC543;
+          border-radius: 11px;
           font-size: 12px;
-          color: #1D6FDF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
   }
-}
-
 </style>
