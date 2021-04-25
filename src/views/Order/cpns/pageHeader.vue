@@ -3,12 +3,16 @@
 
     <div class="wrapper">
       <dl>
-        <dt>Remaining available assets</dt>
-        <dd>123</dd>
+        <dt>{{ $t('availableAssets') }}</dt>
+        <dd class="balance">
+          <span>{{usdtAvailableBalance | moneyFormat(2,'usdt')}}</span>
+          <span>{{coinAvailableBalance | moneyFormat(2,'coin')}}</span>
+        </dd>
       </dl>
+
       <dl>
-        <dt>Remaining available assets</dt>
-        <dd>123</dd>
+        <dt>{{ $t('todayOrder') }}</dt>
+        <dd>{{coincountdata.todayorder + usdtcountdata.todayorder}}</dd>
       </dl>
     </div>
 
@@ -22,6 +26,20 @@ export default {
   props:{
     coincountdata:Object,
     usdtcountdata:Object,
+  },
+  computed:{
+    usdtAccount(){
+      return this.$store.getters['user/usdtAccount']
+    },
+    coinAccount(){
+      return this.$store.getters['user/coinAccount']
+    },
+    usdtAvailableBalance(){
+      return this.usdtAccount.available_balance
+    },
+    coinAvailableBalance(){
+      return this.coinAccount.available_balance
+    }
   }
 }
 </script>
@@ -42,7 +60,7 @@ export default {
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 25px ;
+      //padding: 0 25px ;
       dt{
         color: #333;
         font-size: 15px;
@@ -53,6 +71,11 @@ export default {
         font-size: 21px;
         color: #F97D1D;
         font-weight: 700;
+        &.balance{
+          font-size: 13px;
+          display: flex;
+          flex-direction: column;
+        }
       }
       &:nth-child(2)>dd{
         color: #3799E9;

@@ -446,5 +446,6 @@ export default {
     'rebate':'rebate',
     'levelNum':"Level {num}",
     'MinimumRechargeInfo':'The recharge amount cannot be lower than the minimum amount of this channel ({num})',
+    'availableAssets':'Available assets',
 
 }
