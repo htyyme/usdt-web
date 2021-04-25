@@ -34,7 +34,7 @@ export default {
       return this.$store.getters['user/userInfo']
     },
     usdtAccount(){
-      return this.$store.getters['user/coinAccount']
+      return this.$store.getters['user/usdtAccount']
     },
     coinAccount(){
       return this.$store.getters['user/coinAccount']

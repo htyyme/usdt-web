@@ -63,23 +63,13 @@ export default {
     //获取统计数据
     async queryCountData(){
       const resp = await this.$http.post('/v1/auth/user/shuadan/income')
-      // console.log(resp)
-      if (resp.data){
-        let coin_type = 1
-        if (this.cointype==='usdt'){
-          coin_type = 2
-        }
-        resp.data.forEach(el => {
-          if (el.coin_type == coin_type){
-            this.countData.teamtodayearn = el.teamtodayearn
-            this.countData.teamyesterdayearn = el.teamyesterdayearn
-            this.countData.todayearn = el.todayearn
-            this.countData.todayorder = el.todayorder
-            this.countData.yesterdayearn = el.yesterdayearn
-          }
-        })
+      const countdata =  resp.data[this.cointype]
+      this.countData.teamtodayearn = countdata.teamtodayearn
+      this.countData.teamyesterdayearn = countdata.teamyesterdayearn
+      this.countData.todayearn = countdata.todayearn
+      this.countData.todayorder = countdata.todayorder
+      this.countData.yesterdayearn = countdata.yesterdayearn
 
-      }
     },
     //查询商品的详细信息
     async loadGoodsDetail(){

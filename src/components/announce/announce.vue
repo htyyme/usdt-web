@@ -92,7 +92,7 @@ export default {
       border-radius: 5px;
       font-size: 20px;
       color: #fff;
-      background: #fea322;
+      background: orange;
       border: none;
       width: 60%;
       position: absolute;

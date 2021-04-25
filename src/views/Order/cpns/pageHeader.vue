@@ -18,7 +18,11 @@
 
 <script>
 export default {
-  name: "pageHeader"
+  name: "pageHeader",
+  props:{
+    coincountdata:Object,
+    usdtcountdata:Object,
+  }
 }
 </script>
 

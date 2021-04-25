@@ -2,7 +2,7 @@
   <div class="Order">
     <navbar title="Order" :left-arrow="false"></navbar>
 
-    <pageHeader />
+    <pageHeader :coincountdata="coincountdata" :usdtcountdata="usdtcountdata"/>
 
     <orderList />
   </div>
@@ -17,8 +17,22 @@ export default {
     pageHeader,
     orderList
   },
+  data(){
+    return {
+      coincountdata:{},
+      usdtcountdata:{}
+    }
+  },
   async created() {
-
+    this.queryCoundData()
+  },
+  methods:{
+    //获取统计数据
+    async queryCoundData(){
+      const resp = await this.$http.post('/v1/auth/user/shuadan/income')
+      this.coincountdata = resp.data.coin
+      this.usdtcountdata = resp.data.usdt
+    }
   }
 }
 </script>
