@@ -106,6 +106,11 @@ export default {
         successUrl : this.returnUrl,
         channel_code: this.activeChannel.payChannelName
       }
+      if (this.cointype === 'coin'){
+        formData.coin_type = 1
+      } else if (this.cointype === 'usdt'){
+        formData.coin_type = 2
+      }
       const resp = await this.$http.post('/v1/auth/user/recharge',formData)
       handlePay(resp.data.data)
     }

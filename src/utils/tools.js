@@ -70,7 +70,7 @@ export function openUrl(url) {
     }
 
     const open_in_broswer = store.getters['system/config'].open_in_broswer
-    const isApp = config.isApp
+    const isApp = appConfig.isApp
     if (!isApp) {
         window.location.href = url
         return

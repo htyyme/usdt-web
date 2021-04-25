@@ -19,7 +19,7 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li>
+      <li @click="toRechargeRecordPage">
         <van-icon :name="require('@/assets/icon/rechargerecord.png')" size="40"></van-icon>
         <span>{{$t('rechargeRecord')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
@@ -80,6 +80,11 @@ export default {
     toWithdrawRecordPage(){
       this.$router.push({
         name:'WithdrawRecord'
+      })
+    },
+    toRechargeRecordPage(){
+      this.$router.push({
+        name:'RechargeRecord'
       })
     },
     async signOut(){

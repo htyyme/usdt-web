@@ -31,6 +31,33 @@ const routes = [
                     title:"Order Finance",
                     showTabbar:true
                 },
+            },
+            {
+                path:'Invite',
+                name:'Invite',
+                component:()=>import('@/views/Home/subpages/Invite'),
+                meta:{
+                    title:"Invite Friends",
+                    showTabbar:true
+                },
+            },
+            {
+                path:'FinanceProduct',
+                name:'FinanceProduct',
+                component:()=>import('@/views/Home/subpages/FinanceProduct'),
+                meta:{
+                    title:"Finance Product",
+                    showTabbar:true
+                },
+            },
+            {
+                path:'Introduction',
+                name:'Introduction',
+                component:()=>import('@/views/Home/subpages/Introduction'),
+                meta:{
+                    title:"Introduction",
+                    showTabbar:true
+                },
             }
         ]
     },
@@ -196,6 +223,14 @@ const routes = [
         component:()=>import('@/views/WithdrawRecord/WithdrawRecord'),
         meta:{
             title:"Withdraw Record"
+        }
+    },
+    {
+        path:"/RechargeRecord",
+        name:'RechargeRecord',
+        component:()=>import('@/views/RechargeRecord/RechargeRecord'),
+        meta:{
+            title:"Recharge Record"
         }
     }
 ]

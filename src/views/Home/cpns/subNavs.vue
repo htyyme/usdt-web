@@ -12,26 +12,26 @@
     </div>
 
     <ul>
-      <li>
+      <router-link :to="{name:'OrderFinance'}" tag="li">
         <van-image :src="require('@/assets/icon/order-finance.png')"></van-image>
         <span>{{$t('orderFinance')}}</span>
-      </li>
-      <li>
+      </router-link>
+      <router-link :to="{name:'FinanceProduct'}" tag="li">
         <van-image :src="require('@/assets/icon/financial-product.png')"></van-image>
         <span>{{$t('financeProduct')}}</span>
-      </li>
-      <li>
+      </router-link>
+      <router-link :to="{name:'Invite'}" tag="li">
         <van-image :src="require('@/assets/icon/invite-friends.png')"></van-image>
         <span>{{$t('inviteFriends')}}</span>
-      </li>
+      </router-link>
 <!--      <li>-->
 <!--        <van-image :src="require('@/assets/icon/mission.png')"></van-image>-->
 <!--        <span>Mission</span>-->
 <!--      </li>-->
-      <li>
+      <router-link :to="{name:'Introduction'}" tag="li">
         <van-image :src="require('@/assets/icon/introduction.png')"></van-image>
         <span>{{$t('introduction')}}</span>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -89,6 +89,9 @@
           display: flex;
           align-items: center;
           text-transform: capitalize;
+        }
+        &.router-link-active{
+          color: #3596E8;
         }
       }
     }
