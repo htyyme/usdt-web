@@ -1,13 +1,20 @@
 <template>
-  <div class="record">
-    <span>Withdrawal record</span>
+  <div class="record" @click="toWithdrawRecordPage">
+    <span>{{$t('Withdraw Record')}}</span>
     <van-icon :name="require('@/assets/icon/more.png')" size="12" class="more"></van-icon>
   </div>
 </template>
 
 <script>
 export default {
-  name: "record"
+  name: "record",
+  methods:{
+    toWithdrawRecordPage(){
+      this.$router.push({
+        name:'WithdrawRecord'
+      })
+    },
+  }
 }
 </script>
 
