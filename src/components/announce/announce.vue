@@ -5,6 +5,8 @@
 
       <div class="content" v-html="content"></div>
 
+
+
       <van-button @click="handleClose" block>{{$t('gotIt')}}</van-button>
     </div>
   </van-overlay>
@@ -81,10 +83,9 @@ export default {
     }
 
     .content{
-      font-size: 13px;
+      font-size: 12px;
       padding: 0 40px;
       height: 330px;
-      overflow: auto;
     }
 
     .van-button {
