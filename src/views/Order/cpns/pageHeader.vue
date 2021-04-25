@@ -12,15 +12,16 @@
 
       <dl>
         <dt>{{ $t('todayOrder') }}</dt>
-        <dd>{{coincountdata.todayorder + usdtcountdata.todayorder}}</dd>
+        <dd>({{coincountdata.todayorder + usdtcountdata.todayorder}}/{{maxgrab}})</dd>
       </dl>
     </div>
 
-    <div class="tip">These data are provided by AWOOFFICIALY provider</div>
+    <div class="tip">{{$t('orderProvider',{name:appname})}}</div>
   </div>
 </template>
 
 <script>
+import appconfig from "@/config";
 export default {
   name: "pageHeader",
   props:{
@@ -39,6 +40,12 @@ export default {
     },
     coinAvailableBalance(){
       return this.coinAccount.available_balance
+    },
+    maxgrab(){
+      return this.$store.getters['system/config'].max_grab
+    },
+    appname(){
+      return appconfig.appName
     }
   }
 }

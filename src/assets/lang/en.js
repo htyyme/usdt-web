@@ -131,7 +131,7 @@ export default {
     'Contribution':'Contribution',
     'Order':'Order',
     'todayOrder':"Today's order",
-    'orderProvider':'These data are provided by jdmoney provider',
+    'orderProvider':'These data are provided by {name} provider',
     'noOrderToday':'No order today',
     'GoToOrderFinance':'Go to order finance',
     'OrderNumber':'Order number',

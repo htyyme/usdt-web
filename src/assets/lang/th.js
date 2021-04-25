@@ -130,7 +130,7 @@ export default {
     'Contribution': 'เงินสมทบ',
     'Order': 'คำสั่งซื้อ',
     'todayOrder': "คำสั่งซื้อวันนี้",
-    'orderProvider': 'ข้อมูลเหล่านี้จัดทำโดยผู้ให้บริการ',
+    'orderProvider':'These data are provided by {name} provider',
     'noOrderToday': 'ไม่มีคำสั่งซื้อของวันนี้',
     'GoToOrderFinance': 'ไปยังการเงิน',
     'OrderNumber': 'เลขที่ใบสั่งซื้อ',

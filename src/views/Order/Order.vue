@@ -1,6 +1,6 @@
 <template>
   <div class="Order">
-    <navbar title="Order" :left-arrow="false"></navbar>
+    <navbar :title="$t('Order')" :left-arrow="false"></navbar>
 
     <pageHeader :coincountdata="coincountdata" :usdtcountdata="usdtcountdata"/>
 
