@@ -6,12 +6,14 @@
         background="#FFC543"
         color="#fff"
         :left-icon="require('@/assets/icon/horn.png')"
+        @click="showAnnounce"
     />
     <footer></footer>
   </div>
 </template>
 
 <script>
+import {SHOW_ANNOUNCE} from "@/utils/events";
 export default {
   name: "noticeBar",
   computed: {
@@ -19,6 +21,11 @@ export default {
       return JSON.parse(this.$store.getters['system/config'].notice).join(" ")
     }
   },
+  methods:{
+    showAnnounce(){
+      this.$bus.$emit(SHOW_ANNOUNCE)
+    }
+  }
 }
 </script>
 

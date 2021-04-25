@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import {SHOW_ANNOUNCE} from "@/utils/events";
 import appConfig from "@/config";
 export default {
   name: "Login",
@@ -78,6 +79,7 @@ export default {
       this.$store.commit('user/setToken',token)
       this.$store.commit('system/setContactInfo',contact)
       this.$store.dispatch('user/loadUserInfo')
+      this.$bus.$emit(SHOW_ANNOUNCE)
       this.$router.replace('/')
     },
     changePwdType(){

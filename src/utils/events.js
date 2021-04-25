@@ -4,3 +4,6 @@ export const SHOW_GRAB_ORDER_DETAILS = 'show_grab_order_details'
 
 
 export const PURCHASE_GRAB_SUCCESS = 'purchase_grab_success'
+
+
+export const SHOW_ANNOUNCE = 'show_announce'

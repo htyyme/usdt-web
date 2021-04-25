@@ -3,7 +3,11 @@
 
     <router-view/>
 
+    <announce />
+
     <tabbar v-if="showTabbar"/>
+
+
   </div>
 </template>
 
