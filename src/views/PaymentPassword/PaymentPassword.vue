@@ -4,7 +4,8 @@
 
     <van-form @submit="onSubmit">
       <van-cell :title="$t('Phone')" :value="userInfo.member_name"></van-cell>
-      <van-field :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code" v-model="verify_code" :rules="[{ required: true }]">
+
+      <van-field v-if="isSendSms" :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code" v-model="verify_code" :rules="[{ required: true }]">
         <template #button>
           <van-button size="mini" type="primary" :disabled="countdown>0" @click="sendOtp">{{sendBtnText}}</van-button>
         </template>
@@ -51,6 +52,9 @@ name: "PaymentPassword",
         return 'OTP'
       }
       return this.countdown + 's'
+    },
+    isSendSms(){
+      return this.$store.getters['system/config'].isSendSms
     }
   },
   methods: {
