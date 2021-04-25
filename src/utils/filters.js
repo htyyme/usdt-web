@@ -38,7 +38,7 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
     }
 
     if (typeof val === 'string') {
-        return coin + val
+        return val + coin
     }
     val = val || 0
 
@@ -47,6 +47,8 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
     // }else{
     //     return  val.toFixed(precision) + coin
     // }
+
+
     return  val.toFixed(precision) + coin
 }
 

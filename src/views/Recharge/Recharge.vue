@@ -4,11 +4,11 @@
 
     <assets :cointype="cointype"/>
     <payWay :channellist="channellist" ref="payWayRef" @chooseChannel="chooseChannel"/>
-    <amounts />
+    <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
 
-    <div class="bottom-info">In order to ensure the success rate of transaction, please ensure that the mobile phone number and email address are correct.</div>
+    <div class="bottom-info">{{$t('rechargeTip')}}</div>
 
-    <van-button block class="submit-btn">Recharge</van-button>
+    <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" :disabled="submitDisabled" @click="handleSubmit">{{$t('recharge')}}</van-button>
   </div>
 
 
@@ -19,6 +19,8 @@ import assets from "./cpns/assets";
 import payWay from "./cpns/payWay";
 import amounts from "./cpns/amounts";
 import appConfig from "@/config";
+import {handlePay} from "@/utils/pay";
+
 export default {
   name: "Recharge",
   components:{
@@ -30,7 +32,29 @@ export default {
     return {
       cointype:'',
       channellist:[],
-      activeChannel:{}
+      activeChannel:{},
+      amount:0
+    }
+  },
+  computed:{
+    returnUrl(){
+      const {protocol, host} = location
+      const mode = this.$router.mode
+      if (mode === 'hash') {
+        return protocol + "//" + host + "/#/success"
+      } else {
+        return protocol + "//" + host + "/success"
+      }
+    },
+    // 提交按钮的禁用状态
+    submitDisabled(){
+      if (!this.amount || this.amount <= 0){
+        return true
+      }
+      if (this.channellist.length === 0){
+        return true
+      }
+      return false
     }
   },
   created() {
@@ -67,6 +91,23 @@ export default {
     //选择通道
     chooseChannel(item){
       this.activeChannel = item
+    },
+    chooseAmount(amount){
+      this.amount = amount
+    },
+    async handleSubmit(){
+      //如果充值金额小于这个通道要求的最低金额
+      if (this.amount < this.activeChannel.minAmount){
+        return this.$toast.fail(this.$t('MinimumRechargeInfo',{num:this.activeChannel.minAmount}))
+      }
+      const formData = {
+        money:Number(this.amount),
+        is_web:!appConfig.isApp,
+        successUrl : this.returnUrl,
+        channel_code: this.activeChannel.payChannelName
+      }
+      const resp = await this.$http.post('/v1/auth/user/recharge',formData)
+      handlePay(resp.data.data)
     }
   }
 }
