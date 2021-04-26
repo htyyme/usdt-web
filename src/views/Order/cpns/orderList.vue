@@ -2,7 +2,7 @@
   <div class="orderList">
     <van-empty v-if="list.length===0" :image="require('@/assets/img/nodata.png')" :description="$t('noOrderToday')"></van-empty>
 
-    <van-list class="list" v-model="loading" :finished="finished" :finished-text="$t('No more')" @load="loadData">
+    <van-list class="list" v-model="loading" :finished="finished" :finished-text="$t('No more')" @load="loadData" :loading-text="$t('loading')">
       <div class="item" v-for="item in list" :key="item.id" :class="itemclass(item)">
         <div class="item-top">{{$t('OrderNumber')}}: {{item.order_sn}}</div>
 

@@ -26,7 +26,7 @@
 
     <van-empty :image="require('@/assets/img/nodata.png')" v-if="list.length===0"></van-empty>
 
-    <van-list class="goods-list" v-model="loading" :finished="finished"   @load="loadData">
+    <van-list class="goods-list" v-model="loading" :finished="finished"   @load="loadData" :loading-text="$t('loading')">
       <div class="goods-item" v-for="(item,index) in list" :key="index">
         <div class="top">
           <van-image class="top-img" :src="$tools.getImage(item.show_pic)"></van-image>
