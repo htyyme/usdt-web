@@ -115,8 +115,9 @@ export default {
 
     .options{
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       margin-top: 20px;
+      padding: 0 30px;
       .van-button{
         width: 115px;
         height: 55px;

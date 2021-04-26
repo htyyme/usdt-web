@@ -447,5 +447,23 @@ export default {
     'levelNum':"Level {num}",
     'MinimumRechargeInfo':'The recharge amount cannot be lower than the minimum amount of this channel ({num})',
     'availableAssets':'Available assets',
+    'Shop image':'Shop image',
+    'Shop Name':'Shop Name',
+    'Please enter shop name':'Please enter shop name',
+    'Shop introduction':'Shop introduction',
+    'Please enter shop introduction':'Please enter shop introduction',
+    'Billing infomation':'Billing infomation',
+    'Bank account':'Bank account',
+    'IFSC code':'IFSC code',
+    'Whatsapp':'Whatsapp',
+    'Please upload shop image':'Please upload shop image',
+    'Please enter bank account':'Please enter bank account',
+    'Please enter payee':'Please enter payee',
+    'Please enter whatsapp':'Please enter whatsapp',
+    'Amount sold':'Amount sold',
+    'Quantity sold':'Quantity sold',
+
+
+
 
 }
