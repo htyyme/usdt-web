@@ -23,7 +23,7 @@
     </dl>
 
 
-    <div class="info">{{ $t('Commission') }}: {{ $t('commissionOfPrice', {num: goodsinfo.extra2}) }}</div>
+    <div class="info">{{ $t('Commission') }}: {{ $t('commissionOfPrice', {num: rateFormat(order.win_amount/order.amount)}) }}</div>
 
     <div class="options">
       <van-button class="cancel" @click="handleClose">{{$t('cancel')}}</van-button>
@@ -39,6 +39,7 @@ import {
   SHOW_GRAB_ORDER_DETAILS,
   PURCHASE_GRAB_SUCCESS
 } from "@/utils/events";
+import {rateFormat} from "@/utils/filters";
 
 export default {
   name: "grabOrderDetails",
@@ -72,8 +73,13 @@ export default {
       })
       if (resp.code === 200){
         this.handleClose()
+        //刷新余额
+        this.$store.dispatch('user/loadUserInfo')
         this.$bus.$emit(PURCHASE_GRAB_SUCCESS)
       }
+    },
+    rateFormat(val){
+      return rateFormat(val)
     }
   },
   destroyed() {

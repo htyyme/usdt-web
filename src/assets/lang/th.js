@@ -137,7 +137,7 @@ export default {
     'TotalOrderAmount': 'ยอดสั่งซื้อทั้งหมด',
     'expectedReturn': 'ผลตอบแทนที่คาดหวัง',
     'Commission': 'คอมมิชชัน',
-    'commissionOfPrice': '{num}% of the product price',
+    'commissionOfPrice': '{num} of the product price',
     'OrderGrabbing': 'คว้าออเดอร์',
     'InstructionsForUse': 'คำแนะนำสำหรับการใช้งาน',
     'InstructionsForUseLine1': '1 บัญชีสามารถรับได้ {num} คำสั่งซื้อต่อวัน',

@@ -5,17 +5,28 @@
     <pageHeader :coincountdata="coincountdata" :usdtcountdata="usdtcountdata"/>
 
     <orderList />
+
+    <!--抢单详情-->
+    <grabOrderDetails />
+    <!--购买成功-->
+    <purchaseSuccess />
   </div>
 </template>
 
 <script>
 import pageHeader from "./cpns/pageHeader";
 import orderList from "./cpns/orderList";
+
+import grabOrderDetails from "@/views/OrderGrab/cpns/grabOrderDetails";
+import purchaseSuccess from "@/views/OrderGrab/cpns/purchaseSuccess";
+
 export default {
   name: "Order",
   components:{
     pageHeader,
-    orderList
+    orderList,
+    grabOrderDetails,
+    purchaseSuccess
   },
   data(){
     return {

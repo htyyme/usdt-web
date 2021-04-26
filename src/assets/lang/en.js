@@ -138,7 +138,7 @@ export default {
     'TotalOrderAmount':'Total order amount',
     'expectedReturn':'Expected return',
     'Commission':'Commission',
-    'commissionOfPrice':'{num}% of the product price',
+    'commissionOfPrice':'{num} of the product price',
     'OrderGrabbing':'Order Grabbing',
     'InstructionsForUse':'Instructions for use',
     'InstructionsForUseLine1':'One account can grab {num} order per day',

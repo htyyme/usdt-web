@@ -9,7 +9,7 @@
         </div>
 
         <div class="pro-rate">
-          <span>{{item.extra2 | rateFormat(1)}}</span>
+          <span>{{rateFormat(item.extra2 * item.usdtAttr.multiplying_power)}}</span>
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
@@ -22,7 +22,7 @@
 
       <div class="right" @click="toOrderGrabPage(item,'coin')">
         <div class="pro-rate">
-          <span>{{item.extra2 | rateFormat(1)}}</span>
+          <span>{{rateFormat(item.extra2 * item.coinAttr.multiplying_power)}}</span>
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import {rateFormat} from "@/utils/filters";
+
 export default {
   name: "productList",
   data(){
@@ -82,6 +84,9 @@ export default {
           cointype:cointype
         }
       })
+    },
+    rateFormat(val){
+      return rateFormat(val)
     }
   }
 }
