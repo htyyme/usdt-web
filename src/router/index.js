@@ -256,6 +256,14 @@ const routes = [
         meta:{
             title:"Business Information"
         }
+    },
+    {
+        path:"/UsdtSell",
+        name:'UsdtSell',
+        component:()=>import('@/views/UsdtSell/UsdtSell'),
+        meta:{
+            title:"Usdt Sell"
+        }
     }
 ]
 

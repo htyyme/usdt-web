@@ -5,10 +5,11 @@
     </van-sticky>
 
     <ul class="subnavs">
-      <li>
+      <li @click="toSellPage">
         <van-image :src="require('@/assets/icon/usdt-nav1.png')"></van-image>
         <span>Sell</span>
       </li>
+
       <li>
         <van-image :src="require('@/assets/icon/usdt-nav2.png')"></van-image>
         <span>My sales</span>
@@ -23,20 +24,20 @@
       </li>
     </ul>
 
-<!--    <van-empty :image="require('@/assets/img/nodata.png')"></van-empty>-->
+    <van-empty :image="require('@/assets/img/nodata.png')" v-if="list.length===0"></van-empty>
 
-    <van-list class="goods-list" >
-      <div class="goods-item" v-for="i in 50" :key="i">
+    <van-list class="goods-list" v-model="loading" :finished="finished"   @load="loadData">
+      <div class="goods-item" v-for="(item,index) in list" :key="index">
         <div class="top">
-          <van-image class="top-img" src="http://192.168.2.25:7777/api//uploads/file/9eb3212dcf0a8b33237fee85581b1df4_20210218174555.png"></van-image>
+          <van-image class="top-img" :src="$tools.getImage(item.show_pic)"></van-image>
           <div class="user">
-            <van-image src="http://192.168.2.25:7777/api//uploads/file/44cf075f6e100cc75d3778d6c7afcd56_20210425144150.png" class="avatar"></van-image>
-            <span class="username">张三</span>
+            <van-image :src="getItemAvatar(item)" class="avatar"></van-image>
+            <span class="username">{{item.goods_name}}</span>
           </div>
         </div>
         <div class="detail">
-          <div class="intro">全网最低汇率；线下交易，多购买可赠</div>
-          <div class="price">12323</div>
+          <div class="intro">{{item.goods_intro}}</div>
+          <div class="price">{{item.info.price}}{{$t('coin')}}/USDT</div>
           <div class="enter">Enter</div>
         </div>
 
@@ -52,13 +53,53 @@ export default {
   name: "Usdt",
   data() {
     return {
-      search: ""
+      search: "",
+      list: [],
+      loading: false,
+      finished: false,
+      queryInfo:{
+        page:0,
+        pageSize:20,
+        tp:8
+      }
+    }
+  },
+  methods:{
+    async loadData(){
+      this.queryInfo.page++
+      const resp = await this.$http.post('/v1/auth/ustd/list',this.queryInfo)
+      const {list,total} = resp.data
+      list.forEach(el => el.info = JSON.parse(el.extra2))
+      this.list = this.list.concat(list || [])
+      this.loading = false
+      if (this.list.length >= total){
+        this.finished = true
+      }
+
+    },
+    toSellPage(){
+      this.$router.push({
+        name:'UsdtSell'
+      })
+    },
+    getItemAvatar(item){
+      if (item.info.pic){
+        return this.$tools.getImage(item.info.pic)
+      }else{
+        return require('@/assets/icon/default_avatar.png')
+      }
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+/deep/.van-empty{
+  .van-empty__image{
+    height: unset;
+  }
+}
+
 .usdt {
   min-height: 100vh;
   background-color: #f4f4f4;
