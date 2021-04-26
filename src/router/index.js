@@ -58,7 +58,7 @@ const routes = [
                     title:"Introduction",
                     showTabbar:true
                 },
-            }
+            },
         ]
     },
     {
@@ -231,6 +231,22 @@ const routes = [
         component:()=>import('@/views/RechargeRecord/RechargeRecord'),
         meta:{
             title:"Recharge Record"
+        }
+    },
+    {
+        path:"/MsgList",
+        name:'MsgList',
+        component:()=>import('@/views/MsgList/MsgList'),
+        meta:{
+            title:"Message"
+        }
+    },
+    {
+        path:"/MsgDetail",
+        name:'MsgDetail',
+        component:()=>import('@/views/MsgDetail/MsgDetail'),
+        meta:{
+            title:"Message detail"
         }
     }
 ]

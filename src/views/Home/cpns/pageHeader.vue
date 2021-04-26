@@ -4,7 +4,7 @@
       <span class="hi">hi</span>
       <span class="name">{{userInfo.member_name}}</span>
       <van-icon :name="require('@/assets/icon/lv-icon.png')" size="24" class="lv-icon"></van-icon>
-      <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message"></van-icon>
+      <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message" @click="toMessagePage"></van-icon>
     </div>
 
     <div class="glass"  :class="assetsClass">
@@ -65,6 +65,11 @@ export default {
   methods:{
     toggleCoinType(){
       this.$tools.toggleGlobalCoinType()
+    },
+    toMessagePage(){
+      this.$router.push({
+        name:'MsgList'
+      })
     }
 
   }

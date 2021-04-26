@@ -1,7 +1,7 @@
 <template>
   <header>
     <van-icon :name="require('@/assets/icon/return.png')" size="25" class="return" @click="$router.back()"></van-icon>
-    <van-icon :name="require('@/assets/icon/message.png')" size="25" class="message"></van-icon>
+    <van-icon :name="require('@/assets/icon/message.png')" size="25" class="message" @click="tomsgpage"></van-icon>
     <div class="pagetitle">Vip</div>
     <van-image :src="require('@/assets/icon/level.png')" class="level-icon"></van-image>
 
@@ -22,6 +22,13 @@ export default {
   data(){
     return {
       active:1
+    }
+  },
+  methods:{
+    tomsgpage(){
+      this.$router.push({
+        name:'MsgList'
+      })
     }
   }
 }
