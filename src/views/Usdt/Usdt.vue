@@ -38,7 +38,7 @@
         <div class="detail">
           <div class="intro">{{item.goods_intro}}</div>
           <div class="price">{{item.info.price}}{{$t('coin')}}/USDT</div>
-          <div class="enter">Enter</div>
+          <div class="enter" @click="enterPage(item)">Enter</div>
         </div>
 
 
@@ -80,6 +80,14 @@ export default {
     toSellPage(){
       this.$router.push({
         name:'UsdtSell'
+      })
+    },
+    enterPage(item){
+      this.$router.push({
+        name:'BuyUsdt',
+        query:{
+          id:item.id
+        }
       })
     },
     getItemAvatar(item){
