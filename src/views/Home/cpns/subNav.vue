@@ -16,9 +16,9 @@
     <!--        <van-image :src="require('@/assets/icon/mission.png')"></van-image>-->
     <!--        <span>Mission</span>-->
     <!--      </li>-->
-    <router-link :to="{name:'Introduction'}" tag="li">
-      <van-image :src="require('@/assets/icon/introduction.png')"></van-image>
-      <span>{{$t('introduction')}}</span>
+    <router-link :to="{name:'Mission'}" tag="li">
+      <van-image :src="require('@/assets/icon/mission.png')"></van-image>
+      <span>{{$t('mission')}}</span>
     </router-link>
   </ul>
 </template>

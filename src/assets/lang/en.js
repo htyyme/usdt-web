@@ -462,7 +462,7 @@ export default {
     'Please enter whatsapp':'Please enter whatsapp',
     'Amount sold':'Amount sold',
     'Quantity sold':'Quantity sold',
-
+    'widthdrawfrequency':'Withdraw {num} times /day'
 
 
 

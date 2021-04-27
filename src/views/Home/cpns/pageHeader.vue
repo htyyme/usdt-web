@@ -13,7 +13,7 @@
       <div class="balance">
         <dl>
           <dt>{{available_balance |moneyFormat(2,gcointype) }}</dt>
-          <dd>Your Total Asets</dd>
+          <dd>Your Total Assets</dd>
         </dl>
         <dl>
           <dt>{{experience_amount | moneyFormat(2,gcointype)}}</dt>

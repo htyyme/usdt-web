@@ -59,6 +59,15 @@ const routes = [
                     showTabbar:true
                 },
             },
+            {
+                path:'Mission',
+                name:'Mission',
+                component:()=>import('@/views/Home/subpages/Mission'),
+                meta:{
+                    title:"Mission",
+                    showTabbar:true
+                },
+            },
         ]
     },
     {
@@ -312,7 +321,8 @@ const routes = [
         meta:{
             title:"TransferOut"
         }
-    }
+    },
+
 ]
 
 const router = new VueRouter({

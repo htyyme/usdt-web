@@ -177,3 +177,38 @@ export function createFontAvatar( cvs , name ,width,height ){
 
     return cvs.toDataURL('image/jpeg', 1);
 }
+
+
+export function getLvIcon(lv){
+    switch (lv){
+        case 1:
+            return require('@/assets/img/vip1.png')
+        case 2:
+            return require('@/assets/img/vip2.png')
+        case 3:
+            return require('@/assets/img/vip3.png')
+        case 4:
+            return require('@/assets/img/vip4.png')
+        case 5:
+            return require('@/assets/img/vip5.png')
+        default:
+            return require('@/assets/img/vip1.png')
+    }
+}
+
+export function getLvBgimage(lv){
+    switch (lv){
+        case 1:
+            return require('@/assets/img/vip1-bg.png')
+        case 2:
+            return require('@/assets/img/vip2-bg.png')
+        case 3:
+            return require('@/assets/img/vip3-bg.png')
+        case 4:
+            return require('@/assets/img/vip4-bg.png')
+        case 5:
+            return require('@/assets/img/vip5-bg.png')
+        default:
+            return require('@/assets/img/vip1-bg.png')
+    }
+}

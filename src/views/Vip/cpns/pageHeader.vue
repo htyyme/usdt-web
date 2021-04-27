@@ -3,26 +3,41 @@
     <van-icon :name="require('@/assets/icon/return.png')" size="25" class="return" @click="$router.back()"></van-icon>
     <van-icon :name="require('@/assets/icon/message.png')" size="25" class="message" @click="tomsgpage"></van-icon>
     <div class="pagetitle">Vip</div>
-    <van-image :src="require('@/assets/icon/level.png')" class="level-icon"></van-image>
+    <van-image :src="curlvicon" class="level-icon"></van-image>
 
     <van-steps :active="active" active-color="#FEDF72" >
-      <van-step>LV.1</van-step>
-      <van-step>LV.2</van-step>
-      <van-step>LV.3</van-step>
-      <van-step>LV.4</van-step>
-      <van-step>LV.5</van-step>
+      <van-step v-for="(item,index) in viplist">LV.{{index+1}}</van-step>
     </van-steps>
 
   </header>
 </template>
 
 <script>
+import {getLvIcon} from "@/utils/tools";
+
 export default {
   name: "pageHeader",
+  props:{
+    viplist:Array
+  },
   data(){
     return {
-      active:1
+      active:-1
     }
+  },
+  computed:{
+    //当前的等级
+    curlv(){
+      return this.$store.getters['user/userInfo'].lv_id
+    },
+    //当前等级的图标
+    curlvicon(){
+      return getLvIcon(this.curlv)
+    }
+  },
+  mounted() {
+    //当前激活的步骤 = 当前等级 - 1
+    this.active = this.curlv - 1
   },
   methods:{
     tomsgpage(){
@@ -58,8 +73,8 @@ header {
 
   }
   .level-icon{
-    width: 110px;
-    height: 98px;
+    width: 89px;
+    height: 82px;
     position: absolute;
     top: 55px;
     left: 50%;

@@ -1,23 +1,64 @@
 <template>
   <div class="lvList">
-    <div class="item" v-for="item in 6" :key="item">
-      <van-image :src="require('@/assets/icon/level.png')" class="levelicon"></van-image>
-      <div class="tit">LV.1</div>
+
+    <div class="item" v-for="(item,index) in viplist" :key="index" @click="handleclick(item)">
+      <van-image :src="getLvIcon(item.lv_id)" class="levelicon"></van-image>
+      <div class="tit">LV.{{item.lv_id}}</div>
       <div class="sub-tit">member</div>
       <div class="content">
         <p>1. Each withdrawal limit is 5000</p>
         <p>2. The number of orders can be swipe until 30 times</p>
       </div>
 
-      <div class="shadow">Withdraw cash once a day</div>
+      <div class="shadow">{{$t('widthdrawfrequency',{num:item.lv_id})}}</div>
+
+      <div class="lock" v-if="curlv<item.lv_id"></div>
     </div>
 
   </div>
 </template>
 
 <script>
+import {getLvIcon,getLvBgimage} from "@/utils/tools";
+
 export default {
-  name: "lvList"
+  name: "lvList",
+  props:{
+    viplist:Array
+  },
+  computed:{
+    //当前的等级
+    curlv(){
+      return this.$store.getters['user/userInfo'].lv_id
+    },
+  },
+  methods:{
+    getLvIcon(lv_id){
+      return getLvIcon(lv_id)
+    },
+
+    async handleclick(item){
+      let lvid = item.lv_id
+      if (lvid <= this.curlv){
+        return
+      }
+      const confirmRes = await this.$dialog.confirm({
+        message: `Are you sure to buy this level`,
+      }).catch(err=>err)
+      if (confirmRes !== 'confirm') return
+
+      const resp = await this.$http.post('/v1/auth/membership/buy', {
+        id: item.id,
+        coin_type:1
+      })
+      this.$toast.success({
+        message:this.$t('success'),
+        onClose:()=>{
+          this.$store.dispatch('user/loadUserInfo')
+        }
+      })
+    }
+  }
 }
 </script>
 
@@ -31,14 +72,48 @@ export default {
   .item{
     height: 227px;
     width: 167px;
-    background: url(~assets/img/lv1-bg.png) no-repeat;
+    background: url(~assets/img/vip1-bg.png) no-repeat;
     background-size: 167px;
     background-position: center bottom;
     position: relative;
     margin-bottom: 15px;
+    &:nth-child(2){
+      background-image: url(~assets/img/vip2-bg.png);
+      .shadow{
+        background-color: #F3B511;
+      }
+    }
+    &:nth-child(3){
+      background-image: url(~assets/img/vip3-bg.png);
+      .shadow{
+        background-color: #7187FB;
+      }
+    }
+    &:nth-child(4){
+      background-image: url(~assets/img/vip4-bg.png);
+      .shadow{
+        background-color: #FF7783;
+      }
+    }
+    &:nth-child(5){
+      background-image: url(~assets/img/vip5-bg.png);
+      .shadow{
+        background-color: #FF7783;
+      }
+    }
+    .lock{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(~assets/img/vip-lock.png) no-repeat;
+      background-size: 167px;
+      background-position: center bottom;
+      bottom: 0;
+      left: 0;
+    }
     .levelicon{
       width: 92px;
-      height: 81px;
+      height: 92px;
       position: absolute;
       top: 0;
       left: 10px;

@@ -1,13 +1,14 @@
 <template>
   <div class="vip">
-    <pageHeader />
+    <pageHeader :viplist="viplist"/>
 
-    <lvList />
+    <lvList :viplist="viplist"/>
 
   </div>
 </template>
 
 <script>
+import {getLvIcon} from "@/utils/tools";
 import pageHeader from "./cpns/pageHeader";
 import lvList from './cpns/lvList'
 export default {
@@ -15,6 +16,23 @@ export default {
   components:{
     pageHeader,
     lvList
+  },
+  data(){
+    return {
+      viplist:[]
+    }
+  },
+
+  created() {
+    this.loadviplist()
+  },
+  methods:{
+    //获取等级列表
+    async loadviplist(){
+      const resp = await this.$http.post('/v1/vips')
+      // console.log(resp)
+      this.viplist = resp.data || []
+    }
   }
 }
 </script>
