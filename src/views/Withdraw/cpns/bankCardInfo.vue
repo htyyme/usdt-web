@@ -30,7 +30,7 @@
     </template>
 
 
-    <van-button class="modify" block color="#3596E8">
+    <van-button class="modify" block color="#3596E8" @click="toEditPage">
       {{ $t('Modify') }}
     </van-button>
   </div>
@@ -52,16 +52,28 @@ export default {
       return this.userinfo.trx_account
     }
   },
-  data() {
-    return {
-      cardInfo: {}
-    }
-  },
+
 
   created() {
 
   },
-  methods: {},
+  methods: {
+    //跳转编辑银行卡的页面 或者编辑usdt账号的页面
+    toEditPage(){
+      if (this.cointype === 'coin'){
+        this.$router.push({
+          name:'addBankCard',
+          query:{
+            id : this.bankcardinfo.id
+          }
+        })
+      }else if (this.cointype === 'usdt'){
+        this.$router.push({
+          name:'Setting'
+        })
+      }
+    }
+  },
   destroyed() {
 
   }
