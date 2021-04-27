@@ -10,11 +10,11 @@
           <div class="content-left">
             <div>
               <div>{{$t('TotalOrderAmount')}}:</div>
-              <div class="red">{{item.amount | moneyFormat}}</div>
+              <div class="red">{{item.amount | moneyFormat(2,item.coin_type==1?'coin':'usdt')}}</div>
             </div>
             <div>
               <div>{{$t('expectedReturn')}}:</div>
-              <div class="red">{{item.amount + item.win_amount | moneyFormat}}</div>
+              <div class="red">{{item.amount + item.win_amount | moneyFormat(2,item.coin_type==1?'coin':'usdt')}}</div>
             </div>
           </div>
           <div class="content-right">
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <div class="btm">{{ $t('Commission') }}: {{ $t('commissionOfPrice', {num: 1}) }}</div>
+        <div class="btm">{{ $t('Commission') }}: {{ $t('commissionOfPrice', {num: rateFormat(item.win_amount/item.amount)}) }}</div>
 
       </div>
 
@@ -35,6 +35,7 @@
 
 <script>
 import {SHOW_GRAB_ORDER_DETAILS} from "@/utils/events";
+import {rateFormat} from "@/utils/filters";
 
 export default {
   name: "orderList",
@@ -95,6 +96,9 @@ export default {
         payload.cointype = 'usdt'
       }
       this.$bus.$emit(SHOW_GRAB_ORDER_DETAILS,payload)
+    },
+    rateFormat(val){
+      return rateFormat(val)
     }
   }
 }
