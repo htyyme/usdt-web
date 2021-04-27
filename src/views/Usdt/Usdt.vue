@@ -209,6 +209,15 @@ export default {
           color: #E93737;
           margin-top: 3px;
         }
+        .intro{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /*控制多行的行数*/
+          -webkit-box-orient: vertical;
+          line-height: 1.6;
+          height: 38px;
+        }
         .enter{
           min-width: 41px;
           height: 15px;
