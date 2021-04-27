@@ -10,10 +10,11 @@
         <span>Sell</span>
       </li>
 
-      <li>
+      <li @click="toMySalesPage">
         <van-image :src="require('@/assets/icon/usdt-nav2.png')"></van-image>
         <span>My sales</span>
       </li>
+
       <li>
         <van-image :src="require('@/assets/icon/usdt-nav3.png')"></van-image>
         <span>Purchase order</span>
@@ -80,6 +81,11 @@ export default {
     toSellPage(){
       this.$router.push({
         name:'UsdtSell'
+      })
+    },
+    toMySalesPage(){
+      this.$router.push({
+        name:'UsdtSelllist'
       })
     },
     enterPage(item){

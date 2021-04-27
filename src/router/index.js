@@ -280,6 +280,14 @@ const routes = [
         meta:{
             title:"Comfirm Order"
         }
+    },
+    {
+        path:"/UsdtSelllist",
+        name:'UsdtSelllist',
+        component:()=>import('@/views/UsdtSelllist/UsdtSelllist'),
+        meta:{
+            title:"My sales"
+        }
     }
 ]
 
