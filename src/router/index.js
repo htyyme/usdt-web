@@ -304,6 +304,14 @@ const routes = [
         meta:{
             title:"Sale Order"
         }
+    },
+    {
+        path:"/TransferOut",
+        name:'TransferOut',
+        component:()=>import('@/views/TransferOut/TransferOut'),
+        meta:{
+            title:"TransferOut"
+        }
     }
 ]
 
