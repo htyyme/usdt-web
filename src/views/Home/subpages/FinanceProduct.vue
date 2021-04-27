@@ -54,6 +54,9 @@
       </div>
 
 
+    <van-button class="transfer"  :to="{name:'TransferOut'}">{{ $t('transferOut') }}</van-button>
+
+
   </div>
 </template>
 
@@ -319,6 +322,21 @@ export default {
         background-image: url(~assets/icon/typeB.png);
       }
     }
+  }
+
+
+
+  .transfer {
+    width: 250px;
+    height: 50px;
+    //background: $mainColor;
+    background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+    border-radius: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 20px auto 12px;
   }
 }
 
