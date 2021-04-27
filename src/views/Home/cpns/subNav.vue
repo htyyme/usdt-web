@@ -18,7 +18,7 @@
     <!--      </li>-->
     <router-link :to="{name:'Mission'}" tag="li">
       <van-image :src="require('@/assets/icon/mission.png')"></van-image>
-      <span>{{$t('mission')}}</span>
+      <span>{{$t('Activity')}}</span>
     </router-link>
   </ul>
 </template>
@@ -55,6 +55,7 @@ ul{
     span{
       font-size: 12px;
       padding: 0 5px;
+      text-transform: capitalize;
     }
   }
 }

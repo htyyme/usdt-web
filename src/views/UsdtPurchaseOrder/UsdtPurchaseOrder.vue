@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="PurchaseOrder">
     <navbar title='Purchase Order'></navbar>
 
     <van-tabs v-model="activeName" animated sticky line-width="100px" color="#3596E8">
@@ -33,5 +33,9 @@ export default {
 
 <style scoped lang="scss">
 
+.PurchaseOrder{
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
 
 </style>
