@@ -9,6 +9,11 @@
     <div class="bottom-info">{{$t('rechargeTip')}}</div>
 
     <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" :disabled="submitDisabled" @click="handleSubmit">{{$t('recharge')}}</van-button>
+
+    <!--收集信息的组件-->
+    <createinfo_forcoin  v-if="cointype==='coin'"/>
+    <createinfo_forusdt v-if="cointype==='usdt'" />
+
   </div>
 
 
@@ -18,15 +23,22 @@
 import assets from "./cpns/assets";
 import payWay from "./cpns/payWay";
 import amounts from "./cpns/amounts";
+import createinfo_forcoin from "./cpns/createinfo_forcoin";
+import createinfo_forusdt from "./cpns/createinfo_forusdt";
+
 import appConfig from "@/config";
 import {handlePay} from "@/utils/pay";
+
+
 
 export default {
   name: "Recharge",
   components:{
     assets,
     payWay,
-    amounts
+    amounts,
+    createinfo_forcoin,
+    createinfo_forusdt
   },
   data(){
     return {
