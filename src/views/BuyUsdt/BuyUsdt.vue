@@ -125,7 +125,11 @@ export default {
         message:this.$t('success'),
         onClose:()=>{
           this.$store.dispatch('user/loadUserInfo')
-          this.$router.back()
+          // this.$router.back()
+          this.$store.commit('usdt/setCurrentshopinfo',resp.data)
+          this.$router.push({
+            name:'UsdtComfirmOrder'
+          })
         }
       })
     }

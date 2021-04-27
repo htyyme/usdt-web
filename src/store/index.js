@@ -6,12 +6,14 @@ import createPersistedState from "vuex-persistedstate"
 import system from "./module/system"
 import user from "./module/user"
 import msg from "./module/msg"
+import usdt from "./module/usdt";
 
 export default new Vuex.Store({
   modules: {
     system,
     user,
-    msg
+    msg,
+    usdt
   },
 
   plugins: [

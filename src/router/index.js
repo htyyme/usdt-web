@@ -272,6 +272,14 @@ const routes = [
         meta:{
             title:"Buy Usdt"
         }
+    },
+    {
+        path:"/UsdtComfirmOrder",
+        name:'UsdtComfirmOrder',
+        component:()=>import('@/views/UsdtComfirmOrder/UsdtComfirmOrder'),
+        meta:{
+            title:"Comfirm Order"
+        }
     }
 ]
 
