@@ -35,7 +35,7 @@ export default {
       bankcardinfo:{},// 银行卡信息
     }
   },
-  created() {
+  async created() {
     const {cointype} = this.$route.query
     if (cointype !== 'usdt' && cointype !== 'coin'){
       this.$router.back()
@@ -44,10 +44,28 @@ export default {
 
     //获取用户余额
     this.$store.dispatch('user/loadUserInfo')
+
     if (this.cointype === 'coin') {
       this.getBankCardInfo()
     } else{
-      //todo 判断是否绑定账号
+      // 判断是否绑定账号
+      let userinfo = this.$store.getters['user/userInfo']
+      let trx_account = userinfo.trx_account
+
+      if (!trx_account){
+
+        const confirmres = await this.$dialog.confirm({
+          message: this.$t('You must fill in the usdt account first')
+        }).catch(err=>err)
+
+        if (confirmres !== 'confirm'){
+          this.$router.back()
+          return
+        }
+        this.$router.push({
+          name:'Setting'
+        })
+      }
     }
 
   },
@@ -88,6 +106,23 @@ export default {
       }else if (this.cointype === 'coin'){
         submitdata.bank_id = this.bankcardinfo.id
         submitdata.coin_type = 1
+      }
+
+      //如果是usdt提现 判断是否绑定了绑定账户信息
+      let userinfo = this.$store.getters['user/userInfo']
+      let trx_account = userinfo.trx_account
+      if (this.cointype === 'usdt' && !trx_account){
+        const confirmres = await this.$dialog.confirm({
+          message: this.$t('You must fill in the usdt account first')
+        }).catch(err=>err)
+        if (confirmres !== 'confirm'){
+          return
+        }else{
+          this.$router.push({
+            name:'Setting'
+          })
+          return
+        }
       }
 
       const resp = await this.$http.post('/v1/auth/user/withdraw',submitdata)
