@@ -141,3 +141,39 @@ export function getColorByText(text){
     const color =  '#' + tmp.slice(1, 4)
     return color
 }
+
+
+/**
+ * 生成文字头像
+ * @param cvs  canvas dom对象
+ * @param name 名字
+ * @param width 画布宽度
+ * @param height 画布高度
+ */
+export function createFontAvatar( cvs , name ,width,height ){
+    //获取名字的第一个字符
+    let firstName = name.substring(1, 0);
+
+    //根据名字生成背景色
+    let tmp = ''
+    for (let i = 0 ; i < name.length; i++){
+        tmp += parseInt(name[i].charCodeAt(0), 10).toString(16);
+    }
+    const bgColor =  '#' + tmp.slice(1, 4)
+
+
+    cvs.setAttribute('width', width);
+    cvs.setAttribute('height', height);
+
+    let ctx = cvs.getContext("2d");
+
+    ctx.fillStyle = bgColor
+    ctx.fillRect(0, 0, width, height);
+    ctx.fillStyle = 'rgb(255,255,255)';
+    ctx.font = width * 0.6 + "px Arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText(firstName, width / 2, height / 2);
+
+    return cvs.toDataURL('image/jpeg', 1);
+}

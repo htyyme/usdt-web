@@ -288,6 +288,14 @@ const routes = [
         meta:{
             title:"My sales"
         }
+    },
+    {
+        path:"/UsdtPurchaseOrder",
+        name:'UsdtPurchaseOrder',
+        component:()=>import('@/views/UsdtPurchaseOrder/UsdtPurchaseOrder'),
+        meta:{
+            title:"Purchase Order"
+        }
     }
 ]
 
