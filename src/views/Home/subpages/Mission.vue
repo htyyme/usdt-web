@@ -49,6 +49,11 @@ export default {
   },
   mounted() {
     this.loadTaskList()
+
+    this.$http.post('/v1/activity/queryActivityList')
+    // this.$http.post('/v1/auth/activity/queryActivityDetails',{
+    //   activity_id:29
+    // })
   },
   methods:{
     async loadTaskList(){

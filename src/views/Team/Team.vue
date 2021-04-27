@@ -29,7 +29,7 @@
       </section>
     </div>
 
-    <div class="teambg">
+    <div class="teambg" @click="toincomelistpage">
       <span>{{$t('incomeList')}}</span>
       <router-link to="/">{{$t('go')}}</router-link>
     </div>
@@ -91,6 +91,11 @@ export default {
       })
       this.usdtpromote = r2.data.promote
       this.usdtteams = r2.data.teams || []
+    },
+    toincomelistpage(){
+      this.$router.push({
+        name:'IncomeList'
+      })
     }
   }
 }

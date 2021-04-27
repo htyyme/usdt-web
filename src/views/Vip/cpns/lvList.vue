@@ -4,7 +4,7 @@
     <div class="item" v-for="(item,index) in viplist" :key="index" @click="handleclick(item)">
       <van-image :src="getLvIcon(item.lv_id)" class="levelicon"></van-image>
       <div class="tit">LV.{{item.lv_id}}</div>
-      <div class="sub-tit">member</div>
+      <div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>
       <div class="content">
         <p>1. Each withdrawal limit is 5000</p>
         <p>2. The number of orders can be swipe until 30 times</p>

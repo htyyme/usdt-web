@@ -322,7 +322,14 @@ const routes = [
             title:"TransferOut"
         }
     },
-
+    {
+        path:"/IncomeList",
+        name:'IncomeList',
+        component:()=>import('@/views/IncomeList/IncomeList'),
+        meta:{
+            title:"Income List"
+        }
+    },
 ]
 
 const router = new VueRouter({
