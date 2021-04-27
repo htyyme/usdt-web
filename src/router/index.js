@@ -330,6 +330,14 @@ const routes = [
             title:"Income List"
         }
     },
+    {
+        path:"/ActivityDetail",
+        name:'ActivityDetail',
+        component:()=>import('@/views/ActivityDetail/ActivityDetail'),
+        meta:{
+            title:"Activity Detail"
+        }
+    },
 ]
 
 const router = new VueRouter({

@@ -1,6 +1,6 @@
 <template>
   <div class="mission">
-    <div class="item" v-for="item in list" :key="item.id">
+    <div class="item" v-for="item in list" :key="item.id" @click="toDetailPage(item)">
       <van-image :src="item.show_pic" ></van-image>
 
       <div class="overlay">
@@ -25,6 +25,14 @@ export default {
     async loaddata(){
       const resp = await this.$http.post('/v1/activity/queryActivityList')
       this.list = resp.data || []
+    },
+    toDetailPage(item){
+      this.$router.push({
+        name:'ActivityDetail',
+        query:{
+          id:item.id
+        }
+      })
     }
   }
 }
