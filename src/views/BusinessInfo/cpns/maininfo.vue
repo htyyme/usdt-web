@@ -174,9 +174,12 @@ export default {
       this.form.account_name = resp.data.account_name
       this.form.what_app = resp.data.what_app
 
-      this.$set(this.fileList,0, {
-        url:this.$tools.getImage(this.form.shop_pic)
-      })
+      if (this.form.shop_pic) {
+        this.$set(this.fileList,0, {
+          url:this.$tools.getImage(this.form.shop_pic)
+        })
+      }
+
 
       let payload = {}
       payload.sell_num = resp.data.sell_num
