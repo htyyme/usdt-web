@@ -62,26 +62,27 @@ export function checkBankcardNo(cardNo) {
 //打开一个链接
 export function openUrl(url) {
     if (!url) return
+    window.open(url)
 
 
-    if (!url.startsWith('http')) {
-        router.push(url)
-        return
-    }
-
-    const open_in_broswer = store.getters['system/config'].open_in_broswer
-    const isApp = appConfig.isApp
-    if (!isApp) {
-        window.location.href = url
-        return
-    }
-
-    if (open_in_broswer == '1') { //使用浏览器打开
-        window.android.openUrl(url)
-    } else {
-        //在APP内部打开
-        window.location.href = url
-    }
+    // if (!url.startsWith('http')) {
+    //     router.push(url)
+    //     return
+    // }
+    //
+    // const open_in_broswer = store.getters['system/config'].open_in_broswer
+    // const isApp = appConfig.isApp
+    // if (!isApp) {
+    //     window.location.href = url
+    //     return
+    // }
+    //
+    // if (open_in_broswer == '1') { //使用浏览器打开
+    //     window.android.openUrl(url)
+    // } else {
+    //     //在APP内部打开
+    //     window.location.href = url
+    // }
 
 }
 

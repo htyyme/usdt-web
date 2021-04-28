@@ -38,7 +38,7 @@ export default {
     async loadData() {
       this.queryInfo.page++
       try {
-        const r = await this.$http.post('/v1/msgs', this.queryInfo)
+        const r = await this.$http.post('/v1/auth/msgs', this.queryInfo)
         const {list, total} = r.data
         this.list = this.list.concat(list || [])
         this.loading = false;

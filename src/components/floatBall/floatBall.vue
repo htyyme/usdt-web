@@ -1,7 +1,7 @@
 <template>
   <nav @touchmove.prevent="boxMove" :class="openClass">
     <img class="title" :src="require('@/assets/icon/football.png')"  @click="toggle" />
-    <span class="contact">{{$t('contact')}}</span>
+<!--    <span class="contact">{{$t('contact')}}</span>-->
 <!--    <ul :class="openSide">-->
 <!--      <li  >-->
 <!--        <img src="~assets/img/icon/CHAT.png"/>-->
@@ -123,8 +123,8 @@ nav {
 }
 
 .title {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -7,12 +7,14 @@ export function handlePay(orderInfo){
     const {payUrl,entity,channelCode} = orderInfo
 
     if (!isApp){
-        openUrl(payUrl)
+        // openUrl(payUrl)
+        location.href = payUrl
         return
     }
 
     if (!entity){
-        openUrl(payUrl)
+        // openUrl(payUrl)
+        location.href = payUrl
         return
     }
 
