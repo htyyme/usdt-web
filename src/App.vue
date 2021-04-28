@@ -13,6 +13,8 @@
 
 <script>
 import tabbar from "@/components/tabbar/tabbar";
+import appConfig from "@/config";
+import vars from "@/assets/css/vars.scss";
 export default {
   name:'App',
   components:{
@@ -25,7 +27,32 @@ export default {
   },
   async created() {
     await this.$store.dispatch('system/loadConfig')
-    //todo 根据版本信息 判断是否需要更新App
+    //根据版本信息 判断是否需要更新App
+    await this.updateApp()
+  },
+  methods:{
+    /**
+     * 根据版本信息 判断是否需要更新App
+     */
+    async updateApp() {
+      //如果不是App则不需要进行更新
+      if (!appConfig.isApp) return
+
+      if (this.$store.getters['system/config'].version <= appConfig.apkVersion){
+        return
+      }
+
+      const confirmRes = await this.$dialog.confirm({
+        message: this.$t('confirmUpdateApp'),
+        theme: 'round-button',
+        showCancelButton: false, //不显示取消按钮
+        confirmButtonColor: vars.mainColor,
+        confirmButtonText: this.$t('confirm')
+      }).catch(e => e)
+      if (confirmRes !== 'confirm') return
+
+      this.$tools.openUrl(this.$store.getters['system/config'].android_app_url)
+    },
   }
 }
 </script>

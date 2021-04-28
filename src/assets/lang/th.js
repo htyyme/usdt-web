@@ -519,4 +519,6 @@ export default {
     'Resume':'Resume',
     'Are you sure want to stop this item':'Are you sure want to stop this item',
     'Are you sure want to resume this item':'Are you sure want to resume this item',
+    'Are you sure want to suspend this item':'Are you sure want to suspend this item',
+    'confirmUpdateApp':'The latest version is found,do you want to update it'
 }
