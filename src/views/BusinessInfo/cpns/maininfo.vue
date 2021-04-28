@@ -7,7 +7,7 @@
       </dt>
       <dd>
         <!--h5上传-->
-        <van-uploader v-if="!isApp" :after-read="afterRead"  :fileList="fileList" :multiple="false" :deletable="false" :max-count="1"/>
+        <van-uploader v-if="!isApp" :after-read="afterRead"  :fileList="fileList" :multiple="false" :deletable="false" :max-count="1" :upload-icon="uploadicon"/>
         <!--app上传-->
         <van-uploader v-else @click.native.prevent="handleAppUpload"  :fileList="fileList"  :multiple="false" :deletable="false" :max-count="1"/>
       </dd>
@@ -98,7 +98,8 @@ export default {
       },
       fileList:[],
       sell_num: 0,
-      sell_price: 0
+      sell_price: 0,
+      uploadicon:'photograph'
     };
   },
   computed:{
@@ -120,9 +121,9 @@ export default {
       };
       const resp = await this.$http.post('/api/fileUploadAndDownload/appupload', fd, config)
       this.form.shop_pic = resp.data.file.url
-      this.$set(this.fileList,0, {
-        url:this.$tools.getImage(this.form.shop_pic)
-      })
+
+      this.uploadicon = this.$tools.getImage(this.form.shop_pic)
+
     },
     //app上传
     handleAppUpload() {
@@ -175,9 +176,7 @@ export default {
       this.form.what_app = resp.data.what_app
 
       if (this.form.shop_pic) {
-        this.$set(this.fileList,0, {
-          url:this.$tools.getImage(this.form.shop_pic)
-        })
+        this.uploadicon = this.$tools.getImage(this.form.shop_pic)
       }
 
 
@@ -191,6 +190,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+/deep/.van-uploader__upload-icon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .van-icon__image{
+    width: 100%;
+    height: 100%;
+  }
+}
 .maininfo{
   min-height: calc(100vh - 100px - 10px - 48px);
   background: #FFFFFF;

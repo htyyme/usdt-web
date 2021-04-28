@@ -1,6 +1,6 @@
 <template>
   <div class="Withdraw">
-    <navbar title="Withdraw"></navbar>
+    <navbar :title="$t('Withdraw')"></navbar>
 
     <assets :cointype="cointype"/>
     <record />

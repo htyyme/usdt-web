@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="form-title">{{$t('login')}}</div>
       <field4 :left-icon="require('@/assets/icon/phone-icon.png')" :placeholder="$t('Phone Number')" v-model="form.playerName"></field4>
-      <field4 :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('Password')" v-model="form.passWord" :type="pwdType">
+      <field4 :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('password')" v-model="form.passWord" :type="pwdType">
         <template #right>
           <van-icon :name="pwdIcon" @click="changePwdType"></van-icon>
         </template>

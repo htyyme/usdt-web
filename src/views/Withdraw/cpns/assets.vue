@@ -1,6 +1,6 @@
 <template>
   <div class="assets">
-    <div class="title">Remaining available assets</div>
+    <div class="title">{{$t('Remaining available assets')}}</div>
     <div class="num">{{availableBalance | moneyFormat(2,cointype)}}</div>
   </div>
 </template>

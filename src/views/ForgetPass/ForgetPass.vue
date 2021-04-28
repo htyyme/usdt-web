@@ -8,7 +8,7 @@
           <van-icon :name="require('@/assets/icon/phone-icon.orenge.png')" size="24"></van-icon>
         </dt>
         <dd>
-          <input type="text" :placeholder="$t('Phone number')" v-model="phone">
+          <input type="text" :placeholder="$t('Phone Number')" v-model="phone">
         </dd>
       </dl>
 
@@ -30,7 +30,7 @@
           <van-icon :name="require('@/assets/icon/pwd-icon.orange.png')" size="24"></van-icon>
         </dt>
         <dd>
-          <input :type="pwdType" :placeholder="$t('New password')" v-model="password">
+          <input :type="pwdType" :placeholder="$t('New Password')" v-model="password">
           <van-icon size="18" :name="pwdIcon" class="eye" @click="changePwdType"></van-icon>
         </dd>
       </dl>
@@ -48,7 +48,7 @@
     </div>
 
 
-    <van-button block class="submit-button" :loading="$store.getters['system/gloading']" @click="onSubmit">{{$t('Complete')}}
+    <van-button block class="submit-button" :loading="$store.getters['system/gloading']" @click="onSubmit">{{$t('complete')}}
     </van-button>
 
 

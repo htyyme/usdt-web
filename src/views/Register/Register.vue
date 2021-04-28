@@ -7,25 +7,25 @@
       </field4>
 
       <!--验证码-->
-      <field4 v-if="isSendSms" v-model="registerForm.sms_code" :left-icon="require('@/assets/icon/sms-icon.png')" :placeholder="$t('SMS Code')">
+      <field4 v-if="isSendSms" v-model="registerForm.sms_code" :left-icon="require('@/assets/icon/sms-icon.png')" :placeholder="$t('smsCode')">
         <template #right>
           <van-button color="#35C1FF" class="otp" size="mini" :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
         </template>
       </field4>
 
-      <field4 v-model="registerForm.password" :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('Password')" :type="pwdType">
+      <field4 v-model="registerForm.password" :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('password')" :type="pwdType">
         <template #right>
           <van-icon :name="pwdIcon" @click="changePwdType"></van-icon>
         </template>
       </field4>
-      <field4 v-model="registerForm.repeatPassword" :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('Repeat Password')" :type="repeatPwdType">
+      <field4 v-model="registerForm.repeatPassword" :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('repeatPassword')" :type="repeatPwdType">
         <template #right>
           <van-icon :name="repeatPwdIcon" @click="changeRepeatPwdType"></van-icon>
         </template>
       </field4>
 
-      <field4 :left-icon="require('@/assets/icon/invite-icon.png')" :placeholder="$t('Repeat Password')" v-model="registerForm.invitation_code" :readonly="invitationCodeReadonly"></field4>
-      <van-button class="submit-btn" block @click="doRegister" :loading="$store.getters['system/gloading']">Register</van-button>
+      <field4 :left-icon="require('@/assets/icon/invite-icon.png')" :placeholder="$t('invitationCode')" v-model="registerForm.invitation_code" :readonly="invitationCodeReadonly"></field4>
+      <van-button class="submit-btn" block @click="doRegister" :loading="$store.getters['system/gloading']">{{$t('register')}}</van-button>
 
       <p class="bottom-info">
         <span>{{$t('Already have account?')}}</span>
@@ -64,7 +64,7 @@ export default {
     //发送验证码按钮的文字
     sendBtnText() {
       if (this.countdown <= 1) {
-        return 'send code'
+        return this.$t('sendCode')
       }
       return this.countdown + 's'
     },
