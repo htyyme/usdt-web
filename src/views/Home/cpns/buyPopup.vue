@@ -5,7 +5,7 @@
         <div class="type-icon" >{{ productInfo.financial_name }}</div>
         <div class="inner">
           <div class="tit">
-            {{$t('oneDay')}} +{{productInfo.interest_rate | rateFormat}} ([{{$t('set')}}] {{productInfo.hold_cycle}} {{$t('days')}})
+            {{$t('oneDay')}} +{{interestrate | rateFormat}} ([{{$t('set')}}] {{productInfo.hold_cycle}} {{$t('days')}})
           </div>
           <div class="sub-tit">[{{ $t('set') }}] {{ productInfo.hold_cycle }} {{ $t('days') }}</div>
 
@@ -69,8 +69,14 @@ export default {
       } else {
         return 'U'
       }
+    },
+    interestrate(){
+      if (this.cointype==='coin'){
+        return this.productInfo.interest_rate
+      }else{
+        return this.productInfo.usdt_interest_rate
+      }
     }
-
   },
   mounted() {
     this.$bus.$on(OPEN_BUY_POPUP, this.openPopup)

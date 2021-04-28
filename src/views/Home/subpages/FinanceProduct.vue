@@ -40,14 +40,14 @@
             <div class="irate">{{ $t('interestRate') }}+{{ item.usdt_interest_rate | rateFormat }}</div>
             <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
             <div class="totalrate">+{{ totalUsdtRate(item) }}</div>
-            <div class="bot-btn">USDT</div>
+            <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>
           </div>
           <div class="typ type-coin">
             <div class="tit">{{ $t('oneDay') }} :</div>
             <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
             <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
             <div class="totalrate">+{{ totalRate(item) }}</div>
-            <div class="bot-btn">COIN</div>
+            <div class="bot-btn"  @click="openBuy(item,'coin')">COIN</div>
           </div>
         </div>
 
@@ -57,12 +57,13 @@
     <van-button class="transfer"  :to="{name:'TransferOut'}">{{ $t('transferOut') }}</van-button>
 
 
+    <buyPopup />
   </div>
 </template>
 
 <script>
 import vars from "@/assets/css/vars.scss";
-
+import {OPEN_BUY_POPUP} from "@/utils/events";
 import buyPopup from "../cpns/buyPopup";
 import {
 
@@ -121,6 +122,10 @@ export default {
       let n = item.usdt_interest_rate * item.hold_cycle * 100
       n = n.toFixed(1)
       return n + '%'
+    },
+    openBuy(item,type) {
+      // console.log(item,type)
+      this.$bus.$emit(OPEN_BUY_POPUP, item,type)
     }
   },
 
