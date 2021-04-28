@@ -82,3 +82,51 @@ export function cardNoFormat(val) {
     let str = val.substring(val.length - 4)
     return '**** ' + str
 }
+
+
+export function traTypeFormat(opType) {
+    let locale = appConfig.locale
+    let lang = messages[locale]
+    switch (opType) {
+        case 1:
+            return lang['Consumption']
+        case 2:
+            return lang['Recharge']
+        case 3:
+            return lang['Withdraw']
+        case 4:
+            return lang['Activity Award']
+        case 5:
+            return lang['Winning']
+        case 6:
+            return lang['Rebate']
+        case 7:
+            return lang['Manual recharge']
+        case 8:
+            return lang['Manually proposed']
+        case 9:
+            return lang['Red envelope expenditure']
+        case 10:
+            return lang['Red envelope income']
+        case 11:
+            return lang['Financial income']
+        case 12:
+            return lang['Top-up benefits']
+        case 13:
+            return lang['Handling fee']
+        case 14:
+            return lang['Bet']
+        case 15:
+            return lang['Cancel bet return']
+        case 16:
+            return lang['Financial redemption']
+        case 17:
+            return lang['Crowdfunding revenue']
+        case 18:
+            return lang['Grab order']
+        case 19:
+            return lang['Usdt transaction']
+        default:
+            return ''
+    }
+}

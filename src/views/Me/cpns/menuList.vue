@@ -7,6 +7,12 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
+      <li @click="toFinancedetail">
+        <van-icon :name="require('@/assets/icon/financedetail.png')" size="40"></van-icon>
+        <span>{{$t('Finance Details')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
       <li @click="toBankCardPage">
         <van-icon :name="require('@/assets/icon/bankcard.png')" size="40"></van-icon>
         <span>{{$t('Bank card')}}</span>
@@ -90,6 +96,11 @@ export default {
     toBusinessPage(){
       this.$router.push({
         name:'BusinessInfo'
+      })
+    },
+    toFinancedetail(){
+      this.$router.push({
+        name:'FinanceDetail'
       })
     },
     async signOut(){
