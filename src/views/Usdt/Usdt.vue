@@ -29,7 +29,7 @@
     <van-empty :image="require('@/assets/img/nodata.png')" v-if="list.length===0"></van-empty>
 
     <van-list class="goods-list" v-model="loading" :finished="finished"   @load="loadData" :loading-text="$t('loading')">
-      <div class="goods-item" v-for="(item,index) in list" :key="index">
+      <div class="goods-item" v-for="(item,index) in list" :key="index" @click="enterPage(item)">
         <div class="top">
           <van-image class="top-img" :src="$tools.getImage(item.show_pic)"></van-image>
           <div class="user">
@@ -40,7 +40,7 @@
         <div class="detail">
           <div class="intro">{{item.goods_intro}}</div>
           <div class="price">{{item.info.price}}{{$t('coin')}}/USDT</div>
-          <div class="enter" @click="enterPage(item)">Enter</div>
+          <div class="enter" >Enter</div>
         </div>
 
 

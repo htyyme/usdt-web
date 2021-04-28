@@ -22,19 +22,20 @@
 
     </div>
 
+    <paybox v-if="!isSelfPublish" :detail="detail"/>
+<!--    <infobox v-else :detail="detail"/>-->
 
-
-
-    <paybox :detail="detail"/>
   </div>
 </template>
 
 <script>
 import paybox from "./cpns/paybox";
+import infobox from "./cpns/infobox";
 export default {
   name: "BuyUsdt",
   components:{
-    paybox
+    paybox,
+    infobox
   },
   data(){
     return {
@@ -67,6 +68,16 @@ export default {
         return require('@/assets/icon/default_avatar.png')
       }
     },
+    //判断是否是自己发布的商品
+    isSelfPublish(){
+      let uid = this.$store.getters['user/userInfo'].id
+      let extra1 = this.detail.extra1
+      if (uid == extra1){
+        return true
+      }else{
+        return false
+      }
+    }
 
   }
 }
