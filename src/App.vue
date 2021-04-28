@@ -5,6 +5,8 @@
 
     <announce />
 
+    <floatBall v-if="islogin"/>
+
     <tabbar v-if="showTabbar"/>
 
 
@@ -23,6 +25,10 @@ export default {
   computed:{
     showTabbar(){
       return !!this.$route.meta.showTabbar
+    },
+    islogin(){
+      let token =  this.$store.getters['user/token']
+      return !!token
     }
   },
   async created() {

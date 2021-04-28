@@ -10,6 +10,7 @@ import navbar from "@/components/navbar/navbar";
 import avatarUploader from "@/components/avatarUploader/avatarUploader";
 import announce from "@/components/announce/announce";
 import backTop from "@/components/backTop/backTop";
+import floatBall from "@/components/floatBall/floatBall";
 
 
 Vue.component('field',field)
@@ -20,3 +21,4 @@ Vue.component('navbar',navbar)
 Vue.component('avatarUploader',avatarUploader)
 Vue.component('announce',announce)
 Vue.component('backTop',backTop)
+Vue.component('floatBall',floatBall)
