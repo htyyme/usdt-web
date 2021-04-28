@@ -15,6 +15,8 @@
 
     </van-tabs>
 
+    <backTop />
+
   </div>
 </template>
 

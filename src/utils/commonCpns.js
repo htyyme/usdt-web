@@ -9,6 +9,7 @@ import field4 from "@/components/field/field4";
 import navbar from "@/components/navbar/navbar";
 import avatarUploader from "@/components/avatarUploader/avatarUploader";
 import announce from "@/components/announce/announce";
+import backTop from "@/components/backTop/backTop";
 
 
 Vue.component('field',field)
@@ -18,3 +19,4 @@ Vue.component('field4',field4)
 Vue.component('navbar',navbar)
 Vue.component('avatarUploader',avatarUploader)
 Vue.component('announce',announce)
+Vue.component('backTop',backTop)

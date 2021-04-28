@@ -10,6 +10,8 @@
     <grabOrderDetails />
     <!--购买成功-->
     <purchaseSuccess />
+
+    <backTop />
   </div>
 </template>
 
