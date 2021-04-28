@@ -42,6 +42,11 @@ export default {
       type: 2
     }
   },
+  computed: {
+    id() {
+      return Number(this.$route.query.id)
+    }
+  },
   methods:{
     changeType(t) {
       this.type = t

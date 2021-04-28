@@ -15,6 +15,11 @@
       <div class="price">{{detail.info.price | moneyFormat(2,'coin')}}/USDT</div>
       <p class="shop_desc">{{detail.goods_intro}}</p>
 
+      <p class="soldnumber">
+        <span>Sold number:</span>
+        <em>{{detail.info.sell}} / {{detail.info.sum}}</em>
+      </p>
+
     </div>
 
 
@@ -121,6 +126,15 @@ export default {
         font-size: 12px;
         color: #3596E8;
         font-weight: 700;
+      }
+    }
+    .soldnumber{
+      font-size: 14px;
+      margin-top: 5px;
+      span{
+        font-weight: 700;
+        color: #3596E8;
+        padding-right: 10px;
       }
     }
   }
