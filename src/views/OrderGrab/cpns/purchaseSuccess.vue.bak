@@ -1,9 +1,9 @@
 <template>
   <van-overlay :show="show">
 
-    <div class="purchase-success">
-      <van-image :src="require('@/assets/img/forecast.png')" class="forecast"></van-image>
-      <p>{{ $t('orderSubmitSuccess') }}</p>
+    <div class="purchase-success" style="padding-top: 90px;">
+      <van-image :src="require('@/assets/img/shuadan_dt_hezi.png')"></van-image>
+      <label>{{ $t('orderSubmitSuccess') }}</label>
       <van-button @click="handleClose" block>{{ $t('yes') }}</van-button>
     </div>
 
@@ -15,19 +15,19 @@ import {PURCHASE_GRAB_SUCCESS} from "@/utils/events";
 
 export default {
   name: "purchaseSuccess",
-  data() {
+  data(){
     return {
-      show:false
+      show:true
     }
   },
   created() {
-    this.$bus.$on(PURCHASE_GRAB_SUCCESS, this.handleOpen)
+    this.$bus.$on(PURCHASE_GRAB_SUCCESS , this.handleOpen)
   },
-  methods: {
-    handleOpen() {
+  methods:{
+    handleOpen(){
       this.show = true
     },
-    handleClose() {
+    handleClose(){
       this.show = false
     }
   },
@@ -39,29 +39,29 @@ export default {
 
 <style scoped lang="scss">
 .purchase-success {
-  width: 306px;
-  padding-bottom: 20px;
-  //height: 384px;
-  background: #FFFFFF url(~assets/img/ordersuccbg.png) no-repeat;
-  background-size: 306px;
-  background-position: top center;
-  border-radius: 11px;
+  box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 330px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 12px 12px 30px 12px;
 
-  .forecast {
-    width: 140px;
-    height: 103px;
-    display: block;
-    margin: 90px auto 0;
+  .van-image {
+    width: 105px;
+    height: 110px;
+    position: absolute;
+    top: -40px;
+    right: 20px;
   }
-  p{
-    padding: 15px;
-    font-size: 15px;
-    color: #333;
-    font-weight: 700;
+
+  label {
+    font-size: 14px;
+    margin-left: 15px;
+    font-weight: bold;
   }
 
   .van-button {
