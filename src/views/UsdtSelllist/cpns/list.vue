@@ -16,8 +16,14 @@
 
 
         <div class="ft" v-if="type==1 || type==2">
-          <van-button round  block class="stop" v-if="type==1" @click="handleStop(item)" >{{$t('Stop')}}</van-button>
+          <!--暂停-->
+          <van-button round  block class="stop" v-if="type==1" @click="handleSuspend(item)" >{{$t('Suspend')}}</van-button>
+          <!--恢复-->
           <van-button round plain   block class="resume" v-if="type==2" @click="handleResume(item)">{{$t('Resume')}}</van-button>
+
+          <!--下架-->
+          <van-button round plain   block class="stop" v-if="type<=2" @click="handleStop(item)">{{$t('Stop')}}</van-button>
+
         </div>
 
       </div>
@@ -29,7 +35,8 @@
 <script>
 import {
   USDT_RELOAD_ONSALELIST,
-  USDT_RELOAD_SUSPENDLIST
+  USDT_RELOAD_SUSPENDLIST,
+  USDT_RELOAD_STOPEDLIST
 } from "@/utils/events";
 
 export default {
@@ -55,6 +62,9 @@ export default {
     }
     if (this.type === 2){
       this.$bus.$on(USDT_RELOAD_SUSPENDLIST, this.reloaddata)
+    }
+    if (this.type == 4){
+      this.$bus.$on(USDT_RELOAD_STOPEDLIST, this.reloaddata)
     }
   },
   methods:{
@@ -86,9 +96,9 @@ export default {
       return n.toFixed(2) + '%'
     },
     //暂停
-    async handleStop(item){
+    async handleSuspend(item){
       const confirmres = await this.$dialog.confirm({
-        message:this.$t('Are you sure want to stop this item')
+        message:this.$t('Are you sure want to suspend this item')
       }).catch(err=>err)
       if (confirmres !== 'confirm'){
         return
@@ -118,11 +128,29 @@ export default {
           this.$bus.$emit(USDT_RELOAD_ONSALELIST)
         }
       })
+    },
+    //下架
+    async handleStop(item){
+      const confirmres = await this.$dialog.confirm({
+        message:this.$t('Are you sure want to stop this item')
+      }).catch(err=>err)
+      if (confirmres !== 'confirm'){
+        return
+      }
+      const resp = await this.$http.post('/v1/auth/ustd/sell/cancel',{id : item.id})
+      this.$toast.success({
+        message:this.$t('success'),
+        onClose: () => {
+          this.reloaddata()
+          this.$bus.$emit(USDT_RELOAD_STOPEDLIST)
+        }
+      })
     }
   },
   destroyed() {
     this.$bus.$off(USDT_RELOAD_ONSALELIST)
     this.$bus.$off(USDT_RELOAD_SUSPENDLIST)
+    this.$bus.$off(USDT_RELOAD_STOPEDLIST)
   }
 }
 </script>
