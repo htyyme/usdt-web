@@ -464,6 +464,19 @@ export default {
     'Quantity sold':'Quantity sold',
     'widthdrawfrequency':'Withdraw {num} times /day',
     'Activity':'Activity',
+    'search':'search',
+    'Sell':'Sell',
+    'My sales':'My sales',
+    'Purchase order':'Purchase order',
+    'Sale order':'Sale order',
+    'Enter':'Enter',
+    'Buy Usdt':'Buy Usdt',
+    'Sold number':'Sold number',
+    'Buy by amount':'Buy by amount',
+    'Buy by quantity':'Buy by quantity',
+    'Enter the amount you want to buy':'Enter the amount you want to buy',
+    'Enter the quantity you want to buy':'Enter the quantity you want to buy',
+
 
 
 

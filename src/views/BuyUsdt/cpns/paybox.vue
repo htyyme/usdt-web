@@ -1,17 +1,17 @@
 <template>
   <div class="box">
     <div class="hd">
-      <div class="op" :class="{active:type==1}" @click="changeType(1)">Buy by amount</div>
-      <div class="op" :class="{active:type==2}" @click="changeType(2)">Buy by quantity</div>
+      <div class="op" :class="{active:type==1}" @click="changeType(1)">{{$t('Buy by amount')}}</div>
+      <div class="op" :class="{active:type==2}" @click="changeType(2)">{{$t('Buy by quantity')}}</div>
     </div>
 
     <div class="bd" v-if="type==1">
       <span class="coin">{{ $t('coin') }}</span>
-      <input type="number" placeholder="Enter the amount you want to buy" v-model="amount" @input="handleAmountInput">
+      <input type="number" :placeholder="$t('Enter the amount you want to buy')" v-model="amount" @input="handleAmountInput">
     </div>
     <div class="bd" v-else-if="type==2">
       <span class="coin">U</span>
-      <input type="number" placeholder="Enter the quantity you want to buy"  v-model="nums" @input="handleNumsInput">
+      <input type="number" :placeholder="$t('Enter the quantity you want to buy')"  v-model="nums" @input="handleNumsInput">
     </div>
 
     <div class="ft">

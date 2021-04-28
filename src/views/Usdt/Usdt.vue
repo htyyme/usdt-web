@@ -1,28 +1,28 @@
 <template>
   <div class="usdt">
     <van-sticky>
-      <van-search v-model="queryInfo.name" placeholder="search" shape="round" @search="handleSearch"/>
+      <van-search v-model="queryInfo.name" :placeholder="$t('search')" shape="round" @search="handleSearch"/>
     </van-sticky>
 
     <ul class="subnavs">
       <li @click="toSellPage">
         <van-image :src="require('@/assets/icon/usdt-nav1.png')"></van-image>
-        <span>Sell</span>
+        <span>{{$t('Sell')}}</span>
       </li>
 
       <li @click="toMySalesPage">
         <van-image :src="require('@/assets/icon/usdt-nav2.png')"></van-image>
-        <span>My sales</span>
+        <span>{{$t('My sales')}}</span>
       </li>
 
       <li @click="toPurchaseOrderPage">
         <van-image :src="require('@/assets/icon/usdt-nav3.png')"></van-image>
-        <span>Purchase order</span>
+        <span>{{$t('Purchase order')}}</span>
       </li>
 
       <li @click="toSaleOrderPage">
         <van-image :src="require('@/assets/icon/usdt-nav4.png')"></van-image>
-        <span>Sale order</span>
+        <span>{{$t('Sale order')}}</span>
       </li>
     </ul>
 
@@ -40,7 +40,7 @@
         <div class="detail">
           <div class="intro">{{item.goods_intro}}</div>
           <div class="price">{{item.info.price}}{{$t('coin')}}/USDT</div>
-          <div class="enter" >Enter</div>
+          <div class="enter" >{{$t('Enter')}}</div>
         </div>
 
 

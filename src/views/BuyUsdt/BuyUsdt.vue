@@ -1,6 +1,6 @@
 <template>
   <div class="BuyUsdt">
-    <navbar title="Buy Usdt"></navbar>
+    <navbar :title="$t('Buy Usdt')"></navbar>
 
     <div class="banner">
       <van-image :src="$tools.getImage(detail.show_pic)"></van-image>
@@ -16,7 +16,7 @@
       <p class="shop_desc">{{detail.goods_intro}}</p>
 
       <p class="soldnumber">
-        <span>Sold number:</span>
+        <span>{{$t('Sold number')}}:</span>
         <em>{{detail.info.sell}} / {{detail.info.sum}}</em>
       </p>
 
@@ -48,6 +48,17 @@ export default {
   computed: {
     id() {
       return Number(this.$route.query.id)
+    },
+    //判断是否是自己发布的商品
+    isSelfPublish(){
+      let uid = this.$store.getters['user/userInfo'].id
+      let extra1 = this.detail.extra1
+      // console.log(uid,extra1)
+      if (uid == extra1){
+        return true
+      }else{
+        return false
+      }
     }
   },
   created() {
@@ -68,16 +79,7 @@ export default {
         return require('@/assets/icon/default_avatar.png')
       }
     },
-    //判断是否是自己发布的商品
-    isSelfPublish(){
-      let uid = this.$store.getters['user/userInfo'].id
-      let extra1 = this.detail.extra1
-      if (uid == extra1){
-        return true
-      }else{
-        return false
-      }
-    }
+
 
   }
 }
