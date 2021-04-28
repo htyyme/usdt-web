@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-cpn">
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+    <van-swipe class="my-swipe" :autoplay="6000" indicator-color="white">
       <van-swipe-item v-for="item in banners" :key="item.id">
         <van-image :src="$tools.getImage(item.image_url)"></van-image>
       </van-swipe-item>
