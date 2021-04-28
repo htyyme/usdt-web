@@ -1,7 +1,7 @@
 <template>
   <div class="usdt">
     <van-sticky>
-      <van-search v-model="search" placeholder="search" shape="round"/>
+      <van-search v-model="queryInfo.name" placeholder="search" shape="round" @search="handleSearch"/>
     </van-sticky>
 
     <ul class="subnavs">
@@ -55,14 +55,15 @@ export default {
   name: "Usdt",
   data() {
     return {
-      search: "",
+
       list: [],
       loading: false,
       finished: false,
       queryInfo:{
         page:0,
         pageSize:20,
-        tp:8
+        tp:8,
+        name:''
       }
     }
   },
@@ -77,6 +78,13 @@ export default {
       if (this.list.length >= total){
         this.finished = true
       }
+
+    },
+    handleSearch(){
+      this.loading = false
+      this.finished = false
+      this.queryInfo.page = 0
+      this.list = []
 
     },
     toSellPage(){
