@@ -12,7 +12,7 @@
 
       <dl>
         <dt>{{ $t('todayOrder') }}</dt>
-        <dd>({{coincountdata.todayorder + usdtcountdata.todayorder}}/{{maxgrab}})</dd>
+        <dd>({{coincountdata.todayorder + usdtcountdata.todayorder}}/{{maxgrab*2}})</dd>
       </dl>
     </div>
 
