@@ -346,6 +346,14 @@ const routes = [
             title:"Finance Detail"
         }
     },
+    {
+        path:"/RebateRecord",
+        name:'RebateRecord',
+        component:()=>import('@/views/RebateRecord/RebateRecord'),
+        meta:{
+            title:"Rebate Record"
+        }
+    },
 ]
 
 const router = new VueRouter({

@@ -36,7 +36,7 @@
 
     <div class="lst">
       <div class="item" v-for="(item,index) in cointeams" :key="index">
-        <van-button  class="details">{{$t('levelNum',{num:item.lv_id})}}</van-button>
+        <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>
 
         <dl>
           <dt>{{$t('Team size')}}</dt>
@@ -95,6 +95,14 @@ export default {
     toincomelistpage(){
       this.$router.push({
         name:'IncomeList'
+      })
+    },
+    toRebateRecordPage(item){
+      this.$router.push({
+        name:'RebateRecord',
+        query:{
+          lv_id:item.lv_id
+        }
       })
     }
   }
