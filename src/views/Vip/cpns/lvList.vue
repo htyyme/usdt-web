@@ -6,8 +6,10 @@
       <div class="tit">LV.{{item.lv_id}}</div>
       <div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>
       <div class="content">
-        <p>1. Each withdrawal limit is 5000</p>
-        <p>2. The number of orders can be swipe until 30 times</p>
+<!--        <p>1. Each withdrawal limit is 5000</p>-->
+<!--        <p>2. The number of orders can be swipe until 30 times</p>-->
+        <p>1.{{$t('vipinfo1',{num1:rateFormat(item.superior_rebate) ,num2:rateFormat(item.two_level_rebate) ,num3:rateFormat(item.three_level_rebate)})}}</p>
+        <p>2.{{$t('vipinfo2',{num:maxgrab})}}</p>
       </div>
 
       <div class="shadow">{{$t('widthdrawfrequency',{num:item.lv_id})}}</div>
@@ -20,6 +22,7 @@
 
 <script>
 import {getLvIcon,getLvBgimage} from "@/utils/tools";
+import {rateFormat} from "@/utils/filters";
 
 export default {
   name: "lvList",
@@ -31,6 +34,9 @@ export default {
     curlv(){
       return this.$store.getters['user/userInfo'].lv_id
     },
+    maxgrab(){
+      return this.$store.getters['system/config'].max_grab
+    }
   },
   methods:{
     getLvIcon(lv_id){
@@ -57,6 +63,10 @@ export default {
           this.$store.dispatch('user/loadUserInfo')
         }
       })
+    },
+
+    rateFormat(val){
+      return rateFormat(val)
     }
   }
 }

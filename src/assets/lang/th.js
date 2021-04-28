@@ -520,5 +520,7 @@ export default {
     'Are you sure want to stop this item':'Are you sure want to stop this item',
     'Are you sure want to resume this item':'Are you sure want to resume this item',
     'Are you sure want to suspend this item':'Are you sure want to suspend this item',
-    'confirmUpdateApp':'The latest version is found,do you want to update it'
+    'confirmUpdateApp':'The latest version is found,do you want to update it',
+    'vipinfo1':'The promotion rebate is {num1} {num2} {num3}',
+    'vipinfo2':'The number of orders can be swipe until {num} times',
 }
