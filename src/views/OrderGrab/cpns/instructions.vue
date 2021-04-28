@@ -1,16 +1,21 @@
 <template>
   <div class="instructions">
-      <div class="title">Instructions for use</div>
+      <div class="title">{{$t('InstructionsForUse')}}</div>
 
-      <p>1: One account can grab 5 order per day</p>
-      <p>2: The system is based on LBS technology, through the cloud automatic matching business</p>
+      <p>1: {{$t('InstructionsForUseLine1',{num:max_grab})}}</p>
+      <p>2: {{$t('InstructionsForUseLine2')}}</p>
 
   </div>
 </template>
 
 <script>
 export default {
-  name: "instructions"
+  name: "instructions",
+  computed:{
+    max_grab(){
+      return this.$store.getters['system/config'].max_grab
+    }
+  }
 }
 </script>
 

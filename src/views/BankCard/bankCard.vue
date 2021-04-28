@@ -1,12 +1,12 @@
 <template>
   <div class="bankCard">
-    <navbar title="Bank Card"></navbar>
+    <navbar :title="$t('Bank Card')"></navbar>
 
     <div class="wrapper">
 
       <div class="nodata" v-if="bankCardList.length===0">
-        <van-empty :image="require('@/assets/img/nodata.png')" description="No bank card"></van-empty>
-        <van-button class="add-btn" block :to="{name:'addBankCard'}">Add New Bank Card</van-button>
+        <van-empty :image="require('@/assets/img/nodata.png')" :description="$t('No bank card')"></van-empty>
+        <van-button class="add-btn" block :to="{name:'addBankCard'}">{{$t('Add new bank card')}}</van-button>
       </div>
 
       <div class="lst" v-else>
@@ -19,7 +19,7 @@
           <div class="line line2">
             <div class="bank-code">{{item.username}}</div>
 
-            <div class="edit" @click="toEditPage(item)">Edit bank card <van-icon :name="require('@/assets/icon/edit.png')" :size="13"></van-icon> </div>
+            <div class="edit" @click="toEditPage(item)">{{$t('Edit bank card')}} <van-icon :name="require('@/assets/icon/edit.png')" :size="13"></van-icon> </div>
           </div>
         </div>
       </div>

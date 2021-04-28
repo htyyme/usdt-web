@@ -1,6 +1,6 @@
 <template>
   <div class="amounts">
-    <div class="title">Recharge amount</div>
+    <div class="title">{{$t('rechargeAmount')}}</div>
 
     <ul>
 

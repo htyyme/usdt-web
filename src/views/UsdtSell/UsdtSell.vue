@@ -8,14 +8,14 @@
       </div>
 
       <div class="bd">
-        <div class="tit">Usdt Balance</div>
+        <div class="tit">{{$t('Usdt Balance')}}</div>
         <div class="num">{{usdtAccount.available_balance | moneyFormat(2,'usdt')}}</div>
       </div>
 
     </header>
 
     <div class="box">
-      <div class="tit">Number(USDT)</div>
+      <div class="tit">{{$t('number-usdt')}}</div>
       <div class="ipt">
         <span @click="decNum">-</span>
         <input type="number" v-model.number="form.nums">
@@ -30,19 +30,19 @@
     </div>
 
     <div class="box pr">
-      <div class="tit">Selling price</div>
+      <div class="tit">{{$t('Selling price')}}</div>
       <div class="ipt">
         <span @click="decPrice">-</span>
         <input type="number" v-model.number="form.extra">
         <span @click="incPrice">+</span>
       </div>
-      <div class="ft">Unit price limit1- 99999</div>
+      <div class="ft">{{$t('Unit price limit')}} 1- 99999</div>
     </div>
 
 
-    <div class="total">Total sale price <em>{{totalPrice}}</em></div>
+    <div class="total">{{$t('Total sale price')}} <em>{{totalPrice}}</em></div>
 
-    <van-button round block  class="sel-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">Sell</van-button>
+    <van-button round block  class="sel-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Sell')}}</van-button>
   </div>
 </template>
 
@@ -76,7 +76,7 @@ export default {
       const resp = await this.$http.post('/v1/auth/user/merchant')
       if (resp.data.id==0){
         const confirmres = await this.$dialog.confirm({
-          message:'You must fill the shop information at first'
+          message:this.$t('You must fill the shop information at first')
         }).catch(err=>err)
         if(confirmres ==='confirm'){
           this.$router.push({
@@ -120,7 +120,7 @@ export default {
     },
     async handleSubmit(){
       if (this.totalPrice <= 0){
-        return this.$toast.fail('Please enter the correct quantity')
+        return this.$toast.fail(this.$t('Please enter the correct quantity'))
       }
       const resp = await this.$http.post('/v1/auth/ustd/sell',{
         extra:Number(this.form.extra),

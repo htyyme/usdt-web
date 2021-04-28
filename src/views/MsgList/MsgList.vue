@@ -1,6 +1,6 @@
 <template>
   <div class="MsgList">
-    <navbar title="Message"></navbar>
+    <navbar :title="$t('Message')"></navbar>
 
     <van-empty v-if="list.length===0"></van-empty>
 

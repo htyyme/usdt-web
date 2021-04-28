@@ -1,6 +1,6 @@
 <template>
   <div class="payWay">
-    <div class="title">Pay way</div>
+    <div class="title">{{$t('Pay way')}}</div>
 
       <ul>
         <li v-for="(item,index) in channellist"

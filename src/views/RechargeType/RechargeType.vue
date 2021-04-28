@@ -5,7 +5,7 @@
     <div class="header">
       <div class="pageheader">
         <van-icon :name="require('@/assets/icon/return.png')" size="23" class="return" @click="$router.back()"></van-icon>
-        <span>Choose Recharge</span>
+        <span>{{$t('Choose Recharge')}}</span>
       </div>
 
     </div>

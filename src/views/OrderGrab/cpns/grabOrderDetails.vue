@@ -1,6 +1,6 @@
 <template>
   <van-popup v-model="show" position="bottom" class="grabOrderDetails"  round :close-on-click-overlay="false" get-container="body">
-      <div class="title">Order details</div>
+      <div class="title">{{$t('Order details')}}</div>
 
     <dl>
       <dt>{{ $t('OrderNumber') }}:</dt>

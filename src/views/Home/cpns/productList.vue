@@ -15,7 +15,7 @@
           <div class="tit">{{item.goods_name}}</div>
           <div class="price">
             <span>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</span>
-            <span>Special area</span>
+            <span>{{$t('specialArea')}}</span>
           </div>
         </div>
       </div>
@@ -28,13 +28,13 @@
           <div class="tit">{{item.goods_name}}</div>
           <div class="price">
             <span>{{item.coinAttr.unit_cost | moneyFormat}}</span>
-            <span>Special area</span>
+            <span>{{$t('specialArea')}}</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="no-other">No other new types of products</div>
+    <div class="no-other">{{$t('NoOtherNewTypesOfProducts')}}</div>
 
   </div>
 </template>

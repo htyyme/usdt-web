@@ -1,15 +1,15 @@
 <template>
   <div class="UsdtSelllist">
-    <navbar title="My sales"></navbar>
+    <navbar :title="$t('My sales')"></navbar>
 
     <van-tabs v-model="activeName" animated  color="#3596E8" line-width="100px" sticky>
-      <van-tab title="On Sale" name="onsale">
+      <van-tab :title="$t('On Sale')" name="onsale">
         <list :type="1"/>
       </van-tab>
-      <van-tab title="Suspend" name="Suspend">
+      <van-tab :title="$t('Suspend')" name="Suspend">
         <list :type="2"/>
       </van-tab>
-      <van-tab title="Over" name="Over">
+      <van-tab :title="$t('Over')" name="Over">
         <list :type="4"/>
       </van-tab>
     </van-tabs>

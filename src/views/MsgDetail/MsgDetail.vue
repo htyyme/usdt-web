@@ -1,6 +1,6 @@
 <template>
   <div class="MsgDetail">
-    <navbar title="Message Detail"></navbar>
+    <navbar :title="$t('Message Detail')"></navbar>
 
     <div class="inner">
       <div class="title">{{currentmsg.title}}</div>

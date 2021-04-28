@@ -3,15 +3,15 @@
     <div class="counter">
       <dl>
         <dt>{{countdata.yesterdayearn | moneyFormat(2,gcointype)}}</dt>
-        <dd>Yesterday's earning</dd>
+        <dd>{{$t('yesterdaysEarning')}}</dd>
       </dl>
       <dl>
         <dt>{{countdata.totalincome | moneyFormat(2,gcointype) }}</dt>
-        <dd>Cumulative income</dd>
+        <dd>{{$t('comulativeIncome')}}</dd>
       </dl>
       <dl>
         <dt>{{countdata.totalincome | moneyFormat(2,gcointype)}}</dt>
-        <dd>Today's earning</dd>
+        <dd>{{$t('todaysEarning')}}</dd>
       </dl>
     </div>
 

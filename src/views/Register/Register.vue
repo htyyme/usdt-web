@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="wrapper">
-      <div class="form-title">register</div>
+      <div class="form-title">{{$t('register')}}</div>
       <field4 v-model="registerForm.username" :left-icon="require('@/assets/icon/phone-icon.png')" :placeholder="$t('Phone Number')">
         <template #left>{{internationalCode}}</template>
       </field4>
@@ -28,8 +28,8 @@
       <van-button class="submit-btn" block @click="doRegister" :loading="$store.getters['system/gloading']">Register</van-button>
 
       <p class="bottom-info">
-        <span>Already have account?</span>
-        <router-link :to="{name:'Login'}">Login Now</router-link>
+        <span>{{$t('Already have account?')}}</span>
+        <router-link :to="{name:'Login'}">{{$t('Login Now')}}</router-link>
       </p>
     </div>
   </div>

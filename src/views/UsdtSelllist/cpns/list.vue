@@ -7,7 +7,7 @@
       <div class="list-item" v-for="item in list" :key="item.id">
         <div class="hd">
           <div>
-            <p><em>{{item.info.price | moneyFormat}}</em> <span>/Unit Price</span></p>
+            <p><em>{{item.info.price | moneyFormat}}</em> <span>/{{$t('Unit Price')}}</span></p>
             <p>number {{item.info.sum}} USDT</p>
             <p>time {{item.start_time | dateFormat}}</p>
           </div>
@@ -16,8 +16,8 @@
 
 
         <div class="ft" v-if="type==1 || type==2">
-          <van-button round  block class="stop" v-if="type==1" @click="handleStop(item)" >Stop</van-button>
-          <van-button round plain   block class="resume" v-if="type==2" @click="handleResume(item)">Resume</van-button>
+          <van-button round  block class="stop" v-if="type==1" @click="handleStop(item)" >{{$t('Stop')}}</van-button>
+          <van-button round plain   block class="resume" v-if="type==2" @click="handleResume(item)">{{$t('Resume')}}</van-button>
         </div>
 
       </div>
@@ -88,7 +88,7 @@ export default {
     //暂停
     async handleStop(item){
       const confirmres = await this.$dialog.confirm({
-        message:'Are you sure want to stop this item'
+        message:this.$t('Are you sure want to stop this item')
       }).catch(err=>err)
       if (confirmres !== 'confirm'){
         return
@@ -105,7 +105,7 @@ export default {
     //恢复
     async handleResume(item){
       const confirmres = await this.$dialog.confirm({
-        message:'Are you sure want to resume this item'
+        message:this.$t('Are you sure want to resume this item')
       }).catch(err=>err)
       if (confirmres !== 'confirm'){
         return

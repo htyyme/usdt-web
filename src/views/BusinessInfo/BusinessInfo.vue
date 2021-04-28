@@ -1,6 +1,6 @@
 <template>
   <div class="BusinessInfo">
-    <navbar title="Business Information"></navbar>
+    <navbar :title="$t('Business Information')"></navbar>
 
     <topinfo />
 

@@ -2,33 +2,33 @@
   <div class="pageHeader">
     <div class="pagetitle">
       <van-icon :name="require('@/assets/icon/return.png')" size="25" @click="$router.back()" class="return"></van-icon>
-      Order Grabbing
+      {{$t('OrderGrabbing')}}
     </div>
 
     <div class="counter">
       <dl>
         <dt>{{countData.todayorder}}</dt>
-        <dd>Today's order</dd>
+        <dd>{{$t('todayOrder')}}</dd>
       </dl>
       <dl>
         <dt>{{countData.todayearn| moneyFormat(2,cointype)}}</dt>
-        <dd>Today's earnings</dd>
+        <dd>{{$t('todayEarnings')}}</dd>
       </dl>
       <dl>
         <dt>{{countData.teamtodayearn| moneyFormat(2,cointype)}}</dt>
-        <dd>Team benefits today</dd>
+        <dd>{{$t('teamBenefitsToday')}}</dd>
       </dl>
       <dl>
         <dt>{{totalAssets | moneyFormat(2,cointype)}}</dt>
-        <dd>Total assets</dd>
+        <dd>{{$t('totalAssets')}}</dd>
       </dl>
       <dl>
         <dt>{{totalAssets.yesterdayearn| moneyFormat(2,cointype)}}</dt>
-        <dd>Yesterday's earnings</dd>
+        <dd>{{$t('yesterdaysEarning')}}</dd>
       </dl>
       <dl>
         <dt>{{countData.teamyesterdayearn| moneyFormat(2,cointype)}}</dt>
-        <dd>Yesterday's team earnings</dd>
+        <dd>{{$t('YesterdayTeamEarnings')}}</dd>
       </dl>
     </div>
   </div>

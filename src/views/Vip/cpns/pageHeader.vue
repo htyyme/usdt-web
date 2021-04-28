@@ -2,7 +2,7 @@
   <header>
     <van-icon :name="require('@/assets/icon/return.png')" size="25" class="return" @click="$router.back()"></van-icon>
     <van-icon :name="require('@/assets/icon/message.png')" size="25" class="message" @click="tomsgpage"></van-icon>
-    <div class="pagetitle">Vip</div>
+    <div class="pagetitle">{{$t('Luxury VIP privileges')}}</div>
     <van-image :src="curlvicon" class="level-icon" fit="contain"></van-image>
 
     <van-steps :active="active" active-color="#FEDF72" >

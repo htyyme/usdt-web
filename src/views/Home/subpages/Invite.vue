@@ -5,13 +5,13 @@
     <div class="line"></div>
 
     <div class="info">
-      <div class="tit">Referral code</div>
+      <div class="tit">{{$t('invitationCode')}}</div>
       <div class="code">
         <span class="de">{{code}}</span>
         <van-button @click="copyCode">{{ $t('copy') }}</van-button>
       </div>
 
-      <div class="tit">Referral code</div>
+      <div class="tit">{{$t('invitationLink')}}</div>
       <div class="code">
         <span class="de">{{link | linkFormat}}</span>
         <van-button @click="copyUrl">{{ $t('copy') }}</van-button>

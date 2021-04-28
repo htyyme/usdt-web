@@ -5,7 +5,7 @@
 
     <van-list class="list" v-model="loading" :finished="finished" :finished-text="$t('No more')" @load="loadData" :loading-text="$t('loading')">
       <div class="list-item" v-for="item in list" :key="item.id" :class="orderclass(item)">
-        <div class="no-tit">Order number:</div>
+        <div class="no-tit">{{$t('Order number')}}:</div>
         <div class="no">{{item.order_opt_sn}}</div>
         <div class="amount">
           <span>Amount：</span>

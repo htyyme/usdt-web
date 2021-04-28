@@ -1,6 +1,6 @@
 <template>
   <div class="addBankCard">
-    <navbar title="Bank Card"></navbar>
+    <navbar :title="$t('Bank Card')"></navbar>
     
     <div class="wrapper">
       <dl>
@@ -53,8 +53,8 @@
           :columns="gbanklist"
           @confirm="confirmBank"
           @cancel="showPicker = false"
-          :confirm-button-text="$t('confirm')"
-          :cancel-button-text="$t('cancel')"
+          :confirm-button-text="$t('Confirm')"
+          :cancel-button-text="$t('Cancel')"
       />
     </van-popup>
 

@@ -1,37 +1,37 @@
 <template>
   <div class="UsdtComfirmOrder">
-    <navbar title="Confirm Order"></navbar>
+    <navbar :title="$t('Confirm Order')"></navbar>
 
     <div class="wrapper">
-        <div class="card-title">Transfer information</div>
+        <div class="card-title">{{$t('Transfer information')}}</div>
 
       <dl>
-        <dt>Shop name</dt>
+        <dt>{{$t('Shop name')}}</dt>
         <dd>{{shopinfo.name}}</dd>
       </dl>
 
       <dl>
-        <dt>Bank card</dt>
+        <dt>{{$t('Bank card')}}</dt>
         <dd>{{shopinfo.account}}</dd>
       </dl>
 
       <dl>
-        <dt>Ifsc</dt>
+        <dt>{{$t('IFSC')}}</dt>
         <dd>{{shopinfo.ifsc}}</dd>
       </dl>
 
       <dl>
-        <dt>Payee</dt>
+        <dt>{{$t('Payee')}}</dt>
         <dd>{{shopinfo.account_name}}</dd>
       </dl>
 
       <dl>
-        <dt>Whatsapp</dt>
+        <dt>{{$t('Whatsapp')}}</dt>
         <dd>{{shopinfo.what_app}}</dd>
       </dl>
     </div>
 
-    <van-button class="confirm-btn" block @click="handleConfirm">Confirm</van-button>
+    <van-button class="confirm-btn" block @click="handleConfirm">{{$t('Confirm')}}</van-button>
 
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="ForgetPass">
-    <navbar title="Forget password"></navbar>
+    <navbar :title="$t('forgetPass')"></navbar>
 
     <div class="form">
       <dl>
@@ -8,7 +8,7 @@
           <van-icon :name="require('@/assets/icon/phone-icon.orenge.png')" size="24"></van-icon>
         </dt>
         <dd>
-          <input type="text" placeholder="Phone number" v-model="phone">
+          <input type="text" :placeholder="$t('Phone number')" v-model="phone">
         </dd>
       </dl>
 
@@ -17,7 +17,7 @@
           <van-icon :name="require('@/assets/icon/sms-icon.orange.png')" size="24"></van-icon>
         </dt>
         <dd>
-          <input type="text" placeholder="SMS code" v-model="verify_code">
+          <input type="text" :placeholder="$t('smsCode')" v-model="verify_code">
           <van-button size="mini" color="#FF7335" class="sendcode" @click="sendOtp" :disabled="countdown>0">
             {{ sendBtnText }}
           </van-button>
@@ -30,7 +30,7 @@
           <van-icon :name="require('@/assets/icon/pwd-icon.orange.png')" size="24"></van-icon>
         </dt>
         <dd>
-          <input :type="pwdType" placeholder="New password" v-model="password">
+          <input :type="pwdType" :placeholder="$t('New password')" v-model="password">
           <van-icon size="18" :name="pwdIcon" class="eye" @click="changePwdType"></van-icon>
         </dd>
       </dl>
@@ -40,7 +40,7 @@
           <van-icon :name="require('@/assets/icon/pwd-icon.orange.png')" size="24"></van-icon>
         </dt>
         <dd>
-          <input :type="repeatPwdType" placeholder="Repeat new password" v-model="confirmPassword">
+          <input :type="repeatPwdType" :placeholder="$t('Repeat new password')" v-model="confirmPassword">
           <van-icon size="18" :name="repeatPwdIcon" class="eye" @click="changeRepeatPwdType"></van-icon>
         </dd>
       </dl>
@@ -48,7 +48,7 @@
     </div>
 
 
-    <van-button block class="submit-button" :loading="$store.getters['system/gloading']" @click="onSubmit">Complete
+    <van-button block class="submit-button" :loading="$store.getters['system/gloading']" @click="onSubmit">{{$t('Complete')}}
     </van-button>
 
 

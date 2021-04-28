@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="wrapper">
-      <div class="form-title">login</div>
+      <div class="form-title">{{$t('login')}}</div>
       <field4 :left-icon="require('@/assets/icon/phone-icon.png')" :placeholder="$t('Phone Number')" v-model="form.playerName"></field4>
       <field4 :left-icon="require('@/assets/icon/pwd-icon.png')" :placeholder="$t('Password')" v-model="form.passWord" :type="pwdType">
         <template #right>
@@ -9,16 +9,16 @@
         </template>
       </field4>
 
-      <van-button class="submit-btn" block @click="doLogin" :disabled="btnDisabled" :loading="$store.getters['system/gloading']">Login</van-button>
+      <van-button class="submit-btn" block @click="doLogin" :disabled="btnDisabled" :loading="$store.getters['system/gloading']">{{$t('Login')}}</van-button>
 
       <div class="bottom-info">
         <p>
-          <span>Not have account yet?</span>
-          <router-link :to="{name:'Register'}" >Register Now</router-link>
+          <span>{{$t('Not have account yet?')}}</span>
+          <router-link :to="{name:'Register'}" >{{$t('Register Now')}}</router-link>
         </p>
 
         <p v-if="isSendSms">
-          <router-link :to="{name:'ForgetPass'}" >Forget your password</router-link>
+          <router-link :to="{name:'ForgetPass'}" >{{$t('Forget your password')}}</router-link>
         </p>
       </div>
 
@@ -27,7 +27,7 @@
 
     <a href="javascript:;" class="down-app" v-if="!isApp" @click="downloadApp">
       <van-icon :name="require('@/assets/icon/download-icon.png')" size="25"></van-icon>
-      <span>Download App</span>
+      <span>{{$t('Download App')}}</span>
     </a>
 
   </div>
