@@ -66,10 +66,28 @@ export default {
       return (this.form.extra * this.form.nums) .toFixed(2)
     }
   },
-  created() {
+  async created() {
+    await this.loadMerchantInfo()
     this.$store.dispatch('user/loadUserInfo')
   },
   methods:{
+    //判断是否绑定了商家信息
+    async loadMerchantInfo(){
+      const resp = await this.$http.post('/v1/auth/user/merchant')
+      if (resp.data.id==0){
+        const confirmres = await this.$dialog.confirm({
+          message:'You must fill the shop information at first'
+        }).catch(err=>err)
+        if(confirmres ==='confirm'){
+          this.$router.push({
+            name:'BusinessInfo'
+          })
+        }else{
+          this.$router.back()
+        }
+
+      }
+    },
     decNum(){
       if (this.form.nums <= 0){
         return
