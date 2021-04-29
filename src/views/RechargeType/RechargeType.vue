@@ -15,7 +15,7 @@
         <van-image :src="require('@/assets/icon/rechargeusdt.png')"></van-image>
         <div class="info">
           <div class="tit">USDT</div>
-          <p>提现U享受0.88折优惠</p>
+          <p>{{usdtChargeInfo}}</p>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
         <van-image :src="require('@/assets/icon/rechargecoin.png')"></van-image>
         <div class="info">
           <div class="tit">Common currency</div>
-          <p>提现U享受0.88折优惠</p>
+          <p>{{coinChargeInfo}}</p>
         </div>
       </div>
 
@@ -40,6 +40,14 @@
 <script>
 export default {
   name: "RechargeType",
+  computed:{
+    usdtChargeInfo(){
+      return this.$store.getters['system/config'].usdt_charge_info
+    },
+    coinChargeInfo(){
+      return this.$store.getters['system/config'].coin_charge_info
+    }
+  },
   methods:{
     toRechargePage(typ){
       this.$router.push({

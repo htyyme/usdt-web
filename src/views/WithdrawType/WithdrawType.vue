@@ -15,7 +15,7 @@
         <van-image :src="require('@/assets/icon/widhrawusdt.png')"></van-image>
         <div class="info">
           <div class="tit">USDT</div>
-          <p>提现U享受0.88折优惠</p>
+          <p>{{usdtWithdrawInfo}}</p>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
         <van-image :src="require('@/assets/icon/withdrawcoin.png')"></van-image>
         <div class="info">
           <div class="tit">Common currency</div>
-          <p>提现U享受0.88折优惠</p>
+          <p>{{coinWithdrawInfo}}</p>
         </div>
       </div>
 
@@ -40,6 +40,14 @@
 <script>
 export default {
   name: "WithdrawType",
+  computed:{
+    usdtWithdrawInfo(){
+      return this.$store.getters['system/config'].usdt_withdraw_info
+    },
+    coinWithdrawInfo(){
+      return this.$store.getters['system/config'].coin_withdraw_info
+    }
+  },
   methods:{
     toRechargePage(typ){
       this.$router.push({
