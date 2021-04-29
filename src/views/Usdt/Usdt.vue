@@ -38,6 +38,12 @@
     </nav>
 
 
+    <div class="news">
+      <div class="news-item" v-for="i in 10" :key="i">
+        <div class="title">Novice</div>
+        <div class="content">conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -70,6 +76,7 @@ export default {
 .usdt-page {
   min-height: 100vh;
   background-color: #f4f4f4;
+  padding-bottom: 15px;
   header {
     height: 150px;
     background-color: #3CA1EB;
@@ -169,6 +176,28 @@ export default {
         }
       }
 
+    }
+  }
+
+  .news{
+    .news-item{
+      margin: 10px 15px;
+      padding: 15px;
+      height: 70px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      .title{
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .content{
+        font-size: 14px;
+        color: #666;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 2px;
+      }
     }
   }
 }
