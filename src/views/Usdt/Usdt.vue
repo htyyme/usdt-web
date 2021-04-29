@@ -41,7 +41,7 @@
     <div class="news">
       <div class="news-item" v-for="item in newslist" :key="item.id" :style="itemStyle(item)" @click="toNewsDetail(item)">
         <div class="title">{{item.title}}</div>
-        <div class="content">{{item.content}}</div>
+        <div class="content">{{getShotcontent(item)}}</div>
       </div>
     </div>
   </div>
@@ -108,7 +108,9 @@ export default {
       this.$router.push({
         name:'UsdtnewsDetail',
       })
-
+    },
+    getShotcontent(item){
+      return this.$tools.delHtmlTag(item.content).trim()
     }
   }
 }
