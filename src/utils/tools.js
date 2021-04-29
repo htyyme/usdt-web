@@ -218,3 +218,29 @@ export function getLvBgimage(lv){
 export function delHtmlTag(str){
     return str.replace(/<[^>]+>/g,"");  //正则去掉所有的html标记
 }
+
+/*
+* 判断设备类型
+* */
+export function getDeviceType() {
+    const u = navigator.userAgent
+    const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+    if (isiOS) {
+        return "ios"
+    } else {
+        return "android"
+    }
+}
+
+//下载app
+export function downloadApp(){
+    let appurl = ''
+    let {protocol,host} = location
+    let device = getDeviceType()
+    if (device === 'ios'){
+        appurl = protocol + "//" + host + 'app.mobileconfig'
+    }else {
+        appurl = protocol + "//" + host + 'app.apk'
+    }
+    openUrl(appurl)
+}
