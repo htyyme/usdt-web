@@ -39,7 +39,7 @@
 
 
     <div class="news">
-      <div class="news-item" v-for="item in newslist" :key="item.id" :style="itemStyle(item)">
+      <div class="news-item" v-for="item in newslist" :key="item.id" :style="itemStyle(item)" @click="toNewsDetail(item)">
         <div class="title">{{item.title}}</div>
         <div class="content">{{item.content}}</div>
       </div>
@@ -102,6 +102,13 @@ export default {
       return {
         backgroundImage:"url("+ item.img +")"
       }
+    },
+    toNewsDetail(item){
+      this.$store.commit('usdt/setCurrentnews',item)
+      this.$router.push({
+        name:'UsdtnewsDetail',
+      })
+
     }
   }
 }
@@ -225,6 +232,7 @@ export default {
       border: 1px solid #ccc;
       border-radius: 10px;
       background-size: cover;
+      background-position: center center;
       .title{
         font-weight: 700;
         font-size: 15px;

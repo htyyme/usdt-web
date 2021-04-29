@@ -362,6 +362,14 @@ const routes = [
             title:"Usdt Mall"
         }
     },
+    {
+        path:"/UsdtnewsDetail",
+        name:'UsdtnewsDetail',
+        component:()=>import('@/views/UsdtnewsDetail/UsdtnewsDetail'),
+        meta:{
+            title:"Usdt news"
+        }
+    },
 ]
 
 const router = new VueRouter({
