@@ -5,7 +5,7 @@
     <div class="inner">
       <div class="title">{{currentmsg.title}}</div>
 
-      <div class="content">{{currentmsg.content}}</div>
+      <div class="content" v-html="currentmsg.content"></div>
 
       <div class="time">{{currentmsg.send_time | dateFormat}}</div>
     </div>
@@ -45,7 +45,10 @@ export default {
 
     .content{
       padding: 10px 0;
-
+      /deep/img{
+        max-width: 100%;
+        margin: 5px 0;
+      }
     }
 
     .time{

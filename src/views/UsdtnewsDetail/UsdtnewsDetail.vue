@@ -42,8 +42,9 @@ export default {
       line-height: 1.5;
       color: #333;
 
-      img{
-        max-width: 350px;
+      /deep/img{
+        max-width: 100%;
+        margin: 5px 0;
       }
     }
   }

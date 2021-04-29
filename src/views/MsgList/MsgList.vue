@@ -10,7 +10,7 @@
         <van-image :src="require('@/assets/icon/readmsg.png')" class="msgicon"></van-image>
         <div class="msg">
           <div class="tit">{{item.title}}</div>
-          <div class="content">{{item.content}}</div>
+          <div class="content">{{getShotcontent(item)}}</div>
         </div>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </div>
@@ -55,6 +55,9 @@ export default {
       this.$router.push({
         name:'MsgDetail'
       })
+    },
+    getShotcontent(item){
+      return this.$tools.delHtmlTag(item.content).trim()
     }
   }
 }
@@ -104,7 +107,6 @@ export default {
           text-overflow: ellipsis;
           font-size: 14px;
           color: #919191;
-
         }
       }
 

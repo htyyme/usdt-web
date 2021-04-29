@@ -213,3 +213,8 @@ export function getLvBgimage(lv){
             return require('@/assets/img/vip1-bg.png')
     }
 }
+
+
+export function delHtmlTag(str){
+    return str.replace(/<[^>]+>/g,"");  //正则去掉所有的html标记
+}
