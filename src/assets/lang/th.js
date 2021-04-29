@@ -530,4 +530,6 @@ export default {
     'Free to buy and sell':'Free to buy and sell',
     'GO NOW':'GO NOW',
     'Usdt news':'Usdt news',
+    'Buy usdt':'Buy usdt',
+    'Total price':'Total price',
 }
