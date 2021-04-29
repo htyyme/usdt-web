@@ -24,6 +24,7 @@ export default {
 <style scoped lang="scss">
 .news{
   min-height: 100vh;
+  padding-bottom: 20px;
   background-color: #f4f4f4;
 
   article{
