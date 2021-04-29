@@ -100,7 +100,7 @@ export default {
     },
     itemStyle(item){
       return {
-        backgroundImage:"url("+ item.img +")"
+        // backgroundImage:"url("+ item.img +")"
       }
     },
     toNewsDetail(item){
