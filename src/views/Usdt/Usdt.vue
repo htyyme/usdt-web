@@ -1,51 +1,42 @@
 <template>
-  <div class="usdt">
-    <van-sticky>
-      <van-search v-model="queryInfo.name" :placeholder="$t('search')" shape="round" @search="handleSearch"/>
-    </van-sticky>
+  <div class="usdt-page">
+    <header>
+      <div class="title">udst</div>
+    </header>
 
-    <ul class="subnavs">
-      <li @click="toSellPage">
-        <van-image :src="require('@/assets/icon/usdt-nav1.png')"></van-image>
-        <span>{{$t('Sell')}}</span>
-      </li>
-
-      <li @click="toMySalesPage">
-        <van-image :src="require('@/assets/icon/usdt-nav2.png')"></van-image>
-        <span>{{$t('My sales')}}</span>
-      </li>
-
-      <li @click="toPurchaseOrderPage">
-        <van-image :src="require('@/assets/icon/usdt-nav3.png')"></van-image>
-        <span>{{$t('Purchase order')}}</span>
-      </li>
-
-      <li @click="toSaleOrderPage">
-        <van-image :src="require('@/assets/icon/usdt-nav4.png')"></van-image>
-        <span>{{$t('Sale order')}}</span>
-      </li>
-    </ul>
-
-    <van-empty :image="require('@/assets/img/nodata.png')" v-if="list.length===0"></van-empty>
-
-    <van-list class="goods-list" v-model="loading" :finished="finished"   @load="loadData" :loading-text="$t('loading')">
-      <div class="goods-item" v-for="(item,index) in list" :key="index" @click="enterPage(item)">
-        <div class="top">
-          <van-image class="top-img" :src="$tools.getImage(item.show_pic)"></van-image>
-          <div class="user">
-            <van-image :src="getItemAvatar(item)" class="avatar"></van-image>
-            <span class="username">{{item.goods_name}}</span>
-          </div>
-        </div>
-        <div class="detail">
-          <div class="intro">{{item.goods_intro}}</div>
-          <div class="price">{{item.info.price}}{{$t('coin')}}/USDT</div>
-          <div class="enter" >{{$t('Enter')}}</div>
-        </div>
-
-
+    <div class="assets">
+      <div class="title">My wallte(USDT)</div>
+      <div class="balance">1234.45</div>
+      <div class="botm">
+          <dl>
+            <dt>1234</dt>
+            <dd>earnings</dd>
+          </dl>
+        <dl>
+          <dt>1234</dt>
+          <dd>earnings</dd>
+        </dl>
       </div>
-    </van-list>
+    </div>
+
+    <nav class="subnav">
+      <router-link :to="{name:'UsdtMall'}" class="mall">
+        <p>Usdt trading area</p>
+        <p>Free to buy and sell</p>
+        <div class="go">GO NOW</div>
+      </router-link>
+      <div class="right-link">
+        <a href="javascript:;" @click="toUsdtRechargePage">
+          <van-icon :name="require('@/assets/icon/sell.png')" size="25"></van-icon>
+          <span>Recharge</span>
+        </a>
+        <a href="javascript:;" @click="toUsdtWithdrawPage">
+          <van-icon :name="require('@/assets/icon/sellorder.png')" size="25"></van-icon>
+          <span>Withdraw</span>
+        </a>
+      </div>
+    </nav>
+
 
   </div>
 </template>
@@ -53,197 +44,133 @@
 <script>
 export default {
   name: "Usdt",
-  data() {
-    return {
-
-      list: [],
-      loading: false,
-      finished: false,
-      queryInfo:{
-        page:0,
-        pageSize:20,
-        tp:8,
-        name:''
-      }
-    }
-  },
   methods:{
-    async loadData(){
-      this.queryInfo.page++
-      const resp = await this.$http.post('/v1/auth/ustd/list',this.queryInfo)
-      const {list,total} = resp.data
-      list.forEach(el => el.info = JSON.parse(el.extra2))
-      this.list = this.list.concat(list || [])
-      this.loading = false
-      if (this.list.length >= total){
-        this.finished = true
-      }
-
-    },
-    handleSearch(){
-      this.loading = false
-      this.finished = false
-      this.queryInfo.page = 0
-      this.list = []
-
-    },
-    toSellPage(){
+    toUsdtRechargePage(){
       this.$router.push({
-        name:'UsdtSell'
-      })
-    },
-    toMySalesPage(){
-      this.$router.push({
-        name:'UsdtSelllist'
-      })
-    },
-    toPurchaseOrderPage(){
-      this.$router.push({
-        name:'UsdtPurchaseOrder'
-      })
-    },
-    toSaleOrderPage(){
-      this.$router.push({
-        name:'UsdtSaleOrder'
-      })
-    },
-    enterPage(item){
-      this.$router.push({
-        name:'BuyUsdt',
+        name:'Recharge',
         query:{
-          id:item.id
+          cointype:'usdt'
         }
       })
     },
-    getItemAvatar(item){
-      if (item.info.pic){
-        return this.$tools.getImage(item.info.pic)
-      }else{
-        return require('@/assets/icon/default_avatar.png')
-      }
+    toUsdtWithdrawPage(){
+      this.$router.push({
+        name:'Withdraw',
+        query:{
+          cointype:'usdt'
+        }
+      })
     }
   }
 }
 </script>
 
-<style scoped lang="scss">
-/deep/.van-empty{
-  .van-empty__image{
-    height: unset;
-  }
-}
+<style lang="scss" scoped>
 
-.usdt {
+.usdt-page {
   min-height: 100vh;
   background-color: #f4f4f4;
+  header {
+    height: 150px;
+    background-color: #3CA1EB;
+    border-radius: 0 0 10px 10px;
 
-  /deep/ .van-search {
-    background: linear-gradient(180deg, #41AAED 0%, #2F8DE6 100%);
+    .title {
+      color: #fff;
+      text-transform: uppercase;
+      padding: 15px;
+    }
+  }
+  .assets{
+    background-color: #fff;
+    margin: -100px 15px 0;
+    border-radius: 13px;
+    padding: 15px;
+    color: #333;
+    .title{
+      text-align: center;
+
+    }
+    .balance{
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 5px;
+    }
+    .botm{
+      display: flex;
+      margin: 15px 0 10px;
+      justify-content: space-between;
+      dl {
+        flex: 1;
+        text-align: center;
+        border-right: 1px solid #ccc;
+        &:last-child{
+          border-right: none;
+        }
+        dt{
+          font-size: 17px;
+          font-weight: 700;
+        }
+        dl{
+          color: #999;
+        }
+      }
+    }
   }
 
-  .subnavs{
+  .subnav{
+    height: 122px;
+    margin: 15px;
     display: flex;
-    li{
-      flex: 1;
+    justify-content: space-between;
+    .mall{
+      width: 169px;
+      height: 100%;
+      background: url(~assets/icon/tradearea.png) no-repeat;
+      background-size: cover;
+      color: #fff;
+      padding: 10px 0 0 10px;
+      p{
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      p:nth-of-type(2){
+        font-size: 14px;
+      }
+      .go{
+        color: orange;
+        background-color: #fff;
+        display: inline-flex;
+        padding: 3px 6px;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-top: 14px;
+        border-radius: 5px;
+      }
+    }
+    .right-link{
+      width: 169px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      .van-image{
-        width: 47px;
-        height: 47px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 21px 0 6px 0;
-      }
-      span{
-        font-size: 12px;
-        color: #333;
-      }
-    }
-  }
-
-  .goods-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 10px;
-    .goods-item{
-      width: 172px;
-      border-radius: 12px;
-      background-color: #fff;
-      margin-bottom: 10px;
-      overflow: hidden;
-      position: relative;
-      .top{
-        height: 88px;
-        position: relative;
-        .top-img{
-          height: 100%;
+      justify-content: space-between;
+      a{
+        height: 56px;
+        width: 100%;
+        background-color: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 10px;
+        .van-icon{
+          padding-right: 4px;
         }
-        .user{
-          min-width: 93px;
-          height: 23px;
-          background: #F3F9FF;
-          border-radius: 2px;
-          position: absolute;
-          left: 0;
-          top: 12px;
-          box-shadow: 2px 2px 2px rgba(255,192,203,.6);
-          .avatar{
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 6px;
-          }
-          .username{
-            padding-left: 52px;
-            padding-right: 15px;
-            font-size: 12px;
-          }
-        }
-      }
-      .detail{
-        font-size: 12px;
-        color: #333;
-        padding: 5px 8px 8px;
-        .price{
-          font-size: 15px;
-          font-weight: bold;
-          color: #E93737;
-          margin-top: 3px;
-        }
-        .intro{
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2; /*控制多行的行数*/
-          -webkit-box-orient: vertical;
-          line-height: 1.6;
-          height: 38px;
-        }
-        .enter{
-          min-width: 41px;
-          height: 15px;
-          background: #FFC543;
-          font-size: 12px;
-          position: absolute;
-          bottom: 12px;
-          right: 12px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: 2px 2px 2px #FF4943;
-        }
-
       }
 
     }
   }
-
 }
+
 </style>

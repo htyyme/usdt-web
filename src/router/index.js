@@ -354,6 +354,14 @@ const routes = [
             title:"Rebate Record"
         }
     },
+    {
+        path:"/UsdtMall",
+        name:'UsdtMall',
+        component:()=>import('@/views/UsdtMall/UsdtMall'),
+        meta:{
+            title:"Usdt Mall"
+        }
+    },
 ]
 
 const router = new VueRouter({
