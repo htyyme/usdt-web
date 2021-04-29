@@ -39,9 +39,9 @@
 
 
     <div class="news">
-      <div class="news-item" v-for="i in 10" :key="i">
-        <div class="title">Novice</div>
-        <div class="content">conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt,conetnt</div>
+      <div class="news-item" v-for="item in newslist" :key="item.id" :style="itemStyle(item)">
+        <div class="title">{{item.title}}</div>
+        <div class="content">{{item.content}}</div>
       </div>
     </div>
   </div>
@@ -50,6 +50,11 @@
 <script>
 export default {
   name: "Usdt",
+  data(){
+    return {
+      newslist:[]
+    }
+  },
   computed:{
     userinfo(){
       return this.$store.getters['user/userInfo']
@@ -69,6 +74,7 @@ export default {
   },
   created() {
     this.$store.dispatch('user/loadUserInfo')
+    this.loadNewsList()
   },
   methods:{
     toUsdtRechargePage(){
@@ -86,6 +92,16 @@ export default {
           cointype:'usdt'
         }
       })
+    },
+    async loadNewsList(){
+      const resp = await this.$http.post('/v1/service/ustd/news')
+      // console.log(resp)
+      this.newslist = resp.data || []
+    },
+    itemStyle(item){
+      return {
+        backgroundImage:"url("+ item.img +")"
+      }
     }
   }
 }
@@ -208,6 +224,7 @@ export default {
       height: 70px;
       border: 1px solid #ccc;
       border-radius: 10px;
+      background-size: cover;
       .title{
         font-weight: 700;
         font-size: 15px;
