@@ -19,6 +19,7 @@ import instructions from "./cpns/instructions";
 import grabbing from "./cpns/grabbing";
 import grabOrderDetails from "./cpns/grabOrderDetails";
 import purchaseSuccess from "./cpns/purchaseSuccess";
+import {PURCHASE_GRAB_SUCCESS} from "@/utils/events";
 
 export default {
   name: "OrderGrab",
@@ -58,6 +59,8 @@ export default {
     this.$store.dispatch('user/loadUserInfo')
     this.queryCountData()
     this.loadGoodsDetail()
+
+    this.$bus.$on(PURCHASE_GRAB_SUCCESS , this.queryCountData)
   },
   methods:{
     //获取统计数据
