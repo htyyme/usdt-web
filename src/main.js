@@ -6,7 +6,10 @@ import config from "@/config";
 Vue.config.productionTip = false
 
 // import Vant from 'vant';
-// import 'vant/lib/index.css';
+// // import 'vant/lib/index.css';
+// import { Locale } from 'vant';
+//
+//
 // Vue.use(Vant);
 
 import '@/plugin'

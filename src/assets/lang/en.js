@@ -1,5 +1,17 @@
 export default {
     'coin': '₹',
+
+    // vant
+    tel: 'Phone',
+    save: 'Save',
+    confirm: 'Confirm',
+    delete: 'Delete',
+    telEmpty: 'Please fill in the tel',
+    nameEmpty: 'Please fill in the name',
+    nameInvalid: 'Malformed name',
+    confirmDelete: 'Are you sure you want to delete?',
+    telInvalid: 'Malformed phone number',
+
     'lvMember': 'LV{num} MEMBER',
     "tabBarHome": 'home',
     "tabBarOrder": 'order',

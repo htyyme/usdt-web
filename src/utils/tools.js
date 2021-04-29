@@ -120,26 +120,26 @@ export function getAvatar(url) {
 }
 
 //切换全局的货币类型
-export function toggleGlobalCoinType(){
+export function toggleGlobalCoinType() {
     let gcointype = store.getters['system/gcointype']
     if (gcointype === 'coin') {
-        store.commit('system/setGcointype','usdt')
+        store.commit('system/setGcointype', 'usdt')
     } else {
-        store.commit('system/setGcointype','coin')
+        store.commit('system/setGcointype', 'coin')
     }
 }
 
 //根据文字生成颜色
-export function getColorByText(text){
+export function getColorByText(text) {
     //获取第一个字符
     let firstName = text.substring(1, 0);
 
     //根据名字生成背景色
     let tmp = ''
-    for (let i = 0 ; i < text.length; i++){
+    for (let i = 0; i < text.length; i++) {
         tmp += parseInt(text[i].charCodeAt(0), 10).toString(16);
     }
-    const color =  '#' + tmp.slice(1, 4)
+    const color = '#' + tmp.slice(1, 4)
     return color
 }
 
@@ -151,16 +151,16 @@ export function getColorByText(text){
  * @param width 画布宽度
  * @param height 画布高度
  */
-export function createFontAvatar( cvs , name ,width,height ){
+export function createFontAvatar(cvs, name, width, height) {
     //获取名字的第一个字符
     let firstName = name.substring(1, 0);
 
     //根据名字生成背景色
     let tmp = ''
-    for (let i = 0 ; i < name.length; i++){
+    for (let i = 0; i < name.length; i++) {
         tmp += parseInt(name[i].charCodeAt(0), 10).toString(16);
     }
-    const bgColor =  '#' + tmp.slice(1, 4)
+    const bgColor = '#' + tmp.slice(1, 4)
 
 
     cvs.setAttribute('width', width);
@@ -180,8 +180,8 @@ export function createFontAvatar( cvs , name ,width,height ){
 }
 
 
-export function getLvIcon(lv){
-    switch (lv){
+export function getLvIcon(lv) {
+    switch (lv) {
         case 1:
             return require('@/assets/img/vip1.png')
         case 2:
@@ -197,8 +197,8 @@ export function getLvIcon(lv){
     }
 }
 
-export function getLvBgimage(lv){
-    switch (lv){
+export function getLvBgimage(lv) {
+    switch (lv) {
         case 1:
             return require('@/assets/img/vip1-bg.png')
         case 2:
@@ -215,8 +215,8 @@ export function getLvBgimage(lv){
 }
 
 
-export function delHtmlTag(str){
-    return str.replace(/<[^>]+>/g,"");  //正则去掉所有的html标记
+export function delHtmlTag(str) {
+    return str.replace(/<[^>]+>/g, "");  //正则去掉所有的html标记
 }
 
 /*
@@ -233,14 +233,24 @@ export function getDeviceType() {
 }
 
 //下载app
-export function downloadApp(){
+export function downloadApp() {
     let appurl = ''
-    let {protocol,host} = location
+    let {protocol, host} = location
     let device = getDeviceType()
-    if (device === 'ios'){
+    if (device === 'ios') {
         appurl = protocol + "//" + host + 'app.mobileconfig'
-    }else {
+    } else {
         appurl = protocol + "//" + host + 'app.apk'
     }
     openUrl(appurl)
+}
+
+//生成唯一id
+export function nanoid(t = 21) {
+    let e = "", r = crypto.getRandomValues(new Uint8Array(t));
+    for (; t--;) {
+        let n = 63 & r[t];
+        e += n < 36 ? n.toString(36) : n < 62 ? (n - 26).toString(36).toUpperCase() : n < 63 ? "_" : "-"
+    }
+    return e
 }
