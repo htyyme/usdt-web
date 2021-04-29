@@ -523,4 +523,10 @@ export default {
     'confirmUpdateApp':'The latest version is found,do you want to update it',
     'vipinfo1':'The promotion rebate is {num1} {num2} {num3}',
     'vipinfo2':'The number of orders can be swipe until {num} times',
+    'udst':'udst',
+    'My wallet':'My wallet',
+    'Buy':'Buy',
+    'Usdt trading area':'Usdt trading area',
+    'Free to buy and sell':'Free to buy and sell',
+    'GO NOW':'GO NOW',
 }

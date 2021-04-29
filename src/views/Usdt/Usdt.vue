@@ -1,38 +1,38 @@
 <template>
   <div class="usdt-page">
     <header>
-      <div class="title">udst</div>
+      <div class="title">{{$t('udst')}}</div>
     </header>
 
     <div class="assets">
-      <div class="title">My wallte(USDT)</div>
-      <div class="balance">1234.45</div>
+      <div class="title">{{$t('My wallet')}} <span>({{$t('udst')}})</span></div>
+      <div class="balance">{{usdtBalance}}</div>
       <div class="botm">
           <dl>
-            <dt>1234</dt>
-            <dd>earnings</dd>
+            <dt>{{ustd_sell}}</dt>
+            <dd>{{$t('Sell')}}</dd>
           </dl>
         <dl>
-          <dt>1234</dt>
-          <dd>earnings</dd>
+          <dt>{{ustd_buy}}</dt>
+          <dd>{{$t('Buy')}}</dd>
         </dl>
       </div>
     </div>
 
     <nav class="subnav">
       <router-link :to="{name:'UsdtMall'}" class="mall">
-        <p>Usdt trading area</p>
-        <p>Free to buy and sell</p>
-        <div class="go">GO NOW</div>
+        <p>{{$t('Usdt trading area')}}</p>
+        <p>{{$t('Free to buy and sell')}}</p>
+        <div class="go">{{$t('GO NOW')}}</div>
       </router-link>
       <div class="right-link">
         <a href="javascript:;" @click="toUsdtRechargePage">
           <van-icon :name="require('@/assets/icon/sell.png')" size="25"></van-icon>
-          <span>Recharge</span>
+          <span>{{$t('recharge')}}</span>
         </a>
         <a href="javascript:;" @click="toUsdtWithdrawPage">
           <van-icon :name="require('@/assets/icon/sellorder.png')" size="25"></van-icon>
-          <span>Withdraw</span>
+          <span>{{$t('withdraw')}}</span>
         </a>
       </div>
     </nav>
@@ -50,6 +50,26 @@
 <script>
 export default {
   name: "Usdt",
+  computed:{
+    userinfo(){
+      return this.$store.getters['user/userInfo']
+    },
+    usdtaccountinfo(){
+      return this.$store.getters['user/usdtAccount']
+    },
+    usdtBalance(){
+      return this.usdtaccountinfo.available_balance
+    },
+    ustd_buy(){
+      return this.userinfo.ustd_buy
+    },
+    ustd_sell(){
+      return this.userinfo.ustd_sell
+    }
+  },
+  created() {
+    this.$store.dispatch('user/loadUserInfo')
+  },
   methods:{
     toUsdtRechargePage(){
       this.$router.push({
@@ -96,7 +116,9 @@ export default {
     color: #333;
     .title{
       text-align: center;
-
+      span{
+        text-transform: uppercase;
+      }
     }
     .balance{
       font-weight: 700;
