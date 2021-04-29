@@ -16,16 +16,16 @@
 
     <div class="ft">
       <div>
-        <span>number</span>
+        <span>{{$t('number')}}</span>
         <em>{{nums}} USDT</em>
       </div>
       <div>
-        <span>Total price</span>
+        <span>{{$t('Total price')}}</span>
         <em>{{amount | moneyFormat}}</em>
       </div>
     </div>
 
-    <van-button block round  class="sel-btn" :loading="$store.state.gloading" @click="handleSubmit">Buy usdt</van-button>
+    <van-button block round  class="sel-btn" :loading="$store.state.gloading" @click="handleSubmit">{{$t('Buy usdt')}}</van-button>
   </div>
 </template>
 

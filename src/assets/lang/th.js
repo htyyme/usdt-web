@@ -529,4 +529,5 @@ export default {
     'Usdt trading area':'Usdt trading area',
     'Free to buy and sell':'Free to buy and sell',
     'GO NOW':'GO NOW',
+    'Usdt news':'Usdt news',
 }

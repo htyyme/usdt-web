@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <navbar title="Usdt news"></navbar>
+    <navbar :title="$t('Usdt news')"></navbar>
 
     <article>
         <div class="title">{{newsdetail.title}}</div>
