@@ -29,6 +29,7 @@ export default {
 <style scoped lang="scss">
 .home {
   background-color: #f4f4f4;
+  min-height: calc(100vh - 49px);
 }
 
 </style>
