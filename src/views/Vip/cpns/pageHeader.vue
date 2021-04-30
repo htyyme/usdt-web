@@ -6,7 +6,7 @@
     <van-image :src="curlvicon" class="level-icon" fit="contain"></van-image>
 
     <van-steps :active="active" active-color="#FEDF72" >
-      <van-step v-for="(item,index) in viplist">LV.{{index+1}}</van-step>
+      <van-step v-for="(item,index) in viplist" :key="index">LV.{{index+1}}</van-step>
     </van-steps>
 
   </header>
@@ -44,6 +44,12 @@ export default {
       this.$router.push({
         name:'MsgList'
       })
+    }
+  },
+  watch:{
+    curlv(){
+      //当前激活的步骤 = 当前等级 - 1
+      this.active = this.curlv - 1
     }
   }
 }
