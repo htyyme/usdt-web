@@ -9,7 +9,7 @@
         </div>
 
         <div class="pro-rate">
-          <span>{{rateFormat(item.extra2 * item.usdtAttr.multiplying_power)}}</span>
+          <span>{{rateFormat(item.usdt_extra2)}}</span>
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
@@ -22,7 +22,7 @@
 
       <div class="right" @click="toOrderGrabPage(item,'coin')">
         <div class="pro-rate">
-          <span>{{rateFormat(item.extra2 * item.coinAttr.multiplying_power)}}</span>
+          <span>{{rateFormat(item.extra2)}}</span>
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
