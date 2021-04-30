@@ -3,7 +3,6 @@
     <navbar :title="$t('Usdt news')"></navbar>
 
     <div class="wrapper">
-
       <div class="preview-list" :style="previewStyle">
         <van-image
             v-for="(item,index) in imgList"
@@ -15,6 +14,18 @@
       <div class="prev" @click="toPrev" v-show="curIndex!==0"></div>
       <div class="next" @click="toNext" v-show="curIndex!==imgList.length-1"></div>
     </div>
+    
+    
+<!--    <div class="sm-preview-list">-->
+<!--      <van-image-->
+<!--          v-for="(item,index) in imgList"-->
+<!--          :key="index"-->
+<!--          :src="$tools.getImage(item['path'])"-->
+<!--          class="sm-preview-img"-->
+<!--          :class="{active:curIndex===index}"-->
+<!--          @click="toIdx(index)"-->
+<!--      />-->
+<!--    </div>-->
 
   </div>
   
@@ -58,6 +69,10 @@ export default {
       }
       this.curIndex--
       this.translatex  += 10
+    },
+    toIdx(index){
+      this.curIndex = index
+      this.translatex  = -10 *this.curIndex
     }
   }
 }
@@ -84,8 +99,8 @@ export default {
       left: 10px;
       top: 50%;
       transform: translateY(-50%);
-      width: 20px;
-      height: 40px;
+      width: 40px;
+      height: 80px;
       background-color: rgba(0,0,0,.3);
       &::before{
         content: "";
@@ -95,7 +110,7 @@ export default {
         border-left: 3px solid #fff;
         border-bottom: 3px solid #fff;
         transform:  rotate(45deg) ;
-        left: 7px;
+        left: 17px;
         bottom: 0;
         top: 0;
         margin: auto;
@@ -106,8 +121,8 @@ export default {
       right: 10px;
       top: 50%;
       transform: translateY(-50%);
-      width: 20px;
-      height: 40px;
+      width: 40px;
+      height: 80px;
       background-color: rgba(0,0,0,.3);
       &::before{
         content: "";
@@ -117,7 +132,7 @@ export default {
         border-top: 3px solid #fff;
         border-right: 3px solid #fff;
         transform:  rotate(45deg) ;
-        right: 7px;
+        right: 17px;
         bottom: 0;
         top: 0;
         margin: auto;
@@ -143,6 +158,32 @@ export default {
 
   }
 
+  .sm-preview-list{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(255,255,255,.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sm-preview-img{
+      width: 60px;
+      height: 60px;
+      border: 2px solid #95a5a6;
+      transform: scale(.6);
+      filter: blur(2px);
+      transition: .5s;
+      &.active{
+        transform: scale(1.2);
+        filter: blur(0);
+      }
+    }
+  }
 }
 
 </style>
