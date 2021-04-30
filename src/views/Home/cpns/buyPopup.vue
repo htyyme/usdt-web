@@ -116,7 +116,7 @@ export default {
         id: this.productInfo.id,
         amount: this.amount,
       }
-      if (this.$store.state.currencyType=='coin'){
+      if (this.cointype==='coin'){
         submitData.coin_type = 1
       } else {
         submitData.coin_type =  2

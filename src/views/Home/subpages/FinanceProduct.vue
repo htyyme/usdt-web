@@ -95,7 +95,10 @@ export default {
     }
   },
   mounted() {
-    this.$bus.$on(RELOAD_PROFIT_INFO,this.queryProfitInfo)
+    this.$bus.$on(RELOAD_PROFIT_INFO,()=>{
+      this.queryProfitInfo()
+      this.$store.dispatch('user/loadUserInfo')
+    })
     //
     this.queryProducts()
     this.queryProfitInfo()
