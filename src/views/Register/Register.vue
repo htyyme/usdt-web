@@ -155,7 +155,7 @@ export default {
   width: 100vw;
   height: 100vh;
   background: url(~assets/img/login-bg.png) no-repeat;
-  background-size: 375px;
+  background-size: 375px 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
