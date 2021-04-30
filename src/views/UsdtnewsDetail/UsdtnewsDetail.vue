@@ -16,16 +16,16 @@
     </div>
     
     
-<!--    <div class="sm-preview-list">-->
-<!--      <van-image-->
-<!--          v-for="(item,index) in imgList"-->
-<!--          :key="index"-->
-<!--          :src="$tools.getImage(item['path'])"-->
-<!--          class="sm-preview-img"-->
-<!--          :class="{active:curIndex===index}"-->
-<!--          @click="toIdx(index)"-->
-<!--      />-->
-<!--    </div>-->
+    <div class="sm-preview-list">
+      <van-image
+          v-for="(item,index) in imgList"
+          :key="index"
+          :src="$tools.getImage(item['path'])"
+          class="sm-preview-img"
+          :class="{active:curIndex===index}"
+          @click="toIdx(index)"
+      />
+    </div>
 
   </div>
   
