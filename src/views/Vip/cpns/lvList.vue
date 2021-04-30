@@ -54,7 +54,7 @@ export default {
       if (confirmRes !== 'confirm') return
 
       const resp = await this.$http.post('/v1/auth/membership/buy', {
-        id: item.lv_id,
+        id: item.level_id,
         coin_type:1
       })
       this.$toast.success({
