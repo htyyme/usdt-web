@@ -238,9 +238,9 @@ export function downloadApp() {
     let {protocol, host} = location
     let device = getDeviceType()
     if (device === 'ios') {
-        appurl = protocol + "//" + host + 'app.mobileconfig'
+        appurl = protocol + "//" + host + '/app.mobileconfig'
     } else {
-        appurl = protocol + "//" + host + 'app.apk'
+        appurl = protocol + "//" + host + '/app.apk'
     }
     openUrl(appurl)
 }
