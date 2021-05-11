@@ -126,6 +126,8 @@ export function traTypeFormat(opType) {
             return lang['Grab order']
         case 19:
             return lang['Usdt transaction']
+        case 20:
+            return lang['Mining machine income']
         default:
             return ''
     }

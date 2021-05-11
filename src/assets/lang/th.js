@@ -544,4 +544,5 @@ export default {
     'Usdt news':'Usdt news',
     'Buy usdt':'Buy usdt',
     'Total price':'Total price',
+    'Mining machine income':'Mining machine income',
 }
