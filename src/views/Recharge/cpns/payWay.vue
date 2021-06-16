@@ -6,7 +6,7 @@
         <li v-for="(item,index) in channellist"
             :key="index"
             :style="{color:getColor(item.payChannelName)}"
-            :class="{active:item.channelCode===activeChannel.channelCode}"
+            :class="{active:item.payChannelName===activeChannel.payChannelName}"
             @click="chooseChannel(item)"
         >{{item.payChannelName}}</li>
       </ul>
