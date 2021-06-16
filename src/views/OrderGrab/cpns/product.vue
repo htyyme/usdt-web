@@ -9,7 +9,7 @@
       <div class="num">{{ attr.unit_cost | moneyFormat(2,cointype) }}</div>
       <div class="special">{{ $t('specialArea') }}</div>
       <div class="ops">
-        <van-button class="recharge" :to="{name:'RechargeType'}">{{$t('recharge')}}</van-button>
+        <van-button class="recharge" @click="toRecharge">{{$t('recharge')}}</van-button>
         <van-button class="grabbing" :loading="$store.getters['system/gloading']" @click="grabbing">{{$t('grabbing')}}</van-button>
       </div>
     </div>
@@ -29,7 +29,15 @@ export default {
   methods:{
     grabbing(){
       this.$bus.$emit(SHOW_GRABBING)
-    }
+    },
+    toRecharge(){
+      this.$router.push({
+        name:'Recharge',
+        query:{
+          cointype:'coin'
+        }
+      })
+    },
   }
 }
 </script>
