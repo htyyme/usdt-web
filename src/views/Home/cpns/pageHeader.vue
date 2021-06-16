@@ -8,7 +8,7 @@
     </div>
 
     <div class="glass"  :class="assetsClass">
-      <van-icon :name="require('@/assets/icon/toggle.png')" size="20" class="toggle" @click="toggleCoinType"></van-icon>
+    
 
       <div class="balance">
         <dl>

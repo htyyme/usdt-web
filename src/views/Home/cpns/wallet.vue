@@ -16,14 +16,15 @@
     </div>
 
     <div class="option">
-      <router-link :to="{name:'RechargeType'}">
+      <a href="javascript:;" @click="toRecharge">
         <van-icon :name="require('@/assets/icon/recharge.png')" size="23"></van-icon>
         <span>{{$t('recharge')}}</span>
-      </router-link>
-      <router-link :to="{name:'WithdrawType'}">
+      </a>
+
+      <a href="javascript:;" @click="toWithdraw">
         <van-icon :name="require('@/assets/icon/withdraw.png')" size="23"></van-icon>
         <span>{{$t('withdraw')}}</span>
-      </router-link>
+      </a>
     </div>
 
   </div>
@@ -59,6 +60,22 @@ export default {
       // console.log(resp)
       this.usdtCountData = resp.data.usdt
       this.coinCountData = resp.data.coin
+    },
+    toRecharge(){
+      this.$router.push({
+        name:'Recharge',
+        query:{
+          cointype:'coin'
+        }
+      })
+    },
+    toWithdraw(){
+      this.$router.push({
+        name:'Withdraw',
+        query:{
+          cointype:'coin'
+        }
+      })
     }
   }
 }

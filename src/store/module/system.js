@@ -9,7 +9,7 @@ export default {
         config: {},
         contactInfo:{},
         banners1:[],
-        gcointype:'usdt',
+        gcointype:'coin',
         banklist:[]
     },
     mutations: {
