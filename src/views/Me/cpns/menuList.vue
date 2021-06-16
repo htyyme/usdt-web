@@ -37,11 +37,6 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toBusinessPage">
-        <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>
-        <span>{{$t('Business information')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
 
       <li @click="toAboutPage">
         <van-icon :name="require('@/assets/icon/aboutus.png')" size="40"></van-icon>

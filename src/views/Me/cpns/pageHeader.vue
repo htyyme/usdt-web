@@ -15,7 +15,6 @@
     <div class="assets">
       <div class="tit">{{$t('yourTotalAssets')}}:</div>
       <div class="num">
-        <span>{{usdtAvailableBalance|moneyFormat(2,'usdt')}}</span>
         <span>{{coinAvailableBalance|moneyFormat(2,'coin')}}</span>
       </div>
     </div>

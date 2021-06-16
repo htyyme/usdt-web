@@ -2,23 +2,7 @@
   <div class="productList">
 
     <div class="product-item" v-for="item in productList" :key="item.id" :style="{backgroundImage:backgroundImage(item)}">
-      <div class="left" @click="toOrderGrabPage(item,'usdt')">
-        <div class="lv">
-          <van-icon :name="require('@/assets/icon/lv-icon.png')" size="22"></van-icon>
-          <span>{{$t('lvMember',{num:item.extra1})}}</span>
-        </div>
 
-        <div class="pro-rate">
-          <span>{{rateFormat(item.usdt_extra2)}}</span>
-        </div>
-        <div class="goods-info">
-          <div class="tit">{{item.goods_name}}</div>
-          <div class="price">
-            <span>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</span>
-            <span>{{$t('specialArea')}}</span>
-          </div>
-        </div>
-      </div>
 
       <div class="right" @click="toOrderGrabPage(item,'coin')">
         <div class="pro-rate">

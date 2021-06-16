@@ -1,21 +1,39 @@
 <template>
   <div class="wallet">
     
-    <router-link :to="{name:'RechargeType'}">
+    <a href="javascript:;" @click="toRecharge">
       <van-icon :name="require('@/assets/icon/recharge.png')" size="26"></van-icon>
       <span>{{$t('recharge')}}</span>
-    </router-link>
-    <router-link :to="{name:'WithdrawType'}">
+    </a>
+    <a href="javascript:;" @click="toWithdraw">
       <van-icon :name="require('@/assets/icon/withdraw.png')" size="26"></van-icon>
       <span>{{$t('withdraw')}}</span>
-    </router-link>
+    </a>
     
   </div>
 </template>
 
 <script>
 export default {
-  name: "wallet"
+  name: "wallet",
+  methods:{
+    toRecharge(){
+      this.$router.push({
+        name:'Recharge',
+        query:{
+          cointype:'coin'
+        }
+      })
+    },
+    toWithdraw(){
+      this.$router.push({
+        name:'Withdraw',
+        query:{
+          cointype:'coin'
+        }
+      })
+    }
+  }
 }
 </script>
 

@@ -38,13 +38,13 @@ export default {
         },
 
 
-        {
-          name: 'Usdt',
-          title: this.$t('usdt'),
-          icon: require('@/assets/tabbar/transhall.png'),
-          activeIcon: require('@/assets/tabbar/transhall-active.png'),
-          url: '/Usdt'
-        },
+        // {
+        //   name: 'Usdt',
+        //   title: this.$t('usdt'),
+        //   icon: require('@/assets/tabbar/transhall.png'),
+        //   activeIcon: require('@/assets/tabbar/transhall-active.png'),
+        //   url: '/Usdt'
+        // },
 
         {
           name: 'Team',

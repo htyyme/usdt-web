@@ -3,8 +3,6 @@
       <div class="counter">
         <div class="title">{{ $t('yourTotalAssets') }}</div>
         <div class="sub-title">
-          <span>{{usdtTotalAssets | moneyFormat(2,'usdt')}}</span>
-          <em class="line"></em>
           <span>{{coinTotalAssets| moneyFormat(2,'coin')}}</span>
         </div>
 
@@ -12,19 +10,16 @@
           <div class="item">
             <span>{{ $t('interest') }}</span>
             <span>{{ coinprofitInfo.interest | moneyFormat(2,'coin') }}</span>
-            <span>{{ usdtprofitInfo.interest | moneyFormat(2,'usdt') }}</span>
           </div>
 
           <div class="item">
             <span>{{ $t('totalRevenue') }}</span>
             <span>{{ coinprofitInfo.total_revenue | moneyFormat(2,'coin') }}</span>
-            <span>{{ usdtprofitInfo.total_revenue | moneyFormat(2,'usdt') }}</span>
           </div>
 
           <div class="item">
             <span>{{ $t('yesterdaysEarning') }}</span>
             <span>{{ coinprofitInfo.yestaday_amount | moneyFormat(2,'coin') }}</span>
-            <span>{{ usdtprofitInfo.yestaday_amount | moneyFormat(2,'usdt') }}</span>
           </div>
         </div>
 
@@ -34,14 +29,7 @@
         <div class="title">{{$t('financeProduct')}}</div>
 
         <div class="type-item" v-for="item in productList" :key="item.id">
-          <div class="typ type-usdt">
-            <div class="productname">{{item.financial_name}}</div>
-            <div class="tit">{{ $t('oneDay') }} :</div>
-            <div class="irate">{{ $t('interestRate') }}+{{ item.usdt_interest_rate | rateFormat }}</div>
-            <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
-            <div class="totalrate">+{{ totalUsdtRate(item) }}</div>
-            <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>
-          </div>
+
           <div class="typ type-coin">
             <div class="tit">{{ $t('oneDay') }} :</div>
             <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
@@ -213,7 +201,7 @@ export default {
       margin-bottom: 12px;
       .typ{
         height: 100%;
-        width: 165px;
+        width: 347px;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         position: relative;
