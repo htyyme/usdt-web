@@ -81,8 +81,8 @@ export default {
   padding: 9px 15px 0;
 
   .product-item {
-    background-color: rgba(175, 232, 251, .4);
-    //background-image: url(~assets/temp/shopee.png);
+    //background-color: rgba(175, 232, 251, .4);
+    background-color: #44bebf;
     background-size: 150px;
     height: 175px;
     margin-bottom: 10px;
@@ -117,7 +117,8 @@ export default {
       position: relative;
 
       .goods-info {
-        color: #1D6FDF;
+        //color: #1D6FDF;
+        color: #fff;
       }
     }
 
