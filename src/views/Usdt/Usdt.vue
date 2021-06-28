@@ -230,7 +230,7 @@ export default {
     .news-item{
       margin: 10px 15px;
       padding: 15px;
-      height: 70px;
+      //height: 70px;
       border: 1px solid #ccc;
       border-radius: 10px;
       background-size: cover;
