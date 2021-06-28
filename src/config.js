@@ -6,10 +6,10 @@ export default {
     isApp: IS_APP,
     apkVersion: '1.0.3', //版本
     appName: 'jdmoney',//网站标题
-    host: 'https://usdtweb.2004.tk/',//网站域名
+    host: 'http://vicaro.in/',//网站域名
     encryptKey: '4n3I6Hni50YsyUgTix0CL01Z',
     locale: 'en',//默认语言
     timezone: 'Asia/Bangkok', //时区
     //接口地址
-    baseApiUrl: IS_APP ? 'http://localhost:8080' : '/'
+    baseApiUrl: IS_APP ? 'http://vicaro.in/' : '/'
 }
