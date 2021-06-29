@@ -242,9 +242,9 @@ export default {
       .content{
         font-size: 14px;
         color: #666;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        //overflow: hidden;
+        //text-overflow: ellipsis;
+        //white-space: nowrap;
         margin-top: 2px;
       }
     }
