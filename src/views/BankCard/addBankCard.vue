@@ -23,17 +23,17 @@
         <dd><input type="text"  :placeholder="$t('Please enter mobile')" v-model="form.mobile" ></dd>
       </dl>
 
-      <dl  v-if="showUpiIfsc">
+      <dl  v-if="showIfsc">
         <dt>{{$t('IFSC')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter IFSC code')" v-model="form.bank_code"></dd>
       </dl>
 
-      <dl  v-if="showUpiIfsc">
+      <dl  v-if="showUpi">
         <dt>{{$t('UPI')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter upi number')" v-model="form.upi"></dd>
       </dl>
 
-      <dl v-if="isSendSms">
+      <dl v-if="form.id && isSendSms">
         <dt>{{$t('Verification code')}}</dt>
         <dd>
           <input type="text"  :placeholder="$t('Verification code')" v-model="form.sms_code">
@@ -99,8 +99,11 @@ export default {
     isSendSms(){
       return this.$store.getters['system/config'].isSendSms
     },
-    showUpiIfsc(){
-      return this.$store.getters['system/config'].show_upi_ifsc
+    showUpi(){
+      return this.$store.getters['system/config'].showUpi
+    },
+    showIfsc(){
+      return this.$store.getters['system/config'].showIfsc
     },
     userinfo(){
       return this.$store.getters['user/userInfo']

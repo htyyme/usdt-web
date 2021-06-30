@@ -67,9 +67,14 @@ export default {
             }
 
             if (config.show_upi_ifsc == '1'){
-                config.show_upi_ifsc = true
+                config.showUpi = true
             } else {
-                config.show_upi_ifsc = false
+                config.showUpi = false
+            }
+            if (config.show_ifsc == '1'){
+                config.showIfsc = true
+            } else {
+                config.showIfsc = false
             }
             commit('setConfig',config)
             return config
