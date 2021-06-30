@@ -15,7 +15,7 @@
 
       <dl>
         <dt>{{$t('Opening Bank')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please select opening bank')" :value="form.opening_bank" readonly  @click="showPicker = true"></dd>
+        <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
       </dl>
 
       <dl>
