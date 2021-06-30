@@ -40,6 +40,7 @@
             <div class="irate">{{ $t('interestRate') }}+{{ item.usdt_interest_rate | rateFormat }}</div>
             <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
             <div class="totalrate">+{{ totalUsdtRate(item) }}</div>
+            <div class="desc">{{item.usdt_desc}}</div>
             <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>
           </div>
           <div class="typ type-coin">
@@ -47,6 +48,7 @@
             <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
             <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
             <div class="totalrate">+{{ totalRate(item) }}</div>
+            <div class="desc">{{item.coin_desc}}</div>
             <div class="bot-btn"  @click="openBuy(item,'coin')">COIN</div>
           </div>
         </div>
@@ -221,14 +223,14 @@ export default {
           font-size: 13px;
           color: #333333;
           text-align: center;
-          padding-top: 60px;
+          padding-top: 53px;
           font-weight: 700;
         }
         .irate{
           font-size: 13px;
           font-weight: 800;
           color: #F97D1D;
-          padding-top: 6px;
+          padding-top: 4px;
           text-align: center;
         }
         .setdat{
@@ -237,7 +239,7 @@ export default {
           line-height: 13px;
           color: #333333;
           text-align: center;
-          margin-top: 10px;
+          margin-top: 8px;
         }
         .totalrate{
           min-width: 65px;
@@ -247,12 +249,19 @@ export default {
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          margin: 11px auto 0;
+          margin: 9px auto 0;
           padding: 0 20px;
           color: #fff;
           position: relative;
           left: 50%;
           transform: translateX(-50%);
+        }
+        .desc{
+          font-size: 12px;
+          text-align: center;
+          margin-top: 3px;
+          font-weight: 700;
+          color: #F97D1D;
         }
         .bot-btn{
           position: absolute;

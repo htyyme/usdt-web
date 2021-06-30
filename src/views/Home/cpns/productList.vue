@@ -13,6 +13,7 @@
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
+          <div class="desc">{{item.usdt_desc}}</div>
           <div class="price">
             <span>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</span>
             <span>{{$t('specialArea')}}</span>
@@ -26,6 +27,7 @@
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
+          <div class="desc">{{item.coin_desc}}</div>
           <div class="price">
             <span>{{item.coinAttr.unit_cost | moneyFormat}}</span>
             <span>{{$t('specialArea')}}</span>
@@ -166,18 +168,25 @@ export default {
       position: absolute;
       width: 100%;
       bottom: 0;
-      height: 70px;
+      height: 80px;
       color: #fff;
       text-align: center;
       font-weight: 700;
 
       .tit {
-        font-size: 21px;
+        font-size: 19px;
       }
-
+      .desc{
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #f8b0b7;
+        padding: 3px 10px;
+        transform: scale(.9);
+      }
       .price {
         font-size: 15px;
-        padding-top: 5px;
 
         span:nth-child(1) {
           padding-right: 5px;

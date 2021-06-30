@@ -6,8 +6,10 @@
 
     <div class="prod-bg">
       <div class="lv-tit">{{$t('lvMember',{num:goodsinfo.extra1})}}</div>
+      <div class="desc">{{goodsinfo.goods_intro}}</div>
       <div class="num">{{ attr.unit_cost | moneyFormat(2,cointype) }}</div>
       <div class="special">{{ $t('specialArea') }}</div>
+
       <div class="ops">
         <van-button class="recharge" :to="{name:'RechargeType'}">{{$t('recharge')}}</van-button>
         <van-button class="grabbing" :loading="$store.getters['system/gloading']" @click="grabbing">{{$t('grabbing')}}</van-button>
@@ -72,12 +74,22 @@ export default {
       text-align: center;
       font-weight: 700;
       font-size: 30px;
-      padding-top: 10px;
+      //padding-top: 10px;
     }
     .special{
       text-align: center;
       color: #1F70DF;
       padding-top: 1px;
+    }
+    .desc{
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #1F70DF;
+      padding: 3px 10px;
+      transform: scale(.9);
+      text-align: center;
     }
     .ops{
       position: absolute;
