@@ -1,7 +1,7 @@
 <template>
   <div class="mission">
     <div class="item" v-for="item in list" :key="item.id" @click="toDetailPage(item)">
-      <van-image :src="item.show_pic" ></van-image>
+      <van-image :src="$tools.getImage(item.show_pic)" ></van-image>
 
       <div class="overlay">
         <span class="activity_name">{{item.activity_name}}</span>
