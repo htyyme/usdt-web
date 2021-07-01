@@ -9,6 +9,7 @@
             :key="index"
             :src="$tools.getImage(item['path'])"
             class="preview-img"
+            fit="contain"
         />
       </div>
       <div class="prev" @click="toPrev" v-show="curIndex!==0"></div>
@@ -87,12 +88,13 @@ export default {
   .wrapper{
     position: absolute;
     width: 100%;
-    height: 300px;
+    height: 500px;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
+    transform: translateY(-20px);
 
     .prev{
       position: absolute;
@@ -162,7 +164,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 80px;
-    bottom: 50px;
+    bottom: 20px;
     left: 0;
     right: 0;
     margin: auto;
