@@ -378,6 +378,14 @@ const routes = [
             title:'Mission'
         }
     },
+    {
+        name:'Success',
+        path:'/Success',
+        component:()=>import('@/views/Success/Success'),
+        meta:{
+            title:'Success'
+        }
+    },
 ]
 
 const router = new VueRouter({
