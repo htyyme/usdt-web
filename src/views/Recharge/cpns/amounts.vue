@@ -27,7 +27,13 @@ export default {
   computed: {
     //充值金额列表
     amountList() {
-      let charge_range = this.$store.getters['system/config'].charge_range
+      let charge_range = ''
+      if (this.cointype=='coin'){
+        charge_range = this.$store.getters['system/config'].charge_range
+      }else if (this.cointype=='usdt'){
+        charge_range = this.$store.getters['system/config'].usdt_charge_range
+      }
+
       return charge_range.split(',')
     },
   },
