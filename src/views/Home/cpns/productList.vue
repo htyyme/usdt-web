@@ -9,7 +9,8 @@
         </div>
 
         <div class="pro-rate">
-          <span>{{rateFormat(item.usdt_extra2)}}</span>
+<!--          <span>{{rateFormat(item.usdt_extra2)}}</span>-->
+          <span>{{item.usdtAttr.unit_cost * item.usdtAttr.multiplying_power * max_grab}}</span>
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
@@ -23,7 +24,8 @@
 
       <div class="right" @click="toOrderGrabPage(item,'coin')">
         <div class="pro-rate">
-          <span>{{rateFormat(item.extra2)}}</span>
+<!--          <span>{{rateFormat(item.extra2)}}</span>-->
+          <span>{{item.coinAttr.unit_cost * item.coinAttr.multiplying_power * max_grab}}</span>
         </div>
         <div class="goods-info">
           <div class="tit">{{item.goods_name}}</div>
@@ -57,6 +59,9 @@ export default {
   computed:{
     backgroundImage(){
       return item => `url(${this.$tools.getImage(item.goods_desc)})`
+    },
+    max_grab(){
+      return this.$store.getters['system/config'].max_grab
     }
   },
   methods:{
