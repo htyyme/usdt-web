@@ -30,19 +30,25 @@ export default {
 
 
     toDetailPage(item){
-      if (item.activity_type == 1){
-        this.$router.push({
-          name:'InviteTask'
-        })
-      } else {
-        this.$router.push({
-          name:'ActivityDetail',
-          query:{
-            id:item.id
-          }
-        })
-      }
+      // if (item.activity_type == 1){
+      //   this.$router.push({
+      //     name:'InviteTask'
+      //   })
+      // } else {
+      //   this.$router.push({
+      //     name:'ActivityDetail',
+      //     query:{
+      //       id:item.id
+      //     }
+      //   })
+      // }
 
+      this.$router.push({
+        name:'ActivityDetail',
+        query:{
+          id:item.id
+        }
+      })
     }
   }
 }
