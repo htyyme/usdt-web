@@ -370,6 +370,14 @@ const routes = [
             title:"Usdt news"
         }
     },
+    {
+        name:'InviteTask',
+        path:'/InviteTask',
+        component:()=>import('@/views/InviteTask/InviteTask'),
+        meta:{
+            title:'Mission'
+        }
+    },
 ]
 
 const router = new VueRouter({

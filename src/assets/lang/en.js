@@ -540,6 +540,14 @@ export default {
     'Mining machine income':'Mining machine income',
     'Promotion Detail':'Promotion Detail',
     'GET':'GET',
+    'Mission':'Mission',
+    'Total People':'Total People',
+    'To invite friends':'To invite friends',
+    'Invited':'Invited',
+    'Task reward':'Task reward',
+    'Receive':'Receive',
+    'Received the amount':'Received the amount',
+    'valid member':'valid member',
 
 
 

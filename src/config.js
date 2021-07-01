@@ -2,7 +2,7 @@
 const IS_APP = false
 
 export default {
-    env: 'prod',//dev/prod
+    env: 'dev',//dev/prod
     isApp: IS_APP,
     apkVersion: '1.0.3', //版本
     appName: 'jdmoney',//网站标题

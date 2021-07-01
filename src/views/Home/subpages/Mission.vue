@@ -26,13 +26,23 @@ export default {
       const resp = await this.$http.post('/v1/activity/queryActivityList')
       this.list = resp.data || []
     },
+
+
+
     toDetailPage(item){
-      this.$router.push({
-        name:'ActivityDetail',
-        query:{
-          id:item.id
-        }
-      })
+      if (item.activity_type == 1){
+        this.$router.push({
+          name:'InviteTask'
+        })
+      } else {
+        this.$router.push({
+          name:'ActivityDetail',
+          query:{
+            id:item.id
+          }
+        })
+      }
+
     }
   }
 }
