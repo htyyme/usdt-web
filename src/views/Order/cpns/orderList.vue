@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import {SHOW_GRAB_ORDER_DETAILS} from "@/utils/events";
+import {PURCHASE_GRAB_SUCCESS, SHOW_GRAB_ORDER_DETAILS} from "@/utils/events";
 import {rateFormat} from "@/utils/filters";
 
 export default {
@@ -50,6 +50,13 @@ export default {
         tp: 7,
       }
     }
+  },
+  created() {
+    this.$bus.$on(PURCHASE_GRAB_SUCCESS,()=>{
+      this.finished = false
+      this.list = []
+      this.queryInfo.page = 0
+    })
   },
   methods:{
     async loadData () {
@@ -100,6 +107,9 @@ export default {
     rateFormat(val){
       return rateFormat(val)
     }
+  },
+  destroyed() {
+    this.$bus.$off(PURCHASE_GRAB_SUCCESS)
   }
 }
 </script>
