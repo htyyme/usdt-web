@@ -106,7 +106,7 @@ export default {
   .product-item {
     //background-color: rgba(175, 232, 251, .4);
     //background-image: url(~assets/temp/shopee.png);
-    background-color: #44bebf;
+    //background-color: #44bebf;
     background-size: 150px;
     height: 175px;
     margin-bottom: 10px;
@@ -117,7 +117,7 @@ export default {
 
     .left {
       flex: 1;
-      background-color: rgba(39, 127, 227, .78);
+      //background-color: rgba(39, 127, 227, .78);
       border-radius: 10px;
       position: relative;
 
