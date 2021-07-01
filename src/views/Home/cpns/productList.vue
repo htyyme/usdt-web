@@ -8,33 +8,33 @@
           <span>{{$t('lvMember',{num:item.extra1})}}</span>
         </div>
 
-        <div class="pro-rate">
-<!--          <span>{{rateFormat(item.usdt_extra2)}}</span>-->
-          <span>{{item.usdtAttr.unit_cost * item.usdtAttr.multiplying_power * max_grab}}</span>
-        </div>
-        <div class="goods-info">
-          <div class="tit">{{item.goods_name}}</div>
-          <div class="desc">{{item.usdt_desc}}</div>
-          <div class="price">
-            <span>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</span>
-            <span>{{$t('specialArea')}}</span>
-          </div>
-        </div>
+<!--        <div class="pro-rate">-->
+<!--&lt;!&ndash;          <span>{{rateFormat(item.usdt_extra2)}}</span>&ndash;&gt;-->
+<!--          <span>{{item.usdtAttr.unit_cost * item.usdtAttr.multiplying_power * max_grab}}</span>-->
+<!--        </div>-->
+<!--        <div class="goods-info">-->
+<!--          <div class="tit">{{item.goods_name}}</div>-->
+<!--          <div class="desc">{{item.usdt_desc}}</div>-->
+<!--          <div class="price">-->
+<!--            <span>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</span>-->
+<!--            <span>{{$t('specialArea')}}</span>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
 
       <div class="right" @click="toOrderGrabPage(item,'coin')">
-        <div class="pro-rate">
-<!--          <span>{{rateFormat(item.extra2)}}</span>-->
-          <span>{{item.coinAttr.unit_cost * item.coinAttr.multiplying_power * max_grab}}</span>
-        </div>
-        <div class="goods-info">
-          <div class="tit">{{item.goods_name}}</div>
-          <div class="desc">{{item.coin_desc}}</div>
-          <div class="price">
-            <span>{{item.coinAttr.unit_cost | moneyFormat}}</span>
-            <span>{{$t('specialArea')}}</span>
-          </div>
-        </div>
+<!--        <div class="pro-rate">-->
+<!--&lt;!&ndash;          <span>{{rateFormat(item.extra2)}}</span>&ndash;&gt;-->
+<!--          <span>{{item.coinAttr.unit_cost * item.coinAttr.multiplying_power * max_grab}}</span>-->
+<!--        </div>-->
+<!--        <div class="goods-info">-->
+<!--          <div class="tit">{{item.goods_name}}</div>-->
+<!--          <div class="desc">{{item.coin_desc}}</div>-->
+<!--          <div class="price">-->
+<!--            <span>{{item.coinAttr.unit_cost | moneyFormat}}</span>-->
+<!--            <span>{{$t('specialArea')}}</span>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
     </div>
 
