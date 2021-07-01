@@ -63,10 +63,12 @@ export default {
     line-height: 0.4rem;
     color: #FFFFFF;
 
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    //position: absolute;
+    //bottom: 20px;
+    //left: 50%;
+    //transform: translateX(-50%);
+    display: block;
+    margin: 10px auto;
 
     &.Received{
       background: #ccc !important;
@@ -77,7 +79,8 @@ export default {
 
 .content-wrapper{
   img{
-    max-width: 370px;
+    //max-width: 370px;
+    max-width: 100%;
   }
 }
 
