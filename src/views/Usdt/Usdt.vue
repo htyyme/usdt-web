@@ -246,6 +246,7 @@ export default {
         //text-overflow: ellipsis;
         //white-space: nowrap;
         margin-top: 2px;
+        word-break: break-all;
       }
     }
   }
