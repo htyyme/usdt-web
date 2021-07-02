@@ -35,7 +35,9 @@ export default {
   },
   methods: {
     handleOpen() {
-      this.show = true
+      if (this.content.length>0){
+        this.show = true
+      }
     },
     handleClose() {
       this.show = false
