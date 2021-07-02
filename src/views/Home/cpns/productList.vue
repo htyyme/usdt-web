@@ -109,6 +109,7 @@ export default {
     //background-color: #44bebf;
     //background-size: 150px;
     background-size: contain;
+    background-repeat: no-repeat;
     height: 175px;
     margin-bottom: 10px;
     border-radius: 10px;
