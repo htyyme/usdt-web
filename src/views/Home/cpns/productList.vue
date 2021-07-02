@@ -112,9 +112,9 @@ export default {
     background-repeat: no-repeat;
     height: 175px;
     margin-bottom: 10px;
-    border-radius: 10px;
+    //border-radius: 10px;
     display: flex;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
 
     .left {
