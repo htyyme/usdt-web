@@ -108,6 +108,7 @@ export default {
     //background-image: url(~assets/temp/shopee.png);
     //background-color: #44bebf;
     //background-size: 150px;
+    background-size: contain;
     height: 175px;
     margin-bottom: 10px;
     border-radius: 10px;
