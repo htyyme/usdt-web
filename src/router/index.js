@@ -68,6 +68,15 @@ const routes = [
                     showTabbar:true
                 },
             },
+            {
+                path:'InviteTask',
+                name:'InviteTask',
+                component:()=>import('@/views/Home/subpages/InviteTask'),
+                meta:{
+                    title:"Mission",
+                    showTabbar:true
+                },
+            },
         ]
     },
     {

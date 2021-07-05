@@ -16,7 +16,7 @@
     <!--        <van-image :src="require('@/assets/icon/mission.png')"></van-image>-->
     <!--        <span>Mission</span>-->
     <!--      </li>-->
-    <router-link :to="{name:'Mission'}" tag="li">
+    <router-link :to="{name:'InviteTask'}" tag="li">
       <van-image :src="require('@/assets/icon/mission.png')"></van-image>
       <span>{{$t('Activity')}}</span>
     </router-link>

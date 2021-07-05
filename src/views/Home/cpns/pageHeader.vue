@@ -77,6 +77,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @keyframes fliker {
+    0%{
+      opacity: 0;
+      transform: scale(0);
+    }
+    100%{
+      opacity: 1;
+      transform: scale(2);
+    }
+  }
   header {
     height: 185px;
     background: #3CA1EB;
@@ -104,6 +114,18 @@ export default {
       .message {
         position: absolute;
         right: 16px;
+        &::after{
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #f00;
+          box-shadow: 0 0 1px 1px rgba(255,0,0,.3);
+          position: absolute;
+          right: -1px;
+          top: 0;
+          animation: fliker 1s linear  infinite ;
+        }
       }
     }
 
