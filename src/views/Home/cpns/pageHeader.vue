@@ -78,10 +78,7 @@ export default {
       })
     },
     async loadmsg(){
-      const resp = await this.$http.post('/v1/auth/msgs', {
-        page:1,
-        pageSize:1
-      })
+      const resp = await this.$http.post('/v1/auth/msgs/new',{})
       // console.log(resp)
       this.has_new = resp.data.has_new
     }
