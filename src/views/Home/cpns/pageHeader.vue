@@ -4,7 +4,7 @@
       <span class="hi">hi</span>
       <span class="name">{{userInfo.member_name}}</span>
       <van-icon :name="require('@/assets/icon/lv-icon.png')" size="24" class="lv-icon"></van-icon>
-      <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message" @click="toMessagePage"></van-icon>
+      <van-icon :name="require('@/assets/icon/message.png')" size="24" class="message" :class="{has_new:has_new!=0}" @click="toMessagePage"></van-icon>
     </div>
 
     <div class="glass"  :class="assetsClass">
@@ -60,8 +60,14 @@ export default {
     },
 
   },
-
-
+  data(){
+    return {
+      has_new:0
+    }
+  },
+  created() {
+    this.loadmsg()
+  },
   methods:{
     toggleCoinType(){
       this.$tools.toggleGlobalCoinType()
@@ -70,6 +76,14 @@ export default {
       this.$router.push({
         name:'MsgList'
       })
+    },
+    async loadmsg(){
+      const resp = await this.$http.post('/v1/auth/msgs', {
+        page:1,
+        pageSize:1
+      })
+      // console.log(resp)
+      this.has_new = resp.data.has_new
     }
 
   }
@@ -114,7 +128,8 @@ export default {
       .message {
         position: absolute;
         right: 16px;
-        &::after{
+
+        &.has_new::after{
           content: "";
           width: 6px;
           height: 6px;
@@ -127,6 +142,7 @@ export default {
           animation: fliker 1s linear  infinite ;
         }
       }
+
     }
 
     .glass{
