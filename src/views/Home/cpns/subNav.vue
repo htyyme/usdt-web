@@ -18,7 +18,7 @@
     <!--      </li>-->
     <router-link :to="{name:'InviteTask'}" tag="li">
       <van-image :src="require('@/assets/icon/mission.png')"></van-image>
-      <span>{{$t('Activity')}}</span>
+      <span>{{$t('Activity bonus')}}</span>
     </router-link>
   </ul>
 </template>

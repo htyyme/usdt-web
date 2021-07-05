@@ -548,6 +548,7 @@ export default {
     'Receive':'Receive',
     'Received the amount':'Received the amount',
     'valid member':'valid member',
+    'Activity bonus':'Activity bonus',
 
 
 
