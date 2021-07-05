@@ -1,7 +1,7 @@
 <template>
   <div class="swiper-cpn">
     <van-swipe class="my-swipe" :autoplay="6000" indicator-color="white">
-      <van-swipe-item v-for="item in banners" :key="item.id">
+      <van-swipe-item v-for="item in banners" :key="item.id" @click="jump(item)">
         <van-image :src="$tools.getImage(item.image_url)"></van-image>
       </van-swipe-item>
     </van-swipe>
@@ -21,9 +21,13 @@ export default {
   },
   methods: {
     loadbanners() {
-      if (this.banners.length === 0) {
+      // if (this.banners.length === 0) {
         this.$store.dispatch('system/loadBanners1')
-      }
+      // }
+    },
+    jump(item){
+      let url = item.obcy_adres
+      this.$tools.openUrl(url)
     }
   }
 }

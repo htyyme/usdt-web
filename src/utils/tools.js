@@ -3,6 +3,7 @@ import store from "@/store";
 import appConfig from "@/config";
 import messages from "@/assets/lang/messages";
 import request from "@/utils/request";
+import router from "@/router";
 
 /**
  * 获取语言包里的某个值
@@ -62,7 +63,12 @@ export function checkBankcardNo(cardNo) {
 //打开一个链接
 export function openUrl(url) {
     if (!url) return
-    window.open(url)
+    if (!url) return
+    if (url.startsWith('http')){
+        window.open(url)
+    } else {
+        router.push(url)
+    }
 
 
     // if (!url.startsWith('http')) {
