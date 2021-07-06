@@ -43,6 +43,7 @@
       <div class="news-item" v-for="item in newslist" :key="item.id" :style="itemStyle(item)" @click="toNewsDetail(item)">
         <div class="title">{{item.title}}</div>
         <div class="content">{{getShotcontent(item)}}</div>
+        <a href="javascript:;" class="link" @click.stop="tolink(item)">{{item.link}}</a>
       </div>
     </div>
   </div>
@@ -124,6 +125,9 @@ export default {
       }else {
         this.$router.push({name:'UsdtMall'})
       }
+    },
+    tolink(newsitem){
+      this.$tools.openUrl(newsitem.link)
     }
   }
 }
@@ -259,6 +263,11 @@ export default {
         //text-overflow: ellipsis;
         //white-space: nowrap;
         margin-top: 2px;
+        word-break: break-all;
+      }
+      .link{
+        color: #e74c3c;
+        font-weight: 700;
         word-break: break-all;
       }
     }
