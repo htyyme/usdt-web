@@ -1,11 +1,11 @@
 <template>
   <div class="trx">
-    <navbar :title="$t('Trx Wallet Account')"></navbar>
+    <navbar :title="$t('USDT Wallet Account')"></navbar>
 
 
     <van-form @submit="onSubmit">
 
-      <van-field :label="$t('Trx Wallet Account')" v-model="trx_account" :readonly="trxaccountReadonly"/>
+      <van-field :label="$t('USDT Wallet Account')" v-model="trx_account" :readonly="trxaccountReadonly"/>
 
 
       <div style="margin: 16px;" v-if="!trxaccountReadonly">
