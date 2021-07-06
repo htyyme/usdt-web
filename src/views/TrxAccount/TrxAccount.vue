@@ -1,17 +1,14 @@
 <template>
-  <div class="settings">
-    <navbar :title="$t('Setting')"></navbar>
+  <div class="trx">
+    <navbar :title="$t('Trx Account')"></navbar>
 
 
     <van-form @submit="onSubmit">
-      <van-field :label="$t('Phone Number')" v-model="phone" readonly/>
-      <van-field :label="$t('Nickname')" v-model="nickname"/>
-      <van-field :label="$t('Real Name')" v-model="realname"/>
-      <van-field :label="$t('trxaccount')" v-model="trx_account" :readonly="trxaccountReadonly"/>
-      <van-cell :title="$t('Login Password')" is-link  :to="{name:'ChangePass'}"/>
-      <van-cell :title="$t('Payment Password')" is-link  :to="{name:'PaymentPassword'}"/>
 
-      <div style="margin: 16px;">
+      <van-field :label="$t('trxaccount')" v-model="trx_account" :readonly="trxaccountReadonly"/>
+
+
+      <div style="margin: 16px;" v-if="!trxaccountReadonly">
         <van-button round block native-type="submit" :loading="$store.getters['system/gloading']" class="save-btn">{{$t('Save')}}</van-button>
       </div>
     </van-form>
@@ -23,7 +20,7 @@
 
 
 export default {
-  name: "Setting",
+  name: "TrxAccount",
   data(){
     return {
       nickname:"",
@@ -70,10 +67,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.settings{
+.trx{
   background-color: rgba(232, 232, 232, 0.3);
   height: 100vh;
 }
+
 .save-btn{
   width: 220px;
   height: 40px;

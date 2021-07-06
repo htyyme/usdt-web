@@ -63,7 +63,7 @@ export default {
           return
         }
         this.$router.push({
-          name:'Setting'
+          name:'TrxAccount'
         })
       }
     }

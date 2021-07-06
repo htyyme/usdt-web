@@ -19,6 +19,12 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
+      <li @click="toTaxaccountPage">
+        <van-icon :name="require('@/assets/icon/bankcard.png')" size="40"></van-icon>
+        <span>{{$t('Trx Account')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
       <li @click="toWithdrawRecordPage">
         <van-icon :name="require('@/assets/icon/withdrawrecord.png')" size="40"></van-icon>
         <span>{{$t('Withdraw record')}}</span>
@@ -101,6 +107,11 @@ export default {
     toFinancedetail(){
       this.$router.push({
         name:'FinanceDetail'
+      })
+    },
+    toTaxaccountPage(){
+      this.$router.push({
+        name:'TrxAccount'
       })
     },
     async signOut(){

@@ -148,6 +148,14 @@ const routes = [
         }
     },
     {
+        path:"/TrxAccount",
+        name:'TrxAccount',
+        component:()=>import('@/views/TrxAccount/TrxAccount'),
+        meta:{
+            title:"Trx Account"
+        }
+    },
+    {
         path:"/ChangePass",
         name:'ChangePass',
         component:()=>import('@/views/ChangePass/ChangePass'),
