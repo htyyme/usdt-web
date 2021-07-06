@@ -20,11 +20,12 @@
     </div>
 
     <nav class="subnav">
-      <router-link :to="{name:'UsdtMall'}" class="mall">
+      <div  class="mall" @click="toUsdtMall">
         <p>{{$t('Usdt trading area')}}</p>
         <p>{{$t('Free to buy and sell')}}</p>
         <div class="go">{{$t('GO NOW')}}</div>
-      </router-link>
+      </div>
+
       <div class="right-link">
         <a href="javascript:;" @click="toUsdtRechargePage">
           <van-icon :name="require('@/assets/icon/sell.png')" size="25"></van-icon>
@@ -70,6 +71,9 @@ export default {
     },
     ustd_sell(){
       return this.userinfo.ustd_sell
+    },
+    show_usdt_trading(){
+      return this.$store.getters['system/config'].show_usdt_trading
     }
   },
   created() {
@@ -111,6 +115,15 @@ export default {
     },
     getShotcontent(item){
       return this.$tools.delHtmlTag(item.content).trim()
+    },
+    toUsdtMall(){
+      if (this.show_usdt_trading == '0'){
+        this.$dialog.alert({
+          message:this.$t('It is not open for the time being.')
+        })
+      }else {
+        this.$router.push({name:'UsdtMall'})
+      }
     }
   }
 }

@@ -556,4 +556,5 @@ export default {
     'Received the amount':'Received the amount',
     'valid member':'valid member',
     'Activity bonus':'Activity bonus',
+    'It is not open for the time being.':'It is not open for the time being.',
 }
