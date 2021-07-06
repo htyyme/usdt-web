@@ -3,7 +3,7 @@
       <div class="counter">
         <div class="title">{{ $t('yourTotalAssets') }}</div>
         <div class="sub-title">
-          <span>{{usdtTotalAssets | moneyFormat(2,'usdt')}}</span>
+          <span>{{usdtTotalAssets | moneyFormat(5,'usdt')}}</span>
           <em class="line"></em>
           <span>{{coinTotalAssets| moneyFormat(2,'coin')}}</span>
         </div>
@@ -12,19 +12,19 @@
           <div class="item">
             <span>{{ $t('interest') }}</span>
             <span>{{ coinprofitInfo.interest | moneyFormat(2,'coin') }}</span>
-            <span>{{ usdtprofitInfo.interest | moneyFormat(2,'usdt') }}</span>
+            <span>{{ usdtprofitInfo.interest | moneyFormat(5,'usdt') }}</span>
           </div>
 
           <div class="item">
             <span>{{ $t('totalRevenue') }}</span>
             <span>{{ coinprofitInfo.total_revenue | moneyFormat(2,'coin') }}</span>
-            <span>{{ usdtprofitInfo.total_revenue | moneyFormat(2,'usdt') }}</span>
+            <span>{{ usdtprofitInfo.total_revenue | moneyFormat(5,'usdt') }}</span>
           </div>
 
           <div class="item">
             <span>{{ $t('yesterdaysEarning') }}</span>
             <span>{{ coinprofitInfo.yestaday_amount | moneyFormat(2,'coin') }}</span>
-            <span>{{ usdtprofitInfo.yestaday_amount | moneyFormat(2,'usdt') }}</span>
+            <span>{{ usdtprofitInfo.yestaday_amount | moneyFormat(5,'usdt') }}</span>
           </div>
         </div>
 

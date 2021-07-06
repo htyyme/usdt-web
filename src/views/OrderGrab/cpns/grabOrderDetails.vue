@@ -19,7 +19,7 @@
 
     <dl>
       <dt>{{ $t('expectedReturn') }}:</dt>
-      <dd class="money">+{{ (order.win_amount + order.amount) | moneyFormat(2 , cointype) }}</dd>
+      <dd class="money">+{{ (order.win_amount ) | moneyFormat(2 , cointype) }}</dd>
     </dl>
 
 

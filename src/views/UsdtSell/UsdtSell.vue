@@ -9,7 +9,7 @@
 
       <div class="bd">
         <div class="tit">{{$t('Usdt Balance')}}</div>
-        <div class="num">{{usdtAccount.available_balance | moneyFormat(2,'usdt')}}</div>
+        <div class="num">{{usdtAccount.available_balance | moneyFormat(5,'usdt')}}</div>
       </div>
 
     </header>

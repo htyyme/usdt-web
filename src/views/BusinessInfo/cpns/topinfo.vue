@@ -1,7 +1,7 @@
 <template>
   <div class="topinfo">
     <dl>
-      <dt>{{sell_num | moneyFormat(2,'usdt')}}</dt>
+      <dt>{{sell_num | moneyFormat(5,'usdt')}}</dt>
       <dd>{{$t('Quantity sold')}}</dd>
     </dl>
 

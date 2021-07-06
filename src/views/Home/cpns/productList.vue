@@ -16,7 +16,7 @@
 <!--          <div class="tit">{{item.goods_name}}</div>-->
 <!--          <div class="desc">{{item.usdt_desc}}</div>-->
 <!--          <div class="price">-->
-<!--            <span>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</span>-->
+<!--            <span>{{item.usdtAttr.unit_cost | moneyFormat(5,'usdt')}}</span>-->
 <!--            <span>{{$t('specialArea')}}</span>-->
 <!--          </div>-->
 <!--        </div>-->

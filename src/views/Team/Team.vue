@@ -14,7 +14,7 @@
         </div>
       </section>
       <section>
-        <div class="num">{{usdtpromote | moneyFormat(2,'usdt')}}</div>
+        <div class="num">{{usdtpromote | moneyFormat(5,'usdt')}}</div>
         <div class="dt">
           <van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>
           <span>{{$t('rebate')}}(U)</span>
@@ -51,7 +51,7 @@
             <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>
             <div class="mul">
               <em>+{{item.promote | moneyFormat(2,'coin')}}</em>
-              <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(2,'usdt')}}</em>
+              <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(5,'usdt')}}</em>
             </div>
           </dd>
         </dl>

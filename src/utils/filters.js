@@ -42,14 +42,13 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
     }
     val = val || 0
 
-    // if (cointype=='coin'){
-    //     return coin + val.toFixed(precision)
-    // }else{
-    //     return  val.toFixed(precision) + coin
-    // }
+    if (cointype == 'usdt') {
+        precision = 5
+    } else {
+        precision = 2
+    }
 
-
-    return  val.toFixed(precision) + coin
+    return  Number(val.toFixed(precision)) + coin
 }
 
 /**

@@ -5,7 +5,7 @@
     <van-list class="wrapper" v-model="loading" :finished="finished" :finished-text="$t('No more')" @load="loadData">
       <div class="item" v-for="(item,index) in list" :key="index">
         <div class="name">{{itemName(item)}}</div>
-        <div class="amount">{{item.amount | moneyFormat(2,'usdt')}}</div>
+        <div class="amount">{{item.amount | moneyFormat(5,'usdt')}}</div>
         <div class="date">{{item.created_at | dateFormat}}</div>
       </div>
     </van-list>

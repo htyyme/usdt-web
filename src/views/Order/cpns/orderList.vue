@@ -14,7 +14,7 @@
             </div>
             <div>
               <div>{{$t('expectedReturn')}}:</div>
-              <div class="red">{{item.amount + item.win_amount | moneyFormat(2,item.coin_type==1?'coin':'usdt')}}</div>
+              <div class="red">{{ item.win_amount | moneyFormat(2,item.coin_type==1?'coin':'usdt')}}</div>
             </div>
           </div>
           <div class="content-right">

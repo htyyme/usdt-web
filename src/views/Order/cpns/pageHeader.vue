@@ -5,7 +5,7 @@
       <dl>
         <dt>{{ $t('availableAssets') }}</dt>
         <dd class="balance">
-          <span>{{usdtAvailableBalance | moneyFormat(2,'usdt')}}</span>
+          <span>{{usdtAvailableBalance | moneyFormat(5,'usdt')}}</span>
           <span>{{coinAvailableBalance | moneyFormat(2,'coin')}}</span>
         </dd>
       </dl>
