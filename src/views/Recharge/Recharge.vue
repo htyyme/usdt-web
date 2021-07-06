@@ -12,7 +12,8 @@
 
     <!--收集信息的组件-->
     <createinfo_forcoin  v-if="cointype==='coin'"/>
-    <createinfo_forusdt v-if="cointype==='usdt'" />
+
+<!--    <createinfo_forusdt v-if="cointype==='usdt'" />-->
 
   </div>
 
