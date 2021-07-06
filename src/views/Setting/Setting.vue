@@ -7,7 +7,7 @@
       <van-field :label="$t('Phone Number')" v-model="phone" readonly/>
       <van-field :label="$t('Nickname')" v-model="nickname"/>
       <van-field :label="$t('Real Name')" v-model="realname"/>
-      <van-field :label="$t('trxaccount')" v-model="trx_account"/>
+      <van-field :label="$t('trxaccount')" v-model="trx_account" :readonly="trxaccountReadonly"/>
       <van-cell :title="$t('Login Password')" is-link  :to="{name:'ChangePass'}"/>
       <van-cell :title="$t('Payment Password')" is-link  :to="{name:'PaymentPassword'}"/>
 
@@ -29,7 +29,8 @@ export default {
       nickname:"",
       realname:"",
       phone:"",
-      trx_account:''
+      trx_account:'',
+      trxaccountReadonly:false
     }
   },
   created() {
@@ -37,6 +38,11 @@ export default {
     this.realname = this.userInfo.extend_info.realname
     this.phone = this.userInfo.member_name
     this.trx_account = this.userInfo.trx_account
+
+    //钱包地址不允许修改
+    if (this.trx_account.length > 0){
+      this.trxaccountReadonly = true
+    }
   },
   computed: {
 
