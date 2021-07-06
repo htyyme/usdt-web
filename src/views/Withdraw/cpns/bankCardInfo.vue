@@ -16,7 +16,7 @@
         <dd>{{ bankcardinfo.withdraw_deposit }}</dd>
       </dl>
 
-      <dl>
+      <dl v-if="showIfsc">
         <dt>{{ $t('IFSC') }}</dt>
         <dd>{{ bankcardinfo.bank_code }}</dd>
       </dl>
@@ -30,9 +30,9 @@
     </template>
 
 
-    <van-button class="modify" block color="#3596E8" @click="toEditPage">
-      {{ $t('Modify') }}
-    </van-button>
+<!--    <van-button class="modify" block color="#3596E8" @click="toEditPage">-->
+<!--      {{ $t('Modify') }}-->
+<!--    </van-button>-->
   </div>
 </template>
 
@@ -50,7 +50,13 @@ export default {
     },
     trx_account() {
       return this.userinfo.trx_account
-    }
+    },
+    showUpi(){
+      return this.$store.getters['system/config'].showUpi
+    },
+    showIfsc(){
+      return this.$store.getters['system/config'].showIfsc
+    },
   },
 
 
