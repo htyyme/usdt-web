@@ -379,14 +379,14 @@ const routes = [
             title:"Usdt news"
         }
     },
-    {
-        name:'InviteTask',
-        path:'/InviteTask',
-        component:()=>import('@/views/InviteTask/InviteTask'),
-        meta:{
-            title:'Mission'
-        }
-    },
+    // {
+    //     name:'InviteTask',
+    //     path:'/InviteTask',
+    //     component:()=>import('@/views/InviteTask/InviteTask'),
+    //     meta:{
+    //         title:'Mission'
+    //     }
+    // },
     {
         name:'Success',
         path:'/Success',
