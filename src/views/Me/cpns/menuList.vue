@@ -20,7 +20,7 @@
       </li>
 
       <li @click="toTaxaccountPage">
-        <van-icon :name="require('@/assets/icon/bankcard.png')" size="40"></van-icon>
+        <van-icon :name="require('@/assets/icon/trx.png')" size="40"></van-icon>
         <span>{{$t('Trx Account')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
