@@ -28,7 +28,11 @@ export default {
     }
   },
   mounted() {
-    this.$bus.$on(SHOW_ANNOUNCE, this.handleOpen)
+    this.$bus.$on(SHOW_ANNOUNCE, ()=>{
+      if (this.content.length > 0 ){
+        this.handleOpen()
+      }
+    })
     setTimeout(() => {
       this.drawTitle()
     }, 300)
