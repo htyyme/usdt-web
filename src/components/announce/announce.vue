@@ -25,11 +25,14 @@ export default {
   computed: {
     content() {
       return this.$store.getters['system/config'].system_notice
+    },
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
     }
   },
   mounted() {
     this.$bus.$on(SHOW_ANNOUNCE, ()=>{
-      if (this.content.length > 0 ){
+      if (this.content.length > 0 && this.three_service_address.length > 0 ){
         this.handleOpen()
       }
     })
