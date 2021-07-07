@@ -27,7 +27,7 @@ export default {
     };
   },
   created() {
-    this.tabbarList = tabbar_prod
+    this.tabbarList = tabbar_dev
 
     this.activeName = this.$store.getters['system/tabbar']
   },
