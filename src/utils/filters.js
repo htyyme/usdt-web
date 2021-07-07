@@ -12,8 +12,9 @@ import {getLangField} from "@/utils/tools";
  * @param date
  * @param format
  * @returns {string}
+ * 'YYYY-MM-DD HH:mm:ss'
  */
-export function dateFormat(date, format = 'YYYY-MM-DD HH:mm:ss') {
+export function dateFormat(date, format = 'MM-DD hh:mm A') {
     dayjs.extend(utc)
     dayjs.extend(timezone)
 
