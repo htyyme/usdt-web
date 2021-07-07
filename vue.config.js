@@ -12,11 +12,11 @@ module.exports = {
         port: 12345,
         proxy: {
             '/v1': {
-                target: 'http://192.168.2.49:8087',
+                target: 'http://app.vicaro.in/',
                 changeOrigin: true,
             },
             '/api': {
-                target: 'http://192.168.2.25:7777',
+                target: 'http://app.vicaro.in/',
                 changeOrigin: true,
             }
         }
