@@ -1,7 +1,7 @@
 <template>
   <div class="me">
     <pageHeader />
-    <wallet />
+    <wallet v-if="three_service_address.length>0"/>
     <menuList />
   </div>
 </template>
@@ -16,6 +16,11 @@ export default {
     pageHeader,
     wallet,
     menuList
+  },
+  computed:{
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
+    }
   },
   created() {
     this.$store.dispatch('user/loadUserInfo')

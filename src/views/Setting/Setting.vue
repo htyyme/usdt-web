@@ -7,7 +7,7 @@
       <van-field :label="$t('Phone Number')" v-model="phone" readonly/>
       <van-field :label="$t('Nickname')" v-model="nickname"/>
       <van-field :label="$t('Real Name')" v-model="realname"/>
-      <van-field :label="$t('trxaccount')" v-model="trx_account" :readonly="trxaccountReadonly"/>
+<!--      <van-field :label="$t('trxaccount')" v-model="trx_account" :readonly="trxaccountReadonly"/>-->
       <van-cell :title="$t('Login Password')" is-link  :to="{name:'ChangePass'}"/>
       <van-cell :title="$t('Payment Password')" is-link  :to="{name:'PaymentPassword'}"/>
 

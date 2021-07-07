@@ -15,7 +15,7 @@
     <div class="assets">
       <div class="tit">{{$t('yourTotalAssets')}}:</div>
       <div class="num">
-        <span>{{usdtAvailableBalance|moneyFormat(5,'usdt')}}</span>
+        <span v-if="three_service_address.length>0">{{usdtAvailableBalance|moneyFormat(5,'usdt')}}</span>
         <span>{{coinAvailableBalance|moneyFormat(2,'coin')}}</span>
       </div>
     </div>
@@ -44,6 +44,9 @@ export default {
     },
     coinAvailableBalance(){
       return this.coinAccount.available_balance
+    },
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
     }
   },
 

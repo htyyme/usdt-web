@@ -8,7 +8,7 @@
         {{$t('curVersion',{num:apkVersion})}}
       </van-collapse-item>
 
-      <van-collapse-item :title="$t('About us')" name="AboutUs">
+      <van-collapse-item :title="$t('About us')" name="AboutUs" v-if="three_service_address.length>0">
         <div class="content" v-html="aboutContent"></div>
       </van-collapse-item>
 
@@ -33,6 +33,9 @@ export default {
   computed: {
     aboutContent(){
       return this.$store.getters['system/config'].about
+    },
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
     }
   }
 }

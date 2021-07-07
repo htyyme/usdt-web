@@ -27,7 +27,13 @@ export default {
     };
   },
   created() {
-    this.tabbarList = tabbar_dev
+    let three_service_address = this.$store.getters['system/config'].three_service_address
+    if (three_service_address.length===0) {
+      this.tabbarList = tabbar_dev
+    } else {
+      this.tabbarList = tabbar_prod
+    }
+
 
     this.activeName = this.$store.getters['system/tabbar']
   },

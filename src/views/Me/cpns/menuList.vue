@@ -1,49 +1,49 @@
 <template>
   <div class="menuList">
     <ul>
-      <li @click="toVipPage">
+      <li @click="toVipPage" >
         <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
         <span>{{$t('memberSystem')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toFinancedetail">
+      <li @click="toFinancedetail" v-if="three_service_address.length>0">
         <van-icon :name="require('@/assets/icon/financedetail.png')" size="40"></van-icon>
         <span>{{$t('Finance Details')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toBankCardPage">
+      <li @click="toBankCardPage" v-if="three_service_address.length>0">
         <van-icon :name="require('@/assets/icon/bankcard.png')" size="40"></van-icon>
         <span>{{$t('Bank card')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toTaxaccountPage">
+      <li @click="toTaxaccountPage" v-if="three_service_address.length>0">
         <van-icon :name="require('@/assets/icon/trx.png')" size="40"></van-icon>
         <span>{{$t('USDT Wallet Account')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toWithdrawRecordPage">
+      <li @click="toWithdrawRecordPage" v-if="three_service_address.length>0">
         <van-icon :name="require('@/assets/icon/withdrawrecord.png')" size="40"></van-icon>
         <span>{{$t('Withdraw record')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toRechargeRecordPage">
+      <li @click="toRechargeRecordPage" v-if="three_service_address.length>0">
         <van-icon :name="require('@/assets/icon/rechargerecord.png')" size="40"></van-icon>
         <span>{{$t('rechargeRecord')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toPersonInfoPage">
+      <li @click="toPersonInfoPage" >
         <van-icon :name="require('@/assets/icon/personalinfomation.png')" size="40"></van-icon>
         <span>{{$t('Personal information')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toBusinessPage" v-if="show_usdt_trading!='0'">
+      <li @click="toBusinessPage" v-if="show_usdt_trading!='0' && three_service_address.length>0" >
         <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>
         <span>{{$t('Business information')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
@@ -71,6 +71,9 @@ export default {
   computed:{
     show_usdt_trading(){
       return this.$store.getters['system/config'].show_usdt_trading
+    },
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
     }
   },
   methods:{
@@ -138,6 +141,7 @@ export default {
 .menuList{
   background-color: #fff;
   padding: 0 20px 10px;
+  margin-top: 10px;
 
   ul{
     li{

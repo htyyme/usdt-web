@@ -78,6 +78,9 @@ export default {
       }else{
         return false
       }
+    },
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
     }
   },
   created() {
@@ -126,7 +129,12 @@ export default {
       this.$store.commit('system/setContactInfo',contact)
       this.$store.dispatch('user/loadUserInfo')
       this.$bus.$emit(SHOW_ANNOUNCE)
-      this.$router.replace('/')
+
+      if (this.three_service_address.length>0){
+        this.$router.replace({name:'Home'})
+      } else {
+        this.$router.replace({name:'Mall'})
+      }
     },
     changePwdType(){
       if (this.pwdType === 'password'){
