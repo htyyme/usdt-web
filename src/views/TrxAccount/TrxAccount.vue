@@ -8,6 +8,8 @@
       <div style="margin: 16px;" v-if="!trxaccountReadonly">
         <van-button round block native-type="submit" :loading="$store.getters['system/gloading']" class="save-btn">{{$t('Save')}}</van-button>
       </div>
+
+      <p style="color: #3596E8">Once bound, you cannot change it by yourself, please fill in the correct address</p>
     </van-form>
 
 
