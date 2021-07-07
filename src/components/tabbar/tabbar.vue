@@ -15,55 +15,20 @@
 
 <script>
 import vars from "@/assets/css/vars.scss";
+import tabbar_dev from "./tabbar_dev";
+import tabbar_prod from "./tabbar_prod";
 
 export default {
   name: "tabbar",
   data() {
     return {
       activeName: 'Home',
-      tabbarList: [
-        {
-          name: 'Home',
-          title: this.$t('tabBarHome'),
-          icon: require('@/assets/tabbar/home.png'),
-          activeIcon: require('@/assets/tabbar/home.blue.png'),
-          url: '/Home'
-        },
-        {
-          name: 'Order',
-          title: this.$t('tabBarOrder'),
-          icon: require('@/assets/tabbar/order.png'),
-          activeIcon: require('@/assets/tabbar/order.blue.png'),
-          url: '/Order'
-        },
-
-
-        {
-          name: 'Usdt',
-          title: this.$t('USDT'),
-          icon: require('@/assets/tabbar/transhall.png'),
-          activeIcon: require('@/assets/tabbar/transhall-active.png'),
-          url: '/Usdt'
-        },
-
-        {
-          name: 'Team',
-          title: this.$t('tabBarTeam'),
-          icon: require('@/assets/tabbar/team.png'),
-          activeIcon: require('@/assets/tabbar/team.blue.png'),
-          url: '/Team'
-        },
-        {
-          name: 'Me',
-          title: this.$t('tabBarMe'),
-          icon: require('@/assets/tabbar/me.png'),
-          activeIcon: require('@/assets/tabbar/me.blue.png'),
-          url: '/Me'
-        },
-      ]
+      tabbarList: []
     };
   },
   created() {
+    this.tabbarList = tabbar_prod
+
     this.activeName = this.$store.getters['system/tabbar']
   },
   computed: {

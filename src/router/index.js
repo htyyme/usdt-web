@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: "/",
-        redirect:"/Home"
+        redirect:"/mall"
     },
     {
         path:"/Home",
@@ -113,6 +113,32 @@ const routes = [
         meta:{
             title:"Me",
             showTabbar:true
+        }
+    },
+    {
+        path:"/Mall",
+        name:'Mall',
+        component:()=>import('@/views/Mall/Mall'),
+        meta:{
+            title:"Mall",
+            showTabbar:true
+        }
+    },
+    {
+        path:"/MallSearch",
+        name:'MallSearch',
+        component:()=>import('@/views/MallSearch/MallSearch'),
+        meta:{
+            title:"search",
+            showTabbar:true
+        }
+    },
+    {
+        path:"/MallDetail",
+        name:'MallDetail',
+        component:()=>import('@/views/MallDetail/MallDetail'),
+        meta:{
+            title:"Detail",
         }
     },
     {
@@ -428,7 +454,7 @@ function setTitle(route) {
 
 //保存tabbar
 function setTabbar(route) {
-    const names = ['Home','Order','Team','Me','Usdt']
+    const names = ['Home','Order','Team','Me','Usdt',"Mall",'MallSearch']
     // console.log('-------',route)
 
     if (route.matched[0] && names.indexOf(route.matched[0].name) !== -1) {
