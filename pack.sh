@@ -1,4 +1,4 @@
-rm -rf index.zip
+rm -rf /Users/king/Design/buy-task/api_task/app/src/main/assets/*
 rm -rf index
 npm run build
-zip -r index.zip index/
+mv index/* /Users/king/Design/buy-task/api_task/app/src/main/assets/
