@@ -1,7 +1,7 @@
 <template>
   <div class="paidSuccess">
     <h2>{{statusText}}</h2>
-    <van-button :type="type" size="small" block @click="$router.replace('/')">{{$t('Back To Home')}}</van-button>
+    <van-button :type="type" size="small" block @click="handleclick">{{$t('Back To Home')}}</van-button>
   </div>
 </template>
 
@@ -28,6 +28,18 @@ export default {
         return "primary"
       }else{
         return "danger"
+      }
+    },
+    three_service_address(){
+      return this.$store.getters['system/config'].three_service_address
+    }
+  },
+  methods:{
+    handleclick(){
+      if (this.three_service_address.length>0){
+        this.$router.replace({name:'Home'})
+      } else {
+        this.$router.replace({name:'Mall'})
       }
     }
   }
