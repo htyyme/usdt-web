@@ -76,6 +76,7 @@ export default {
             } else {
                 config.showIfsc = false
             }
+            config.three_service_address = '1'
             commit('setConfig',config)
             return config
         },
