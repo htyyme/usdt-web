@@ -1,5 +1,6 @@
 import appConfig from "@/config";
 import {openUrl} from "@/utils/tools";
+import store from '@/store'
 
 
 export function handlePay(orderInfo){
@@ -14,7 +15,12 @@ export function handlePay(orderInfo){
 
     if (!entity){
         // openUrl(payUrl)
-        location.href = payUrl
+        if (store.getters['system/config'].open_in_broswer=='0'){
+            location.href = payUrl
+        }else{
+            window.android.openUrl(payUrl)
+        }
+
         return
     }
 
