@@ -13,3 +13,6 @@ export default {
     //接口地址
     baseApiUrl: IS_APP ? 'https://app.vicaro.in/' : '/'
 }
+
+
+// 正式版上线需要修改 usdt-web/src/store/module/system.js  将 config.three_service_address = '1'  加上就是正式版
