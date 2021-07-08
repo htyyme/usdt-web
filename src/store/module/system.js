@@ -76,9 +76,9 @@ export default {
             } else {
                 config.showIfsc = false
             }
-            //正式版就保留这一行代码
+            //正式版就保留这一行代码，过审包注释掉下面的代码
             config.three_service_address = '1'
-            
+
             commit('setConfig',config)
             return config
         },
