@@ -20,6 +20,7 @@
 
 
 import {mapGetters} from 'vuex'
+import appConfig from "@/config";
 export default {
   name: "WhatsappBar",
   data() {
@@ -90,13 +91,13 @@ export default {
     * 展开与关闭
     * */
     toggle(){
-      // if(this.openClass){
-      //   this.openClass = ''
-      // }else{
-      //   this.openClass = 'open'
-      // }
 
-      this.$tools.openUrl(this.link)
+      if (appConfig.isApp){
+        window.android.openUrl(this.link)
+      }else{
+        this.$tools.openUrl(this.link)
+      }
+
     },
 
 
