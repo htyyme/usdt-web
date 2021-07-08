@@ -6,7 +6,7 @@
     <record />
     <withdrawForm ref="withdrawFormRef"/>
 
-    <van-notice-bar scrollable :text="$t('handlefeetip',{num:0.18})" color="#CF182C" background="#e5e5e5"/>
+    <van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>
     <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype"/>
     <pageFooter />
 
@@ -33,6 +33,7 @@ export default {
     return {
       cointype:'',
       bankcardinfo:{},// 银行卡信息
+      fee:0
     }
   },
   async created() {
@@ -44,6 +45,8 @@ export default {
 
     //获取用户余额
     this.$store.dispatch('user/loadUserInfo')
+    //获取费率信息
+    this.loadconfig()
 
     if (this.cointype === 'coin') {
       this.getBankCardInfo()
@@ -70,6 +73,15 @@ export default {
 
   },
   methods:{
+    async loadconfig(){
+      const resp= await this.$http.post('/v1/withdraw/config')
+      // console.log(resp)
+      if (this.cointype == 'coin') {
+        this.fee = resp.data.fee
+      } else if (this.cointype == 'usdt'){
+        this.fee = resp.data.usdt_fee
+      }
+    },
     //查询银行卡信息
     async getBankCardInfo(){
       const resp = await this.$http.post('/v1/auth/user/cards')
