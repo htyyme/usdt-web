@@ -8,7 +8,8 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: "/",
-        redirect:"/mall"
+        // redirect:"/mall"
+        redirect:"/home"
     },
     {
         path:"/Home",
