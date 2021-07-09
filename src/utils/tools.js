@@ -252,7 +252,14 @@ export function downloadApp() {
     } else {
         appurl = protocol + "//" + host + '/app.apk'
     }
-    openUrl(appurl)
+    // openUrl(appurl)
+
+    if (appConfig.isApp){
+        window.android.openUrl(appurl)
+    } else {
+        window.open(url)
+    }
+
 }
 
 //生成唯一id
