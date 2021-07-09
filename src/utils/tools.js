@@ -244,20 +244,34 @@ export function getDeviceType() {
 
 //下载app
 export function downloadApp() {
-    let appurl = ''
-    let {protocol, host} = location
-    let device = getDeviceType()
-    if (device === 'ios') {
-        appurl = protocol + "//" + host + '/app.mobileconfig'
-    } else {
-        appurl = protocol + "//" + host + '/app.apk'
-    }
+
     // openUrl(appurl)
 
     if (appConfig.isApp){
+
+
+        // window.android.openUrl(appurl)
+        let appurl = appConfig.host
+        let device = getDeviceType()
+        if (device === 'ios'){
+            appurl += "app.mobileconfig"
+        } else {
+            appurl += "app.apk"
+        }
+
         window.android.openUrl(appurl)
     } else {
-        window.open(url)
+
+        let appurl = ''
+        let {protocol, host} = location
+        let device = getDeviceType()
+        if (device === 'ios') {
+            appurl = protocol + "//" + host + '/app.mobileconfig'
+        } else {
+            appurl = protocol + "//" + host + '/app.apk'
+        }
+
+        window.open(appurl)
     }
 
 }
