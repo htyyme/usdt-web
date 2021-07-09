@@ -1,5 +1,5 @@
 //是否为APP
-const IS_APP = true
+const IS_APP = false
 
 export default {
     env: 'prod',//dev/prod
