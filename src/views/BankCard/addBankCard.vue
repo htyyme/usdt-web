@@ -41,6 +41,19 @@
         </dd>
       </dl>
 
+
+      <!--优先级-->
+      <dl>
+        <dt>{{$t('Withdrawal priority')}}</dt>
+        <dd style="display: flex;align-items: center;padding-left: 15px;">
+          <van-radio-group v-model="form.priority" direction="horizontal">
+            <van-radio :name="1">{{$t('Bank Card')}}</van-radio>
+            <van-radio :name="2">{{$t('UPI')}}</van-radio>
+          </van-radio-group>
+        </dd>
+      </dl>
+
+
       <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
 
     </div>
@@ -78,6 +91,7 @@ export default {
         upi:"",
         mobile:"",
         sms_code:"",
+        priority:1
       },
       countdown: 0,
       timer:null,

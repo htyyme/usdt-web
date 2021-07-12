@@ -558,4 +558,5 @@ export default {
     'Activity bonus':'Activity bonus',
     'It is not open for the time being.':'It is not open for the time being.',
     'USDT':'USDT',
+    'Withdrawal priority':'Withdrawal priority',
 }

@@ -84,12 +84,13 @@ export default {
       this.$store.commit('system/setContactInfo',contact)
       this.$store.dispatch('user/loadUserInfo')
       this.$bus.$emit(SHOW_ANNOUNCE)
-      if (this.three_service_address.length>0){
-        this.$router.replace({name:'Home'})
-      } else {
-        this.$router.replace({name:'Mall'})
-      }
+      // if (this.three_service_address.length>0){
+      //   this.$router.replace({name:'Home'})
+      // } else {
+      //   this.$router.replace({name:'Mall'})
+      // }
 
+      this.$router.replace('/')
     },
     changePwdType(){
       if (this.pwdType === 'password'){
