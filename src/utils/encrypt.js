@@ -2,7 +2,7 @@ import CryptoJS from "crypto-js";
 
 const encryptKey = '4n3I6Hni50YsyUgTix0CL01Z'
 
-export function encryptBy3DES(message, key = encryptKey) {
+function encryptBy3DES(message, key = encryptKey) {
     const keyHex = CryptoJS.enc.Utf8.parse(key);
     const encrypted = CryptoJS.TripleDES.encrypt(message, keyHex, {
         mode: CryptoJS.mode.ECB,
@@ -11,7 +11,7 @@ export function encryptBy3DES(message, key = encryptKey) {
     return encrypted.toString();
 }
 
-export function decryptBy3DES(ciphertext, key = encryptKey) {
+function decryptBy3DES(ciphertext, key = encryptKey) {
     const keyHex = CryptoJS.enc.Utf8.parse(key);
     // direct decrypt ciphertext
     const decrypted = CryptoJS.TripleDES.decrypt({
@@ -25,7 +25,7 @@ export function decryptBy3DES(ciphertext, key = encryptKey) {
 
 
 //请求数据加密
-export function encryptReqData(data){
+function encryptReqData(data) {
     data = data ? data : {}
     let s = JSON.stringify(data)
     let en = encryptBy3DES(s)
@@ -34,7 +34,7 @@ export function encryptReqData(data){
 }
 
 //响应数据解密
-export function decryptResData(data){
+function decryptResData(data) {
     let de = decryptBy3DES(data)
     de = JSON.parse(de)
     return de
@@ -42,7 +42,12 @@ export function decryptResData(data){
 
 
 
-
+export {
+    encryptBy3DES,
+    decryptBy3DES,
+    encryptReqData,
+    decryptResData
+}
 
 
 
