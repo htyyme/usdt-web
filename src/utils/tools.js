@@ -96,26 +96,7 @@ export function openUrl(url) {
 
 }
 
-export function encryptBy3DES(message, key = appConfig.encryptKey) {
-    const keyHex = CryptoJS.enc.Utf8.parse(key);
-    const encrypted = CryptoJS.TripleDES.encrypt(message, keyHex, {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-    });
-    return encrypted.toString();
-}
 
-export function decryptBy3DES(ciphertext, key = appConfig.encryptKey) {
-    const keyHex = CryptoJS.enc.Utf8.parse(key);
-    // direct decrypt ciphertext
-    const decrypted = CryptoJS.TripleDES.decrypt({
-        ciphertext: CryptoJS.enc.Base64.parse(ciphertext)
-    }, keyHex, {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-    });
-    return decrypted.toString(CryptoJS.enc.Utf8);
-}
 
 //获取后台上传的图片
 export function getImage(url) {

@@ -7,7 +7,6 @@ export default {
     apkVersion: '1.0.2', //版本
     appName: 'vicaro',//网站标题
     host: 'https://www.vicaro.in/',//网站域名
-    encryptKey: '4n3I6Hni50YsyUgTix0CL01Z',
     locale: 'en',//默认语言
     // timezone: 'Asia/Bangkok', //时区 泰国
     timezone: 'Asia/Kolkata', //时区 印度

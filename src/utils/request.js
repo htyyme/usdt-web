@@ -2,7 +2,9 @@ import axios from "axios";
 import appConfig from "@/config";
 import store from '@/store'
 import messages from "@/assets/lang/messages";
-import {encryptBy3DES, decryptBy3DES,getLangField} from "@/utils/tools";
+import {getLangField} from "@/utils/tools";
+import {encryptBy3DES,decryptBy3DES,encryptReqData,decryptResData} from "@/utils/encrypt";
+
 import {Toast} from "vant";
 import router from "@/router";
 
@@ -75,21 +77,7 @@ service.interceptors.response.use(resp => {
     return Promise.reject(error)
 })
 
-//请求数据加密
-function encryptReqData(data){
-    data = data ? data : {}
-    let s = JSON.stringify(data)
-    let en = encryptBy3DES(s)
-    // console.log(en)
-    return en
-}
 
-//响应数据解密
-function decryptResData(data){
-    let de = decryptBy3DES(data)
-    de = JSON.parse(de)
-    return de
-}
 
 
 export default service
