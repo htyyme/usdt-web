@@ -1,7 +1,10 @@
 <template>
   <div class="usdt">
     <van-sticky>
-      <van-search v-model="queryInfo.name" :placeholder="$t('search')" shape="round" @search="handleSearch"/>
+      <div style="display: flex;align-items: center; background: linear-gradient(180deg, #41AAED 0%, #2F8DE6 100%);">
+        <van-icon :name="require('@/assets/icon/return.png')" size="22" style="margin-left: 15px;" @click="$router.back()"></van-icon>
+        <van-search style="flex: 1" v-model="queryInfo.name" :placeholder="$t('search')" shape="round" @search="handleSearch"/>
+      </div>
     </van-sticky>
 
     <ul class="subnavs">
