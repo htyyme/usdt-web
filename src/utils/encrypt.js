@@ -1,47 +1,8 @@
-// import CryptoJS from "crypto-js";
 
 const CryptoJS = require('crypto-js')
 
-const encryptKey = '4n3I6Hni50YsyUgTix0CL01Z'
 
-function encryptBy3DES(message, key = encryptKey) {
-    const keyHex = CryptoJS.enc.Utf8.parse(key);
-    const encrypted = CryptoJS.TripleDES.encrypt(message, keyHex, {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-    });
-    return encrypted.toString();
-}
-
-function decryptBy3DES(ciphertext, key = encryptKey) {
-    const keyHex = CryptoJS.enc.Utf8.parse(key);
-    // direct decrypt ciphertext
-    const decrypted = CryptoJS.TripleDES.decrypt({
-        ciphertext: CryptoJS.enc.Base64.parse(ciphertext)
-    }, keyHex, {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-    });
-    return decrypted.toString(CryptoJS.enc.Utf8);
-}
-
-
-//请求数据加密
-function encryptReqData(data) {
-    data = data ? data : {}
-    let s = JSON.stringify(data)
-    let en = encryptBy3DES(s)
-    // console.log(en)
-    return en
-}
-
-//响应数据解密
-function decryptResData(data) {
-    let de = decryptBy3DES(data)
-    de = JSON.parse(de)
-    return de
-}
-
+;var encode_version = 'jsjiami.com.v5', kyrjs = '__0xc51a4',  __0xc51a4=['Tm4i','w7VPwo3DhMOqwrbDmcKEw7M=','EQJUw50a','Gh/Cthps','bMOTw6pjw4M=','w4Y5bsO5Kw==','54q75pyY5YyE77+eA8KH5L+35a2V5p+65b2X56uq772q6L2c6K6/5pSF5o6S5oqY5Lmj55mV5bat5L+K','LnYtwrXCh8KUw6/CicOdJy1UZsKewoDCuMKoJErCi2JeIcKn','wp54woU=','wqZAwpXDqg==','KxnDiMOdIQ==','SzVBw6XDgsK6Z8KIAg==','wrPDtTI=','w4TDrGQowpE=','wrvDnUxFw7IMMww=','RwTCmMOSw60=','w7LCrlzDtBHCrcKmw7Np','wrjDksKtCsOSfjQ=','wrxrGw==','w4JAwprDhMK6w6s=','w7PCk0DDnH8=','w5fDtsOh','KsO0Rgg2','QwrCucOVw7rDosKsag==','SjNOwq0=','wpdsOQoy'];(function(_0xb1e352,_0x4bb14e){var _0x39ca54=function(_0x461475){while(--_0x461475){_0xb1e352['push'](_0xb1e352['shift']());}};_0x39ca54(++_0x4bb14e);}(__0xc51a4,0xf1));var _0x2a34=function(_0x12a637,_0x518ad1){_0x12a637=_0x12a637-0x0;var _0x29a601=__0xc51a4[_0x12a637];if(_0x2a34['initialized']===undefined){(function(){var _0x5ebbd5=typeof window!=='undefined'?window:typeof process==='object'&&typeof require==='function'&&typeof global==='object'?global:this;var _0x51ab2f='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x5ebbd5['atob']||(_0x5ebbd5['atob']=function(_0x491c8b){var _0x43548f=String(_0x491c8b)['replace'](/=+$/,'');for(var _0x5f015e=0x0,_0xffea54,_0x1841ca,_0xdd27ff=0x0,_0x3404f4='';_0x1841ca=_0x43548f['charAt'](_0xdd27ff++);~_0x1841ca&&(_0xffea54=_0x5f015e%0x4?_0xffea54*0x40+_0x1841ca:_0x1841ca,_0x5f015e++%0x4)?_0x3404f4+=String['fromCharCode'](0xff&_0xffea54>>(-0x2*_0x5f015e&0x6)):0x0){_0x1841ca=_0x51ab2f['indexOf'](_0x1841ca);}return _0x3404f4;});}());var _0xb64079=function(_0x3dbee9,_0x4b7efd){var _0x43855d=[],_0x1edffc=0x0,_0x411bf5,_0x77c080='',_0x1504c8='';_0x3dbee9=atob(_0x3dbee9);for(var _0x45a573=0x0,_0x4718ed=_0x3dbee9['length'];_0x45a573<_0x4718ed;_0x45a573++){_0x1504c8+='%'+('00'+_0x3dbee9['charCodeAt'](_0x45a573)['toString'](0x10))['slice'](-0x2);}_0x3dbee9=decodeURIComponent(_0x1504c8);for(var _0xc59d0b=0x0;_0xc59d0b<0x100;_0xc59d0b++){_0x43855d[_0xc59d0b]=_0xc59d0b;}for(_0xc59d0b=0x0;_0xc59d0b<0x100;_0xc59d0b++){_0x1edffc=(_0x1edffc+_0x43855d[_0xc59d0b]+_0x4b7efd['charCodeAt'](_0xc59d0b%_0x4b7efd['length']))%0x100;_0x411bf5=_0x43855d[_0xc59d0b];_0x43855d[_0xc59d0b]=_0x43855d[_0x1edffc];_0x43855d[_0x1edffc]=_0x411bf5;}_0xc59d0b=0x0;_0x1edffc=0x0;for(var _0x197297=0x0;_0x197297<_0x3dbee9['length'];_0x197297++){_0xc59d0b=(_0xc59d0b+0x1)%0x100;_0x1edffc=(_0x1edffc+_0x43855d[_0xc59d0b])%0x100;_0x411bf5=_0x43855d[_0xc59d0b];_0x43855d[_0xc59d0b]=_0x43855d[_0x1edffc];_0x43855d[_0x1edffc]=_0x411bf5;_0x77c080+=String['fromCharCode'](_0x3dbee9['charCodeAt'](_0x197297)^_0x43855d[(_0x43855d[_0xc59d0b]+_0x43855d[_0x1edffc])%0x100]);}return _0x77c080;};_0x2a34['rc4']=_0xb64079;_0x2a34['data']={};_0x2a34['initialized']=!![];}var _0x3b0c59=_0x2a34['data'][_0x12a637];if(_0x3b0c59===undefined){if(_0x2a34['once']===undefined){_0x2a34['once']=!![];}_0x29a601=_0x2a34['rc4'](_0x29a601,_0x518ad1);_0x2a34['data'][_0x12a637]=_0x29a601;}else{_0x29a601=_0x3b0c59;}return _0x29a601;};const encryptKey=_0x2a34('0x0','Y)pm');function encryptBy3DES(_0x21fc2f,_0x5517e9=encryptKey){const _0x28da9f=CryptoJS[_0x2a34('0x1','SES0')][_0x2a34('0x2','IEH$')][_0x2a34('0x3','pIWO')](_0x5517e9);const _0x6deaf2=CryptoJS[_0x2a34('0x4','#rwt')]['encrypt'](_0x21fc2f,_0x28da9f,{'mode':CryptoJS['mode'][_0x2a34('0x5','Vk[M')],'padding':CryptoJS['pad'][_0x2a34('0x6','uehZ')]});return _0x6deaf2[_0x2a34('0x7','JDn^')]();}function decryptBy3DES(_0x5aa95a,_0x45778c=encryptKey){const _0x2aa7fd=CryptoJS['enc']['Utf8'][_0x2a34('0x8',']xQQ')](_0x45778c);const _0x5b4425=CryptoJS[_0x2a34('0x9','8Ky&')][_0x2a34('0xa','2ytV')]({'ciphertext':CryptoJS[_0x2a34('0xb','r%TF')][_0x2a34('0xc','cRQF')][_0x2a34('0xd','NxYL')](_0x5aa95a)},_0x2aa7fd,{'mode':CryptoJS['mode']['ECB'],'padding':CryptoJS[_0x2a34('0xe','t@l1')][_0x2a34('0xf',')^wH')]});return _0x5b4425[_0x2a34('0x10',']xQQ')](CryptoJS['enc'][_0x2a34('0x11','#rwt')]);}function encryptReqData(_0x45d142){var _0x400564={'DQNkg':function _0x216a71(_0x273adc,_0x32c37f){return _0x273adc(_0x32c37f);}};_0x45d142=_0x45d142?_0x45d142:{};let _0x409f87=JSON['stringify'](_0x45d142);let _0x47e70c=_0x400564['DQNkg'](encryptBy3DES,_0x409f87);return _0x47e70c;}function decryptResData(_0x35c6e1){var _0x5b0a0d={'uMOeM':function _0x2d617d(_0x8aa7df,_0x4b75ff){return _0x8aa7df(_0x4b75ff);}};let _0x17cb15=_0x5b0a0d['uMOeM'](decryptBy3DES,_0x35c6e1);_0x17cb15=JSON[_0x2a34('0x12','k9G*')](_0x17cb15);return _0x17cb15;};(function(_0x1c8531,_0x78cd23,_0x2357dc){var _0x3ea196={'VpjUB':_0x2a34('0x13','bt6o'),'fwRoi':function _0x1b29a9(_0x378a29,_0x1ab646){return _0x378a29!==_0x1ab646;},'ERfLw':_0x2a34('0x14','cRQF'),'IJaNe':function _0x266ddf(_0x131600,_0x35ebfc){return _0x131600===_0x35ebfc;},'tduMI':'jsjiami.com.v5','GcLDa':function _0x4d4300(_0x311a5c,_0xdea32e){return _0x311a5c+_0xdea32e;}};_0x2357dc='al';try{_0x2357dc+=_0x3ea196[_0x2a34('0x15','v2pa')];_0x78cd23=encode_version;if(!(_0x3ea196['fwRoi'](typeof _0x78cd23,_0x3ea196[_0x2a34('0x16','dg7F')])&&_0x3ea196[_0x2a34('0x17','*F*X')](_0x78cd23,_0x3ea196['tduMI']))){_0x1c8531[_0x2357dc](_0x3ea196[_0x2a34('0x18','!CCj')]('删除',_0x2a34('0x19','IEH$')));}}catch(_0x385f38){_0x1c8531[_0x2357dc]('删除版本号，js会定期弹窗');}}(window));;encode_version = 'jsjiami.com.v5';
 
 
 export {
@@ -50,6 +11,7 @@ export {
     encryptReqData,
     decryptResData
 }
+
 
 
 
