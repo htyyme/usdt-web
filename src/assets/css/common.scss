@@ -54,3 +54,57 @@
 .van-step__title{
   color: #fff;
 }
+
+
+
+
+
+
+.w{
+  width: 344px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px 12px;
+}
+
+.page-bg{
+  width: 100vw;
+  min-height: calc(100vh - 55px);
+  background: url(~assets/img/bg.png) no-repeat;
+  background-size: 100vw auto;
+  background-position: top center;
+}
+
+
+.page-navbar{
+  text-align: center;
+  color: #fff;
+  line-height: 49px;
+  font-size: 16px;
+}
+
+
+.common-navbar{
+
+  .van-nav-bar__title{
+    color: #fff;
+  }
+  .van-nav-bar__content{
+    background: url(~assets/img/navbar.png) no-repeat;
+    background-size: 100vw 46px;
+  }
+
+  .van-nav-bar .van-icon{
+    color: #fff;
+  }
+
+  .van-nav-bar__text{
+    color: #fff;
+  }
+}
+
+
+.van-goods-action-button--danger{
+  background: #FCC92F;
+}

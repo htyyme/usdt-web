@@ -23,7 +23,8 @@
     "vuex-persistedstate": "^4.0.0-beta.1",
     "swiper": "^6.5.0",
     "vue-awesome-swiper": "^4.1.1",
-    "element-ui": "^2.15.1"
+    "element-ui": "^2.15.1",
+    "url-encode-decode": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

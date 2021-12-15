@@ -552,6 +552,13 @@ export default {
     'It is not open for the time being.':'It is not open for the time being.',
     'USDT':'USDT',
     'Withdrawal priority':'Withdrawal priority',
+    'USDT Wallet Account':'USDT Wallet Account',
+    "I've chosen.":"I've chosen.",
+    'Input TRX Address here':"Input TRX Address here",
+    'Wallet binding':'Wallet binding',
+    'Binding':'Binding',
+    'Account setup':'Account setup',
+
 
 
 
