@@ -558,7 +558,7 @@ export default {
     'Wallet binding':'Wallet binding',
     'Binding':'Binding',
     'Account setup':'Account setup',
-
+    'Received':'Received',
 
 
 
