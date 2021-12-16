@@ -6,13 +6,13 @@
 
       <div class="lfwp">
         <div class="day">{{item.coinAttr.mold}}</div>
-        <span>Days</span>
+        <span>{{$t('Days')}}</span>
         <em class="arrow"></em>
       </div>
 
 
       <van-swipe :loop="false" :width="270" :show-indicators="false">
-        <van-swipe-item>
+        <van-swipe-item @click="showDetail(item,'coin')">
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
@@ -23,18 +23,18 @@
               <div class="content">
                 <dl>
                   <dt>{{item.coinAttr.unit_cost | moneyFormat}}</dt>
-                  <dd>Price</dd>
+                  <dd>{{$t('Price')}}</dd>
                 </dl>
                 <dl>
                   <dt>{{item.coinAttr.win_rate | moneyFormat}}</dt>
-                  <dd>Hourly earnings</dd>
+                  <dd>{{$t('Hourly earnings')}}</dd>
                 </dl>
               </div>
             </div>
           </div>
         </van-swipe-item>
 
-        <van-swipe-item>
+        <van-swipe-item @click="showDetail(item,'usdt')">
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
@@ -45,11 +45,11 @@
               <div class="content">
                 <dl>
                   <dt>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</dt>
-                  <dd>Price</dd>
+                  <dd>{{$t('Price')}}</dd>
                 </dl>
                 <dl>
                   <dt>{{item.usdtAttr.win_rate | moneyFormat(2,'usdt')}}</dt>
-                  <dd>Hourly earnings</dd>
+                  <dd>{{$t('Hourly earnings')}}</dd>
                 </dl>
               </div>
             </div>
@@ -63,15 +63,19 @@
 
     </div>
 
+    <productDetail ref="productDetailRef"/>
 
   </div>
 </template>
 
 <script>
 
-
+import productDetail from "./productDetail";
 export default {
   name: "productList",
+  components:{
+    productDetail
+  },
   data(){
     return {
       productList:[],
@@ -100,6 +104,10 @@ export default {
       })
       this.productList = productList
     },
+
+    showDetail(item,type){
+      this.$refs.productDetailRef.handleOpen(item,type)
+    }
 
   }
 }
@@ -210,6 +218,7 @@ export default {
               margin-right: 10px;
               border-radius: 6px;
               border: 1px solid rgb(40, 93, 242);
+              overflow: hidden;
             }
             .content{
               display: flex;

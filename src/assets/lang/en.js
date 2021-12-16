@@ -559,6 +559,13 @@ export default {
     'Binding':'Binding',
     'Account setup':'Account setup',
     'Received':'Received',
+    'Days':'Days',
+    'Hourly earnings':'Hourly earnings',
+    'Total revenue':'Total revenue',
+    'Cycle days':'Cycle days',
+    'Rent':'Rent',
+    'Rent Success':'Rent Success',
+    'Hourly income':'Hourly income',
 
 
 
