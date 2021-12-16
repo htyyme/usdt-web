@@ -47,7 +47,7 @@ export default {
       queryInfo: {
         page: 0,
         pageSize: 30,
-        tp: 7,
+        tp: 10,
       }
     }
   },

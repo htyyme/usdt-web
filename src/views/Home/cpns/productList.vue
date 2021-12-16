@@ -1,50 +1,74 @@
 <template>
-  <div class="productList">
+  <div class="productList-cpn">
 
-    <div class="product-item" v-for="item in productList" :key="item.id" :style="{backgroundImage:backgroundImage(item)}">
-      <div class="left" @click="toOrderGrabPage(item,'usdt')">
-        <div class="lv">
-          <van-icon :name="require('@/assets/icon/lv-icon.png')" size="22"></van-icon>
-          <span>{{$t('lvMember',{num:item.extra1})}}</span>
-        </div>
 
-<!--        <div class="pro-rate">-->
-<!--&lt;!&ndash;          <span>{{rateFormat(item.usdt_extra2)}}</span>&ndash;&gt;-->
-<!--          <span>{{item.usdtAttr.unit_cost * item.usdtAttr.multiplying_power * max_grab}}</span>-->
-<!--        </div>-->
-<!--        <div class="goods-info">-->
-<!--          <div class="tit">{{item.goods_name}}</div>-->
-<!--          <div class="desc">{{item.usdt_desc}}</div>-->
-<!--          <div class="price">-->
-<!--            <span>{{item.usdtAttr.unit_cost | moneyFormat(5,'usdt')}}</span>-->
-<!--            <span>{{$t('specialArea')}}</span>-->
-<!--          </div>-->
-<!--        </div>-->
+    <div class="prod-item" v-for="(item,index) in productList" :key="index">
+
+      <div class="lfwp">
+        <div class="day">{{item.coinAttr.mold}}</div>
+        <span>Days</span>
+        <em class="arrow"></em>
       </div>
 
-      <div class="right" @click="toOrderGrabPage(item,'coin')">
-<!--        <div class="pro-rate">-->
-<!--&lt;!&ndash;          <span>{{rateFormat(item.extra2)}}</span>&ndash;&gt;-->
-<!--          <span>{{item.coinAttr.unit_cost * item.coinAttr.multiplying_power * max_grab}}</span>-->
-<!--        </div>-->
-<!--        <div class="goods-info">-->
-<!--          <div class="tit">{{item.goods_name}}</div>-->
-<!--          <div class="desc">{{item.coin_desc}}</div>-->
-<!--          <div class="price">-->
-<!--            <span>{{item.coinAttr.unit_cost | moneyFormat}}</span>-->
-<!--            <span>{{$t('specialArea')}}</span>-->
-<!--          </div>-->
-<!--        </div>-->
-      </div>
+
+      <van-swipe :loop="false" :width="270" :show-indicators="false">
+        <van-swipe-item>
+          <div class="swipe-box">
+            <div class="item-head">
+              <span class="title">{{item.goods_name}}</span>
+              <van-button size="mini" round color="#285df2">Details</van-button>
+            </div>
+            <div class="item-bd">
+              <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
+              <div class="content">
+                <dl>
+                  <dt>{{item.coinAttr.unit_cost | moneyFormat}}</dt>
+                  <dd>Price</dd>
+                </dl>
+                <dl>
+                  <dt>{{item.coinAttr.win_rate | moneyFormat}}</dt>
+                  <dd>Hourly earnings</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </van-swipe-item>
+
+        <van-swipe-item>
+          <div class="swipe-box">
+            <div class="item-head">
+              <span class="title">{{item.goods_name}}</span>
+              <van-button size="mini" round color="#285df2">Details</van-button>
+            </div>
+            <div class="item-bd">
+              <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
+              <div class="content">
+                <dl>
+                  <dt>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</dt>
+                  <dd>Price</dd>
+                </dl>
+                <dl>
+                  <dt>{{item.usdtAttr.win_rate | moneyFormat(2,'usdt')}}</dt>
+                  <dd>Hourly earnings</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </van-swipe-item>
+
+      </van-swipe>
+
+
+
+
     </div>
 
-    <div class="no-other">{{$t('NoOtherNewTypesOfProducts')}}</div>
 
   </div>
 </template>
 
 <script>
-import {rateFormat} from "@/utils/filters";
+
 
 export default {
   name: "productList",
@@ -56,20 +80,13 @@ export default {
   created() {
     this.loadProducts()
   },
-  computed:{
-    backgroundImage(){
-      return item => `url(${this.$tools.getImage(item.goods_desc)})`
-    },
-    max_grab(){
-      return this.$store.getters['system/config'].max_grab
-    }
-  },
+
   methods:{
     async loadProducts(){
       const resp = await this.$http.post('/v1/business/matches',{
         page:1,
         pageSize:30,
-        tp:7
+        tp:10
       })
       let productList = resp.data.list || []
       productList.forEach(el => {
@@ -83,135 +100,141 @@ export default {
       })
       this.productList = productList
     },
-    toOrderGrabPage(item,cointype){
-      this.$router.push({
-        name:'OrderGrab',
-        query:{
-          id:item.id,
-          cointype:cointype
-        }
-      })
-    },
-    rateFormat(val){
-      return rateFormat(val)
-    }
+
   }
 }
 </script>
 
 <style scoped lang="scss">
-.productList {
-  padding: 9px 15px 0;
 
-  .product-item {
-    //background-color: rgba(175, 232, 251, .4);
-    //background-image: url(~assets/temp/shopee.png);
-    //background-color: #44bebf;
-    //background-size: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 175px;
-    margin-bottom: 10px;
-    //border-radius: 10px;
+.productList-cpn{
+  padding-bottom: 30px;
+
+  .prod-item{
     display: flex;
-    //overflow: hidden;
-    position: relative;
+    padding-left: 13px;
+    align-items: center;
+    margin-bottom: 15px;
 
-    .left {
-      flex: 1;
-      //background-color: rgba(39, 127, 227, .78);
-      border-radius: 10px;
-      position: relative;
-
-      .lv {
-        background: url("~assets/icon/lvbg-icon.png") no-repeat;
-        background-size: cover;
-        width: 130px;
-        font-size: 12px;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        padding-left: 8px;
-      }
-      .pro-rate{
-        color: #f00;
-      }
-    }
-
-    .right {
-      flex: 1;
-      position: relative;
-
-      .goods-info {
-        //color: #1D6FDF;
-        color: #fff;
-      }
-    }
-
-    .pro-rate {
-      width: 100%;
-      height: 50px;
-      background: url(~assets/icon/prorate.png) no-repeat;
-      background-size: contain;
-      background-position: center center;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 40px;
+    .lfwp{
+      width: 45px;
+      height: 108px;
+      margin-right: 10px;
+      background: linear-gradient(#3498db,#2980b9);
+      border-radius: 7px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 13px;
-
-      span {
+      .day{
+        background: #fff;
+        color: #2980b9;
+        font-size: 12px;
+        margin-top: 10px;
+        width: 20px;
+        height: 34px;
+        text-align: center;
+        padding-top: 3px;
+        font-weight: 700;
         position: relative;
-        top: -3px;
+        overflow: hidden;
+        &::after{
+          content: "";
+          width: 18px;
+          height: 18px;
+          background: linear-gradient(#3498db,#2980b9);
+          position: absolute;
+          transform: rotate(45deg) ;
+          bottom: -10px;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+
+      }
+      span{
+        font-size: 12px;
+        color: #fff;
+        font-weight: 700;
+      }
+      .arrow{
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin-top: 10px;
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          color: #2980b9;
+          border-top: 3px solid currentColor;
+          border-right: 3px solid currentColor;
+          transform: rotate(45deg) translate(4px,1px);
+        }
       }
     }
 
-    .goods-info {
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      height: 80px;
-      color: #fff;
-      text-align: center;
-      font-weight: 700;
-
-      .tit {
-        font-size: 19px;
-      }
-      .desc{
-        font-size: 12px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: #f8b0b7;
-        padding: 3px 10px;
-        transform: scale(.9);
-      }
-      .price {
-        font-size: 15px;
-
-        span:nth-child(1) {
-          padding-right: 5px;
+    .van-swipe{
+      flex: 1;
+      .van-swipe-item{
+        padding: 3px 15px 3px 2px;
+        .swipe-box{
+          padding: 10px;
+          border-radius: 7px;
+          position: relative;
+          overflow: hidden;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px;
+          background-color: #fff;
+          .item-head{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .title{
+              font-weight: 700;
+              font-size: 14px;
+            }
+            .van-button{
+              padding: 0 8px;
+            }
+          }
+          .item-bd{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            .prod-img{
+              width: 55px;
+              height: 55px;
+              margin-right: 10px;
+              border-radius: 6px;
+              border: 1px solid rgb(40, 93, 242);
+            }
+            .content{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              font-size: 12px;
+              flex: 1;
+              dl{
+                dt{
+                  color: rgb(40, 93, 242);
+                  font-size: 14px;
+                }
+                dd{
+                  color: #000;
+                  font-weight: 700;
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 
 
-  .no-other {
-    color: #999999;
-    background-color: #F1F1F1;
-    border-radius: 13px;
-    margin: 20px 20px;
-    text-align: center;
-    padding: 3px 0;
-    font-size: 13px;
-  }
 }
 
 </style>
