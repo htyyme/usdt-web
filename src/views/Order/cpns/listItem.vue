@@ -132,12 +132,13 @@ export default {
 .list-item {
   width: 345px;
   height: 210px;
-  background: #F6F2FC;
+  background: #F4F4F4;
   border-radius: 10px;
   margin: 15px auto;
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 1px 1px 1px rgba(100,100,100,.3);
 
   .goodstag{
     width: 59px;
@@ -275,6 +276,7 @@ export default {
       align-items: center;
       text-align: center;
       padding: 0 5px;
+      color: #E93737;
 
       dt {
         width: 100%;
@@ -286,12 +288,12 @@ export default {
         margin: 8px 0 5px 0;
         font-size: 18px;
         font-family: Nirmala UI;
-        color: $mainColor;
+
         font-weight: 700;
       }
 
       &:last-child {
-        background-color: $mainColor;
+        background-color: #8fccf9;
 
         border-radius: 0 0 10px 10px;
 

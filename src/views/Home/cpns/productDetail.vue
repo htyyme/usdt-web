@@ -25,7 +25,7 @@
       </dl>
     </div>
 
-    <van-button color="#2980b9" round block class="rent-btn" :loading="$store.getters['system/gloading']" @click="purchase">{{$t('Rent')}}</van-button>
+    <van-button color="#2C9EF4" round block class="rent-btn" :loading="$store.getters['system/gloading']" @click="purchase">{{$t('Rent')}}</van-button>
 
   </van-popup>
 
