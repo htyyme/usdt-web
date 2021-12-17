@@ -81,14 +81,19 @@ export default {
         id : this.type == 'coin' ? this.item.coinAttr.id : this.item.usdtAttr.id ,
         coin_type : this.type == 'coin' ? 1 : 2
       }
-      const resp  = await this.$http.post('/v1/auth/business/match/purchase',formData)
-      this.$toast({
-        message:this.$t('Rent Success'),
-        onClose:()=>{
-          this.handleClose()
-          this.$store.dispatch('user/loadUserInfo')
-        }
-      })
+      const resp  = await this.$http.post('/v1/auth/business/match/purchase',formData).catch(err=>err)
+      if (resp.code == 90004){
+        this.$router.push('/TrxAccount')
+      } else {
+        this.$toast({
+          message:this.$t('Rent Success'),
+          onClose:()=>{
+            this.handleClose()
+            this.$store.dispatch('user/loadUserInfo')
+          }
+        })
+      }
+
     }
   }
 }
