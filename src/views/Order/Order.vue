@@ -1,59 +1,59 @@
 <template>
   <div class="Order">
-    <navbar :title="$t('Order')" :left-arrow="false"></navbar>
+    <navbar :title="$t('Order')" :leftArrow="false"></navbar>
 
-    <pageHeader :coincountdata="coincountdata" :usdtcountdata="usdtcountdata"/>
+    <van-empty v-if="list.length==0"></van-empty>
 
-    <orderList />
+    <van-list class="list" v-model="loading" :finished="finished" :finished-text="$t('No more')" @load="loadData" :loading-text="$t('loading')">
+      <listItem v-for="item in list" :key="item.id" :order="item" @collectFinish="collectFinish"/>
+    </van-list>
 
-    <!--抢单详情-->
-    <grabOrderDetails />
-    <!--购买成功-->
-    <purchaseSuccess />
 
-    <backTop />
+
   </div>
 </template>
 
 <script>
-import pageHeader from "./cpns/pageHeader";
-import orderList from "./cpns/orderList";
-
-import grabOrderDetails from "@/views/OrderGrab/cpns/grabOrderDetails";
-import purchaseSuccess from "@/views/OrderGrab/cpns/purchaseSuccess";
+import listItem from "./cpns/listItem";
 
 export default {
-  name: "Order",
   components:{
-    pageHeader,
-    orderList,
-    grabOrderDetails,
-    purchaseSuccess
+    listItem
   },
   data(){
     return {
-      coincountdata:{},
-      usdtcountdata:{}
+      loading: false,
+      finished: false,
+      list: [],
+      queryInfo: {
+        page: 0,
+        pageSize: 30,
+        tp: 10,
+      }
     }
   },
-  async created() {
-    this.queryCoundData()
-  },
   methods:{
-    //获取统计数据
-    async queryCoundData(){
-      const resp = await this.$http.post('/v1/auth/user/shuadan/income')
-      this.coincountdata = resp.data.coin
-      this.usdtcountdata = resp.data.usdt
+    async loadData () {
+      this.queryInfo.page++
+      let resp = await this.$http.post('/v1/auth/business/match/record', {
+        ...this.queryInfo,
+      })
+      const {list,total} = resp.data
+      this.loading = false
+      this.list = this.list.concat(list || [])
+      if (this.list.length >= total){
+        this.finished = true
+      }
+    },
+    collectFinish(order){
+      const index = this.list.findIndex(el => el.id == order.id)
+      this.$set(this.list[index],'bonus_amount',0)
     }
   }
 }
+
 </script>
 
 <style scoped lang="scss">
-.Order{
-  min-height: calc(100vh - 49px);
-  background-color: #f4f4f4;
-}
 
 </style>
