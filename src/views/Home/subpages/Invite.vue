@@ -1,22 +1,33 @@
 <template>
-  <div class="invite">
-    <div id="qrcode"></div>
+  <div >
+    <div class="invite">
+      <div id="qrcode"></div>
 
-    <div class="line"></div>
+      <div class="line"></div>
 
-    <div class="info">
-      <div class="tit">{{$t('invitationCode')}}</div>
-      <div class="code">
-        <span class="de">{{code}}</span>
-        <van-button @click="copyCode">{{ $t('copy') }}</van-button>
+      <div class="info">
+        <div class="tit">{{$t('invitationCode')}}</div>
+        <div class="code">
+          <span class="de">{{code}}</span>
+          <van-button @click="copyCode">{{ $t('copy') }}</van-button>
+        </div>
+
+        <div class="tit">{{$t('invitationLink')}}</div>
+        <div class="code">
+          <span class="de">{{link | linkFormat}}</span>
+          <van-button @click="copyUrl">{{ $t('copy') }}</van-button>
+        </div>
+
+        <!--<van-button @click="saveImage" class="save-image" block type="primary">{{ $t('Save Image') }}</van-button>-->
       </div>
 
-      <div class="tit">{{$t('invitationLink')}}</div>
-      <div class="code">
-        <span class="de">{{link | linkFormat}}</span>
-        <van-button @click="copyUrl">{{ $t('copy') }}</van-button>
-      </div>
+      <a :href="imgurl" style="display: none" ref="download" target="_blank" download="download" id="xiazai"></a>
     </div>
+
+    <div class="save">
+      <van-button @click="saveImage" class="save-image" block type="primary">{{ $t('Save Image') }}</van-button>
+    </div>
+
 
   </div>
 </template>
@@ -24,6 +35,8 @@
 <script>
 import appconfig from "@/config";
 import QRCode from 'qrcodejs2'
+import html2canvas from 'html2canvas'
+
 export default {
   name: "Invite",
   computed:{
@@ -40,6 +53,12 @@ export default {
       }
     }
 
+  },
+  data(){
+    return {
+      // strDataURI:""
+      imgurl:""
+    }
   },
   mounted() {
     this.generateQrcode()
@@ -63,12 +82,20 @@ export default {
      * 生成二维码
      */
     generateQrcode() {
-      new QRCode(document.getElementById("qrcode"), {
+      console.log(new QRCode(document.getElementById("qrcode"), {
         text: this.link,
         width: 150,
         height: 150,
-      });
+      }))
     },
+    saveImage(){
+      html2canvas(document.querySelector('.invite')).then(canvas=>{
+        var url = canvas.toDataURL()
+        var xiazai = document.querySelector('#xiazai')
+        xiazai.setAttribute('href',url)
+        xiazai.click()
+      })
+    }
   },
   filters:{
     linkFormat(v) {
@@ -156,5 +183,19 @@ export default {
     }
   }
 }
+
+
+.save{
+  background-color: #f4f4f4;
+  padding-bottom: 30px;
+  .save-image{
+    border-radius: 10px;
+    height: 30px;
+    width: 90%;
+    margin: 15px auto 0px;
+
+  }
+}
+
 
 </style>
