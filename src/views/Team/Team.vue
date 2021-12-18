@@ -34,12 +34,17 @@
       <router-link to="/">{{$t('go')}}</router-link>
     </div>
 
-    <van-swipe :loop="false" :width="165" :show-indicators="false" class="lst">
-      <van-swipe-item v-for="(item,index) in cointeams" :key="index" >
 
-        <div  class="item">
-          <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>
 
+
+
+
+
+    <div class="lst">
+      <div class="item" v-for="(item,index) in cointeams" :key="index">
+        <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>
+
+        <section>
           <dl>
             <dt>{{$t('Team size')}}</dt>
             <dd>
@@ -57,36 +62,9 @@
               </div>
             </dd>
           </dl>
-        </div>
-
-
-      </van-swipe-item>
-
-    </van-swipe>
-
-    <!--<div class="lst">-->
-    <!--  <div class="item" v-for="(item,index) in cointeams" :key="index">-->
-    <!--    <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>-->
-
-    <!--    <dl>-->
-    <!--      <dt>{{$t('Team size')}}</dt>-->
-    <!--      <dd>-->
-    <!--        <van-icon :name="require('@/assets/icon/teamsize.png')" size="22"></van-icon>-->
-    <!--        <span>{{item.size}}</span>-->
-    <!--      </dd>-->
-    <!--    </dl>-->
-    <!--    <dl>-->
-    <!--      <dt>{{$t('Total rebate')}}</dt>-->
-    <!--      <dd>-->
-    <!--        <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>-->
-    <!--        <div class="mul">-->
-    <!--          <em>+{{item.promote | moneyFormat(2,'coin')}}</em>-->
-    <!--          <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(5,'usdt')}}</em>-->
-    <!--        </div>-->
-    <!--      </dd>-->
-    <!--    </dl>-->
-    <!--  </div>-->
-    <!--</div>-->
+        </section>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -233,30 +211,38 @@ export default {
   }
 
   .lst{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    //display: flex;
+    //justify-content: space-between;
+    //flex-wrap: wrap;
     //padding: 0 24px;
     margin: 0 24px;
     .item{
-      width: 153px;
-      height: 207px;
+      //width: 335px;
+      //height: 207px;
       background: #FFFFFF;
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
       border-radius: 13px;
       margin-top: 13px;
       position: relative;
+      padding: 15px;
+      padding-bottom: 8px;
       .details{
-        position: absolute;
-        right: 0;
-        top: 0;
+        //position: absolute;
+        //right: 0;
+        //top: 0;
         height: 36px;
         background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
         border-radius: 28px;
         color: #fff;
         text-transform: capitalize;
+        margin: 0 auto;
+        display: block;
       }
-      padding: 61px 0 0 14px;
+      section{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px 0;
+      }
       dl{
         margin-bottom: 10px;
         dt{
