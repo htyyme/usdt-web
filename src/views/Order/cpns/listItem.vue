@@ -53,18 +53,22 @@
 
     <!--动画弹窗-->
     <doubleConfirm ref="doubleConfirmRef"/>
+
+    <collar ref="collarRef"/>
   </div>
 </template>
 
 <script>
 import vars from "@/assets/css/vars.scss";
 import doubleConfirm from "./doubleConfirm";
+import collar from "./collar";
 import {debounce} from "lodash";
 
 export default {
   name: "listItem",
   components:{
-    doubleConfirm
+    doubleConfirm,
+    collar
   },
   props: {
     order:{
@@ -107,12 +111,20 @@ export default {
       if (resp.code==200){
         // this.$refs.doubleConfirmRef.handleOpen()
 
-        this.$toast({
-          message:this.$t('success'),
-          onClose:()=>{
-            this.$emit('collectFinish',this.order)
-          }
+        // this.$toast({
+        //   message:this.$t('success'),
+        //   onClose:()=>{
+        //     // this.$emit('collectFinish',this.order)
+        //   }
+        // })
+
+        this.$refs.collarRef.handleOpen({
+          // isOne:true,
+          // order:resp.data
+          amount:this.order.bonus_amount
         })
+
+        this.$emit('collectFinish',resp.data)
       }
 
       setTimeout(()=>{

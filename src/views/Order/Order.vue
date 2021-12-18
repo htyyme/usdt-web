@@ -47,7 +47,10 @@ export default {
     },
     collectFinish(order){
       const index = this.list.findIndex(el => el.id == order.id)
-      this.$set(this.list[index],'bonus_amount',0)
+      this.$set(this.list,index,order)
+
+      this.$store.dispatch('user/loadUserInfo')
+
     }
   }
 }
