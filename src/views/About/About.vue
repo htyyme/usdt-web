@@ -12,6 +12,11 @@
         <div class="content" v-html="aboutContent"></div>
       </van-collapse-item>
 
+
+      <van-collapse-item :title="$t('新手引导')" name="guide" v-if="guide.length>0">
+        <div class="content" v-html="guide"></div>
+      </van-collapse-item>
+
     </van-collapse>
 
   </div>
@@ -36,6 +41,9 @@ export default {
     },
     three_service_address(){
       return this.$store.getters['system/config'].three_service_address
+    },
+    guide(){
+      return this.$store.getters['system/config'].guide
     }
   }
 }

@@ -430,6 +430,14 @@ const routes = [
             title:'Success'
         }
     },
+    {
+        name:'RedEnvelope',
+        path:"/RedEnvelope",
+        component:()=>import('@/views/RedEnvelope/RedEnvelope'),
+        meta:{
+            title:'Red Envelope'
+        }
+    }
 ]
 
 const router = new VueRouter({

@@ -1,6 +1,12 @@
 <template>
   <div class="menuList">
     <ul>
+      <li @click="showEnterEnvelopeKey" >
+        <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
+        <span>{{$t('Red Envelope')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
       <li @click="toVipPage" >
         <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
         <span>{{$t('memberSystem')}}</span>
@@ -62,12 +68,18 @@
       </li>
 
     </ul>
+
+    <enterEnvelopeKey ref="enterEnvelopeKeyRef"></enterEnvelopeKey>
   </div>
 </template>
 
 <script>
+import enterEnvelopeKey from "./enterEnvelopeKey";
 export default {
   name: "menuList",
+  components:{
+    enterEnvelopeKey
+  },
   computed:{
     show_usdt_trading(){
       return this.$store.getters['system/config'].show_usdt_trading
@@ -132,7 +144,11 @@ export default {
       this.$store.commit('user/setToken','')
       this.$store.commit('system/setBanners1',[])
       this.$router.replace({name:'Login'})
+    },
+    showEnterEnvelopeKey(){
+      this.$refs.enterEnvelopeKeyRef.handleOpen()
     }
+
   }
 }
 </script>

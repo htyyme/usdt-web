@@ -32,7 +32,7 @@
 
       <div class="sub-title" @click="showDesc">
 
-        什么是质押收益
+        {{$t('What is Pledge income?')}}
         <van-icon name="question-o" />
       </div>
 

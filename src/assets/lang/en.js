@@ -630,6 +630,11 @@ export default {
     'signDes':'I have signed in for {signNum} consecutive days continue to cheer',
     'signInTitle':'Signed in for {signNum} consecutive day',
     'Recharge help':'Recharge help',
+    'Enter envelope key':'Enter envelope key',
+    'Red Envelope':'Red Envelope',
+    'Envelope key':'Envelope key',
+    'Pledge income':'Pledge income',
+    'What is Pledge income?':'What is Pledge income?',
 
 
 

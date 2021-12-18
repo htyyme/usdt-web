@@ -2,8 +2,8 @@
 
   <van-popup v-model="show" get-container="#app" >
 
-    <div class="content">
-      什么是质押收益
+    <div class="content" v-html="shop_description">
+
     </div>
 
     <van-icon name="close" class="close" @click="handleClose" color="#fff" size="23"/>
@@ -17,6 +17,11 @@ export default {
   data() {
     return {
       show: false
+    }
+  },
+  computed:{
+    shop_description(){
+      return this.$store.getters['system/config'].shop_description
     }
   },
   methods:{
@@ -43,6 +48,8 @@ export default {
     font-size: 13px;
     line-height: 1.3;
     background-color: #fff;
+    font-family: "Courier";
+
   }
 
   .close{
