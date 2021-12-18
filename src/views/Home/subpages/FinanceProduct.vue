@@ -37,7 +37,7 @@
       </div>
 
       <div class="type-list">
-        <div class="title">{{$t('financeProduct')}}</div>
+        <div class="title">{{$t('Pledge income')}}</div>
 
         <div class="type-item" v-for="item in productList" :key="item.id">
           <div class="typ type-usdt">
