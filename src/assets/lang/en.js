@@ -1,5 +1,5 @@
 export default {
-    'coin': '₹',
+    'coin': 'COL$',
 
     // vant
     tel: 'Phone',

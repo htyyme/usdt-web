@@ -6,7 +6,7 @@
     </router-link>
     <router-link :to="{name:'FinanceProduct'}" tag="li">
       <van-image :src="require('@/assets/icon/financial-product.png')"></van-image>
-      <span>{{$t('financeProduct')}}</span>
+      <span>{{$t('质押收益')}}</span>
     </router-link>
     <router-link :to="{name:'Invite'}" tag="li">
       <van-image :src="require('@/assets/icon/invite-friends.png')"></van-image>

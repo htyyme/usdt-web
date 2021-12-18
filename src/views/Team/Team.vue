@@ -34,29 +34,59 @@
       <router-link to="/">{{$t('go')}}</router-link>
     </div>
 
-    <div class="lst">
-      <div class="item" v-for="(item,index) in cointeams" :key="index">
-        <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>
+    <van-swipe :loop="false" :width="165" :show-indicators="false" class="lst">
+      <van-swipe-item v-for="(item,index) in cointeams" :key="index" >
 
-        <dl>
-          <dt>{{$t('Team size')}}</dt>
-          <dd>
-            <van-icon :name="require('@/assets/icon/teamsize.png')" size="22"></van-icon>
-            <span>{{item.size}}</span>
-          </dd>
-        </dl>
-        <dl>
-          <dt>{{$t('Total rebate')}}</dt>
-          <dd>
-            <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>
-            <div class="mul">
-              <em>+{{item.promote | moneyFormat(2,'coin')}}</em>
-              <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(5,'usdt')}}</em>
-            </div>
-          </dd>
-        </dl>
-      </div>
-    </div>
+        <div  class="item">
+          <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>
+
+          <dl>
+            <dt>{{$t('Team size')}}</dt>
+            <dd>
+              <van-icon :name="require('@/assets/icon/teamsize.png')" size="22"></van-icon>
+              <span>{{item.size}}</span>
+            </dd>
+          </dl>
+          <dl>
+            <dt>{{$t('Total rebate')}}</dt>
+            <dd>
+              <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>
+              <div class="mul">
+                <em>+{{item.promote | moneyFormat(2,'coin')}}</em>
+                <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(5,'usdt')}}</em>
+              </div>
+            </dd>
+          </dl>
+        </div>
+
+
+      </van-swipe-item>
+
+    </van-swipe>
+
+    <!--<div class="lst">-->
+    <!--  <div class="item" v-for="(item,index) in cointeams" :key="index">-->
+    <!--    <van-button  class="details" @click="toRebateRecordPage(item)">{{$t('levelNum',{num:item.lv_id})}}</van-button>-->
+
+    <!--    <dl>-->
+    <!--      <dt>{{$t('Team size')}}</dt>-->
+    <!--      <dd>-->
+    <!--        <van-icon :name="require('@/assets/icon/teamsize.png')" size="22"></van-icon>-->
+    <!--        <span>{{item.size}}</span>-->
+    <!--      </dd>-->
+    <!--    </dl>-->
+    <!--    <dl>-->
+    <!--      <dt>{{$t('Total rebate')}}</dt>-->
+    <!--      <dd>-->
+    <!--        <van-icon :name="require('@/assets/icon/withdraw.png')" size="22"></van-icon>-->
+    <!--        <div class="mul">-->
+    <!--          <em>+{{item.promote | moneyFormat(2,'coin')}}</em>-->
+    <!--          <em v-if="usdtteams[index]">+{{usdtteams[index].promote | moneyFormat(5,'usdt')}}</em>-->
+    <!--        </div>-->
+    <!--      </dd>-->
+    <!--    </dl>-->
+    <!--  </div>-->
+    <!--</div>-->
 
   </div>
 </template>
@@ -206,7 +236,8 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 24px;
+    //padding: 0 24px;
+    margin: 0 24px;
     .item{
       width: 153px;
       height: 207px;
