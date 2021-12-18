@@ -30,6 +30,12 @@
 
       </div>
 
+      <div class="sub-title" @click="showDesc">
+
+        什么是质押收益
+        <van-icon name="question-o" />
+      </div>
+
       <div class="type-list">
         <div class="title">{{$t('financeProduct')}}</div>
 
@@ -60,6 +66,7 @@
 
 
     <buyPopup />
+    <financeDescPop ref="financeDescPopRef"/>
   </div>
 </template>
 
@@ -67,6 +74,7 @@
 import vars from "@/assets/css/vars.scss";
 import {OPEN_BUY_POPUP} from "@/utils/events";
 import buyPopup from "../cpns/buyPopup";
+import financeDescPop from "../cpns/financeDescPop";
 import {
 
   RELOAD_PROFIT_INFO
@@ -76,6 +84,7 @@ export default {
   name: "FinanceProduct",
   components: {
     buyPopup,
+    financeDescPop
   },
   data() {
     return {
@@ -131,6 +140,11 @@ export default {
     openBuy(item,type) {
       // console.log(item,type)
       this.$bus.$emit(OPEN_BUY_POPUP, item,type)
+    },
+
+    //展示什么是质押收益
+    showDesc(){
+      this.$refs.financeDescPopRef.handleOpen()
     }
   },
 
@@ -355,6 +369,14 @@ export default {
     color: #fff;
     margin: 20px auto 12px;
   }
+}
+
+.sub-title{
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+  color: #3596E8;
+  cursor: pointer;
 }
 
 </style>
