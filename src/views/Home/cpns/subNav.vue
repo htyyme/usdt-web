@@ -5,7 +5,7 @@
       <span>{{$t('orderFinance')}}</span>
     </router-link>
     <router-link :to="{name:'FinanceProduct'}" tag="li">
-      <van-image :src="require('@/assets/icon/financial-product.png')"></van-image>
+      <van-image :src="require('@/assets/icon/image_2021-12-18_14-38-07.png')"></van-image>
       <span>{{$t('Pledge income')}}</span>
     </router-link>
     <router-link :to="{name:'Invite'}" tag="li">

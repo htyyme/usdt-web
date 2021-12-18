@@ -1,15 +1,19 @@
 <template>
   <div class="lvList">
 
-    <div class="item" v-for="(item,index) in viplist" :key="index" @click="handleclick(item)">
+    <div class="item" v-for="(item,index) in viplist" :key="index" >
       <van-image :src="getLvIcon(item.lv_id)" class="levelicon" fit="contain"></van-image>
       <div class="tit">LV.{{item.lv_id}}</div>
-      <div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>
+      <!--<div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>-->
       <div class="content">
 <!--        <p>1. Each withdrawal limit is 5000</p>-->
 <!--        <p>2. The number of orders can be swipe until 30 times</p>-->
         <p>1.{{$t('vipinfo1',{num1:rateFormat(item.superior_rebate) ,num2:rateFormat(item.two_level_rebate) ,num3:rateFormat(item.three_level_rebate)})}}</p>
-        <p>2.{{$t('vipinfo2',{num:maxgrab})}}</p>
+        <!--<p>2.{{$t('vipinfo2',{num:maxgrab})}}</p>-->
+
+        <p>2.Withdraw fee:{{item.withdrawal_fee}}</p>
+        <p>3.Need {{item.cond_limit}} subordinates buy our products</p>
+
       </div>
 
       <div class="shadow">{{$t('widthdrawfrequency',{num:item.lv_id})}}</div>
@@ -142,7 +146,7 @@ export default {
     .content{
       color: #666;
       font-size: 12px;
-      padding: 10px 10px 0;
+      padding: 40px 10px 0;
     }
     .shadow{
       position: absolute;

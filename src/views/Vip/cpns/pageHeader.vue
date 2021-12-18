@@ -9,6 +9,7 @@
       <van-step v-for="(item,index) in viplist" :key="index">LV.{{index+1}}</van-step>
     </van-steps>
 
+    <span class="cnt">Invite members:{{$store.getters['user/coinAccount'].limit_buy}}</span>
   </header>
 </template>
 
@@ -95,6 +96,15 @@ header {
     transform: translateX(-50%);
     width: 85%;
 
+  }
+
+  .cnt{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    font-weight: 700;
+    font-size: 16px;
   }
 }
 
