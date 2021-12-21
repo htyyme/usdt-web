@@ -1,7 +1,7 @@
 <template>
   <div class="addBankCard">
     <navbar :title="$t('Bank Card')"></navbar>
-    
+
     <div class="wrapper">
       <dl>
         <dt>{{$t('Account Name')}}</dt>
@@ -37,7 +37,7 @@
         <dt>{{$t('Verification code')}}</dt>
         <dd>
           <input type="text"  :placeholder="$t('Verification code')" v-model="form.sms_code">
-          <van-button size="mini" :disabled="countdown>0" type="warning" @click="getVerificationCode">{{sendBtnText}}</van-button>
+          <van-button size="mini" :disabled="countdown>0" color="#626AD9" @click="getVerificationCode">{{sendBtnText}}</van-button>
         </dd>
       </dl>
 
@@ -200,7 +200,7 @@ export default {
     dl{
       dt{
         font-size: 18px;
-        color: #97B9F5;
+        color: #242EAC;
       }
       dd{
         width: 310px;
@@ -229,7 +229,7 @@ export default {
     .submit-btn{
       width: 175px;
       height: 40px;
-      background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+      background: linear-gradient( to top,#242EAC,#626AD9);
       opacity: 1;
       border-radius: 28px;
       color: #fff;

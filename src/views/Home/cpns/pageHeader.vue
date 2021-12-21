@@ -100,7 +100,7 @@ export default {
   }
   header {
     height: 185px;
-    background: #3CA1EB;
+    background: linear-gradient( to top,#242EAC,#626AD9);
     position: relative;
 
     .user {
@@ -177,7 +177,8 @@ export default {
         dd {
           width: 125px;
           height: 22px;
-          background: #FFC543;
+          background: #626AD9;
+
           border-radius: 11px;
           font-size: 12px;
           display: flex;

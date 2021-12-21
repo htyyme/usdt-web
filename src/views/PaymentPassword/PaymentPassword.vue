@@ -7,7 +7,7 @@
 
       <van-field v-if="isSendSms" :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code" v-model="verify_code" :rules="[{ required: true }]">
         <template #button>
-          <van-button size="mini" type="primary" :disabled="countdown>0" @click="sendOtp">{{sendBtnText}}</van-button>
+          <van-button size="mini" color="#626AD9" :disabled="countdown>0" @click="sendOtp">{{sendBtnText}}</van-button>
         </template>
       </van-field>
 
@@ -114,7 +114,7 @@ name: "PaymentPassword",
 .save-btn{
   width: 220px;
   height: 40px;
-  background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+  background: linear-gradient( to top,#242EAC,#626AD9);
   border-radius: 28px;
   color: #fff;
   margin: 0 auto;

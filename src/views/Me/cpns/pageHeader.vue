@@ -57,7 +57,7 @@ export default {
 <style scoped lang="scss">
   .pageHeader{
     height: 250px;
-    background: url(~assets/img/mebg.png) no-repeat;
+    background: linear-gradient( to top,#242EAC,#626AD9);
     background-size: cover;
     padding: 43px 0 0 0;
     .user{
@@ -97,7 +97,7 @@ export default {
         font-weight: 700;
       }
       .num{
-        color: #3799E9;
+        color: #626AD9;
         font-size: 21px;
         font-weight: 700;
         display: flex;

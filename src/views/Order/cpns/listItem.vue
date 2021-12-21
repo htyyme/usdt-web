@@ -144,7 +144,7 @@ export default {
 .list-item {
   width: 345px;
   height: 210px;
-  background: #F4F4F4;
+  background: #7981E3;
   border-radius: 10px;
   margin: 15px auto;
   display: flex;
@@ -245,6 +245,7 @@ export default {
         line-clamp: 2;
         -webkit-box-orient: vertical;
         margin: 6px 5px;
+        color: #fff;
       }
 
       .tags{
@@ -269,7 +270,7 @@ export default {
 
       .line {
         font-size: 12px;
-        color: #666;
+        color: #fff;
         line-height: 2;
       }
     }
@@ -288,12 +289,12 @@ export default {
       align-items: center;
       text-align: center;
       padding: 0 5px;
-      color: #E93737;
+      color: #fff;
 
       dt {
         width: 100%;
         font-size: 12px;
-        color: #999;
+        color: #fff;
       }
 
       dd {
@@ -305,16 +306,18 @@ export default {
       }
 
       &:last-child {
-        background-color: #8fccf9;
+        background-color: #242EAC;
 
         border-radius: 0 0 10px 10px;
+        border: 1px solid #fff;
+        border-top: none;
 
         dd, dt {
           color: #fff;
         }
 
         &.zero {
-          background-color: #ccc;
+          background-color: #626AD9;
         }
       }
     }

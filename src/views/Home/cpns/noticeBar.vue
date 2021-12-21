@@ -3,7 +3,7 @@
     <van-notice-bar
         left-icon="volume-o"
         :text="noticeText"
-        background="#FFC543"
+        background="#626AD9"
         color="#fff"
         :left-icon="require('@/assets/icon/horn.png')"
         @click="showAnnounce"
@@ -47,7 +47,7 @@ export default {
       position: absolute;
       width: 25px;
       height: 25px;
-      background-color: #F8B829;
+      background: linear-gradient( to top,#242EAC,#626AD9);
       right: 0;
       bottom: 0;
       transform: translateY(-5px) rotate(-30deg);

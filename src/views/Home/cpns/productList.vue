@@ -16,7 +16,7 @@
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
-              <van-button size="mini" round color="#2C9EF4">Details</van-button>
+              <van-button size="mini" round color="#626AD9">Details</van-button>
             </div>
             <div class="item-bd">
               <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
@@ -38,7 +38,7 @@
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
-              <van-button size="mini" round color="#2C9EF4">Details</van-button>
+              <van-button size="mini" round color="#626AD9">Details</van-button>
             </div>
             <div class="item-bd">
               <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
@@ -128,7 +128,7 @@ export default {
       width: 45px;
       height: 108px;
       margin-right: 10px;
-      background: linear-gradient(#95D0FA,#2C9EF4);
+      background: linear-gradient( to top,#242EAC,#626AD9);
       border-radius: 7px;
       display: flex;
       flex-direction: column;
@@ -149,7 +149,7 @@ export default {
           content: "";
           width: 18px;
           height: 18px;
-          background: linear-gradient(#3498db,#2980b9);
+          background: linear-gradient( to top,#242EAC,#626AD9);
           position: absolute;
           transform: rotate(45deg) ;
           bottom: -10px;

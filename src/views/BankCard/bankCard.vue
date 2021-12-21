@@ -92,7 +92,7 @@ export default {
       .item{
         width: 319px;
         height: 100px;
-        background: #09A1ED;
+        background: linear-gradient( to top,#242EAC,#626AD9);
         border-radius: 13px;
         .line{
           padding: 12px 30px 0 24px;

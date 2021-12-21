@@ -124,7 +124,7 @@ export default {
   padding-bottom: 25px;
   .header{
     height: 140px;
-    background: #09A1ED;
+    background: linear-gradient( to top,#242EAC,#626AD9);
     border-radius: 0px 0px 13px 13px;
     .pagetitle{
       padding-top: 12px;
@@ -231,7 +231,7 @@ export default {
         //right: 0;
         //top: 0;
         height: 36px;
-        background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+        background: linear-gradient( to top,#242EAC,#626AD9);
         border-radius: 28px;
         color: #fff;
         text-transform: capitalize;

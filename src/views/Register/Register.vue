@@ -9,7 +9,7 @@
       <!--验证码-->
       <field4 v-if="isSendSms" v-model="registerForm.sms_code" :left-icon="require('@/assets/icon/sms-icon.png')" :placeholder="$t('smsCode')">
         <template #right>
-          <van-button color="#35C1FF" class="otp" size="mini" :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
+          <van-button color="#626AD9" class="otp" size="mini" :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
         </template>
       </field4>
 
@@ -164,7 +164,8 @@ export default {
 .login {
   width: 100vw;
   height: 100vh;
-  background: url(~assets/img/login-bg.png) no-repeat;
+  //background: url(~assets/img/login-bg.png) no-repeat;
+  background: linear-gradient( to top,#242EAC,#626AD9);
   background-size: 375px 100vh;
   display: flex;
   align-items: center;
@@ -182,7 +183,7 @@ export default {
     .form-title {
       font-size: 20px;
       font-weight: 800;
-      color: #FF00E6;
+      color: #fff;
       text-align: center;
       padding: 55px 0 5px 0;
       text-transform: uppercase;
@@ -190,7 +191,8 @@ export default {
     .submit-btn {
       width: 201px;
       height: 50px;
-      background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+      //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+      background: linear-gradient( to top,#242EAC,#626AD9);
       opacity: 1;
       border-radius: 25px;
       border: none;
@@ -206,7 +208,7 @@ export default {
       padding-top: 12px;
 
       a {
-        color: #FF00E6;
+        color: #fff;
         padding-left: 7px;
       }
     }

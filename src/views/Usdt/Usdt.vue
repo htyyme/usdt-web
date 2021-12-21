@@ -141,7 +141,7 @@ export default {
   padding-bottom: 15px;
   header {
     height: 150px;
-    background-color: #3CA1EB;
+    background: linear-gradient( to top,#242EAC,#626AD9);
     border-radius: 0 0 10px 10px;
 
     .title {
@@ -229,7 +229,7 @@ export default {
       a{
         height: 56px;
         width: 100%;
-        background-color: orange;
+        background: linear-gradient( to top,#242EAC,#626AD9);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -266,7 +266,7 @@ export default {
         word-break: break-all;
       }
       .link{
-        color: #e74c3c;
+        color: #626AD9;
         font-weight: 700;
         word-break: break-all;
       }

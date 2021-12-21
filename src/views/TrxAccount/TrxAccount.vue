@@ -206,8 +206,10 @@ export default {
 @import "src/assets/css/vars";
 
 .accounts-page{
-
+  background: linear-gradient( to top,#242EAC,#626AD9);
+  min-height: 100vh ;
   .bankcard-wrapper{
+
     .top{
       display: flex;
       justify-content: space-between;
@@ -235,7 +237,9 @@ export default {
   }
 
   .wallet-wrapper{
+    //background: #fff url(~assets/img/usdtbg.png) no-repeat;
     margin-top: 15px;
+    background: #7981E3;
     .top{
       display: flex;
       justify-content: space-between;
@@ -247,6 +251,7 @@ export default {
         align-items: center;
         .bind{
           margin-left: 10px;
+          color: #fff;
         }
       }
     }
@@ -278,13 +283,13 @@ export default {
 
     .trx{
       padding-top: 20px;
-      color: #969696;
+      color: #fff;
       section{
         margin-top: 7px;
         background: #FFFBF3;
-        border: 1px solid #FEC74D;
+        //border: 1px solid #FEC74D;
         border-radius: 5px;
-        padding: 15px 13px;
+        padding: 7px 13px;
         word-break: break-all;
         position: relative;
         a{
@@ -299,6 +304,7 @@ export default {
           border: none;
           background-color: transparent;
           font-size: 12px;
+          color: #242EAC;
         }
       }
     }
@@ -307,7 +313,7 @@ export default {
 
 .tips{
   padding: 20px 0 10px 3px;
-  color: #999;
+  color: #fff;
 }
 
 .back{

@@ -25,7 +25,7 @@
       </dl>
     </div>
 
-    <van-button color="#2C9EF4" round block class="rent-btn" :loading="$store.getters['system/gloading']" @click="purchase">{{$t('Rent')}}</van-button>
+    <van-button  round block class="rent-btn" :loading="$store.getters['system/gloading']" @click="purchase">{{$t('Rent')}}</van-button>
 
   </van-popup>
 
@@ -109,7 +109,7 @@ export default {
   .van-image{
     width: 80px;
     height: 80px;
-    border: 1px solid #2980b9;
+    border: 1px solid #626AD9;
     border-radius: 13px;
     overflow: hidden;
     display: block;
@@ -152,7 +152,7 @@ export default {
         color: #000;
       }
       dd{
-       color: #2980b9;
+       color: #626AD9;
         font-size: 17px;
         font-weight: 700;
       }
@@ -163,6 +163,8 @@ export default {
     width: 192px;
     height: 40px;
     margin: 25px auto 10px;
+    background: linear-gradient( to top,#242EAC,#626AD9);
+    color: #fff;
   }
 
 }

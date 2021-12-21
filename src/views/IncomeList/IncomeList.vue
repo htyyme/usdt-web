@@ -2,7 +2,7 @@
   <div>
     <navbar :title="$t('Income List')"></navbar>
 
-    <van-tabs v-model="activeName" sticky animated line-width="100px" color="#09A1ED">
+    <van-tabs v-model="activeName" sticky animated line-width="100px" color="#242EAC">
       <van-tab title="USDT" name="USDT">
         <usdt_incomelist />
       </van-tab>
