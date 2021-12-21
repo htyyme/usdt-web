@@ -10,7 +10,13 @@
 
         <section class="right-xsec">
           <van-image :src="require('@/assets/icon/icon_records.png')" width="19" height="19"></van-image>
-          <van-image :src="require('@/assets/icon/icon_more.png')" width="19" height="6"></van-image>
+          <!--<van-image :src="require('@/assets/icon/icon_more.png')" width="19" height="6"></van-image>-->
+
+          <van-popover v-model="showPopover" trigger="click" :actions="actions"  placement="left-start" @select="selectOption">
+            <template #reference>
+              <van-image :src="require('@/assets/icon/icon_more.png')" width="19" height="6"></van-image>
+            </template>
+          </van-popover>
         </section>
       </div>
 
@@ -18,12 +24,26 @@
 
     <router-view></router-view>
 
+
+
+
   </div>
 </template>
 
 <script>
 
 export default  {
+  data() {
+    return {
+      showPopover: false,
+      actions: [
+        { text: '收款方式管理', icon: require('@/assets/icon/transactioncenter.png') },
+        { text: '交易设置', icon:require('@/assets/icon/shoukuan.png') },
+        { text: '帮助中心', icon:require('@/assets/icon/helpcenter.png') },
+      ],
+    };
+  },
+
   computed:{
     routeName(){
       return this.$route.name
@@ -36,6 +56,10 @@ export default  {
     toPurchaselist(){
       this.$router.push('/UsdtMall2/purchaselist')
     },
+
+    selectOption(action,index){
+      console.log(action,index)
+    }
 
   }
 }
@@ -82,4 +106,7 @@ export default  {
       }
     }
   }
+
+
+
 </style>
