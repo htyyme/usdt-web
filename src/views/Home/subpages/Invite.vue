@@ -152,7 +152,7 @@ export default {
     .tit{
       font-size: 14px;
       font-weight: bold;
-      color: #379AE9;
+      color:#626AD9;
       margin-top: 15px;
     }
     .code{
@@ -162,7 +162,7 @@ export default {
         color: #fff;
         width: 160px;
         height: 29px;
-        background: #379AE9;
+        background: #626AD9;
         border-radius: 7px;
         display: flex;
         justify-content: center;
