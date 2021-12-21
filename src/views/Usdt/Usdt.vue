@@ -123,7 +123,7 @@ export default {
           message:this.$t('It is not open for the time being.')
         })
       }else {
-        this.$router.push({name:'UsdtMall'})
+        this.$router.push('/UsdtMall2/purchaselist')
       }
     },
     tolink(newsitem){

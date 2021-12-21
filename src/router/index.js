@@ -407,6 +407,30 @@ const routes = [
         }
     },
     {
+        path:"/UsdtMall2",
+        name:'UsdtMall2',
+        component:()=>import('@/views/UsdtMall2/UsdtMall'),
+        meta:{
+            title:"Usdt Mall"
+        },
+        children: [
+            {
+                path:'/',
+                redirect: '/UsdtMall2/purchaselist',
+            },
+            {
+                path:"/UsdtMall2/purchaselist",
+                name:'UsdtMall2_purchaselist',
+                component:()=>import('@/views/UsdtMall2/purchaselist'),
+            },
+            {
+                path:"/UsdtMall2/salelist",
+                name:'UsdtMall2_salelist',
+                component:()=>import('@/views/UsdtMall2/salelist'),
+            }
+        ]
+    },
+    {
         path:"/UsdtnewsDetail",
         name:'UsdtnewsDetail',
         component:()=>import('@/views/UsdtnewsDetail/UsdtnewsDetail'),
