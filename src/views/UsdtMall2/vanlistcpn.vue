@@ -108,7 +108,7 @@ export default {
         color: #868995;
         padding: 3px 0;
         .price{
-          color: #0066ED;
+          color: #242EAC;
           font-size: 18px;
           font-weight: 700;
         }
