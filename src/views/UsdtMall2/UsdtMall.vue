@@ -51,10 +51,16 @@ export default  {
   },
   methods:{
     toSalelist(){
-      this.$router.push('/UsdtMall2/salelist')
+      if (this.$route.path !== '/UsdtMall2/salelist'){
+        this.$router.push('/UsdtMall2/salelist')
+      }
+
     },
     toPurchaselist(){
-      this.$router.push('/UsdtMall2/purchaselist')
+      if (this.$route.path !== "/UsdtMall2/purchaselist"){
+        this.$router.push('/UsdtMall2/purchaselist')
+      }
+
     },
 
     selectOption(action,index){
