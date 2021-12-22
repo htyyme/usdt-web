@@ -2,7 +2,7 @@
   <div class="menuList">
     <ul>
       <li @click="showEnterEnvelopeKey" >
-        <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
+        <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>
         <span>{{$t('Red Envelope')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
