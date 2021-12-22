@@ -53,14 +53,15 @@ export default {
 <style scoped lang="scss">
 .payWay{
   border: 1px solid #FFFFFF;
-  background: linear-gradient(181deg, #98DEF8 0%, #7ED7FA 31%, #75D4FB 54%, #35C1FF 100%);
+  //background: linear-gradient(181deg, #98DEF8 0%, #7ED7FA 31%, #75D4FB 54%, #35C1FF 100%);
+  background: linear-gradient( to top,#242EAC,#626AD9);
   border-radius: 13px;
   margin: 10px 15px 0;
   padding: 10px 18px;
 
   .title{
     font-size: 17px;
-    color: #333;
+    color: #fff;
     font-weight: 700;
     margin-bottom: 11px;
   }

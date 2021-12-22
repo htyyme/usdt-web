@@ -7,7 +7,7 @@
     </div>
     <div class="card-val">
       <input type="password" :placeholder="$t('Enter the fund password')" v-model="form.password" autocomplete="off"/>
-      <van-button color="#3596E8" round size="normal" :to="{name:'PaymentPassword'}" >{{$t('Forget')}}</van-button>
+      <van-button color="#626AD9" round size="normal" :to="{name:'PaymentPassword'}" >{{$t('Forget')}}</van-button>
     </div>
 
   </section>

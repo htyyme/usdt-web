@@ -75,18 +75,19 @@ export default {
     li {
       width: 140px;
       height: 50px;
-      background-color: rgba(53, 193, 255, 0.2);
+      //background-color: rgba(53, 193, 255, 0.2);
+      background: #626AD9;
       border-radius: 13px;
       margin-bottom: 13px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 21px;
-      color: #1D6FDF;
+      color: #fff;
       font-weight: 700;
 
       &.active {
-        background-color: #3596E8;
+        background-color: #242EAC;
         color: #fff;
       }
     }

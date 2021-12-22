@@ -128,7 +128,8 @@ export default {
       .van-button{
         width: 115px;
         height: 55px;
-        background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+        //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+        background: linear-gradient( to top,#242EAC,#626AD9);
         border-radius: 13px;
         color: #fff;
         margin-right: 15px;
