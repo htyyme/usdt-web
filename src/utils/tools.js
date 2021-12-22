@@ -266,3 +266,9 @@ export function nanoid(t = 21) {
     }
     return e
 }
+
+
+export function getHost(){
+    const {protocol,host} = location
+    return protocol + "//" + host
+}
