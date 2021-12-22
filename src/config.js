@@ -2,9 +2,9 @@
 const IS_APP = false
 
 export default {
-    env: 'dev',//dev/prod
+    env: 'prod',//dev/prod
     isApp: IS_APP,
-    apkVersion: '1.0.4', //版本
+    apkVersion: '1.0.0', //版本
     appName: 'vicaro',//网站标题
     host: 'https://www.vicaro.in/',//网站域名
     locale: 'en',//默认语言
