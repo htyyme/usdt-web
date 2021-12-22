@@ -1,9 +1,14 @@
 <template>
   <van-overlay :show="show" z-index="999" class-name="collar" >
-    <van-image class="collar-img" :src="require('@/assets/img/collar.gif')">
-      <em>{{amount | moneyFormat}}</em>
-      <span class="collar-btn" @click="handleClose"></span>
+    <van-image class="collar-img" :src="require('@/assets/img/11.gif')">
+      <!--<em>{{amount | moneyFormat}}</em>-->
+      <!--<span class="collar-btn" @click="handleClose"></span>-->
     </van-image>
+
+
+    <em class="amount">{{amount | moneyFormat}}</em>
+
+    <span class="collar-btn" @click="handleClose" >Collect</span>
   </van-overlay>
 </template>
 
@@ -54,32 +59,62 @@ export default {
 
 <style scoped lang="scss">
 .collar {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
   .collar-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 375px;
-    height: 503px;
+    width: 250px;
+    //position: absolute;
+    //top: 30%;
+    //left: 50%;
+    //transform: translateX(-50%);
+    //width: 375px;
+    //height: 503px;
 
-    .collar-btn {
-      position: absolute;
-      width: 155px;
-      height: 50px;
-      bottom: 42px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    //.collar-btn {
+    //  position: absolute;
+    //  width: 155px;
+    //  height: 50px;
+    //  bottom: 42px;
+    //  left: 50%;
+    //  transform: translateX(-50%);
+    //}
+    //
+    //em{
+    //  color: #000;
+    //  font-size: 22px;
+    //  font-weight: 700;
+    //  position: absolute;
+    //  bottom: 30px;
+    //  left: 50%;
+    //  transform: translateX(-50%);
+    //}
+  }
+  .amount{
+    font-weight: 700;
+    font-size: 20px;
+    color: yellow;
+  }
 
-    em{
-      color: #000;
-      font-size: 22px;
-      font-weight: 700;
-      position: absolute;
-      bottom: 140px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  .collar-btn {
+    //width: 155px;
+    //height: 50px;
+    //background-color: yellow;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 25px;
+    -webkit-box-reflect: below 20px linear-gradient(transparent,rgba(255,255,255,0.3));
+    padding: 8px 25px;
+    //border: 1px solid #fff;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px 2px rgba(255,255,255,.8);
+    overflow: hidden;
+
   }
 }
 
