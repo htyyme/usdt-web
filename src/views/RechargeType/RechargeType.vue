@@ -42,10 +42,10 @@ export default {
   name: "RechargeType",
   computed:{
     usdtChargeInfo(){
-      return this.$store.getters['system/config'].usdt_charge_info
+      return this.$store.getters['system/config'].recharge_usdt_intro
     },
     coinChargeInfo(){
-      return this.$store.getters['system/config'].coin_charge_info
+      return this.$store.getters['system/config'].recharge_coin_intro
     }
   },
   methods:{
