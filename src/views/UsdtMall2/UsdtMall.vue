@@ -2,6 +2,8 @@
   <div class="usdtmall-page">
 
     <header>
+      <div class="back" @click="$router.push('/Usdt')"></div>
+
       <div class="inner">
         <section>
           <nav :class="{active:routeName=='UsdtMall2_purchaselist'}" @click="toPurchaselist">我要买</nav>
@@ -38,7 +40,7 @@ export default  {
       showPopover: false,
       actions: [
         { text: '收款方式管理', icon: require('@/assets/icon/transactioncenter.png') },
-        { text: '交易设置', icon:require('@/assets/icon/shoukuan.png') },
+        { text: '发布订单', icon:require('@/assets/icon/shoukuan.png') },
         { text: '帮助中心', icon:require('@/assets/icon/helpcenter.png') },
       ],
     };
@@ -65,6 +67,12 @@ export default  {
 
     selectOption(action,index){
       console.log(action,index)
+      if (index === 1){
+        //发布订单
+        this.$router.push({
+          name:'UsdtSell'
+        })
+      }
     }
 
   }
@@ -81,6 +89,17 @@ export default  {
       display: flex;
       align-items: flex-end;
       padding: 14px;
+      position: relative;
+      .back{
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+        left: 20px;
+        top: 20px;
+        transform: rotate(-45deg);
+      }
       .inner{
         width: 100%;
         display: flex;

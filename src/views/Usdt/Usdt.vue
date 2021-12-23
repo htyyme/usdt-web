@@ -6,10 +6,10 @@
 
     <div class="assets">
       <div class="title">{{$t('My wallet')}} <span>({{$t('udst')}})</span></div>
-      <div class="balance">{{usdtBalance}}</div>
+      <div class="balance">{{exchangeAccount.available_balance}}</div>
       <div class="botm">
           <dl>
-            <dt>{{ustd_sell}}</dt>
+            <dt>{{exchangeAccount.sell_e_money}}</dt>
             <dd>{{$t('Sell')}}</dd>
           </dl>
         <dl>
@@ -54,7 +54,8 @@ export default {
   name: "Usdt",
   data(){
     return {
-      newslist:[]
+      newslist:[],
+      exchangeAccount:{}
     }
   },
   computed:{
@@ -80,13 +81,19 @@ export default {
   created() {
     this.$store.dispatch('user/loadUserInfo')
     this.loadNewsList()
+    this.getExchangeAccount()
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.exchangeAccount = resp.data
+    },
     toUsdtRechargePage(){
       this.$router.push({
         name:'Recharge',
         query:{
-          cointype:'usdt'
+          cointype:'usdt',
+          order_type:4
         }
       })
     },
@@ -94,7 +101,8 @@ export default {
       this.$router.push({
         name:'Withdraw',
         query:{
-          cointype:'usdt'
+          cointype:'usdt',
+          order_type:4
         }
       })
     },

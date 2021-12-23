@@ -2,12 +2,12 @@
   <div class="Withdraw">
     <navbar :title="$t('Withdraw')"></navbar>
 
-    <assets :cointype="cointype"/>
+    <assets :cointype="cointype" :exchange-account="exchangeAccount"/>
     <record />
     <withdrawForm ref="withdrawFormRef"/>
 
     <van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>
-    <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype"/>
+    <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype" :e_wallet_key="e_wallet_key"/>
     <pageFooter />
 
     <van-button  block  class="withdraw-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Withdraw')}}</van-button>
@@ -33,7 +33,9 @@ export default {
     return {
       cointype:'',
       bankcardinfo:{},// 银行卡信息
-      fee:0
+      fee:0,
+      exchangeAccount:{},
+      e_wallet_key:"",
     }
   },
   async created() {
@@ -71,8 +73,29 @@ export default {
       }
     }
 
+    if (this.$route.query.order_type == 4){
+      this.getExchangeAccount()
+    }
+    if (this.$route.query.order_type == 4 || this.cointype === 'usdt'){
+      this.getWallet()
+    }
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.exchangeAccount = resp.data
+    },
+    async getWallet(){
+      const resp = await this.$http.post('/v1/auth/user/wallet')
+      if (resp.data.length > 0){
+        this.e_wallet_key = resp.data[0]?.e_wallet_key
+      } else {
+        this.$notify({
+          message:this.$t('Please bind your wallet first'),
+          type:'success'
+        })
+      }
+    },
     async loadconfig(){
       const resp= await this.$http.post('/v1/withdraw/config')
       // console.log(resp)
@@ -137,7 +160,11 @@ export default {
         }
       }
 
-      const resp = await this.$http.post('/v1/auth/user/withdraw',submitdata)
+      let url = '/v1/auth/user/withdraw'
+      if (this.$route.query.order_type == 4){
+        url = "/v1/auth/ustd/exchangePayout"
+      }
+      const resp = await this.$http.post(url,submitdata)
 
       this.$toast.success({
         message: this.$t('success'),

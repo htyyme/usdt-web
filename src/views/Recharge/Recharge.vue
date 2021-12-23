@@ -119,12 +119,20 @@ export default {
         successUrl : this.returnUrl,
         channel_code: this.activeChannel.payChannelName
       }
+      let reqUrl = '/v1/auth/user/recharge'
       if (this.cointype === 'coin'){
         formData.coin_type = 1
       } else if (this.cointype === 'usdt'){
         formData.coin_type = 2
       }
-      const resp = await this.$http.post('/v1/auth/user/recharge',formData)
+
+      let {order_type} = this.$route.query
+      if (order_type == 4 || order_type == 3){
+        reqUrl = '/v1/auth/user/rechargeByExchange'
+        formData.order_type = Number(order_type)
+      }
+
+      const resp = await this.$http.post(reqUrl,formData)
       handlePay(resp.data.data)
     }
   }

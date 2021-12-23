@@ -2,11 +2,9 @@
   <div>
     <van-tabs v-model="active" color="#0066ED" animated>
       <van-tab title="USDT">
-        <vanlistcpn />
+        <vanlistcpn :cpn-type="cpnType"/>
       </van-tab>
-      <van-tab title="BTC">
-        <vanlistcpn />
-      </van-tab>
+
     </van-tabs>
 
   </div>
@@ -21,7 +19,8 @@ export default {
   },
   data() {
     return {
-      active: 0
+      active: 0,
+      cpnType:1,//2卖 1买
     }
   },
 }

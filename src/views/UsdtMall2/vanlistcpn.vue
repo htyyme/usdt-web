@@ -3,34 +3,50 @@
       v-model="loading"
       :finished="finished"
       finished-text="没有更多了"
+      @load="loadData"
   >
 
-    <section class="sale-item" v-for="i in 15" :key="i">
+    <section class="sale-item" v-for="item in list" :key="item.id" @click="handleClick(item)">
 
       <header>
         <div class="user">
-          <div class="avatar"></div>
-          <span class="username">海底捞火锅</span>
+          <canvas class="avatar" ref="avatar"></canvas>
+          <span class="username">{{item.goods_name}}</span>
         </div>
-        <div class="nums">
-          <span>成单量2278</span>
-          <span>89%</span>
-        </div>
+        <!--<div class="nums">-->
+        <!--  <span>成单量2278</span>-->
+        <!--  <span>89%</span>-->
+        <!--</div>-->
       </header>
 
       <div class="bd">
         <div class="line">
-          <section>数量 120382.165606 USDT</section>
+          <section>数量 {{item.goods_amount}} USDT</section>
           <section>单价</section>
         </div>
 
         <div class="line">
-          <section>限额 ￥500,000.00-￥756,000.00</section>
-          <section class="price">￥6.28</section>
+          <section>限额 1 USDT - {{item.num}} USDT</section>
+          <section class="price">{{item.fee}}</section>
         </div>
       </div>
 
+      <!--我要买-->
+      <template v-if="cpnType==1 && item.visible">
+        <div class="nums-wrap">
+          <div style="display: flex;align-items: center">
+            <van-button size="mini" plain class="num-ctrl" @click="item.nums > 1 && item.nums--">-</van-button>
+            <input type="number" v-model.number="item.nums">
+            <van-button size="mini" plain class="num-ctrl" @click="item.nums++">+</van-button>
+          </div>
+
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="purchase(item)">确定购买</van-button>
+        </div>
+      </template>
+
     </section>
+
+
 
   </van-list>
 
@@ -39,13 +55,100 @@
 <script>
 export default {
   name: "vanlistcpn",
+  props:{
+    cpnType:Number
+  },
   data() {
     return {
       list: [],
       loading: false,
-      finished: true,
+      finished: false,
+      queryInfo:{
+        tp:8,
+        page:0,
+        pageSize:20
+      }
     };
   },
+  computed:{
+    member_id(){
+      return this.$store.getters['user/userInfo'].id
+    }
+  },
+  created() {
+
+  },
+  methods:{
+    async loadData(){
+      this.queryInfo.page++
+      const queryInfo = {...this.queryInfo}
+      if (this.cpnType == 2){
+        queryInfo.member_id = this.member_id
+      }
+      const resp = await this.$http.post('/v1/auth/ustd/list',queryInfo)
+      const {list,total} = resp.data
+      this.list = this.list.concat(list || [])
+      this.loading = false
+      if (this.list.length >= total){
+        this.finished = true
+      }
+
+      this.list.forEach(el=>{
+        this.$set(el,'nums',1)
+        this.$set(el,'visible',false)
+      })
+
+      //加载完毕 渲染头像
+      this.$nextTick(() => {
+        if (this.list.length > 0) {
+          this.$refs.avatar.forEach((el, index) => {
+            this.$tools.createFontAvatar(el, this.list[index]['goods_name'], 22, 22)
+          })
+        }
+      })
+    },
+
+    handleClick(item){
+      //我要买
+      if (this.cpnType === 1){
+        this.list.forEach(el=>{
+          this.$set(el,'visible',false)
+        })
+        this.$set(item,'visible',!item.visible)
+      }
+    },
+
+    async purchase(item){
+      const formData = {
+        nums:Number(item.nums),
+        id : item.id
+      }
+      const resp = await this.$http.post('/v1/auth/ustd/buy',formData)
+      const { amount,order_type,order_id,state } = resp.data
+      if (state === 1){
+        this.$notify({
+          message:this.$t('Purchase success'),
+          type:'success'
+        })
+      } else if (state === 2){
+        this.$router.push({
+          name:'Recharge',
+          query:{
+            cointype:'coin',
+            amount,
+            order_type,
+            order_id,
+          }
+        })
+      } else {
+        this.$notify({
+          message:this.$t('Purchase fail'),
+          type:'danger'
+        })
+      }
+    }
+
+  }
 }
 </script>
 
@@ -69,7 +172,7 @@ export default {
         .avatar{
           width: 22px;
           height: 22px;
-          background: #0066ED;
+          //background: #0066ED;
           border-radius: 50%;
           overflow: hidden;
           margin-right: 10px;
@@ -117,6 +220,29 @@ export default {
 
 
   }
+}
+
+.nums-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  input{
+    width: 60px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    text-align: center;
+    height: 24px;
+    font-size: 13px;
+  }
+  .num-ctrl{
+    width: 24px;
+    height: 24px;
+  }
+  .purchase{
+    padding: 0 10px;
+    margin-left: 15px;
+  }
+
 }
 
 </style>

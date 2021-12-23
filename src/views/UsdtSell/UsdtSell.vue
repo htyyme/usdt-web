@@ -9,7 +9,7 @@
 
       <div class="bd">
         <div class="tit">{{$t('Usdt Balance')}}</div>
-        <div class="num">{{usdtAccount.available_balance | moneyFormat(5,'usdt')}}</div>
+        <div class="num">{{available_balance | moneyFormat(5,'usdt')}}</div>
       </div>
 
     </header>
@@ -52,9 +52,11 @@ export default {
   name: "UsdtSell",
   data(){
     return {
+      available_balance:0,
       form:{
         extra:0,//单价
         nums:0,//数量
+
       }
     }
   },
@@ -69,8 +71,13 @@ export default {
   async created() {
     await this.loadMerchantInfo()
     this.$store.dispatch('user/loadUserInfo')
+    this.getExchangeAccount()
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.available_balance = resp.data?.available_balance
+    },
     //判断是否绑定了商家信息
     async loadMerchantInfo(){
       const resp = await this.$http.post('/v1/auth/user/merchant')

@@ -12,7 +12,7 @@ module.exports = {
         port: 12345,
         proxy: {
             '/v1': {
-                target: 'http://192.168.2.109:8087',
+                target: 'http://192.168.2.107:8087',
                 changeOrigin: true,
             },
             '/api': {

@@ -10,8 +10,12 @@ export default {
   name: "assets",
   props:{
     cointype:String,
+    exchangeAccount:Object
   },
   computed:{
+    order_type(){
+      return this.$route.query.order_type
+    },
     usdtAccount(){
       return this.$store.getters['user/usdtAccount']
     },
@@ -19,7 +23,12 @@ export default {
       return this.$store.getters['user/coinAccount']
     },
     accountinfo(){
-      return this.cointype === 'coin' ? this.coinAccount : this.usdtAccount
+      if (this.order_type != 4){
+        return this.cointype === 'coin' ? this.coinAccount : this.usdtAccount
+      } else {
+        return this.exchangeAccount
+      }
+
     },
     availableBalance(){
       return this.accountinfo.available_balance

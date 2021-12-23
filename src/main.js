@@ -38,7 +38,8 @@ import Vue18n from 'vue-i18n'
 Vue.use(Vue18n)
 const i18n = new Vue18n({
   locale:store.state.system.locale || config.locale,
-  messages:messages
+  messages:messages,
+  silentTranslationWarn:true
 })
 Vue.prototype._i18n = i18n
 
