@@ -13,7 +13,7 @@
       </van-collapse-item>
 
 
-      <van-collapse-item :title="$t('新手引导')" name="guide" v-if="guide.length>0">
+      <van-collapse-item :title="$t('Novice guide')" name="guide" v-if="guide.length>0">
         <div class="content" v-html="guide"></div>
       </van-collapse-item>
 
