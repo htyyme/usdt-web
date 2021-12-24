@@ -2,7 +2,7 @@
   <div class="recharge">
     <navbar :title="$t('recharge')"></navbar>
 
-    <assets :cointype="cointype"/>
+    <assets :cointype="cointype" :exchange-account="exchangeAccount"/>
     <payWay :channellist="channellist" ref="payWayRef" @chooseChannel="chooseChannel"/>
 
     <template v-if="order_type!=3">
@@ -57,7 +57,8 @@ export default {
       cointype:'',
       channellist:[],
       activeChannel:{},
-      amount:0
+      amount:0,
+      exchangeAccount:{}
     }
   },
   computed:{
@@ -103,8 +104,16 @@ export default {
     //获取用户余额
     this.$store.dispatch('user/loadUserInfo')
     this.loadChannels()
+
+    if (this.order_type == 3 || this.order_type ==4){
+      this.getExchangeAccount()
+    }
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.exchangeAccount = resp.data
+    },
     //获取通道列表
     async loadChannels(){
       let submitdata = {}

@@ -13,8 +13,8 @@
             <dd>{{$t('Sell')}}</dd>
           </dl>
         <dl>
-          <dt>{{ustd_buy}}</dt>
-          <dd>{{$t('Buy')}}</dd>
+          <dt>{{exchangeAccount.legal_currency}}</dt>
+          <dd>{{$t('法币')}}</dd>
         </dl>
       </div>
     </div>

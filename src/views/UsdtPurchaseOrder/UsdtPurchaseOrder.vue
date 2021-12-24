@@ -2,7 +2,7 @@
   <div class="PurchaseOrder">
     <navbar :title="$t('Purchase Order')"></navbar>
 
-    <van-tabs v-model="activeName" animated sticky line-width="100px" color="#3596E8">
+    <van-tabs v-model="activeName" animated sticky line-width="60px" color="#3596E8">
       <van-tab :title="$t('Pending')" name="Pending">
         <list :state="20"/>
       </van-tab>
@@ -17,6 +17,9 @@
       </van-tab>
       <van-tab :title="$t('Cancel')" name="Cancel">
         <list :state="24"/>
+      </van-tab>
+      <van-tab :title="$t('Finished')" name="Finished">
+        <list :state="25"/>
       </van-tab>
     </van-tabs>
 
