@@ -90,7 +90,7 @@ export default {
         margin-right: 0;
       }
       &.active{
-        background-color: #3596E8;
+        background-color: #626AD9;
         color: #fff !important;
       }
     }
