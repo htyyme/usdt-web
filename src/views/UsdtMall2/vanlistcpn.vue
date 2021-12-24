@@ -26,7 +26,7 @@
         </div>
 
         <div class="line">
-          <section>限额 1 USDT - {{item.goods_amount - item.num}} USDT</section>
+          <section>限额 1 USDT - {{item.num}} USDT</section>
           <section class="price">{{item.fee}}</section>
         </div>
       </div>
@@ -48,6 +48,7 @@
       <!--我要卖-->
       <template v-if="cpnType==2">
         <div class="options">
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">销售详情</van-button>
           <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">撤回</van-button>
         </div>
       </template>

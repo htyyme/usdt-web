@@ -11,7 +11,7 @@
         </section>
 
         <section class="right-xsec">
-          <van-image :src="require('@/assets/icon/icon_records.png')" width="19" height="19"></van-image>
+          <van-image :src="require('@/assets/icon/icon_records.png')" width="19" height="19" @click="toRecords"></van-image>
           <!--<van-image :src="require('@/assets/icon/icon_more.png')" width="19" height="6"></van-image>-->
 
           <van-popover v-model="showPopover" trigger="click" :actions="actions"  placement="left-start" @select="selectOption">
@@ -63,6 +63,10 @@ export default  {
         this.$router.push('/UsdtMall2/purchaselist')
       }
 
+    },
+
+    toRecords(){
+      this.$router.push('/UsdtPurchaseOrder')
     },
 
     selectOption(action,index){

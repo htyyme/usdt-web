@@ -6,7 +6,7 @@
       <div class="list-item" v-for="item in list" :key="item.id">
         <div class="user">
           <canvas ref="avatar"></canvas>
-          <span>{{ item.info.user }}</span>
+          <span>{{ item.goods_order_record.goods_name }}</span>
         </div>
 
         <div class="flex">
@@ -15,16 +15,21 @@
 
 
         <div class="flex">
-          <p><strong>Price</strong>: {{ item.info.price | moneyFormat }}</p>
-          <p><strong>Amount</strong>: {{ item.goods_order_record.amount }}</p>
+          <p><strong>Nums</strong>: {{ item.goods_order_record.amount  }} USDT</p>
+          <p><strong>Price</strong>: 1 : {{ item.goods_order_record.fee_amount | moneyFormat }}</p>
+
         </div>
 
         <div class="flex">
-          <p><strong>Total</strong>: {{ totalprice(item) | moneyFormat }}</p>
+          <p><strong>Amount</strong>: {{ item.goods_order_record.actual_amount |moneyFormat }}</p>
           <p><strong>time</strong>: {{ item.goods_order_record.buy_time | dateFormat }}</p>
         </div>
 
 
+        <div class="options">
+          <van-button @click="optOrder(item,1)" v-if="state==20" size="mini" color="#242EAC" round>撤销</van-button>
+          <van-button @click="optOrder(item,2)"  v-if="state==20" size="mini" color="#242EAC" round>支付</van-button>
+        </div>
 
       </div>
     </van-list>
@@ -62,7 +67,7 @@ export default {
         state: this.state
       })
       const {list, total} = resp.data
-      list.forEach(el => el.info = JSON.parse(el.extra2))
+      // list.forEach(el => el.info = JSON.parse(el.extra2))
       this.list = this.list.concat(list || [])
       this.loading = false
       if (this.list.length >= total) {
@@ -73,17 +78,67 @@ export default {
       this.$nextTick(() => {
         if (this.list.length > 0) {
           this.$refs.avatar.forEach((el, index) => {
-            this.$tools.createFontAvatar(el, this.list[index]['info']['user'], 18, 18)
+            this.$tools.createFontAvatar(el, this.list[index]['goods_order_record']['goods_name'], 18, 18)
           })
         }
       })
     },
-    totalprice(item) {
-      let x = item.info.price
-      let y = item.goods_order_record.amount
-      let n = x * y
-      return n
-    },
+    // totalprice(item) {
+    //   let x = item.info.price
+    //   let y = item.goods_order_record.amount
+    //   let n = x * y
+    //   return n
+    // },
+
+    async optOrder(item,op_type){
+      if (op_type==1){
+        const confirmRes = await this.$dialog.confirm({
+          message:'确定要撤销吗',
+          confirmButtonText:this.$t('confirm'),
+          cancelButtonText:this.$t('cancel')
+        }).catch(err => err)
+        if (confirmRes !== 'confirm'){
+          return
+        }
+      }
+
+      const resp = await this.$http.post('/v1/auth/ustd/optOrder',{
+        id : item.goods_order_record?.id ,
+        op_type,
+      })
+      if (op_type == 1){
+        this.$toast({
+          message:'撤销成功',
+          onClose:()=>{
+            location.reload()
+          }
+        })
+      } else {
+        const { amount,order_type,order_id,state } = resp.data
+        if (state === 1){
+          this.$notify({
+            message:this.$t('Purchase success'),
+            type:'success'
+          })
+        } else if (state === 2){
+          this.$router.push({
+            name:'Recharge',
+            query:{
+              cointype:'coin',
+              amount,
+              order_type,
+              order_id,
+            }
+          })
+        } else {
+          this.$notify({
+            message:this.$t('Purchase fail'),
+            type:'danger'
+          })
+        }
+
+      }
+    }
 
   },
 
@@ -137,6 +192,10 @@ export default {
       padding-top: 10px;
       display: flex;
       justify-content: flex-end;
+      .van-button{
+        padding: 0 15px;
+        margin-left: 10px;
+      }
     }
 
   }
