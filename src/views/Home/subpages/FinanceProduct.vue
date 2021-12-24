@@ -40,7 +40,7 @@
         <div class="title">{{$t('Pledge income')}}</div>
 
         <div class="type-item" v-for="item in productList" :key="item.id">
-          <div class="typ type-usdt">
+          <div class="typ type-usdt" v-if="show_usdt_finance">
             <div class="productname">{{item.financial_name}}</div>
             <div class="tit">{{ $t('oneDay') }} :</div>
             <div class="irate">{{ $t('interestRate') }}+{{ item.usdt_interest_rate | rateFormat }}</div>
@@ -49,7 +49,8 @@
             <div class="desc">{{item.usdt_desc}}</div>
             <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>
           </div>
-          <div class="typ type-coin">
+
+          <div class="typ type-coin" v-if="show_coin_finance">
             <div class="tit">{{ $t('oneDay') }} :</div>
             <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
             <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
@@ -103,6 +104,12 @@ export default {
     },
     coinTotalAssets(){
       return this.$store.getters['user/coinAccount'].available_balance
+    },
+    show_coin_finance(){
+      return this.$store.getters['system/config'].show_coin_finance
+    },
+    show_usdt_finance(){
+      return this.$store.getters['system/config'].show_usdt_finance
     }
   },
   mounted() {
