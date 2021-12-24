@@ -48,7 +48,7 @@
       <!--我要卖-->
       <template v-if="cpnType==2">
         <div class="options">
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">销售详情</van-button>
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="toSallDetail(item,index)">销售详情</van-button>
           <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">撤回</van-button>
         </div>
       </template>
@@ -166,6 +166,16 @@ export default {
     async recallGoods(item,index){
       const resp = await this.$http.post('/v1/auth/ustd/recallGoods',{id:item.id})
       this.list.splice(index,1)
+    },
+
+    toSallDetail(item){
+      this.$router.push({
+        name:'UsdtPurchaseOrder',
+        query:{
+          id:item.id ,
+          tp:2
+        }
+      })
     }
 
   }

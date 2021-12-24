@@ -51,20 +51,34 @@ export default {
       queryInfo: {
         page: 0,
         pageSize: 20,
-        tp: 1
       }
     }
   },
   created() {
 
   },
+  computed:{
+    tp(){
+      if (this.$route.query.tp){
+        return  Number(this.$route.query.tp)
+      } else {
+        return  1
+      }
+    },
+    id(){
+      return Number(this.$route.query.id)
+    }
+  },
+
   methods: {
 
     async loadData() {
       this.queryInfo.page++
       const resp = await this.$http.post('/v1/auth/ustd/record', {
         ...this.queryInfo,
-        state: this.state
+        state: this.state,
+        tp:this.tp,
+        id:this.id
       })
       const {list, total} = resp.data
       // list.forEach(el => el.info = JSON.parse(el.extra2))
