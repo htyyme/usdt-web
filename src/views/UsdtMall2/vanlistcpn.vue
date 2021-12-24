@@ -6,7 +6,7 @@
       @load="loadData"
   >
 
-    <section class="sale-item" v-for="item in list" :key="item.id" @click="handleClick(item)">
+    <section class="sale-item" v-for="(item,index) in list" :key="item.id" @click="handleClick(item)">
 
       <header>
         <div class="user">
@@ -41,6 +41,14 @@
           </div>
 
           <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="purchase(item)">确定购买</van-button>
+        </div>
+      </template>
+
+
+      <!--我要卖-->
+      <template v-if="cpnType==2">
+        <div class="options">
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">撤回</van-button>
         </div>
       </template>
 
@@ -119,10 +127,15 @@ export default {
     },
 
     async purchase(item){
+      if (isNaN(item.nums) || item.nums <= 0){
+        return
+      }
+
       const formData = {
         nums:Number(item.nums),
         id : item.id
       }
+
       const resp = await this.$http.post('/v1/auth/ustd/buy',formData)
       const { amount,order_type,order_id,state } = resp.data
       if (state === 1){
@@ -146,6 +159,12 @@ export default {
           type:'danger'
         })
       }
+    },
+
+    //撤回
+    async recallGoods(item,index){
+      const resp = await this.$http.post('/v1/auth/ustd/recallGoods',{id:item.id})
+      this.list.splice(index,1)
     }
 
   }
@@ -245,4 +264,11 @@ export default {
 
 }
 
+.options{
+  display: flex;
+  justify-content: flex-end;
+  .van-button{
+    padding: 0 15px;
+  }
+}
 </style>

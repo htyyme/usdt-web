@@ -4,7 +4,18 @@
 
     <assets :cointype="cointype"/>
     <payWay :channellist="channellist" ref="payWayRef" @chooseChannel="chooseChannel"/>
-    <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
+
+    <template v-if="order_type!=3&&order_type!=4">
+      <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
+    </template>
+
+    <template v-else>
+      <div class="preset_amount">
+        <div>Amount:</div>
+        <div>{{amount}}</div>
+      </div>
+    </template>
+
 
     <div class="bottom-info">{{$t('rechargeTip')}}</div>
 
@@ -68,14 +79,26 @@ export default {
         return true
       }
       return false
+    },
+    order_id(){
+      return Number(this.$route.query.order_id)
+    },
+    order_type(){
+      return this.$route.query.order_type
+    },
+    order_amount(){
+      return this.$route.query.amount
     }
   },
-  created() {
+  mounted() {
     const {cointype} = this.$route.query
     if (cointype !== 'usdt' && cointype !== 'coin'){
       this.$router.back()
     }
     this.cointype = cointype
+    if (this.order_type == 3 || this.order_type == 4){
+      this.amount = this.order_amount
+    }
 
     //获取用户余额
     this.$store.dispatch('user/loadUserInfo')
@@ -130,6 +153,7 @@ export default {
       if (order_type == 4 || order_type == 3){
         reqUrl = '/v1/auth/user/rechargeByExchange'
         formData.order_type = Number(order_type)
+        formData.order_id = this.order_id
       }
 
       const resp = await this.$http.post(reqUrl,formData)
@@ -162,6 +186,16 @@ export default {
     color: #fff;
     font-size: 20px;
     margin: 20px auto 0;
+  }
+}
+
+.preset_amount{
+  padding: 15px 0 0 15px;
+  display: flex;
+  font-size: 17px;
+  div:first-child{
+    font-weight: 700;
+    padding-right: 5px;
   }
 }
 
