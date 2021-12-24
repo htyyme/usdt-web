@@ -11,7 +11,7 @@
 
     <template v-else>
       <div class="preset_amount">
-        <div>Amount:</div>
+        <div>{{$t('Amount')}}:</div>
         <div>{{amount}}</div>
       </div>
     </template>
@@ -129,7 +129,7 @@ export default {
 
       //默认选择第一个通道
       if (this.channellist.length>0){
-        // this.activeChannel = this.channellist[0]
+
         this.$refs.payWayRef.chooseChannel(this.channellist[0])
       }
     },
