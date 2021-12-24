@@ -5,7 +5,7 @@
     <assets :cointype="cointype"/>
     <payWay :channellist="channellist" ref="payWayRef" @chooseChannel="chooseChannel"/>
 
-    <template v-if="order_type!=3&&order_type!=4">
+    <template v-if="order_type!=3">
       <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
     </template>
 
@@ -96,7 +96,7 @@ export default {
       this.$router.back()
     }
     this.cointype = cointype
-    if (this.order_type == 3 || this.order_type == 4){
+    if (this.order_type == 3){
       this.amount = this.order_amount
     }
 
