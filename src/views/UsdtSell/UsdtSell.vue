@@ -147,7 +147,7 @@ export default {
 
 <style scoped lang="scss">
 header{
-  background-color: #3CA1EB;
+  background: linear-gradient( to top,#242EAC,#626AD9);
   height: 6.66667rem;
   .navbar{
     height: 44px;
@@ -247,7 +247,8 @@ header{
 .sel-btn{
   margin: 20px auto 0;
   width: 70%;
-  background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+  //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+  background: linear-gradient( to top,#242EAC,#626AD9);
   color: #fff;
 }
 
