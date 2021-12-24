@@ -82,7 +82,8 @@ export default {
     .add-btn {
       width: 250px;
       height: 50px;
-      background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+      //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+      background: linear-gradient( to top,#242EAC,#626AD9);
       border-radius: 28px;
       color: #fff;
       margin: 20px auto;

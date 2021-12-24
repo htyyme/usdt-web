@@ -80,19 +80,34 @@ export default {
     },
     //判断是否绑定了商家信息
     async loadMerchantInfo(){
-      const resp = await this.$http.post('/v1/auth/user/merchant')
-      if (resp.data.id==0){
+      // const resp = await this.$http.post('/v1/auth/user/merchant')
+      // if (resp.data.id==0){
+      //   const confirmres = await this.$dialog.confirm({
+      //     message:this.$t('You must fill the shop information at first')
+      //   }).catch(err=>err)
+      //   if(confirmres ==='confirm'){
+      //     this.$router.push({
+      //       name:'BusinessInfo'
+      //     })
+      //   }else{
+      //     this.$router.back()
+      //   }
+      //
+      // }
+
+      const resp = await this.$http.post('/v1/auth/user/cards',)
+      let bankCardList = resp.data || []
+      if (bankCardList.length === 0) {
         const confirmres = await this.$dialog.confirm({
-          message:this.$t('You must fill the shop information at first')
-        }).catch(err=>err)
-        if(confirmres ==='confirm'){
+          message: this.$t('You must fill the shop information at first')
+        }).catch(err => err)
+        if (confirmres === 'confirm') {
           this.$router.push({
-            name:'BusinessInfo'
+            name: 'bankCard'
           })
-        }else{
+        } else {
           this.$router.back()
         }
-
       }
     },
     decNum(){
