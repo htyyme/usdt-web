@@ -111,7 +111,7 @@ export default {
       this.form.extra--
     },
     quickSelect(option){
-      const balance = this.usdtAccount.available_balance
+      const balance = this.available_balance
       if (option==1){ //all
         this.form.nums = balance
       }else if (option==2){ // 1/2
@@ -130,14 +130,14 @@ export default {
         return this.$toast.fail(this.$t('Please enter the correct quantity'))
       }
       const resp = await this.$http.post('/v1/auth/ustd/sell',{
-        extra:Number(this.form.extra),
+        ratio:Number(this.form.extra),
         nums:Number(this.form.nums),
       })
       this.$toast.success({
         message:this.$t('success'),
         onClose:()=> {
           this.$store.dispatch('user/loadUserInfo')
-          this.$router.back()
+          this.$router.push('/UsdtMall2/salelist')
         }
       })
     }

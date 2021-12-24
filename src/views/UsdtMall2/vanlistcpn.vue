@@ -26,7 +26,7 @@
         </div>
 
         <div class="line">
-          <section>限额 1 USDT - {{item.num}} USDT</section>
+          <section>限额 1 USDT - {{item.goods_amount - item.num}} USDT</section>
           <section class="price">{{item.fee}}</section>
         </div>
       </div>
