@@ -2,11 +2,11 @@
 const IS_APP = false
 
 export default {
-    env: 'dev',//dev/prod
+    env: 'prod',//dev/prod
     isApp: IS_APP,
     apkVersion: '1.0.0', //版本
-    appName: 'vicaro',//网站标题
-    host: 'https://www.vicaro.in/',//网站域名
+    appName: 'bitcoiniojo',//网站标题
+    host: 'https://www.bitcoiniojo.com/',//网站域名
     locale: 'en',//默认语言
     // timezone: 'Asia/Bangkok', //时区 泰国
     timezone: 'Asia/Kolkata', //时区 印度
