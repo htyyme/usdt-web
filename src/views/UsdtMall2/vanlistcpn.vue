@@ -2,7 +2,7 @@
   <van-list
       v-model="loading"
       :finished="finished"
-      finished-text="没有更多了"
+      :finished-text="$t('No more')"
       @load="loadData"
   >
 
@@ -21,12 +21,12 @@
 
       <div class="bd">
         <div class="line">
-          <section>数量 {{item.goods_amount}} USDT</section>
-          <section>单价</section>
+          <section>{{$t('number')}} {{item.goods_amount}} USDT</section>
+          <section>{{$t('price')}}</section>
         </div>
 
         <div class="line">
-          <section>限额 1 USDT - {{item.num}} USDT</section>
+          <section>{{$t('Quota')}} 1 USDT - {{item.num}} USDT</section>
           <section class="price">{{item.fee}}</section>
         </div>
       </div>
@@ -40,7 +40,7 @@
             <van-button size="mini" plain class="num-ctrl" @click="item.nums++">+</van-button>
           </div>
 
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="purchase(item)">确定购买</van-button>
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="purchase(item)">{{$t('Confirm the purchase')}}</van-button>
         </div>
       </template>
 
@@ -48,8 +48,8 @@
       <!--我要卖-->
       <template v-if="cpnType==2">
         <div class="options">
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="toSallDetail(item,index)">销售详情</van-button>
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">撤回</van-button>
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="toSallDetail(item,index)">{{$t('Sales detail')}}</van-button>
+          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">{{$t('revocation')}}</van-button>
         </div>
       </template>
 

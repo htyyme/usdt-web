@@ -635,6 +635,18 @@ export default {
     'Pledge income':'Pledge income',
     'What is Pledge income?':'What is Pledge income?',
     'Novice guide':'Novice guide',
+    'I want to buy':'buy',
+    'I want to sell':'sell',
+    'Collection mode management':'Collection mode management',
+    'Issue an order':'Issue an order',
+    'Quota':'Quota',
+    'Confirm the purchase':'Confirm the purchase',
+    'Sales detail':'Sales detail',
+    'revocation':'revocation',
+    'Help center':'Help center',
+    'Pending':'Pending',
+    'Finished':'Finished',
+    'pay':'pay',
 
 
 

@@ -14,7 +14,7 @@
           </dl>
         <dl>
           <dt>{{exchangeAccount.legal_currency}}</dt>
-          <dd>{{$t('法币')}}</dd>
+          <dd>{{$t('coin')}}</dd>
         </dl>
       </div>
     </div>

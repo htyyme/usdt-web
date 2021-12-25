@@ -5,7 +5,7 @@
 
     <announce />
 
-    <floatBall v-if="islogin"/>
+    <floatBall />
 
     <tabbar v-if="showTabbar"/>
 

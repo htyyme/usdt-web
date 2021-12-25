@@ -57,9 +57,12 @@ service.interceptors.response.use(resp => {
     responseId = new Date().getTime()
 
     let respData = resp.data
+
     if (appConfig.env === 'prod' && !resp.config.url.startsWith('/api')){
         respData = decryptResData(resp.data)
     }
+
+    console.log(resp.config.url,respData)
     const {code, message} = respData
     if (code === 403){
         Toast.fail(message)

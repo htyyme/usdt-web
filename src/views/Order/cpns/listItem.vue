@@ -89,7 +89,7 @@ export default {
   computed: {
     shareTime:{
       get(){
-        return Math.floor((this.order.bonus_time - this.order.buy_time) / 3600) - 1
+        return Math.floor((this.order.bonus_time - this.order.buy_time) / 3600)
       }
     }
   },

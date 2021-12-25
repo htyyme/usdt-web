@@ -6,8 +6,8 @@
 
       <div class="inner">
         <section>
-          <nav :class="{active:routeName=='UsdtMall2_purchaselist'}" @click="toPurchaselist">我要买</nav>
-          <nav :class="{active:routeName=='UsdtMall2_salelist'}" @click="toSalelist">我要卖</nav>
+          <nav :class="{active:routeName=='UsdtMall2_purchaselist'}" @click="toPurchaselist">{{$t('I want to buy')}}</nav>
+          <nav :class="{active:routeName=='UsdtMall2_salelist'}" @click="toSalelist">{{$t('I want to sell')}}</nav>
         </section>
 
         <section class="right-xsec">
@@ -39,9 +39,9 @@ export default  {
     return {
       showPopover: false,
       actions: [
-        { text: '收款方式管理', icon: require('@/assets/icon/transactioncenter.png') },
-        { text: '发布订单', icon:require('@/assets/icon/shoukuan.png') },
-        { text: '帮助中心', icon:require('@/assets/icon/helpcenter.png') },
+        { text: this.$t('Collection mode management'), icon: require('@/assets/icon/transactioncenter.png') },
+        { text: this.$t('Issue an order'), icon:require('@/assets/icon/shoukuan.png') },
+        { text: this.$t('Help center'), icon:require('@/assets/icon/helpcenter.png') },
       ],
     };
   },
@@ -70,8 +70,9 @@ export default  {
     },
 
     selectOption(action,index){
-      console.log(action,index)
-      if (index === 1){
+      if (index === 0){
+        this.$router.push('/bankCard')
+      }else if (index === 1){
         //发布订单
         this.$router.push({
           name:'UsdtSell'

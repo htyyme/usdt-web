@@ -37,8 +37,17 @@ export default {
     contactInfo(){
       return this.$store.getters['system/contactInfo']
     },
+    islogin(){
+      let token =  this.$store.getters['user/token']
+      return !!token
+    },
     link(){
-      return this.contactInfo.kf_link
+      if (!this.islogin){
+        return this.$store.getters['system/config'].kf
+      } else {
+        return this.contactInfo.kf_link || this.$store.getters['system/config'].kf
+      }
+
     }
   },
   mounted() {
