@@ -1,5 +1,9 @@
 <template>
   <div class="login">
+    <select v-model="locale" class="sel-lang" @change="handleLocaleChange">
+      <option :value="item" v-for="(item,index) in languageList" :key="index">{{item}}</option>
+    </select>
+
     <div class="wrapper">
       <div class="form-title">{{$t('login')}}</div>
       <field4 :left-icon="require('@/assets/icon/phone-icon.png')" :placeholder="$t('Phone Number')" v-model="form.playerName"></field4>
@@ -36,6 +40,9 @@
 <script>
 import {SHOW_ANNOUNCE} from "@/utils/events";
 import appConfig from "@/config";
+import messages from "@/assets/lang/messages";
+import { Locale } from 'vant';
+
 export default {
   name: "Login",
   data() {
@@ -45,7 +52,10 @@ export default {
         passWord: ''
       },
       pwdType:'password',
-      pwdIcon:require('@/assets/icon/close-eye-icon.png')
+      pwdIcon:require('@/assets/icon/close-eye-icon.png'),
+      messages:messages,
+      locale: this.$store.getters['system/locale'] || appConfig.locale,
+      languageList:Object.keys(messages)
     }
   },
   computed:{
@@ -100,7 +110,13 @@ export default {
         this.pwdType = 'password'
         this.pwdIcon = require('@/assets/icon/close-eye-icon.png')
       }
-    }
+    },
+    //选择语言
+    handleLocaleChange(){
+      this.$store.commit('system/setLocale',this.locale)
+      this._i18n.locale = this.locale
+      Locale.use(this.locale ,messages[this.locale] )
+    },
   }
 }
 </script>
@@ -113,6 +129,12 @@ export default {
   background: linear-gradient( to top,#242EAC,#626AD9);
   background-size: cover;
   overflow: hidden;
+  position: relative;
+  .sel-lang{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+  }
 
 
   .wrapper {

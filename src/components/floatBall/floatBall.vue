@@ -125,8 +125,8 @@ nav {
   align-items: center;
   position: fixed;
   cursor: pointer;
-  right: 55px;
-  top: 5px;
+  right: 10px;
+  top: 30px;
   z-index: 99;
   color: #3596E8;
   font-weight: 700;

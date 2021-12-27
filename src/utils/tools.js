@@ -11,7 +11,7 @@ import router from "@/router";
  */
 export function getLangField(key) {
     let locale = store.state.system.locale || appConfig.locale
-    let lang = messages[locale]
+    let lang = messages[locale] || {}
      if (lang[key]) {
          return lang[key]
      } else {
