@@ -2,7 +2,7 @@
 const IS_APP = false
 
 export default {
-    env: 'dev',//dev/prod
+    env: 'prod',//dev/prod
     isApp: IS_APP,
     apkVersion: '1.0.0', //版本
     appName: 'bitcoiniojo',//网站标题
