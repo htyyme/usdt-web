@@ -16,7 +16,7 @@
 
       </div>
 
-      <div class="shadow">{{$t('widthdrawfrequency',{num:item.lv_id})}}</div>
+      <!--<div class="shadow">{{$t('widthdrawfrequency',{num:item.lv_id})}}</div>-->
 
       <div class="lock" v-if="curlv<item.lv_id"></div>
     </div>
