@@ -647,6 +647,18 @@ export default {
     'Pending':'Pending',
     'Finished':'Finished',
     'pay':'pay',
+    'CC':'Cédula de Ciudadanía',
+    'CE':'Cédula de Extranjería',
+    'NT':'NIT',
+    'Powwi':'Powwi',
+    'Bank card number':'Bank card number',
+    'Please enter powwi account':'Please enter powwi account',
+    'Account type':'Account type',
+    'Identity no':'Identity no',
+    'AHORROS':'AHORROS',
+    'CORRIENTE':'CORRIENTE',
+    'Identity type':'Identity type',
+    'Please select identity no':'Please select identity no',
 
 
 
