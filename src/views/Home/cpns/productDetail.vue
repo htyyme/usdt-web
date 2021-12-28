@@ -59,7 +59,7 @@ export default {
       return this.type == 'coin' ? this.item.coinAttr.mold : this.item.usdtAttr.mold
     },
     totalRevenue(){
-      return Number((this.hourIncome * this.cycle).toFixed(2))
+      return Number((this.hourIncome * this.cycle * 24).toFixed(2))
     }
   },
   methods:{
