@@ -84,7 +84,7 @@ export default {
       const resp  = await this.$http.post('/v1/auth/business/match/purchase',formData).catch(err=>err)
       if (resp.code == 90004){
         this.$router.push('/TrxAccount')
-      } else {
+      } else if (resp.code == 200) {
         this.$toast({
           message:this.$t('Rent Success'),
           onClose:()=>{
@@ -92,6 +92,8 @@ export default {
             this.$store.dispatch('user/loadUserInfo')
           }
         })
+      } else{
+
       }
 
     }
