@@ -8,15 +8,15 @@
         <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
       </dl>
 
-      <dl>
-        <dt>{{$t('Card Number')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter card number')" v-model="form.withdraw_deposit"></dd>
-      </dl>
+      <!--<dl>-->
+      <!--  <dt>{{$t('Card Number')}}</dt>-->
+      <!--  <dd><input type="text"  :placeholder="$t('Please enter card number')" v-model="form.withdraw_deposit"></dd>-->
+      <!--</dl>-->
 
-      <dl>
-        <dt>{{$t('Opening Bank')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
-      </dl>
+      <!--<dl>-->
+      <!--  <dt>{{$t('Opening Bank')}}</dt>-->
+      <!--  <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>-->
+      <!--</dl>-->
 
       <dl>
         <dt>{{$t('Mobile')}}</dt>
@@ -46,12 +46,61 @@
       <dl>
         <dt>{{$t('Withdrawal priority')}}</dt>
         <dd style="display: flex;align-items: center;padding-left: 15px;">
-          <van-radio-group v-model="form.priority" direction="horizontal">
-            <van-radio :name="1">{{$t('Bank Card')}}</van-radio>
-            <van-radio :name="2">{{$t('UPI')}}</van-radio>
+          <van-radio-group v-model="form.opening_type" direction="horizontal">
+            <van-radio name="bank">{{$t('Bank Card')}}</van-radio>
+            <van-radio name="powwi">{{$t('Powwi')}}</van-radio>
           </van-radio-group>
         </dd>
       </dl>
+
+      <template v-if="form.opening_type==='powwi'">
+        <dl>
+          <dt>{{$t('Bank account')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
+        </dl>
+      </template>
+
+      <template v-if="form.opening_type==='bank'">
+        <dl>
+          <dt>{{$t('Bank card number')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
+        </dl>
+
+        <dl>
+          <dt>{{$t('Opening Bank')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
+        </dl>
+
+        <dl>
+          <dt>{{$t('Account type')}}</dt>
+          <dd style="display: flex;align-items: center;padding-left: 15px;">
+            <van-radio-group v-model="form.acc_type" direction="horizontal">
+              <van-radio name="AHORROS">{{$t('AHORROS')}}</van-radio>
+              <van-radio name="CORRIENTE">{{$t('CORRIENTE')}}</van-radio>
+            </van-radio-group>
+          </dd>
+        </dl>
+
+
+
+        <dl>
+          <dt>{{$t('Identity type')}}</dt>
+          <dd style="display: flex;align-items: center;padding-left: 15px;">
+            <van-radio-group v-model="form.identity_type" direction="horizontal">
+              <van-radio name="CC">{{$t('CC')}}</van-radio>
+              <van-radio name="CE">{{$t('CE')}}</van-radio>
+              <van-radio name="NT">{{$t('NT')}}</van-radio>
+            </van-radio-group>
+          </dd>
+        </dl>
+
+
+        <dl>
+          <dt>{{$t('Identity no')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please select identity no')" v-model="form.identity_no" ></dd>
+        </dl>
+
+      </template>
 
 
       <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
@@ -91,7 +140,10 @@ export default {
         upi:"",
         mobile:"",
         sms_code:"",
-        priority:1
+        priority:1,
+        opening_type:'bank',
+        acc_type:'AHORROS',
+        identity_type:'CC',
       },
       countdown: 0,
       timer:null,
