@@ -6,7 +6,14 @@
     <payWay :channellist="channellist" ref="payWayRef" @chooseChannel="chooseChannel"/>
 
     <template v-if="order_type!=3">
+      <div  class="amout-ipt">
+        <span>{{$t('Amount')}}:</span>
+        <input type="number" v-model.number="amount" class="">
+      </div>
+
       <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
+
+
     </template>
 
     <template v-else>
@@ -15,6 +22,7 @@
         <div>{{amount}}</div>
       </div>
     </template>
+
 
 
     <div class="bottom-info">{{$t('rechargeTip')}}</div>
@@ -208,4 +216,26 @@ export default {
   }
 }
 
+.amout-ipt{
+  width: 345px;
+  margin: 15px auto;
+  display: flex;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(100,100,100,.3);
+  overflow: hidden;
+  align-items: center;
+  padding: 0 15px;
+  font-weight: 700;
+
+  input{
+    flex:1;
+    font-weight: 700;
+    font-size: 17px;
+    border: none;
+    padding-left: 20px;
+  }
+
+}
 </style>

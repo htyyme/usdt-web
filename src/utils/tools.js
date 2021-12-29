@@ -278,8 +278,9 @@ export function getHost(){
 export function getBillType(no){
     let locale = (store.getters['system/locale'] || appConfig.locale).toLowerCase()
     let billDictionaries = store.getters['system/billDictionaries']
-    if (!billDictionaries[locale]) {
+    if (!billDictionaries[no]){
+        console.log(no)
         return ""
     }
-    return billDictionaries[locale][no] ? billDictionaries[locale][no] : ''
+    return billDictionaries[no][locale] ? billDictionaries[no][locale] : billDictionaries[no].english
 }

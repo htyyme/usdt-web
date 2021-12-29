@@ -31,6 +31,9 @@ export default {
   },
   components:{
     lst
+  },
+  created() {
+    this.$store.dispatch('system/getBillDictionaries')
   }
 }
 </script>

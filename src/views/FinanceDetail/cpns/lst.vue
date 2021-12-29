@@ -9,7 +9,7 @@
         <div class="amount color-orange" v-else>{{item.amount }}</div>
 
 
-        <div class="type color-gray"> {{item.op_type | traTypeFormat}}</div>
+        <div class="type color-gray"> {{$tools.getBillType(item.op_type)}}</div>
         <div class="orderNo">{{item.created_at |dateFormat}}</div>
 
 
