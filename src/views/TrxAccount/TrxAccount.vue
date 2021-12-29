@@ -70,8 +70,8 @@
     </div>
 
 
-    <van-button block color="rgb(239, 160, 25)" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==2" @click="bind(current)">{{$t("I've chosen.")}}</van-button>
-    <van-button block color="rgb(239, 160, 25)" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==1" @click="recvOrder">{{$t("Start taking orders")}}</van-button>
+    <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==2" @click="bind(current)">{{$t("I've chosen.")}}</van-button>
+    <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==1" @click="recvOrder">{{$t("Start taking orders")}}</van-button>
 
   </div>
 </template>
@@ -177,7 +177,7 @@ export default {
 
     //开始接单
     recvOrder(){
-      this.$router.push('/task-pool')
+      this.$router.push('/')
     },
 
     async bindEWallet(){
@@ -209,6 +209,10 @@ export default {
 <style scoped lang="scss">
 @import "src/assets/css/vars";
 
+.btn{
+  background: linear-gradient( to right bottom,#00B8A0,#056256);
+  color: #fff;
+}
 .accounts-page{
   background: linear-gradient( to top,#242EAC,#626AD9);
   min-height: 100vh ;
