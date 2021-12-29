@@ -31,17 +31,17 @@
         <!--</div>-->
 
         <div class="line">{{$t('Shared')}}:{{shareTime}}{{$t('Hours')}}</div>
-        <div class="line">{{$t('Purchase Price')}}({{$t('coin')}}):{{order.amount}}</div>
+        <div class="line">{{$t('Purchase Price')}}({{order.coin_type == 1 ? $t('coin') : 'U' }}):{{order.amount}}</div>
         <div class="line">{{$t('Purchase Time')}}:{{order.buy_time | dateFormat}}</div>
       </div>
     </div>
     <div class="footer">
       <dl>
-        <dt>{{$t('Cumulative earnings')}}({{$t('coin')}})</dt>
+        <dt>{{$t('Cumulative earnings')}}({{order.coin_type == 1 ? $t('coin') : 'U' }})</dt>
         <dd>{{order.win_amount}}</dd>
       </dl>
       <dl>
-        <dt>{{$t('Hourly earnings')}}({{$t('coin')}})</dt>
+        <dt>{{$t('Hourly earnings')}}({{order.coin_type == 1 ? $t('coin') : 'U' }})</dt>
         <dd>{{order.end_result}}</dd>
       </dl>
       <dl :class="{zero:order.bonus_amount<=0}" @click="collect">
