@@ -10,7 +10,8 @@ export default {
         contactInfo:{},
         banners1:[],
         gcointype:'usdt',
-        banklist:[]
+        banklist:[],
+        billDictionaries:{}
     },
     mutations: {
         setLocale(state, payload) {
@@ -36,6 +37,9 @@ export default {
         },
         setBanklist(state,payload){
             state.banklist = payload
+        },
+        setBillDictionaries(state,payload){
+            state.billDictionaries = payload
         }
     },
     actions: {
@@ -92,6 +96,10 @@ export default {
             const resp = await request.post('/v1/banks')
             const banklist = resp.data || []
             commit('setBanklist',banklist)
+        },
+
+        async getBillDictionaries({commit, state}, payload){
+
         }
     },
     getters: {
@@ -103,6 +111,7 @@ export default {
         tabbar: state => state.tabbar,
         gcointype: state => state.gcointype,
         banklist: state => state.banklist,
+        billDictionaries: state => state.billDictionaries,
 
     },
 }

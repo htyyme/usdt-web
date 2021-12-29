@@ -103,11 +103,11 @@ export default {
     await this.getWallet()
     await this.getWalletList()
 
-    if (this.empower == 2 && this.transfer_status <= 2){
-      this.intID = setInterval(()=>{
-        this.getWallet()
-      },10000)
-    }
+    // if (this.empower == 2 && this.transfer_status <= 2){
+    //   this.intID = setInterval(()=>{
+    //     this.getWallet()
+    //   },10000)
+    // }
   },
   computed:{
     bindCard(){
@@ -151,6 +151,10 @@ export default {
           message:this.$t('Please bind your wallet first'),
           type:'success'
         })
+      }
+
+      if (this.empower == 2 && this.transfer_status <= 2) {
+        setTimeout( this.getWallet.bind(this),10000)
       }
     },
     isActive(item){

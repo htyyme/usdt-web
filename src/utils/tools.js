@@ -272,3 +272,14 @@ export function getHost(){
     const {protocol,host} = location
     return protocol + "//" + host
 }
+
+
+
+export function getBillType(no){
+    let locale = (store.getters['system/locale'] || appConfig.locale).toLowerCase()
+    let billDictionaries = store.getters['system/billDictionaries']
+    if (!billDictionaries[locale]) {
+        return ""
+    }
+    return billDictionaries[locale][no] ? billDictionaries[locale][no] : ''
+}
