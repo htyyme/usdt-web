@@ -10,7 +10,7 @@ export default {
     locale: 'Spanish',//默认语言  Spanish 西班牙语
     // timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
-    timezone: 'America/New_York', //时区 印度
+    timezone: 'America/New_York', //时区 美东时间 -5 时区
     //接口地址
     baseApiUrl: IS_APP ? 'https://app.bitcoiniojo.com/' : '/'
 }
