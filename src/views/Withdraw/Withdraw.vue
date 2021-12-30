@@ -54,23 +54,23 @@ export default {
       this.getBankCardInfo()
     } else{
       // 判断是否绑定账号
-      let userinfo = this.$store.getters['user/userInfo']
-      let trx_account = userinfo.trx_account
-
-      if (!trx_account){
-
-        const confirmres = await this.$dialog.confirm({
-          message: this.$t('You must fill in the usdt account first')
-        }).catch(err=>err)
-
-        if (confirmres !== 'confirm'){
-          this.$router.back()
-          return
-        }
-        this.$router.push({
-          name:'TrxAccount'
-        })
-      }
+      // let userinfo = this.$store.getters['user/userInfo']
+      // let trx_account = userinfo.trx_account
+      //
+      // if (!trx_account){
+      //
+      //   const confirmres = await this.$dialog.confirm({
+      //     message: this.$t('You must fill in the usdt account first')
+      //   }).catch(err=>err)
+      //
+      //   if (confirmres !== 'confirm'){
+      //     this.$router.back()
+      //     return
+      //   }
+      //   this.$router.push({
+      //     name:'TrxAccount'
+      //   })
+      // }
     }
 
     if (this.$route.query.order_type == 4){
@@ -144,21 +144,21 @@ export default {
       }
 
       //如果是usdt提现 判断是否绑定了绑定账户信息
-      let userinfo = this.$store.getters['user/userInfo']
-      let trx_account = userinfo.trx_account
-      if (this.cointype === 'usdt' && !trx_account){
-        const confirmres = await this.$dialog.confirm({
-          message: this.$t('You must fill in the usdt account first')
-        }).catch(err=>err)
-        if (confirmres !== 'confirm'){
-          return
-        }else{
-          this.$router.push({
-            name:'TrxAccount'
-          })
-          return
-        }
-      }
+      // let userinfo = this.$store.getters['user/userInfo']
+      // let trx_account = userinfo.trx_account
+      // if (this.cointype === 'usdt' && !trx_account){
+      //   const confirmres = await this.$dialog.confirm({
+      //     message: this.$t('You must fill in the usdt account first')
+      //   }).catch(err=>err)
+      //   if (confirmres !== 'confirm'){
+      //     return
+      //   }else{
+      //     this.$router.push({
+      //       name:'TrxAccount'
+      //     })
+      //     return
+      //   }
+      // }
 
       let url = '/v1/auth/user/withdraw'
       if (this.$route.query.order_type == 4){
