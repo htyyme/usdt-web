@@ -659,7 +659,7 @@ export default {
     'CORRIENTE':'CORRIENTE',
     'Identity type':'Identity type',
     'Please select identity no':'Please select identity no',
-
+    'Start':'Start',
 
 
 

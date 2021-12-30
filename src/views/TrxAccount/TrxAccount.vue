@@ -71,7 +71,7 @@
 
 
     <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==2" @click="bind(current)">{{$t("I've chosen.")}}</van-button>
-    <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==1" @click="recvOrder">{{$t("Start taking orders")}}</van-button>
+    <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==1" @click="recvOrder">{{$t("Start")}}</van-button>
 
   </div>
 </template>
