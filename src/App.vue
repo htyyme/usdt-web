@@ -31,10 +31,14 @@ export default {
       return !!token
     }
   },
-  async created() {
+  async mounted() {
     await this.$store.dispatch('system/loadConfig')
     //根据版本信息 判断是否需要更新App
     await this.updateApp()
+
+    document.body.addEventListener('click', ()=>{
+      this.$tools.playClickSound()
+    })
   },
   methods:{
     /**

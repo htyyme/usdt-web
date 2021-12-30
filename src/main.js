@@ -57,6 +57,13 @@ window.payNotify = payNotify
 import jconfirm from "@/components/jconfirm/jconfirm";
 Vue.prototype.$jconfirm = jconfirm.install
 
+
+window.audio = new Audio(require('@/assets/sound/11.mp3'))
+window.audio.loop = false
+
+window.clickAudio = new Audio(require('@/assets/sound/click.mp3'))
+window.clickAudio.loop = false
+
 new Vue({
   router,
   store,

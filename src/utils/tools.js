@@ -284,3 +284,26 @@ export function getBillType(no){
     }
     return billDictionaries[no][locale] ? billDictionaries[no][locale] : billDictionaries[no].english
 }
+
+
+
+export function playSound(){
+    // let audio = new Audio()
+    // audio.src = require('@/assets/sound/11.mp3')
+    // audio.loop = false
+    // audio.play()
+    if (window.audio) {
+        window.audio.play()
+    }
+}
+
+export function playClickSound(){
+    // let audio = new Audio()
+    // audio.src = require('@/assets/sound/click.mp3')
+    // audio.loop = false
+    // audio.play()
+
+    if (window.clickAudio) {
+        window.clickAudio.play()
+    }
+}
