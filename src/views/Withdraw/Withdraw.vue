@@ -164,14 +164,19 @@ export default {
       if (this.$route.query.order_type == 4){
         url = "/v1/auth/ustd/exchangePayout"
       }
-      const resp = await this.$http.post(url,submitdata)
+      const resp = await this.$http.post(url,submitdata).catch(err=>err)
+      if (resp.code === 90005){
+        this.$router.push('/TrxAccount')
+      } else if (resp.code === 200){
+        this.$toast.success({
+          message: this.$t('success'),
+          onClose: () => {
+            this.$router.back()
+          }
+        })
+      }
 
-      this.$toast.success({
-        message: this.$t('success'),
-        onClose: () => {
-          this.$router.back()
-        }
-      })
+
 
     }
   }
