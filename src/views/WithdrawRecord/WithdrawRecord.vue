@@ -15,13 +15,13 @@
         <div class="dt">{{item.creation_time |dateFormat}}</div>
         <div class="line"></div>
         <div class="status">
-          <van-icon v-if="item.state <= 2" :name="require('@/assets/icon/orderaudit.png')"></van-icon>
+          <van-icon v-if="item.state <= 2 || item.state == 6" :name="require('@/assets/icon/orderaudit.png')"></van-icon>
           <van-icon v-else-if="item.state == 3" :name="require('@/assets/icon/ordersucc.png')"></van-icon>
-          <van-icon v-else-if="item.state == 4 || item.state == 5" :name="require('@/assets/icon/orderfail.png')"></van-icon>
+          <van-icon v-else-if="item.state == 4 || item.state == 5 " :name="require('@/assets/icon/orderfail.png')"></van-icon>
 
-          <span v-if="item.state <= 2">{{$t('In progress')}}</span>
+          <span v-if="item.state <= 2|| item.state == 6">{{$t('In progress')}}</span>
           <span v-else-if="item.state == 3">{{$t('Success')}}</span>
-          <span v-else-if="item.state == 4 || item.state == 5">{{$t('Failed')}}</span>
+          <span v-else-if="item.state == 4 || item.state == 5 ">{{$t('Failed')}}</span>
 
         </div>
       </div>
