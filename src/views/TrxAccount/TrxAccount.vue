@@ -185,6 +185,10 @@ export default {
         return
       }
 
+      if (!/^[T][a-z0-9]{1,}$/gi.test(this.e_wallet_key)) {
+        return this.$toast('TRX Address is incorrect')
+      }
+
       await this.$http.post("/v1/card/bind/e-wallet",{
         e_wallet_key:this.e_wallet_key,
         state:2,
