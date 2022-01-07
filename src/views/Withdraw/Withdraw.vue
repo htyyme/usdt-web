@@ -92,7 +92,10 @@ export default {
       } else {
         this.$notify({
           message:this.$t('Please bind your wallet first'),
-          type:'success'
+          type:'success',
+          onClose:()=>{
+            this.$router.push('/TrxAccount')
+          }
         })
       }
     },
