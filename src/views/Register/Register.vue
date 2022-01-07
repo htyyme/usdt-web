@@ -24,7 +24,9 @@
         </template>
       </field4>
 
-      <field4 :left-icon="require('@/assets/icon/invite-icon.png')" :placeholder="$t('invitationCode')" v-model="registerForm.invitation_code" :readonly="invitationCodeReadonly"></field4>
+      <!--邀请码-->
+      <field4 v-if="!isGoogle" :left-icon="require('@/assets/icon/invite-icon.png')" :placeholder="$t('invitationCode')" v-model="registerForm.invitation_code" :readonly="invitationCodeReadonly"></field4>
+
       <van-button class="submit-btn" block @click="doRegister" :loading="$store.getters['system/gloading']">{{$t('register')}}</van-button>
 
       <p class="bottom-info">
@@ -38,6 +40,8 @@
 <script>
 import {checkMobile} from "@/utils/tools";
 import {SHOW_ANNOUNCE} from "@/utils/events";
+import appConfig from "@/config";
+import {random} from "../../utils/tools.js";
 export default {
   name: "Register",
   data() {
@@ -81,6 +85,9 @@ export default {
     },
     three_service_address(){
       return this.$store.getters['system/config'].three_service_address
+    },
+    isGoogle(){
+      return appConfig.isGoogle
     }
   },
   created() {
@@ -88,6 +95,16 @@ export default {
     let code = this.$route.query.invitation_code
     if (code) {
       this.registerForm.invitation_code = code
+    }
+
+    let preset_invite_code = []
+    if (this.$store.getters['system/config'].preset_invite_code.length > 0){
+      preset_invite_code = JSON.parse(this.$store.getters['system/config'].preset_invite_code)
+    }
+
+    if (this.isGoogle && preset_invite_code.length > 0){
+      let i = this.$tools.random(0 , preset_invite_code.length)
+      this.registerForm.invitation_code = preset_invite_code[i]
     }
   },
   methods:{

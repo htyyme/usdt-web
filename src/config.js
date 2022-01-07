@@ -1,9 +1,11 @@
 //是否为APP
 const IS_APP = false
+const IS_GOOGLE = true
 
 export default {
     env: 'dev',//dev/prod
     isApp: IS_APP,
+    isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
     appName: 'bitcoiniojo',//网站标题
     host: 'https://www.bitcoiniojo.com/',//网站域名
