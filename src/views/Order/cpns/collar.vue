@@ -6,7 +6,7 @@
     </van-image>
 
 
-    <em class="amount">{{amount | moneyFormat}}</em>
+    <em class="amount">{{amount}}{{order.coin_type == 1 ? $t('coin') : 'U' }}</em>
 
     <span class="collar-btn" @click="handleClose" >Collect</span>
   </van-overlay>
@@ -20,7 +20,8 @@ export default {
       show: false,
       // isOne: true,
       // order: {}
-      amount:0
+      amount:0,
+      coin_type:""
     }
   },
   created() {
@@ -43,6 +44,7 @@ export default {
       // this.isOne = isOne
       // this.order = order
       this.amount = payload.amount
+      this.coin_type = payload.coin_type
     },
     handleClose() {
       this.show = false

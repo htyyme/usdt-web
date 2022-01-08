@@ -121,7 +121,8 @@ export default {
         this.$refs.collarRef.handleOpen({
           // isOne:true,
           // order:resp.data
-          amount:this.order.bonus_amount
+          amount:this.order.bonus_amount,
+          coin_type:this.order.coin_type
         })
 
         this.$emit('collectFinish',resp.data)
