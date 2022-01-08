@@ -6,7 +6,7 @@
     <div class="form-wrapper">
       <field3 title="Exchange money" v-model="money"></field3>
 
-      <p class="tips">Exchange rate:{{$store.getters['system/config'].exchange_rate*100}}%</p>
+      <p class="tips">Exchange rate:1U ≈ {{dispayRate}}{{$t('coin')}}</p>
     </div>
 
     <footer>
@@ -23,6 +23,11 @@ export default {
     return {
       show:false,
       money:''
+    }
+  },
+  computed:{
+    dispayRate(){
+      return Number(( 1 / this.$store.getters['system/config'].exchange_rate).toFixed(2))
     }
   },
   methods:{
