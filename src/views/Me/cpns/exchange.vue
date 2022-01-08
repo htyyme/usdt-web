@@ -6,7 +6,7 @@
     <div class="form-wrapper">
       <field3 title="Exchange money" v-model="money"></field3>
 
-      <p class="tips">Exchange rate:{{$store.getters['system/config'].exchange_rate}}</p>
+      <p class="tips">Exchange rate:{{$store.getters['system/config'].exchange_rate*100}}%</p>
     </div>
 
     <footer>
