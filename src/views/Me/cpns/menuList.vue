@@ -1,6 +1,12 @@
 <template>
   <div class="menuList">
     <ul>
+      <li @click="showExchange" >
+        <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>
+        <span>{{$t('Exchange')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
       <li @click="showEnterEnvelopeKey" >
         <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>
         <span>{{$t('Red Envelope')}}</span>
@@ -70,15 +76,18 @@
     </ul>
 
     <enterEnvelopeKey ref="enterEnvelopeKeyRef"></enterEnvelopeKey>
+    <exchange ref="exchangeRef"></exchange>
   </div>
 </template>
 
 <script>
 import enterEnvelopeKey from "./enterEnvelopeKey";
+import exchange from "./exchange.vue";
 export default {
   name: "menuList",
   components:{
-    enterEnvelopeKey
+    enterEnvelopeKey,
+    exchange
   },
   computed:{
     show_usdt_trading(){
@@ -147,6 +156,9 @@ export default {
     },
     showEnterEnvelopeKey(){
       this.$refs.enterEnvelopeKeyRef.handleOpen()
+    },
+    showExchange(){
+      this.$refs.exchangeRef.handleOpen()
     }
 
   }
