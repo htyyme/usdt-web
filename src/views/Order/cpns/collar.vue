@@ -6,7 +6,7 @@
     </van-image>
 
 
-    <em class="amount">{{amount}}{{order.coin_type == 1 ? $t('coin') : 'U' }}</em>
+    <em class="amount">{{amount}}{{coin_type == 1 ? $t('coin') : 'U' }}</em>
 
     <span class="collar-btn" @click="handleClose" >Collect</span>
   </van-overlay>
