@@ -39,7 +39,7 @@ export default {
       this.money = ''
     },
     async handleSubmit(){
-      if (!this.money || isNaN(this.money) || this.money <= 0){
+      if (!this.money || isNaN(this.money) || this.money <= 0 || this.money > this.$store.getters['user/coinAccount'].available_balance){
         return this.$toast('money is incorrect')
       }
       const resp = await this.$http.post('/v1/auth/user/currency/transfer',{money : Number(this.money)})
