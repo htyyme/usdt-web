@@ -1,9 +1,9 @@
 //是否为APP
 const IS_APP = false
-const IS_GOOGLE = true
+const IS_GOOGLE = false
 
 export default {
-    env: 'dev',//dev/prod
+    env: 'prod',//dev/prod
     isApp: IS_APP,
     isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
@@ -19,3 +19,6 @@ export default {
 
 
 // 正式版上线需要修改 usdt-web/src/store/module/system.js  将 config.three_service_address = '1'  加上就是正式版
+
+
+
