@@ -6,7 +6,7 @@
     <record />
     <withdrawForm ref="withdrawFormRef"/>
 
-    <van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>
+    <!--<van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>-->
     <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype" :e_wallet_key="e_wallet_key"/>
     <pageFooter />
 
