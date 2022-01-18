@@ -1,11 +1,12 @@
 <template>
-  <van-overlay class="announce" :show="show">
+  <van-overlay class="announce" :show="show" :lock-scroll="false">
     <div class="inner">
       <canvas id="welcome" ref="welcome" width="352" height="50"></canvas>
 
       <div class="content" v-html="content"></div>
 
 
+      <div class="contact" @click="toggle">Please contact customer</div>
 
       <van-button @click="handleClose" block>{{$t('gotIt')}}</van-button>
     </div>
@@ -14,7 +15,8 @@
 
 <script>
 import {SHOW_ANNOUNCE} from "@/utils/events";
-
+import {mapGetters} from 'vuex'
+import appConfig from "@/config";
 export default {
   name: "announce",
   data() {
@@ -28,6 +30,31 @@ export default {
     },
     three_service_address(){
       return this.$store.getters['system/config'].three_service_address
+    },
+
+    contactInfo(){
+      return this.$store.getters['system/contactInfo']
+    },
+    islogin(){
+      let token =  this.$store.getters['user/token']
+      return !!token
+    },
+    link(){
+      if (!this.islogin){
+        return this.$store.getters['system/config'].kf
+      } else {
+        return this.contactInfo.kf_link || this.$store.getters['system/config'].kf
+      }
+
+    },
+    linkArr(){
+      let str = ''
+      if (!this.islogin){
+        str = this.$store.getters['system/config'].kf
+      } else {
+        str = this.contactInfo.kf_link || this.$store.getters['system/config'].kf
+      }
+      return str.split(',')
     }
   },
   mounted() {
@@ -64,7 +91,24 @@ export default {
       ctx.lineWidth = 1
       ctx.strokeStyle = '#277FE3'
       ctx.strokeText('Welcome', 120, 30)
-    }
+    },
+
+    toggle(){
+      this.handleClose()
+
+      if (this.linkArr.length === 0){
+        return
+      }
+      let index= this.$tools.random(0,this.linkArr.length)
+      let link = this.linkArr[index]
+
+      if (appConfig.isApp){
+        window.android.openUrl(link)
+      }else{
+        this.$tools.openUrl(link)
+      }
+
+    },
   },
   destroyed() {
     this.$bus.$off(SHOW_ANNOUNCE)
@@ -95,6 +139,8 @@ export default {
       font-size: 12px;
       padding: 0 40px;
       height: 330px;
+      overflow: auto;
+      pointer-events: auto;
     }
 
     .van-button {
@@ -110,5 +156,14 @@ export default {
       transform: translateX(-50%);
     }
   }
+}
+
+.contact{
+  text-align: center;
+  font-size: 14px;
+  color: red;
+  font-weight: 700;
+  text-decoration: underline;
+  padding-top: 5px;
 }
 </style>

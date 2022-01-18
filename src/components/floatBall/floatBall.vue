@@ -48,6 +48,15 @@ export default {
         return this.contactInfo.kf_link || this.$store.getters['system/config'].kf
       }
 
+    },
+    linkArr(){
+      let str = ''
+      if (!this.islogin){
+        str = this.$store.getters['system/config'].kf
+      } else {
+        str = this.contactInfo.kf_link || this.$store.getters['system/config'].kf
+      }
+      return str.split(',')
     }
   },
   mounted() {
@@ -101,10 +110,16 @@ export default {
     * */
     toggle(){
 
+      if (this.linkArr.length === 0){
+        return
+      }
+      let index= this.$tools.random(0,this.linkArr.length)
+      let link = this.linkArr[index]
+
       if (appConfig.isApp){
-        window.android.openUrl(this.link)
+        window.android.openUrl(link)
       }else{
-        this.$tools.openUrl(this.link)
+        this.$tools.openUrl(link)
       }
 
     },
