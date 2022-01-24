@@ -34,7 +34,7 @@ export default {
       this.money = ''
     },
     async handleSubmit(){
-      if (!this.money || isNaN(this.money) || this.money <= 0 || this.money > this.$store.getters['user/coinAccount'].available_balance){
+      if (!this.money || isNaN(this.money) || this.money <= 0 || this.money > this.$store.getters['user/usdtAccount'].available_balance){
         return this.$toast('money is incorrect')
       }
       const resp = await this.$http.post('/v1/auth/ustd/transeTrx',{amount : Number(this.money)})
