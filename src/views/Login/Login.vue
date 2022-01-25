@@ -189,7 +189,7 @@ export default {
     margin: 50px 23px 0;
     height: 60px;
     border-radius: 30px;
-    color: #2073E0;
+    color: #ff1720;
     font-size: 20px;
     align-items: center;
     justify-content: center;
