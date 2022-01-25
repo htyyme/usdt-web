@@ -135,7 +135,7 @@ export default {
       align-items: center;
       .day{
         background: #fff;
-        color: #2980b9;
+        color: #ff1720;
         font-size: 12px;
         margin-top: 10px;
         width: 20px;
@@ -176,7 +176,7 @@ export default {
           position: absolute;
           width: 5px;
           height: 5px;
-          color: #2980b9;
+          color: #ff1720;
           border-top: 3px solid currentColor;
           border-right: 3px solid currentColor;
           transform: rotate(45deg) translate(4px,1px);
