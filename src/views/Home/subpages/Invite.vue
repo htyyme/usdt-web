@@ -115,7 +115,7 @@ export default {
 <style scoped lang="scss">
 .invite{
   height: 622px;
-  background: url(~assets/img/invitebg.png) no-repeat;
+  background: url(~assets/img/invitebg.jpg) no-repeat;
   background-position: top center;
   background-size: 100vw;
   position: relative;
