@@ -31,32 +31,11 @@ export function checkMobile(mobile) {
     return /^[0-9]{9,12}$/.test(mobile)
 }
 
+
 //验证邮箱格式
 export function checkEmail(email) {
-    let extArr = [
-        '@gmail.com',
-        '@yahoo.com',
-        '@msn.com',
-        '@hotmail.com',
-        '@aol.com',
-        '@ask.com',
-        '@live.com',
-        '@0355.net',
-        '@yeah.net',
-        '@googlemail.com',
-        '@126.com',
-        '@sina.com',
-        '@sohu.com'
-    ]
-    let valid = false
-    for (let i = 0; i < extArr.length; i++) {
-        let index = email.indexOf(extArr[i])
-        if (index !== -1) {
-            valid = true
-            break
-        }
-    }
-    return valid
+    var ePattern = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
+    return ePattern.test(email)
 }
 
 //验证银行卡格式
