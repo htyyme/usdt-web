@@ -3,7 +3,7 @@
     <navbar :title="$t('Finance Details')"></navbar>
 
 
-    <van-tabs v-model="activeName" line-width="100px" animated sticky color="#7981E3">
+    <van-tabs v-model="activeName" line-width="100px" animated sticky color="#ff1720">
 
       <van-tab title="USDT" name="USDT">
         <lst cointype="usdt"/>

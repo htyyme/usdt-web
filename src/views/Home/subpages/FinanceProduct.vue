@@ -180,7 +180,7 @@ export default {
       text-align: center;
     }
     .sub-title{
-      color: #1D6FDF;
+      color: #ff1720;
       text-align: center;
       font-weight: 700;
       margin-top: 8px;
@@ -191,7 +191,7 @@ export default {
       margin: 0 15px;
       height: 17px;
       width: 1px;
-      background-color: #1D6FDF;
+      background-color: #ff1720;
     }
 
     .bottom {
@@ -210,7 +210,7 @@ export default {
 
         span:nth-child(2) ,span:nth-child(3){
           font-size: 13px;
-          color: #1D6FDF;
+          color: #ff1720;
           text-align: center;
           margin-top: 2px;
         }
@@ -368,7 +368,7 @@ export default {
     width: 250px;
     height: 50px;
     //background: $mainColor;
-    background: linear-gradient( to top,#242EAC,#626AD9);
+    background: linear-gradient( to top, #F8868C,#ff1720);
     border-radius: 27px;
     display: flex;
     justify-content: center;
@@ -382,7 +382,7 @@ export default {
   font-size: 13px;
   margin-top: 10px;
   text-align: center;
-  color: #3596E8;
+  color: #ff1720;
   cursor: pointer;
 }
 

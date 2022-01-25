@@ -2,7 +2,7 @@
   <div class="RebateRecord">
     <navbar :title="$t('Rebate Record')"></navbar>
 
-    <van-tabs v-model="activeName" line-width="100px" color="#242EAC">
+    <van-tabs v-model="activeName" line-width="100px" color=" #F8868C">
       <van-tab title="USDT" name="USDT">
         <usdt_rebaterecord />
       </van-tab>

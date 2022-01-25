@@ -8,7 +8,7 @@
       <van-field v-if="isSendSms" :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code"
                  v-model="verify_code" :rules="[{ required: true }]">
         <template #button>
-          <van-button size="mini" color="#626AD9" :disabled="countdown>0" @click="sendOtp">{{ sendBtnText }}</van-button>
+          <van-button size="mini" color="#ff1720" :disabled="countdown>0" @click="sendOtp">{{ sendBtnText }}</van-button>
         </template>
       </van-field>
 
@@ -122,7 +122,7 @@ export default {
   .save-btn {
     width: 220px;
     height: 40px;
-    background: linear-gradient( to top,#242EAC,#626AD9);
+    background: linear-gradient( to top, #F8868C,#ff1720);
     border-radius: 28px;
     color: #fff;
     margin: 0 auto;

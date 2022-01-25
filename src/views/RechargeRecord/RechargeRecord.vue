@@ -112,7 +112,7 @@ name: "RechargeRecord",
       left: 0;
       height: 100%;
       width: 12px;
-      background-color: #242EAC;
+      background-color:  #F8868C;
     }
     &.success::before{
       background-color: #22BF3C;
@@ -148,7 +148,7 @@ name: "RechargeRecord",
       font-size: 15px;
       margin-top: 6px;
       em{
-        color: #242EAC;
+        color:  #F8868C;
         font-weight: 700;
       }
     }
@@ -170,7 +170,7 @@ name: "RechargeRecord",
       margin-top: 11px;
     }
     .status{
-      color: #242EAC;
+      color:  #F8868C;
       height: 28px;
       display: flex;
       align-items: center;

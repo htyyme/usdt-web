@@ -59,7 +59,7 @@ export default {
 
 <style scoped lang="scss">
 .Order{
-  background: linear-gradient( to top,#242EAC,#626AD9);
+  background: linear-gradient( to top, #F8868C,#ff1720);
   min-height: 100vh ;
 }
 </style>

@@ -37,7 +37,7 @@
         <dt>{{$t('Verification code')}}</dt>
         <dd>
           <input type="text"  :placeholder="$t('Verification code')" v-model="form.sms_code">
-          <van-button size="mini" :disabled="countdown>0" color="#626AD9" @click="getVerificationCode">{{sendBtnText}}</van-button>
+          <van-button size="mini" :disabled="countdown>0" color="#ff1720" @click="getVerificationCode">{{sendBtnText}}</van-button>
         </dd>
       </dl>
 
@@ -46,7 +46,7 @@
       <dl>
         <dt>{{$t('Withdrawal priority')}}</dt>
         <dd style="display: flex;align-items: center;padding-left: 15px;">
-          <van-radio-group v-model="form.opening_type" direction="horizontal">
+          <van-radio-group v-model="form.opening_type" direction="horizontal" checked-color="#ff1720">
             <van-radio name="bank">{{$t('Bank Card')}}</van-radio>
             <van-radio name="powwi">{{$t('Powwi')}}</van-radio>
           </van-radio-group>
@@ -252,7 +252,7 @@ export default {
     dl{
       dt{
         font-size: 18px;
-        color: #242EAC;
+        color:  #F8868C;
       }
       dd{
         width: 310px;
@@ -281,7 +281,7 @@ export default {
     .submit-btn{
       width: 175px;
       height: 40px;
-      background: linear-gradient( to top,#242EAC,#626AD9);
+      background: linear-gradient( to top, #F8868C,#ff1720);
       opacity: 1;
       border-radius: 28px;
       color: #fff;

@@ -45,7 +45,7 @@ ul{
     text-align: center;
     padding: 10px 0;
     &.router-link-active{
-      color: #3596E8;
+      color: #ff1720;
     }
     .van-image{
       width: 46px;

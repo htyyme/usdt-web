@@ -145,7 +145,7 @@ export default {
 .list-item {
   width: 345px;
   height: 210px;
-  background: #7981E3;
+  background: #F8868C;
   border-radius: 10px;
   margin: 15px auto;
   display: flex;
@@ -307,7 +307,7 @@ export default {
       }
 
       &:last-child {
-        background-color: #242EAC;
+        background-color:  #F8868C;
 
         border-radius: 0 0 10px 10px;
         border: 1px solid #fff;
@@ -318,7 +318,7 @@ export default {
         }
 
         &.zero {
-          background-color: #626AD9;
+          background-color: #ff1720;
         }
       }
     }

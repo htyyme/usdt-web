@@ -27,8 +27,8 @@
 
 
         <div class="options">
-          <van-button @click="optOrder(item,1)" v-if="state==20" size="mini" color="#242EAC" round>{{$t('revocation')}}</van-button>
-          <van-button @click="optOrder(item,2)"  v-if="state==20" size="mini" color="#242EAC" round>{{$t('pay')}}</van-button>
+          <van-button @click="optOrder(item,1)" v-if="state==20" size="mini" color=" #F8868C" round>{{$t('revocation')}}</van-button>
+          <van-button @click="optOrder(item,2)"  v-if="state==20" size="mini" color=" #F8868C" round>{{$t('pay')}}</van-button>
         </div>
 
       </div>

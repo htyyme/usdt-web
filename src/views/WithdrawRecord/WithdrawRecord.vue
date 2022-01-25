@@ -115,7 +115,7 @@ export default {
       left: 0;
       height: 100%;
       width: 12px;
-      background-color: #242EAC;
+      background-color:  #F8868C;
     }
     &.success::before{
       background-color: #22BF3C;

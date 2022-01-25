@@ -10,8 +10,8 @@
     </div>
 
     <footer>
-      <van-button plain  color="#626AD9" @click="handleClose">{{$t('Cancel')}}</van-button>
-      <van-button color="#626AD9" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Confirm')}}</van-button>
+      <van-button plain  color="#ff1720" @click="handleClose">{{$t('Cancel')}}</van-button>
+      <van-button color="#ff1720" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Confirm')}}</van-button>
     </footer>
   </van-popup>
 </template>

@@ -126,7 +126,8 @@ export default {
   width: 100vw;
   height: 100vh;
   //background: url(~assets/img/login-bg.png) no-repeat;
-  background: linear-gradient( to top,#242EAC,#626AD9);
+
+  background: linear-gradient( to top, #F8868C,#ff1720);
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -157,7 +158,7 @@ export default {
     .submit-btn {
       width: 201px;
       height: 50px;
-      background: linear-gradient( to top,#242EAC,#626AD9);
+      background: linear-gradient( to top, #F8868C,#ff1720);
       opacity: 1;
       border-radius: 25px;
       border: none;

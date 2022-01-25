@@ -54,7 +54,7 @@ export default {
   .button {
     width: 70%;
     height: 50px;
-    background: linear-gradient(to bottom,#53C8F4,#2378E1);
+    background: linear-gradient( to top, #F8868C,#ff1720);
     box-shadow: 0 0.05333rem 0.08rem rgba(10, 83, 12, 0.32);
     border-radius: 1.6rem;
     border: none;

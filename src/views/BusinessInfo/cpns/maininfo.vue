@@ -303,7 +303,7 @@ export default {
   .submit-btn{
     width: 250px;
     height: 55px;
-    background: linear-gradient( to top,#242EAC,#626AD9);
+    background: linear-gradient( to top, #F8868C,#ff1720);
     border-radius: 28px;
     color: #fff;
     font-size: 20px;

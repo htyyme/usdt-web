@@ -218,7 +218,7 @@ export default {
   color: #fff;
 }
 .accounts-page{
-  background: linear-gradient( to top,#242EAC,#626AD9);
+  background: linear-gradient( to top, #F8868C,#ff1720);
   min-height: 100vh ;
   .bankcard-wrapper{
 
@@ -251,7 +251,7 @@ export default {
   .wallet-wrapper{
     //background: #fff url(~assets/img/usdtbg.png) no-repeat;
     margin-top: 15px;
-    background: #7981E3;
+    background: #F8868C;
     .top{
       display: flex;
       justify-content: space-between;
@@ -316,7 +316,7 @@ export default {
           border: none;
           background-color: transparent;
           font-size: 12px;
-          color: #242EAC;
+          color:  #F8868C;
         }
       }
     }

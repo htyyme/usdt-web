@@ -76,7 +76,7 @@ export default {
       width: 140px;
       height: 50px;
       //background-color: rgba(53, 193, 255, 0.2);
-      background: #626AD9;
+      background: #ff1720;
       border-radius: 13px;
       margin-bottom: 13px;
       display: flex;
@@ -87,7 +87,7 @@ export default {
       font-weight: 700;
 
       &.active {
-        background-color: #242EAC;
+        background-color:  #F8868C;
         color: #fff;
       }
     }

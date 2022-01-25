@@ -40,7 +40,7 @@
             <van-button size="mini" plain class="num-ctrl" @click="item.nums++">+</van-button>
           </div>
 
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="purchase(item)">{{$t('Confirm the purchase')}}</van-button>
+          <van-button color=" #F8868C" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="purchase(item)">{{$t('Confirm the purchase')}}</van-button>
         </div>
       </template>
 
@@ -48,8 +48,8 @@
       <!--我要卖-->
       <template v-if="cpnType==2">
         <div class="options">
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="toSallDetail(item,index)">{{$t('Sales detail')}}</van-button>
-          <van-button color="#242EAC" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">{{$t('revocation')}}</van-button>
+          <van-button color=" #F8868C" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="toSallDetail(item,index)">{{$t('Sales detail')}}</van-button>
+          <van-button color=" #F8868C" size="mini" round class="purchase" :loading="$store.getters['system/gloading']" @click="recallGoods(item,index)">{{$t('revocation')}}</van-button>
         </div>
       </template>
 
@@ -241,7 +241,7 @@ export default {
         color: #868995;
         padding: 3px 0;
         .price{
-          color: #242EAC;
+          color:  #F8868C;
           font-size: 18px;
           font-weight: 700;
         }

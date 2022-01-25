@@ -205,7 +205,7 @@ export default {
     width: 250px;
     height: 55px;
     //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
-    background: linear-gradient( to top,#242EAC,#626AD9);
+    background: linear-gradient( to top, #F8868C,#ff1720);
     border-radius: 28px;
     font-size: 20px;
     color: #fff;
