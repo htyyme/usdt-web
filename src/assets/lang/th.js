@@ -640,5 +640,7 @@ export default {
     'Pledge income':'Pledge income',
     'What is Pledge income?':'What is Pledge income?',
     'Novice guide':'Novice guide',
+    'Exchange':'Exchange',
+    'Exchange USDT to TRX':'Exchange USDT to TRX',
 
 }

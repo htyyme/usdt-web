@@ -56,7 +56,7 @@ export default {
 
 <style scoped lang="scss">
   .pageHeader{
-    height: 250px;
+    height: 265px;
     background: linear-gradient( to top,#242EAC,#626AD9);
     background-size: cover;
     padding: 43px 0 0 0;

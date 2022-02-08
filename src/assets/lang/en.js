@@ -660,6 +660,8 @@ export default {
     'Identity type':'Identity type',
     'Please select identity no':'Please select identity no',
     'Start':'Start',
+    'Exchange':'Exchange',
+    'Exchange USDT to TRX':'Exchange USDT to TRX',
 
 
 

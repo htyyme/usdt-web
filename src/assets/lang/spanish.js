@@ -697,5 +697,7 @@ export default {
     'CORRIENTE':'CORRIENTE',
     'Identity type':'Identity type',
     'Please select identity no':'Please select identity no',
+    'Exchange':'Exchange',
+    'Exchange USDT to TRX':'Exchange USDT to TRX',
 
 }
