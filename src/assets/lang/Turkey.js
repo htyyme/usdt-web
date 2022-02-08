@@ -656,7 +656,8 @@ export default {
     'Identity type':'Kimlik tipi',
     'Please select identity no':'Lütfen kimlik no seçin',
     'Start':'Başlangıç',
-
+    'Exchange':'Exchange',
+    'Exchange USDT to TRX':'Exchange USDT to TRX',
 
 
 
