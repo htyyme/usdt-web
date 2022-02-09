@@ -1,5 +1,5 @@
 <template>
-  <van-overlay class="announce" :show="show">
+  <van-overlay class="announce" :show="show" :lock-scroll="false">
     <div class="inner">
       <canvas id="welcome" ref="welcome" width="352" height="50"></canvas>
 
@@ -95,6 +95,7 @@ export default {
       font-size: 12px;
       padding: 0 40px;
       height: 330px;
+      overflow: auto;
     }
 
     .van-button {
