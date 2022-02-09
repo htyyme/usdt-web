@@ -9,7 +9,7 @@
 
       <div class="bd">
         <div class="tit">{{$t('Usdt Balance')}}</div>
-        <div class="num">{{usdtAccount.available_balance | moneyFormat(5,'usdt')}}</div>
+        <div class="num">{{available_balance | moneyFormat(5,'usdt')}}</div>
       </div>
 
     </header>
@@ -52,9 +52,11 @@ export default {
   name: "UsdtSell",
   data(){
     return {
+      available_balance:0,
       form:{
         extra:0,//单价
         nums:0,//数量
+
       }
     }
   },
@@ -69,23 +71,43 @@ export default {
   async created() {
     await this.loadMerchantInfo()
     this.$store.dispatch('user/loadUserInfo')
+    this.getExchangeAccount()
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.available_balance = resp.data?.available_balance
+    },
     //判断是否绑定了商家信息
     async loadMerchantInfo(){
-      const resp = await this.$http.post('/v1/auth/user/merchant')
-      if (resp.data.id==0){
+      // const resp = await this.$http.post('/v1/auth/user/merchant')
+      // if (resp.data.id==0){
+      //   const confirmres = await this.$dialog.confirm({
+      //     message:this.$t('You must fill the shop information at first')
+      //   }).catch(err=>err)
+      //   if(confirmres ==='confirm'){
+      //     this.$router.push({
+      //       name:'BusinessInfo'
+      //     })
+      //   }else{
+      //     this.$router.back()
+      //   }
+      //
+      // }
+
+      const resp = await this.$http.post('/v1/auth/user/cards',)
+      let bankCardList = resp.data || []
+      if (bankCardList.length === 0) {
         const confirmres = await this.$dialog.confirm({
-          message:this.$t('You must fill the shop information at first')
-        }).catch(err=>err)
-        if(confirmres ==='confirm'){
+          message: this.$t('You must fill the shop information at first')
+        }).catch(err => err)
+        if (confirmres === 'confirm') {
           this.$router.push({
-            name:'BusinessInfo'
+            name: 'bankCard'
           })
-        }else{
+        } else {
           this.$router.back()
         }
-
       }
     },
     decNum(){
@@ -104,7 +126,7 @@ export default {
       this.form.extra--
     },
     quickSelect(option){
-      const balance = this.usdtAccount.available_balance
+      const balance = this.available_balance
       if (option==1){ //all
         this.form.nums = balance
       }else if (option==2){ // 1/2
@@ -123,14 +145,14 @@ export default {
         return this.$toast.fail(this.$t('Please enter the correct quantity'))
       }
       const resp = await this.$http.post('/v1/auth/ustd/sell',{
-        extra:Number(this.form.extra),
+        ratio:Number(this.form.extra),
         nums:Number(this.form.nums),
       })
       this.$toast.success({
         message:this.$t('success'),
         onClose:()=> {
           this.$store.dispatch('user/loadUserInfo')
-          this.$router.back()
+          this.$router.push('/UsdtMall2/salelist')
         }
       })
     }
@@ -140,7 +162,7 @@ export default {
 
 <style scoped lang="scss">
 header{
-  background-color: #3CA1EB;
+  background: linear-gradient(180deg, #41AAED 0%, #2F8DE6 100%);
   height: 6.66667rem;
   .navbar{
     height: 44px;
@@ -241,6 +263,7 @@ header{
   margin: 20px auto 0;
   width: 70%;
   background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+  //background: linear-gradient( to top,#242EAC,#626AD9);
   color: #fff;
 }
 

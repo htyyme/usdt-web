@@ -12,18 +12,33 @@
 export default {
   name: "assets",
   props:{
-    cointype:String
+    cointype:String,
+    exchangeAccount:Object
   },
   computed:{
-
+    order_type(){
+      return this.$route.query.order_type
+    },
     coinAccount(){
       return this.$store.getters['user/coinAccount']
     },
     usdtAccount(){
       return this.$store.getters['user/usdtAccount']
     },
+    // accountinfo(){
+    //   return this.cointype==='coin' ? this.coinAccount : this.usdtAccount
+    // },
+    // availableBalance(){
+    //   return this.accountinfo.available_balance
+    // },
+
     accountinfo(){
-      return this.cointype==='coin' ? this.coinAccount : this.usdtAccount
+      if (this.order_type != 4){
+        return this.cointype === 'coin' ? this.coinAccount : this.usdtAccount
+      } else {
+        return this.exchangeAccount
+      }
+
     },
     availableBalance(){
       return this.accountinfo.available_balance
@@ -38,12 +53,13 @@ export default {
   height: 115px;
   border: 1px solid #FFFFFF;
   background: linear-gradient(181deg, #98DEF8 0%, #7ED7FA 31%, #75D4FB 54%, #35C1FF 100%);
+  //background: linear-gradient( to top,#242EAC,#626AD9);
   opacity: 1;
   border-radius: 13px;
   padding: 10px 18px 0;
   .title{
     font-size: 17px;
-    color: #333;
+    color: #fff;
     font-weight: 700;
   }
   .info{

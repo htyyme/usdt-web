@@ -2,9 +2,28 @@
   <div class="recharge">
     <navbar :title="$t('recharge')"></navbar>
 
-    <assets :cointype="cointype"/>
+    <assets :cointype="cointype" :exchange-account="exchangeAccount"/>
     <payWay :channellist="channellist" ref="payWayRef" @chooseChannel="chooseChannel"/>
-    <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
+
+    <template v-if="order_type!=3">
+      <div  class="amout-ipt">
+        <span>{{$t('Amount')}}:</span>
+        <input type="number" v-model.number="amount" class="">
+      </div>
+
+      <amounts :cointype="cointype" @chooseAmount="chooseAmount"/>
+
+
+    </template>
+
+    <template v-else>
+      <div class="preset_amount">
+        <div>{{$t('Amount')}}:</div>
+        <div>{{amount}}</div>
+      </div>
+    </template>
+
+
 
     <div class="bottom-info">{{$t('rechargeTip')}}</div>
 
@@ -46,7 +65,8 @@ export default {
       cointype:'',
       channellist:[],
       activeChannel:{},
-      amount:0
+      amount:0,
+      exchangeAccount:{}
     }
   },
   computed:{
@@ -68,20 +88,40 @@ export default {
         return true
       }
       return false
+    },
+    order_id(){
+      return Number(this.$route.query.order_id)
+    },
+    order_type(){
+      return this.$route.query.order_type
+    },
+    order_amount(){
+      return this.$route.query.amount
     }
   },
-  created() {
+  mounted() {
     const {cointype} = this.$route.query
     if (cointype !== 'usdt' && cointype !== 'coin'){
       this.$router.back()
     }
     this.cointype = cointype
+    if (this.order_type == 3){
+      this.amount = this.order_amount
+    }
 
     //获取用户余额
     this.$store.dispatch('user/loadUserInfo')
     this.loadChannels()
+
+    if (this.order_type == 3 || this.order_type ==4){
+      this.getExchangeAccount()
+    }
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.exchangeAccount = resp.data
+    },
     //获取通道列表
     async loadChannels(){
       let submitdata = {}
@@ -97,7 +137,7 @@ export default {
 
       //默认选择第一个通道
       if (this.channellist.length>0){
-        // this.activeChannel = this.channellist[0]
+
         this.$refs.payWayRef.chooseChannel(this.channellist[0])
       }
     },
@@ -119,12 +159,21 @@ export default {
         successUrl : this.returnUrl,
         channel_code: this.activeChannel.payChannelName
       }
+      let reqUrl = '/v1/auth/user/recharge'
       if (this.cointype === 'coin'){
         formData.coin_type = 1
       } else if (this.cointype === 'usdt'){
         formData.coin_type = 2
       }
-      const resp = await this.$http.post('/v1/auth/user/recharge',formData)
+
+      let {order_type} = this.$route.query
+      if (order_type == 4 || order_type == 3){
+        reqUrl = '/v1/auth/user/rechargeByExchange'
+        formData.order_type = Number(order_type)
+        formData.order_id = this.order_id
+      }
+
+      const resp = await this.$http.post(reqUrl,formData)
       handlePay(resp.data.data)
     }
   }
@@ -149,6 +198,7 @@ export default {
     width: 250px;
     height: 55px;
     background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+    //background: linear-gradient( to top,#242EAC,#626AD9);
     border-radius: 28px;
     color: #fff;
     font-size: 20px;
@@ -156,4 +206,36 @@ export default {
   }
 }
 
+.preset_amount{
+  padding: 15px 0 0 15px;
+  display: flex;
+  font-size: 17px;
+  div:first-child{
+    font-weight: 700;
+    padding-right: 5px;
+  }
+}
+
+.amout-ipt{
+  width: 345px;
+  margin: 15px auto;
+  display: flex;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(100,100,100,.3);
+  overflow: hidden;
+  align-items: center;
+  padding: 0 15px;
+  font-weight: 700;
+
+  input{
+    flex:1;
+    font-weight: 700;
+    font-size: 17px;
+    border: none;
+    padding-left: 20px;
+  }
+
+}
 </style>

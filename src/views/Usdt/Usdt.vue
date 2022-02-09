@@ -6,15 +6,15 @@
 
     <div class="assets">
       <div class="title">{{$t('My wallet')}} <span>({{$t('udst')}})</span></div>
-      <div class="balance">{{usdtBalance}}</div>
+      <div class="balance">{{exchangeAccount.available_balance}}</div>
       <div class="botm">
           <dl>
-            <dt>{{ustd_sell}}</dt>
+            <dt>{{exchangeAccount.sell_e_money}}</dt>
             <dd>{{$t('Sell')}}</dd>
           </dl>
         <dl>
-          <dt>{{ustd_buy}}</dt>
-          <dd>{{$t('Buy')}}</dd>
+          <dt>{{exchangeAccount.legal_currency}}</dt>
+          <dd>{{$t('coin')}}</dd>
         </dl>
       </div>
     </div>
@@ -54,7 +54,8 @@ export default {
   name: "Usdt",
   data(){
     return {
-      newslist:[]
+      newslist:[],
+      exchangeAccount:{}
     }
   },
   computed:{
@@ -80,13 +81,19 @@ export default {
   created() {
     this.$store.dispatch('user/loadUserInfo')
     this.loadNewsList()
+    this.getExchangeAccount()
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.exchangeAccount = resp.data
+    },
     toUsdtRechargePage(){
       this.$router.push({
         name:'Recharge',
         query:{
-          cointype:'usdt'
+          cointype:'usdt',
+          order_type:4
         }
       })
     },
@@ -94,7 +101,8 @@ export default {
       this.$router.push({
         name:'Withdraw',
         query:{
-          cointype:'usdt'
+          cointype:'usdt',
+          order_type:4
         }
       })
     },
@@ -123,7 +131,7 @@ export default {
           message:this.$t('It is not open for the time being.')
         })
       }else {
-        this.$router.push({name:'UsdtMall'})
+        this.$router.push('/UsdtMall2/purchaselist')
       }
     },
     tolink(newsitem){
@@ -266,7 +274,7 @@ export default {
         word-break: break-all;
       }
       .link{
-        color: #e74c3c;
+        color: #626AD9;
         font-weight: 700;
         word-break: break-all;
       }
