@@ -699,5 +699,6 @@ export default {
     'Please select identity no':'Please select identity no',
     'Exchange':'Exchange',
     'Exchange USDT to TRX':'Exchange USDT to TRX',
-
+    'Are you sure you want to undo?':'Are you sure you want to undo?',
+    'Revoked successfully':'Revoked successfully',
 }

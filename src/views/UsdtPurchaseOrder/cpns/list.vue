@@ -107,7 +107,7 @@ export default {
     async optOrder(item,op_type){
       if (op_type==1){
         const confirmRes = await this.$dialog.confirm({
-          message:'确定要撤销吗',
+          message:this.$t('Are you sure you want to undo?'),
           confirmButtonText:this.$t('confirm'),
           cancelButtonText:this.$t('cancel')
         }).catch(err => err)
@@ -122,7 +122,7 @@ export default {
       })
       if (op_type == 1){
         this.$toast({
-          message:'撤销成功',
+          message:this.$t('Revoked successfully'),
           onClose:()=>{
             location.reload()
           }
