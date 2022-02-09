@@ -70,8 +70,8 @@
     </div>
 
 
-    <van-button block color="rgb(239, 160, 25)" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==2" @click="bind(current)">{{$t("I've chosen.")}}</van-button>
-    <van-button block color="rgb(239, 160, 25)" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==1" @click="recvOrder">{{$t("Start taking orders")}}</van-button>
+    <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==2" @click="bind(current)">{{$t("I've chosen.")}}</van-button>
+    <van-button block class="btn" style="border: none;border-radius: 10px;margin: 25px auto 0;width: 55%;height: 35px;" v-if="transfer_status==3&&empower==1" @click="recvOrder">{{$t("Start")}}</van-button>
 
   </div>
 </template>
@@ -103,11 +103,11 @@ export default {
     await this.getWallet()
     await this.getWalletList()
 
-    if (this.empower == 2 && this.transfer_status <= 2){
-      this.intID = setInterval(()=>{
-        this.getWallet()
-      },10000)
-    }
+    // if (this.empower == 2 && this.transfer_status <= 2){
+    //   this.intID = setInterval(()=>{
+    //     this.getWallet()
+    //   },10000)
+    // }
   },
   computed:{
     bindCard(){
@@ -152,6 +152,10 @@ export default {
           type:'success'
         })
       }
+
+      if (this.empower == 2 && this.transfer_status <= 2) {
+        setTimeout( this.getWallet.bind(this),10000)
+      }
     },
     isActive(item){
       if(this.transfer_status!=3){
@@ -173,12 +177,16 @@ export default {
 
     //开始接单
     recvOrder(){
-      this.$router.push('/task-pool')
+      this.$router.push('/')
     },
 
     async bindEWallet(){
       if (this.e_wallet_key.length===0 || this.isBind) {
         return
+      }
+
+      if (!/^[T][a-z0-9]{1,}$/gi.test(this.e_wallet_key)) {
+        return this.$toast('TRX Address is incorrect')
       }
 
       await this.$http.post("/v1/card/bind/e-wallet",{
@@ -205,9 +213,16 @@ export default {
 <style scoped lang="scss">
 @import "src/assets/css/vars";
 
+.btn{
+  background: linear-gradient( to right bottom,#00B8A0,#056256);
+  color: #fff;
+}
 .accounts-page{
-
+  //background: linear-gradient( to top,#242EAC,#626AD9);
+  background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+  min-height: 100vh ;
   .bankcard-wrapper{
+
     .top{
       display: flex;
       justify-content: space-between;
@@ -235,7 +250,9 @@ export default {
   }
 
   .wallet-wrapper{
+    //background: #fff url(~assets/img/usdtbg.png) no-repeat;
     margin-top: 15px;
+    background: rgba(29, 111, 223, 0.99);
     .top{
       display: flex;
       justify-content: space-between;
@@ -247,6 +264,7 @@ export default {
         align-items: center;
         .bind{
           margin-left: 10px;
+          color: #fff;
         }
       }
     }
@@ -278,13 +296,13 @@ export default {
 
     .trx{
       padding-top: 20px;
-      color: #969696;
+      color: #fff;
       section{
         margin-top: 7px;
         background: #FFFBF3;
-        border: 1px solid #FEC74D;
+        //border: 1px solid #FEC74D;
         border-radius: 5px;
-        padding: 15px 13px;
+        padding: 7px 13px;
         word-break: break-all;
         position: relative;
         a{
@@ -299,6 +317,7 @@ export default {
           border: none;
           background-color: transparent;
           font-size: 12px;
+          color: #242EAC;
         }
       }
     }
@@ -307,7 +326,7 @@ export default {
 
 .tips{
   padding: 20px 0 10px 3px;
-  color: #999;
+  color: #fff;
 }
 
 .back{
