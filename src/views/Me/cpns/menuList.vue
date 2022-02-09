@@ -1,6 +1,24 @@
 <template>
   <div class="menuList">
     <ul>
+      <li @click="showExchange" >
+        <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
+        <span>{{$t('Exchange')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
+      <li @click="showExchangeUsdtTrx" >
+        <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
+        <span>{{$t('Exchange USDT to TRX')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
+      <!--<li @click="showEnterEnvelopeKey" >-->
+      <!--  <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('Red Envelope')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
+
       <li @click="toVipPage" >
         <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
         <span>{{$t('memberSystem')}}</span>
@@ -43,11 +61,11 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toBusinessPage" v-if="show_usdt_trading!='0' && three_service_address.length>0" >
-        <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>
-        <span>{{$t('Business information')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
+      <!--<li @click="toBusinessPage" v-if="show_usdt_trading!='0' && three_service_address.length>0" >-->
+      <!--  <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('Business information')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
 
       <li @click="toAboutPage">
         <van-icon :name="require('@/assets/icon/aboutus.png')" size="40"></van-icon>
@@ -62,12 +80,24 @@
       </li>
 
     </ul>
+
+    <enterEnvelopeKey ref="enterEnvelopeKeyRef"></enterEnvelopeKey>
+    <exchange ref="exchangeRef"></exchange>
+    <exchangeUsdtTrx ref="exchangeUsdtTrxRef"/>
   </div>
 </template>
 
 <script>
+import enterEnvelopeKey from "./enterEnvelopeKey";
+import exchange from "./exchange.vue";
+import exchangeUsdtTrx from "./exchangeUsdtTrx.vue";
 export default {
   name: "menuList",
+  components:{
+    enterEnvelopeKey,
+    exchange,
+    exchangeUsdtTrx
+  },
   computed:{
     show_usdt_trading(){
       return this.$store.getters['system/config'].show_usdt_trading
@@ -132,7 +162,17 @@ export default {
       this.$store.commit('user/setToken','')
       this.$store.commit('system/setBanners1',[])
       this.$router.replace({name:'Login'})
+    },
+    showEnterEnvelopeKey(){
+      this.$refs.enterEnvelopeKeyRef.handleOpen()
+    },
+    showExchange(){
+      this.$refs.exchangeRef.handleOpen()
+    },
+    showExchangeUsdtTrx(){
+      this.$refs.exchangeUsdtTrxRef.handleOpen()
     }
+
   }
 }
 </script>
