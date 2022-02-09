@@ -16,7 +16,7 @@ module.exports = {
                 changeOrigin: true,
             },
             '/api': {
-                target: 'http://app.vicaro.in/',
+                target: 'http://192.168.2.243:7777',
                 changeOrigin: true,
             }
         }
