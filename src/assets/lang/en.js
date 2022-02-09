@@ -662,8 +662,8 @@ export default {
     'Start':'Start',
     'Exchange':'Exchange',
     'Exchange USDT to TRX':'Exchange USDT to TRX',
-
-
+    'Are you sure you want to undo?':'Are you sure you want to undo?',
+    'Revoked successfully':'Revoked successfully',
 
 
 
