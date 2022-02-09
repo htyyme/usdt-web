@@ -6,7 +6,7 @@
 
     <div class="time">
       <em>{{$t('Withdrawal Time')}}</em>
-      <span>{{$t('Working day')}} {{config.withdraw_time}}</span>
+      <span>{{$t('Working day')}} {{timerange}}</span>
     </div>
     <div class="end" v-html="config.withdraw_tips2"></div>
 
@@ -20,6 +20,19 @@
       computed:{
         config(){
           return this.$store.getters['system/config']
+        },
+        coin_withdraw_timerange(){
+          return this.config.coin_withdraw_timerange.split(',').join('-')
+        },
+        usdt_withdraw_timerange(){
+          return this.config.usdt_withdraw_timerange.split(',').join('-')
+        },
+        timerange(){
+          if (this.$route.query.cointype ==='usdt'){
+            return this.usdt_withdraw_timerange
+          } else {
+            return this.coin_withdraw_timerange
+          }
         }
       }
     }

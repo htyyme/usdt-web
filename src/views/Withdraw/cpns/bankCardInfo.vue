@@ -25,7 +25,7 @@
     <template v-else>
       <dl>
         <dt>{{ $t('trxaccount') }}</dt>
-        <dd>{{ trx_account }}</dd>
+        <dd>{{ e_wallet_key }}</dd>
       </dl>
     </template>
 
@@ -42,7 +42,8 @@ export default {
   name: "bankCardInfo",
   props: {
     bankcardinfo: Object,
-    cointype: String
+    cointype: String,
+    e_wallet_key: String,
   },
   computed: {
     userinfo() {
@@ -147,7 +148,7 @@ export default {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      font-size: 17px;
+      font-size: 13px;
       background-color: #F9F9F9;
       border-radius: 50px;
       margin-top: 10px;

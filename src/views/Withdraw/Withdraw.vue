@@ -2,12 +2,12 @@
   <div class="Withdraw">
     <navbar :title="$t('Withdraw')"></navbar>
 
-    <assets :cointype="cointype"/>
+    <assets :cointype="cointype" :exchange-account="exchangeAccount"/>
     <record />
     <withdrawForm ref="withdrawFormRef"/>
 
-    <van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>
-    <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype"/>
+    <!--<van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>-->
+    <bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype" :e_wallet_key="e_wallet_key"/>
     <pageFooter />
 
     <van-button  block  class="withdraw-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Withdraw')}}</van-button>
@@ -33,7 +33,9 @@ export default {
     return {
       cointype:'',
       bankcardinfo:{},// 银行卡信息
-      fee:0
+      fee:0,
+      exchangeAccount:{},
+      e_wallet_key:"",
     }
   },
   async created() {
@@ -52,27 +54,51 @@ export default {
       this.getBankCardInfo()
     } else{
       // 判断是否绑定账号
-      let userinfo = this.$store.getters['user/userInfo']
-      let trx_account = userinfo.trx_account
-
-      if (!trx_account){
-
-        const confirmres = await this.$dialog.confirm({
-          message: this.$t('You must fill in the usdt account first')
-        }).catch(err=>err)
-
-        if (confirmres !== 'confirm'){
-          this.$router.back()
-          return
-        }
-        this.$router.push({
-          name:'TrxAccount'
-        })
-      }
+      // let userinfo = this.$store.getters['user/userInfo']
+      // let trx_account = userinfo.trx_account
+      //
+      // if (!trx_account){
+      //
+      //   const confirmres = await this.$dialog.confirm({
+      //     message: this.$t('You must fill in the usdt account first')
+      //   }).catch(err=>err)
+      //
+      //   if (confirmres !== 'confirm'){
+      //     this.$router.back()
+      //     return
+      //   }
+      //   this.$router.push({
+      //     name:'TrxAccount'
+      //   })
+      // }
     }
 
+    if (this.$route.query.order_type == 4){
+      this.getExchangeAccount()
+    }
+    if (this.$route.query.order_type == 4 || this.cointype === 'usdt'){
+      this.getWallet()
+    }
   },
   methods:{
+    async getExchangeAccount(){
+      const resp = await this.$http.post('/v1/auth/ustd/exchangeAccount')
+      this.exchangeAccount = resp.data
+    },
+    async getWallet(){
+      const resp = await this.$http.post('/v1/auth/user/wallet')
+      if (resp.data.length > 0){
+        this.e_wallet_key = resp.data[0]?.e_wallet_key
+      } else {
+        this.$notify({
+          message:this.$t('Please bind your wallet first'),
+          type:'success',
+          onClose:()=>{
+            this.$router.push('/TrxAccount')
+          }
+        })
+      }
+    },
     async loadconfig(){
       const resp= await this.$http.post('/v1/withdraw/config')
       // console.log(resp)
@@ -121,30 +147,43 @@ export default {
       }
 
       //如果是usdt提现 判断是否绑定了绑定账户信息
-      let userinfo = this.$store.getters['user/userInfo']
-      let trx_account = userinfo.trx_account
-      if (this.cointype === 'usdt' && !trx_account){
-        const confirmres = await this.$dialog.confirm({
-          message: this.$t('You must fill in the usdt account first')
-        }).catch(err=>err)
-        if (confirmres !== 'confirm'){
-          return
-        }else{
-          this.$router.push({
-            name:'TrxAccount'
-          })
-          return
-        }
+      // let userinfo = this.$store.getters['user/userInfo']
+      // let trx_account = userinfo.trx_account
+      // if (this.cointype === 'usdt' && !trx_account){
+      //   const confirmres = await this.$dialog.confirm({
+      //     message: this.$t('You must fill in the usdt account first')
+      //   }).catch(err=>err)
+      //   if (confirmres !== 'confirm'){
+      //     return
+      //   }else{
+      //     this.$router.push({
+      //       name:'TrxAccount'
+      //     })
+      //     return
+      //   }
+      // }
+
+      let url = '/v1/auth/user/withdraw'
+      if (this.$route.query.order_type == 4){
+        url = "/v1/auth/ustd/exchangePayout"
+      }
+      const resp = await this.$http.post(url,submitdata).catch(err=>err)
+      if (resp.code === 90005){
+        this.$router.push('/TrxAccount')
+      } else if (resp.code === 200){
+        this.$toast.success({
+          message: this.$t('success'),
+          onClose: () => {
+            this.$router.back()
+          }
+        })
+      } else {
+        this.$toast({
+          message: resp.message,
+        })
       }
 
-      const resp = await this.$http.post('/v1/auth/user/withdraw',submitdata)
 
-      this.$toast.success({
-        message: this.$t('success'),
-        onClose: () => {
-          this.$router.back()
-        }
-      })
 
     }
   }
@@ -165,7 +204,8 @@ export default {
   .withdraw-btn {
     width: 250px;
     height: 55px;
-    background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+    //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+    background: linear-gradient( to top,#242EAC,#626AD9);
     border-radius: 28px;
     font-size: 20px;
     color: #fff;

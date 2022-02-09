@@ -42,10 +42,10 @@ export default {
   name: "WithdrawType",
   computed:{
     usdtWithdrawInfo(){
-      return this.$store.getters['system/config'].usdt_withdraw_info
+      return this.$store.getters['system/config'].withdraw_usdt_intro
     },
     coinWithdrawInfo(){
-      return this.$store.getters['system/config'].coin_withdraw_info
+      return this.$store.getters['system/config'].withdraw_coin_intro
     }
   },
   methods:{
