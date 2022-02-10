@@ -701,4 +701,5 @@ export default {
     'Exchange USDT to TRX':'Exchange USDT to TRX',
     'Are you sure you want to undo?':'Are you sure you want to undo?',
     'Start taking orders':'Start taking orders',
+    'Revoked successfully':'Revoked successfully',
 }

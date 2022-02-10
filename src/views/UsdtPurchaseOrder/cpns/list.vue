@@ -122,7 +122,7 @@ export default {
       })
       if (op_type == 1){
         this.$toast({
-          message:'撤销成功',
+          message:this.$t('Revoked successfully'),
           onClose:()=>{
             location.reload()
           }
