@@ -16,7 +16,9 @@ export default {
     // timezone: 'America/New_York', //时区 美东时间 -5 时区
     timezone: 'Europe/Minsk', //时区 +3 时区
     //接口地址
-    baseApiUrl: IS_APP ? 'https://app.bitcoiniojo.com/' : '/'
+    baseApiUrl: IS_APP ? 'https://app.bitcoiniojo.com/' : '/',
+    //是否开启交易所
+    openExchange:true
 }
 
 // 正式版上线需要修改 usdt-web/src/store/module/system.js  将 config.three_service_address = '1'  加上就是正式版

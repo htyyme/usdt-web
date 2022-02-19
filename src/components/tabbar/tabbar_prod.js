@@ -1,7 +1,8 @@
 import {getLangField} from "@/utils/tools";
+import config from "../../config.js";
 
 
-export default [
+const tabbarList =  [
     {
         name: 'Home',
         title: getLangField('tabBarHome'),
@@ -18,13 +19,13 @@ export default [
     },
 
 
-    {
-        name: 'Usdt',
-        title: getLangField('USDT'),
-        icon: require('@/assets/tabbar/transhall.png'),
-        activeIcon: require('@/assets/tabbar/transhall-active.png'),
-        url: '/Usdt'
-    },
+    // {
+    //     name: 'Usdt',
+    //     title: getLangField('USDT'),
+    //     icon: require('@/assets/tabbar/transhall.png'),
+    //     activeIcon: require('@/assets/tabbar/transhall-active.png'),
+    //     url: '/Usdt'
+    // },
 
     {
         name: 'Team',
@@ -41,3 +42,18 @@ export default [
         url: '/Me'
     },
 ]
+
+//交易所
+const exchangeTabbar = {
+    name: 'Usdt',
+    title: getLangField('USDT'),
+    icon: require('@/assets/tabbar/transhall.png'),
+    activeIcon: require('@/assets/tabbar/transhall-active.png'),
+    url: '/Usdt'
+}
+
+if (config.openExchange){
+    tabbarList.splice(2,0,exchangeTabbar)
+}
+
+export default tabbarList
