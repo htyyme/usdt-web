@@ -1,5 +1,5 @@
 export default {
-    'coin': 'COP',
+    'coin': '₺',
     // vant
     tel: 'Phone',
     save: 'Save',
