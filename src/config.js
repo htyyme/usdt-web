@@ -3,7 +3,7 @@ const IS_APP = false
 const IS_GOOGLE = false
 
 export default {
-    env: 'prod',//dev/prod
+    env: 'dev',//dev/prod
     isApp: IS_APP,
     isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
@@ -14,7 +14,9 @@ export default {
     // timezone: 'Asia/Kolkata', //时区 印度
     timezone: 'America/New_York', //时区 美东时间 -5 时区
     //接口地址
-    baseApiUrl: IS_APP ? 'https://app.bitcoiniojo.com/' : '/'
+    baseApiUrl: IS_APP ? 'https://app.bitcoiniojo.com/' : '/',
+    //是否开启交易所
+    openExchange:true
 }
 
 
