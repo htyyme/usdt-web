@@ -11,7 +11,9 @@ export default {
     // timezone: 'Asia/Bangkok', //时区 泰国
     timezone: 'Asia/Kolkata', //时区 印度
     //接口地址
-    baseApiUrl: IS_APP ? 'https://app.vicaro.in/' : '/'
+    baseApiUrl: IS_APP ? 'https://app.vicaro.in/' : '/',
+    //是否开启交易所
+    openExchange:true
 }
 
 
