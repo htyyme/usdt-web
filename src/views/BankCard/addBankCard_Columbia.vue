@@ -55,7 +55,7 @@
 
       <template v-if="form.opening_type==='powwi'">
         <dl>
-          <dt>{{$t('Bank account')}}</dt>
+          <dt>{{$t('Hesap IBAN')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
         </dl>
       </template>
@@ -218,8 +218,10 @@ export default {
       if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
       if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
       if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
-      if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
+      // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
       // if(this.isSendSms && !this.form.sms_code)  return this.$toast.fail(this.$t('Please enter sms code'))
+
+
       const r = await this.$http.post('/v1/auth/card/bind',this.form)
 
       this.$toast.success({
