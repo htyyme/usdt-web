@@ -67,7 +67,7 @@
         </dl>
 
         <dl>
-          <dt>{{$t('Soyad')}}</dt>
+          <dt>{{$t('Hesap Ad Soyad')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
         </dl>
 
