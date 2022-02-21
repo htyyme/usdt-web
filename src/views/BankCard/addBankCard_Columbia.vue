@@ -4,7 +4,7 @@
 
     <div class="wrapper">
       <dl>
-        <dt>{{$t('Account Name')}}</dt>
+        <dt>{{$t('Hesap Ad Soyad')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
       </dl>
 
@@ -67,7 +67,7 @@
         </dl>
 
         <dl>
-          <dt>{{$t('Hesap Ad Soyad')}}</dt>
+          <dt>{{$t('banka adı')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
         </dl>
 
