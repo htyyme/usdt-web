@@ -62,14 +62,16 @@
 
       <template v-if="form.opening_type==='bank'">
         <dl>
+          <dt>{{$t('banka adı')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
+        </dl>
+
+        <dl>
           <dt>{{$t('Hesap IBAN')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
         </dl>
 
-        <dl>
-          <dt>{{$t('banka adı')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
-        </dl>
+
 
         <!--<dl>-->
         <!--  <dt>{{$t('Account type')}}</dt>-->
