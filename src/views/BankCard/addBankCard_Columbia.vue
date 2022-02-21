@@ -55,50 +55,50 @@
 
       <template v-if="form.opening_type==='powwi'">
         <dl>
-          <dt>{{$t('Hesap IBAN')}}</dt>
+          <dt>{{$t('Bank account')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
         </dl>
       </template>
 
       <template v-if="form.opening_type==='bank'">
         <dl>
-          <dt>{{$t('Bank card number')}}</dt>
+          <dt>{{$t('Hesap IBAN')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
         </dl>
 
         <dl>
-          <dt>{{$t('Opening Bank')}}</dt>
+          <dt>{{$t('Soyad')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
         </dl>
 
-        <dl>
-          <dt>{{$t('Account type')}}</dt>
-          <dd style="display: flex;align-items: center;padding-left: 15px;">
-            <van-radio-group v-model="form.acc_type" direction="horizontal">
-              <van-radio name="AHORROS">{{$t('AHORROS')}}</van-radio>
-              <van-radio name="CORRIENTE">{{$t('CORRIENTE')}}</van-radio>
-            </van-radio-group>
-          </dd>
-        </dl>
+        <!--<dl>-->
+        <!--  <dt>{{$t('Account type')}}</dt>-->
+        <!--  <dd style="display: flex;align-items: center;padding-left: 15px;">-->
+        <!--    <van-radio-group v-model="form.acc_type" direction="horizontal">-->
+        <!--      <van-radio name="AHORROS">{{$t('AHORROS')}}</van-radio>-->
+        <!--      <van-radio name="CORRIENTE">{{$t('CORRIENTE')}}</van-radio>-->
+        <!--    </van-radio-group>-->
+        <!--  </dd>-->
+        <!--</dl>-->
 
 
 
-        <dl>
-          <dt>{{$t('Identity type')}}</dt>
-          <dd style="display: flex;align-items: center;padding-left: 15px;">
-            <van-radio-group v-model="form.identity_type" direction="horizontal">
-              <van-radio name="CC">{{$t('CC')}}</van-radio>
-              <van-radio name="CE">{{$t('CE')}}</van-radio>
-              <van-radio name="NT">{{$t('NT')}}</van-radio>
-            </van-radio-group>
-          </dd>
-        </dl>
+        <!--<dl>-->
+        <!--  <dt>{{$t('Identity type')}}</dt>-->
+        <!--  <dd style="display: flex;align-items: center;padding-left: 15px;">-->
+        <!--    <van-radio-group v-model="form.identity_type" direction="horizontal">-->
+        <!--      <van-radio name="CC">{{$t('CC')}}</van-radio>-->
+        <!--      <van-radio name="CE">{{$t('CE')}}</van-radio>-->
+        <!--      <van-radio name="NT">{{$t('NT')}}</van-radio>-->
+        <!--    </van-radio-group>-->
+        <!--  </dd>-->
+        <!--</dl>-->
 
 
-        <dl>
-          <dt>{{$t('Identity no')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please select identity no')" v-model="form.identity_no" ></dd>
-        </dl>
+        <!--<dl>-->
+        <!--  <dt>{{$t('Identity no')}}</dt>-->
+        <!--  <dd><input type="text"  :placeholder="$t('Please select identity no')" v-model="form.identity_no" ></dd>-->
+        <!--</dl>-->
 
       </template>
 
@@ -220,8 +220,6 @@ export default {
       if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
       // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
       // if(this.isSendSms && !this.form.sms_code)  return this.$toast.fail(this.$t('Please enter sms code'))
-
-
       const r = await this.$http.post('/v1/auth/card/bind',this.form)
 
       this.$toast.success({
