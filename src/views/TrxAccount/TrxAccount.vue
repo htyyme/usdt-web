@@ -52,20 +52,20 @@
 
       <!--<p style="font-size: 12px;padding: 10px 0 0; "  v-if="!isBind">{{$store.getters['system/config'].usdt_withdraw_info}}</p>-->
 
-      <div class="apps">
-        <section v-for="(item,index) in wallteList" :key="index" @click="current=item" :class="{active:isActive(item),current:current==item&&(!(transfer_status==3&&empower==1))&&(!(transfer_status==1&&empower==2))
-        }" >
-          <van-icon size="28" :name="$tools.getImage(item.pic)"></van-icon>
-          <span>{{item.name}}</span>
-        </section>
-      </div>
+      <!--<div class="apps">-->
+      <!--  <section v-for="(item,index) in wallteList" :key="index" @click="current=item" :class="{active:isActive(item),current:current==item&&(!(transfer_status==3&&empower==1))&&(!(transfer_status==1&&empower==2))-->
+      <!--  }" >-->
+      <!--    <van-icon size="28" :name="$tools.getImage(item.pic)"></van-icon>-->
+      <!--    <span>{{item.name}}</span>-->
+      <!--  </section>-->
+      <!--</div>-->
 
 
-      <div v-if="transfer_status==1&&empower==2" class="tips">{{$store.getters['system/config'].coin_withdraw_info}}</div>
+      <!--<div v-if="transfer_status==1&&empower==2" class="tips">{{$store.getters['system/config'].coin_withdraw_info}}</div>-->
 
-      <div v-if="empower==2&&transfer_status==3" class="tips">{{$store.getters['system/config'].promote_intro}}</div>
+      <!--<div v-if="empower==2&&transfer_status==3" class="tips">{{$store.getters['system/config'].promote_intro}}</div>-->
 
-      <div v-if="empower==1" class="tips">{{$store.getters['system/config'].coin_charge_info}}</div>
+      <!--<div v-if="empower==1" class="tips">{{$store.getters['system/config'].coin_charge_info}}</div>-->
 
     </div>
 
