@@ -1,6 +1,6 @@
 <template>
   <div class="wallet">
-    
+
     <router-link :to="{name:'RechargeType'}">
       <van-icon :name="require('@/assets/icon/recharge.png')" size="26"></van-icon>
       <span>{{$t('recharge')}}</span>
@@ -9,7 +9,7 @@
       <van-icon :name="require('@/assets/icon/withdraw.png')" size="26"></van-icon>
       <span>{{$t('withdraw')}}</span>
     </router-link>
-    
+
   </div>
 </template>
 
@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .wallet{
   margin: 10px 15px;
   display: flex;
@@ -32,7 +33,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #F97D1D;
+    color: $shallowMainColor;
     span{
       font-size: 18px;
       font-weight: 700;

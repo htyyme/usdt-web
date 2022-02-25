@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/assets/css/vars.scss";
 .promotionDetail {
   font-size: 14px;
   line-height: 1.5;
@@ -54,7 +55,7 @@ export default {
   .button {
     width: 70%;
     height: 50px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $shallowMainColor,$mainColor);
     box-shadow: 0 0.05333rem 0.08rem rgba(10, 83, 12, 0.32);
     border-radius: 1.6rem;
     border: none;

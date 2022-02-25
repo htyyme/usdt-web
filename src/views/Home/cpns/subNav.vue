@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 ul{
   width: 350px;
   background: rgba(255, 255, 255, 0.99);
@@ -45,7 +46,7 @@ ul{
     text-align: center;
     padding: 10px 0;
     &.router-link-active{
-      color: #ff1720;
+      color: $mainColor;
     }
     .van-image{
       width: 46px;

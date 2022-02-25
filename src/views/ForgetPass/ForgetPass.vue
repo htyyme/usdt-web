@@ -18,7 +18,7 @@
         </dt>
         <dd>
           <input type="text" :placeholder="$t('smsCode')" v-model="verify_code">
-          <van-button size="mini" color="#FF7335" class="sendcode" @click="sendOtp" :disabled="countdown>0">
+          <van-button size="mini" color="#FF3364" class="sendcode" @click="sendOtp" :disabled="countdown>0">
             {{ sendBtnText }}
           </van-button>
         </dd>
@@ -158,6 +158,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
+
 .ForgetPass {
   min-height: 100vh;
   background-color: #f4f4f4;
@@ -210,7 +212,7 @@ export default {
   .submit-button {
     width: 250px;
     height: 55px;
-    background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
+    background: linear-gradient(180deg,$mainColor,$shallowMainColor);
     border-radius: 28px;
     color: #fff;
     margin: 35px auto 0;

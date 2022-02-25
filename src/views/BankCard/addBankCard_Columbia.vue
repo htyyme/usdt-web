@@ -46,7 +46,7 @@
       <dl>
         <dt>{{$t('Withdrawal priority')}}</dt>
         <dd style="display: flex;align-items: center;padding-left: 15px;">
-          <van-radio-group v-model="form.opening_type" direction="horizontal" checked-color="#ff1720">
+          <van-radio-group v-model="form.opening_type" direction="horizontal" checked-color="#FF3364">
             <van-radio name="bank">{{$t('Bank Card')}}</van-radio>
             <van-radio name="powwi">{{$t('Powwi')}}</van-radio>
           </van-radio-group>
@@ -241,6 +241,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .addBankCard{
   min-height: 100vh;
   background-color: #f4f4f4;
@@ -254,7 +255,7 @@ export default {
     dl{
       dt{
         font-size: 18px;
-        color:  #F8868C;
+        color:  $shallowMainColor;
       }
       dd{
         width: 310px;
@@ -283,7 +284,7 @@ export default {
     .submit-btn{
       width: 175px;
       height: 40px;
-      background: linear-gradient( to top, #F8868C,#ff1720);
+      background: linear-gradient( to top, $shallowMainColor,$mainColor);
       opacity: 1;
       border-radius: 28px;
       color: #fff;

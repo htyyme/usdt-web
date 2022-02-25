@@ -70,6 +70,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .settings{
   background-color: rgba(232, 232, 232, 0.3);
   height: 100vh;
@@ -77,7 +78,7 @@ export default {
 .save-btn{
   width: 220px;
   height: 40px;
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, $shallowMainColor,$mainColor);
   border-radius: 28px;
   color: #fff;
   margin: 0 auto;

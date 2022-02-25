@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .assets {
   margin: 20px 15px 0;
   padding: 10px 18px;
@@ -56,7 +57,7 @@ export default {
     background: #F6F6F6;
     border-radius: 25px;
     margin: 10px auto;
-    color: #F97D1D;
+    color: $mainColor;
     font-size: 22px;
     font-weight: 700;
     display: flex;

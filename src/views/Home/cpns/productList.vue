@@ -16,7 +16,7 @@
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
-              <van-button size="mini" round color="#ff1720">Details</van-button>
+              <van-button size="mini" round color="#FA3061">Details</van-button>
             </div>
             <div class="item-bd">
               <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
@@ -38,7 +38,7 @@
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
-              <van-button size="mini" round color="#ff1720">Details</van-button>
+              <van-button size="mini" round color="#FA3061">Details</van-button>
             </div>
             <div class="item-bd">
               <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
@@ -114,7 +114,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import "src/assets/css/vars.scss";
 .productList-cpn{
   padding-bottom: 30px;
 
@@ -128,14 +128,14 @@ export default {
       width: 45px;
       height: 108px;
       margin-right: 10px;
-      background: linear-gradient( to top, #F8868C,#ff1720);
+      background: linear-gradient( to top, $shallowMainColor,$mainColor);
       border-radius: 7px;
       display: flex;
       flex-direction: column;
       align-items: center;
       .day{
         background: #fff;
-        color: #ff1720;
+        color: $mainColor;
         font-size: 12px;
         margin-top: 10px;
         width: 20px;
@@ -149,7 +149,7 @@ export default {
           content: "";
           width: 18px;
           height: 18px;
-          background: linear-gradient( to top, #F8868C,#ff1720);
+          background: linear-gradient( to top, $shallowMainColor,$mainColor);
           position: absolute;
           transform: rotate(45deg) ;
           bottom: -10px;
@@ -176,7 +176,7 @@ export default {
           position: absolute;
           width: 5px;
           height: 5px;
-          color: #ff1720;
+          color: $mainColor;
           border-top: 3px solid currentColor;
           border-right: 3px solid currentColor;
           transform: rotate(45deg) translate(4px,1px);
@@ -228,7 +228,7 @@ export default {
               flex: 1;
               dl{
                 dt{
-                  color: #FE8E42;
+                  color: $shallowMainColor;
                   font-size: 14px;
                 }
                 dd{

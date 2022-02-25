@@ -7,7 +7,7 @@
     </div>
     <div class="card-val">
       <input type="password" :placeholder="$t('Enter the fund password')" v-model="form.password" autocomplete="off"/>
-      <van-button color="#ff1720" round size="normal" :to="{name:'PaymentPassword'}" >{{$t('Forget')}}</van-button>
+      <van-button color="#FF3364" round size="normal" :to="{name:'PaymentPassword'}" >{{$t('Forget')}}</van-button>
     </div>
 
   </section>
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import "src/assets/css/vars";
 .card-wrapper{
   display: block;
   width: 345px;
@@ -84,7 +84,7 @@ export default {
     dt{
       font-weight: 700;
       font-size: 17px;
-      color:#ff1720;
+      color:$mainColor;
     }
     dd{
       height: 49px;

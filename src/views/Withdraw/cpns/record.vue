@@ -19,12 +19,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .record{
   margin: 15px 15px 0;
   padding: 18px;
   background-color: #fff;
   border-radius: 13px;
-  color: #CF182C;
+  color: $mainColor;
   font-size: 18px;
   font-weight: 700;
   position: relative;

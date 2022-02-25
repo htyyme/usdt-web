@@ -58,8 +58,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .Order{
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, $shallowMainColor,$mainColor);
   min-height: 100vh ;
 }
 </style>

@@ -218,7 +218,7 @@ export default {
   color: #fff;
 }
 .accounts-page{
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, $shallowMainColor,$mainColor);
   min-height: 100vh ;
   .bankcard-wrapper{
 

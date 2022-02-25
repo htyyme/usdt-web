@@ -88,6 +88,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
+
   @keyframes fliker {
     0%{
       opacity: 0;
@@ -100,7 +102,7 @@ export default {
   }
   header {
     height: 185px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $mainColor,$shallowMainColor);
     position: relative;
 
     .user {
@@ -177,7 +179,7 @@ export default {
         dd {
           width: 125px;
           height: 22px;
-          background: #ff1720;
+          background: $mainColor;
 
           border-radius: 11px;
           font-size: 12px;

@@ -37,7 +37,7 @@ export default {
 @import "@/assets/css/vars.scss";
 
 /deep/ .van-nav-bar {
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, $mainColor,$shallowMainColor);
   z-index: 9;
 
   .van-nav-bar__title {

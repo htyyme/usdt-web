@@ -318,7 +318,7 @@ export default {
         }
 
         &.zero {
-          background-color: #ff1720;
+          background-color: $mainColor;
         }
       }
     }

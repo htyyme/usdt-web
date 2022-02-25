@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import "src/assets/css/vars";
 .WithdrawType {
   min-height: 100vh;
   background-color: #f4f4f4;
@@ -129,7 +129,7 @@ export default {
         width: 115px;
         height: 55px;
         //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
-        background: linear-gradient( to top, #F8868C,#ff1720);
+        background: linear-gradient( to top, $shallowMainColor,$mainColor);
         border-radius: 13px;
         color: #fff;
         margin-right: 15px;

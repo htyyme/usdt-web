@@ -122,12 +122,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .login {
   width: 100vw;
   height: 100vh;
   //background: url(~assets/img/login-bg.png) no-repeat;
 
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, $mainColor,$shallowMainColor);
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -158,7 +159,7 @@ export default {
     .submit-btn {
       width: 201px;
       height: 50px;
-      background: linear-gradient( to top, #F8868C,#ff1720);
+      background: linear-gradient( to top,  $mainColor,$shallowMainColor);
       opacity: 1;
       border-radius: 25px;
       border: none;
@@ -189,7 +190,7 @@ export default {
     margin: 50px 23px 0;
     height: 60px;
     border-radius: 30px;
-    color: #ff1720;
+    color: $mainColor;
     font-size: 20px;
     align-items: center;
     justify-content: center;

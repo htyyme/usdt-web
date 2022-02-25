@@ -54,6 +54,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .amounts {
   background-color: #fff;
   margin: 10px 15px;
@@ -76,7 +77,7 @@ export default {
       width: 140px;
       height: 50px;
       //background-color: rgba(53, 193, 255, 0.2);
-      background: #ff1720;
+      background: $mainColor;
       border-radius: 13px;
       margin-bottom: 13px;
       display: flex;

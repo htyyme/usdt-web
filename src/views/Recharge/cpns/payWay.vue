@@ -51,10 +51,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .payWay{
   border: 1px solid #FFFFFF;
   //background: linear-gradient(181deg, #98DEF8 0%, #7ED7FA 31%, #75D4FB 54%, #35C1FF 100%);
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, $shallowMainColor,$mainColor);
   border-radius: 13px;
   margin: 10px 15px 0;
   padding: 10px 18px;
@@ -90,7 +91,7 @@ export default {
         margin-right: 0;
       }
       &.active{
-        background-color: #ff1720;
+        background-color: $mainColor;
         color: #fff !important;
       }
     }

@@ -10,8 +10,8 @@
     </div>
 
     <footer>
-      <van-button plain  color="#ff1720" @click="handleClose">{{$t('Cancel')}}</van-button>
-      <van-button color="#ff1720" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Confirm')}}</van-button>
+      <van-button plain  color="#FF3364" @click="handleClose">{{$t('Cancel')}}</van-button>
+      <van-button color="#FF3364" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Confirm')}}</van-button>
     </footer>
   </van-popup>
 </template>
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import "src/assets/css/vars.scss";
 .van-popup{
   padding-top: 15px;
 }
@@ -64,7 +64,7 @@ export default {
 }
 
 .tips{
-  color: red;
+  color: $mainColor;
   text-align: center;
   font-size: 14px;
   padding-bottom: 15px;

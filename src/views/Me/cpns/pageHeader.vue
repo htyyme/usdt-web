@@ -55,9 +55,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
   .pageHeader{
     height: 265px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $shallowMainColor,$mainColor);
     background-size: cover;
     padding: 43px 0 0 0;
     .user{

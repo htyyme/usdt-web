@@ -63,6 +63,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .bankCard {
   min-height: 100vh;
   background-color: #f4f4f4;
@@ -83,7 +84,7 @@ export default {
       width: 250px;
       height: 50px;
       //background: linear-gradient(180deg, rgba(94, 217, 248, 0.99) 0%, rgba(29, 111, 223, 0.99) 100%);
-      background: linear-gradient( to top, #F8868C,#ff1720);
+      background: linear-gradient( to top, $shallowMainColor,$mainColor);
       border-radius: 28px;
       color: #fff;
       margin: 20px auto;
@@ -93,7 +94,7 @@ export default {
       .item{
         width: 319px;
         height: 100px;
-        background: linear-gradient( to top, #F8868C,#ff1720);
+        background: linear-gradient( to top, $shallowMainColor,$mainColor);
         border-radius: 13px;
         .line{
           padding: 12px 30px 0 24px;

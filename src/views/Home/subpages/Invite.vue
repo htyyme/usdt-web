@@ -113,6 +113,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .invite{
   height: 622px;
   background: url(~assets/img/invitebg.jpg) no-repeat;
@@ -152,7 +153,7 @@ export default {
     .tit{
       font-size: 14px;
       font-weight: bold;
-      color:#ff1720;
+      color:$shallowMainColor;
       margin-top: 15px;
     }
     .code{
@@ -162,7 +163,7 @@ export default {
         color: #fff;
         width: 160px;
         height: 29px;
-        background: #ff1720;
+        background: $shallowMainColor;
         border-radius: 7px;
         display: flex;
         justify-content: center;

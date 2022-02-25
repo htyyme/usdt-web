@@ -118,11 +118,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .change-pass {
   .save-btn {
     width: 220px;
     height: 40px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $shallowMainColor,$mainColor);
     border-radius: 28px;
     color: #fff;
     margin: 0 auto;

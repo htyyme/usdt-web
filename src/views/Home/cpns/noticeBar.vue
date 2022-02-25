@@ -3,7 +3,7 @@
     <van-notice-bar
         left-icon="volume-o"
         :text="noticeText"
-        background="#ff1720"
+        background="#FF3364"
         color="#fff"
         :left-icon="require('@/assets/icon/horn.png')"
         @click="showAnnounce"
@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .noticeBar {
   .van-notice-bar {
     height: 25px;
@@ -47,7 +48,7 @@ export default {
       position: absolute;
       width: 25px;
       height: 25px;
-      background: linear-gradient( to top, #F8868C,#ff1720);
+      background: linear-gradient( to top, $mainColor,$shallowMainColor);
       right: 0;
       bottom: 0;
       transform: translateY(-5px) rotate(-30deg);

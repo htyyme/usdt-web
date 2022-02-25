@@ -65,6 +65,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 .wallet{
   width: 350px;
   height: 113px;
@@ -84,14 +85,14 @@ export default {
       dt {
         font-size: 16px;
         font-weight: 700;
-        color: #9F58FE;
+        color: $mainColor;
         padding-bottom: 6px;
 
       }
 
       dd {
         font-size: 12px;
-        color: #1D6FDF;
+        color: $mainColor;
       }
     }
   }
@@ -104,7 +105,7 @@ export default {
       height: 37px;
       background: #F4F4F4;
       border-radius: 8px;
-      color: #F97D1D;
+      color: $mainColor;
       font-size: 17px;
       display: flex;
       justify-content: center;

@@ -142,14 +142,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "src/assets/css/vars.scss";
 .usdt-page {
   min-height: 100vh;
   background-color: #f4f4f4;
   padding-bottom: 15px;
   header {
     height: 150px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $shallowMainColor,$mainColor);
     border-radius: 0 0 10px 10px;
 
     .title {
@@ -237,7 +237,7 @@ export default {
       a{
         height: 56px;
         width: 100%;
-        background: linear-gradient( to top, #F8868C,#ff1720);
+        background: linear-gradient( to top, $shallowMainColor,$mainColor);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -274,7 +274,7 @@ export default {
         word-break: break-all;
       }
       .link{
-        color: #ff1720;
+        color: $mainColor;
         font-weight: 700;
         word-break: break-all;
       }

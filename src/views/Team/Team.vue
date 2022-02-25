@@ -118,13 +118,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars.scss";
 .Team{
   min-height: calc(100vh - 49px);
   background-color: #f4f4f4;
   padding-bottom: 25px;
   .header{
     height: 140px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $shallowMainColor,$mainColor);
     border-radius: 0px 0px 13px 13px;
     .pagetitle{
       padding-top: 12px;
@@ -146,7 +147,7 @@ export default {
       flex: 1;
       .num{
         text-align: center;
-        color: #F97D1D;
+        color: $mainColor;
         font-size: 17px;
         font-weight: 700;
         padding-top: 16px;
@@ -231,7 +232,7 @@ export default {
         //right: 0;
         //top: 0;
         height: 36px;
-        background: linear-gradient( to top, #F8868C,#ff1720);
+        background: linear-gradient( to top, $shallowMainColor,$mainColor);
         border-radius: 28px;
         color: #fff;
         text-transform: capitalize;

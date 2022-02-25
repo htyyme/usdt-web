@@ -163,7 +163,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "src/assets/css/vars.scss";
 .finance-product{
   padding: 10px 0 20px 0;
   .counter{
@@ -180,7 +180,7 @@ export default {
       text-align: center;
     }
     .sub-title{
-      color: #ff1720;
+      color: $mainColor;
       text-align: center;
       font-weight: 700;
       margin-top: 8px;
@@ -191,7 +191,7 @@ export default {
       margin: 0 15px;
       height: 17px;
       width: 1px;
-      background-color: #ff1720;
+      background-color: $mainColor;
     }
 
     .bottom {
@@ -210,7 +210,7 @@ export default {
 
         span:nth-child(2) ,span:nth-child(3){
           font-size: 13px;
-          color: #ff1720;
+          color: $mainColor;
           text-align: center;
           margin-top: 2px;
         }
@@ -250,7 +250,7 @@ export default {
         .irate{
           font-size: 13px;
           font-weight: 800;
-          color: #F97D1D;
+          color: $shallowMainColor;
           padding-top: 4px;
           text-align: center;
         }
@@ -265,7 +265,7 @@ export default {
         .totalrate{
           min-width: 65px;
           height: 25px;
-          background: #FF7335;
+          background: $shallowMainColor;
           border-radius: 13px;
           display: inline-flex;
           justify-content: center;
@@ -282,7 +282,7 @@ export default {
           text-align: center;
           margin-top: 3px;
           font-weight: 700;
-          color: #F97D1D;
+          color: $shallowMainColor;
         }
         .bot-btn{
           position: absolute;
@@ -294,7 +294,7 @@ export default {
           justify-content: center;
           align-items: center;
           color: #fff;
-          background-color: #FF7335;
+          background-color: $shallowMainColor;
           border-radius: 5px;
         }
       }
@@ -318,10 +318,10 @@ export default {
 
     .type-item:nth-child(n){
       .totalrate{
-        background-color: #FF7335;
+        background-color: $shallowMainColor;
       }
       .bot-btn{
-        background-color: #FF7335;
+        background-color: $shallowMainColor;
       }
       .type-usdt .productname{
         background-image: url(~assets/icon/typeA.png);
@@ -368,7 +368,7 @@ export default {
     width: 250px;
     height: 50px;
     //background: $mainColor;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, $shallowMainColor,$mainColor);
     border-radius: 27px;
     display: flex;
     justify-content: center;
@@ -382,7 +382,7 @@ export default {
   font-size: 13px;
   margin-top: 10px;
   text-align: center;
-  color: #ff1720;
+  color: $shallowMainColor;
   cursor: pointer;
 }
 
