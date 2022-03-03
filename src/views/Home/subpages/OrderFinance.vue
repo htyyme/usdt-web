@@ -3,6 +3,8 @@
 
     <swiper />
 
+    <presentOrders />
+
     <div class="seat"></div>
 
     <productList />
@@ -14,12 +16,15 @@
 <script>
     import swiper from "../cpns/swiper";
     import productList from "../cpns/productList";
+    //注册赠送的订单
+    import presentOrders from "../cpns/presentOrders.vue";
 
     export default {
         name: "OrderFinance",
         components: {
             swiper,
-            productList
+            productList,
+            presentOrders
         }
     }
 </script>
