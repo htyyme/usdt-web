@@ -3,13 +3,13 @@ const IS_APP = false
 const IS_GOOGLE = false
 
 export default {
-    env: 'dev',//dev/prod
+    env: 'prod',//dev/prod
     isApp: IS_APP,
     isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
     appName: 'bitstop',//网站标题
     host: 'https://app.bitstop.vip/',//网站域名
-    locale: 'Turkey',//默认语言  Spanish 西班牙语  Turkey 土耳其语
+    locale: 'Spanish',//默认语言  Spanish 西班牙语  Turkey 土耳其语
     //时区查询https://jp.cybozu.help/general/zh/admin/list_systemadmin/list_localization/timezone.html
     // timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
@@ -18,7 +18,7 @@ export default {
     //接口地址
     baseApiUrl: IS_APP ? 'https://app.bitcoiniojo.com/' : '/',
     //是否开启交易所
-    openExchange:true
+    openExchange:false
 }
 
 // 正式版上线需要修改 usdt-web/src/store/module/system.js  将 config.three_service_address = '1'  加上就是正式版
