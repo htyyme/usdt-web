@@ -1,6 +1,6 @@
 //是否为APP
 const IS_APP = false
-const IS_GOOGLE = true
+const IS_GOOGLE = false
 
 export default {
     env: 'prod',//dev/prod
