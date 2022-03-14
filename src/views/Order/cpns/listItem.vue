@@ -144,7 +144,7 @@ export default {
 
 .list-item {
   width: 345px;
-  height: 210px;
+  //height: 210px;
   background: #F8868C;
   border-radius: 10px;
   margin: 15px auto;
