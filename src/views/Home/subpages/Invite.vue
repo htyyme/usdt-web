@@ -45,12 +45,14 @@ export default {
       return this.$store.getters['user/userInfo'].expand_code
     },
     link() {
-      let mode = this.$router.mode
-      if (mode == 'hash') {
-        return appconfig.host + "/#/Register?invitation_code=" + this.code
-      } else {
-        return appconfig.host + "/Register?invitation_code=" + this.code
-      }
+      // let mode = this.$router.mode
+      // if (mode == 'hash') {
+      //   return appconfig.host + "/#/Register?invitation_code=" + this.code
+      // } else {
+      //   return appconfig.host + "/Register?invitation_code=" + this.code
+      // }
+
+      return this.$store.getters['system/config'].invite_link + "?invitation_code=" + this.code
     }
 
   },
