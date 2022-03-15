@@ -1,6 +1,6 @@
 
 export default {
-    'coin':               'CLP',
+    'coin':               '$',
     'tel':                'Teléfono',
     'save':               'Ahorrar',
     'confirm':            'Confirmar',
