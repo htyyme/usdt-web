@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-tabbar v-model="activeName" active-color="#ff1720" inactive-color="#000" placeholder :border="false">
+    <van-tabbar v-model="activeName" active-color="#ff1720" inactive-color="#000" placeholder :border="false" z-index="99">
       <van-tabbar-item replace v-for="(item,index) in tabbarList" :key="index" :name="item.name" :to="item.url">
         <template #icon>
           <van-icon :name="item.activeIcon" v-if="activeName==item.name"/>
