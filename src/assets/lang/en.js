@@ -1,5 +1,6 @@
 export default {
-    'coin': '₺',
+    'coin': '$',
+    // vant
     tel: 'Phone',
     save: 'Save',
     confirm: 'Confirm',
@@ -9,6 +10,7 @@ export default {
     nameInvalid: 'Malformed name',
     confirmDelete: 'Are you sure you want to delete?',
     telInvalid: 'Malformed phone number',
+
     'lvMember': 'LV{num} MEMBER',
     "tabBarHome": 'home',
     "tabBarOrder": 'order',
@@ -104,6 +106,9 @@ export default {
     'WithdrawRecord': 'Withdraw Record',
     'pleaseEnterPhone': 'Please enter the phone number',
     'loading': 'loading',
+
+
+    //me
     'id': 'ID:',
     'membershipLevel': 'Membership level :',
     'lv': 'LV',
@@ -114,6 +119,7 @@ export default {
     'changeName': 'Change Name',
     'introduction': 'Introduction',
     'signOut': 'Sign out',
+    // bankCard
     'bankCardInfo': 'Bank Card Info',
     'UPINumber': 'UPI ID',
     'fillInPersonalInformation': 'Fill in personal information',
@@ -182,6 +188,8 @@ export default {
     'email': 'Email',
     'EnterEmail': 'Enter your email',
     'bankname': 'Bank Name',
+
+
     'vipInfo1': 'Each withdrawal limit is {num}',
     'vipInfo2': 'The number of orders can be swipe until {num} times',
     'vipInfo3': 'The promotion rebate is {num1}% {num2}% {num3}%',
@@ -198,6 +206,8 @@ export default {
     'successTip': 'if the green prompt "Succeeded" is displayed,the withdrawal is successful,please go to you bank account to confirm.',
     'failedTip': 'if the red prompt "Order failed" is displayed,the channel party may not receive the order or the bank processing has timed out.You can try to withdraw again or contact customer service to resove.',
     'withdrawTip': 'If the withdrawal is not arrived,please contact customer service as soon as possible to resove.',
+
+
     'WISH online order': 'WISH online order',
     'Invite more friends': 'Invite more friends',
     'Financial product': 'Financial product',
@@ -222,6 +232,8 @@ export default {
     'p17': 'if the red prompt "Order failed" is displayed, the channel party may not receive the order or the bank processing has timed out. You can try to withdraw again or contact customer service to resolve.',
     'p18': 'If You need help , please contact our online customer service',
     'p19': 'According to bank regulations,You can withdraw cash on working days(cannot withdraw cash on holidays)',
+
+
     'personalInfo': 'Personal Info',
     'Customer Service': 'Customer Service',
     'Back To Home': 'Back To Home',
@@ -236,6 +248,7 @@ export default {
     'Password length is at least 6 characters': 'Password length is at least 6 characters',
     'The two passwords are inconsistent': 'The two passwords are inconsistent',
     'Academy': 'Academy',
+
     'Pay': 'Pay',
     'Receiving account': 'Receiving account',
     'Beneficiary Bank': 'Beneficiary Bank',
@@ -654,4 +667,24 @@ export default {
     'red envelope record':'red envelope record',
     'Num':'Num',
     'Bonus':'Bonus',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
