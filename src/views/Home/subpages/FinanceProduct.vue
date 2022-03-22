@@ -48,6 +48,9 @@
             <div class="totalrate">+{{ totalUsdtRate(item) }}</div>
             <div class="desc">{{item.usdt_desc}}</div>
             <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>
+            <div  class="lock-img" v-if="item.state === 2">
+              <img :src="require('@/assets/icon/lock.png')" alt="">
+            </div>
           </div>
 
           <div class="typ type-coin" v-if="show_coin_finance">
@@ -57,6 +60,9 @@
             <div class="totalrate">+{{ totalRate(item) }}</div>
             <div class="desc">{{item.coin_desc}}</div>
             <div class="bot-btn"  @click="openBuy(item,'coin')">COIN</div>
+            <div  class="lock-img" v-if="item.state === 2">
+              <img :src="require('@/assets/icon/lock.png')" alt="">
+            </div>
           </div>
         </div>
 
@@ -240,6 +246,23 @@ export default {
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         position: relative;
+        overflow: hidden;
+        .lock-img{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: rgba(0,0,0,.33);
+          img{
+            width: 70px;
+            position: relative;
+            z-index: 9;
+          }
+        }
         .tit{
           font-size: 13px;
           color: #333333;
