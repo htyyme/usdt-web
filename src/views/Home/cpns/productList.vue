@@ -12,31 +12,7 @@
 
 
       <van-swipe :loop="false" :width="270" :show-indicators="false">
-        <van-swipe-item @click="showDetail(item,'coin')">
-          <div class="swipe-box">
-            <div class="item-head">
-              <span class="title">{{item.goods_name}}</span>
-              <van-button size="mini" round color="#FA3061">Details</van-button>
-            </div>
-            <div class="item-bd">
-              <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
-              <div class="content">
-                <dl>
-                  <dt>{{item.coinAttr.unit_cost | moneyFormat}}</dt>
-                  <dd>{{$t('Price')}}</dd>
-                </dl>
-                <dl>
-                  <dt>{{item.coinAttr.win_rate | moneyFormat}}</dt>
-                  <dd>{{$t('Hourly earnings')}}</dd>
-                </dl>
-              </div>
-            </div>
 
-            <div  class="lock-img" v-if="item.state === 2">
-              <img :src="require('@/assets/icon/lock.png')" alt="">
-            </div>
-          </div>
-        </van-swipe-item>
 
         <van-swipe-item @click="showDetail(item,'usdt')">
           <div class="swipe-box">
@@ -64,6 +40,31 @@
           </div>
         </van-swipe-item>
 
+        <van-swipe-item @click="showDetail(item,'coin')">
+          <div class="swipe-box">
+            <div class="item-head">
+              <span class="title">{{item.goods_name}}</span>
+              <van-button size="mini" round color="#FA3061">Details</van-button>
+            </div>
+            <div class="item-bd">
+              <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
+              <div class="content">
+                <dl>
+                  <dt>{{item.coinAttr.unit_cost | moneyFormat}}</dt>
+                  <dd>{{$t('Price')}}</dd>
+                </dl>
+                <dl>
+                  <dt>{{item.coinAttr.win_rate | moneyFormat}}</dt>
+                  <dd>{{$t('Hourly earnings')}}</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div  class="lock-img" v-if="item.state === 2">
+              <img :src="require('@/assets/icon/lock.png')" alt="">
+            </div>
+          </div>
+        </van-swipe-item>
       </van-swipe>
 
 
