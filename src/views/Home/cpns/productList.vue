@@ -2,7 +2,7 @@
   <div class="productList-cpn">
 
 
-    <div class="prod-item" v-for="(item,index) in productList" :key="index">
+    <div class="prod-item" v-for="(item,index) in productList" :key="index" >
 
       <div class="lfwp">
         <div class="day">{{item.coinAttr.mold}}</div>
@@ -31,6 +31,10 @@
                 </dl>
               </div>
             </div>
+
+            <div  class="lock-img" v-if="item.state === 2">
+              <img :src="require('@/assets/icon/lock.png')" alt="">
+            </div>
           </div>
         </van-swipe-item>
 
@@ -52,6 +56,10 @@
                   <dd>{{$t('Hourly earnings')}}</dd>
                 </dl>
               </div>
+            </div>
+
+            <div  class="lock-img" v-if="item.state === 2">
+              <img :src="require('@/assets/icon/lock.png')" alt="">
             </div>
           </div>
         </van-swipe-item>
@@ -106,6 +114,9 @@ export default {
     },
 
     showDetail(item,type){
+      if (item.state !== 1){
+        return
+      }
       this.$refs.productDetailRef.handleOpen(item,type)
     }
 
@@ -195,6 +206,22 @@ export default {
           overflow: hidden;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px;
           background-color: #fff;
+          .lock-img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,.33);
+            img{
+              width: 70px;
+              position: relative;
+              z-index: 9;
+            }
+          }
           .item-head{
             display: flex;
             align-items: center;
