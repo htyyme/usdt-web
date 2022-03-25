@@ -654,6 +654,6 @@ export default {
     'red envelope record': "rekord czerwonej koperty",
     'Num': "Num",
     'Bonus': 'Bonus',
-    'Exchange USDT to COP':'Exchange USDT to COP',
-    'Exchange COP to USDT':'Exchange COP to USDT',
+    'Exchange USDT to COP':'Exchange USDT to money',
+    'Exchange COP to USDT':'Exchange money to USDT',
 }

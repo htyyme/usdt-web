@@ -701,6 +701,6 @@ export default {
     'Exchange USDT to TRX':'Exchange USDT to TRX',
     'Are you sure you want to undo?':'Are you sure you want to undo?',
     'Revoked successfully':'Revoked successfully',
-    'Exchange USDT to COP':'Exchange USDT to COP',
-    'Exchange COP to USDT':'Exchange COP to USDT',
+    'Exchange USDT to COP':'Exchange USDT to money',
+    'Exchange COP to USDT':'Exchange money to USDT',
 }
