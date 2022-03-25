@@ -3,13 +3,13 @@
     <ul>
       <li @click="showExchange" >
         <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
-        <span>{{$t('Exchange')}}</span>
+        <span>{{$t('Exchange COP to USDT')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
       <li @click="showUsdtToCop" >
         <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
-        <span>{{$t('USDT to COP')}}</span>
+        <span>{{$t('Exchange USDT to COP')}}</span>
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
