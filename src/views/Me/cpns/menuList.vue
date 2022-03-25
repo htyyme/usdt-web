@@ -7,6 +7,12 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
+      <li @click="showUsdtToCop" >
+        <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
+        <span>{{$t('USDT to COP')}}</span>
+        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
+      </li>
+
       <li @click="showExchangeUsdtTrx" >
         <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
         <span>{{$t('Exchange USDT to TRX')}}</span>
@@ -84,6 +90,7 @@
     <enterEnvelopeKey ref="enterEnvelopeKeyRef"></enterEnvelopeKey>
     <exchange ref="exchangeRef"></exchange>
     <exchangeUsdtTrx ref="exchangeUsdtTrxRef"/>
+    <usdtToCop ref="usdtToCopRef"/>
   </div>
 </template>
 
@@ -91,12 +98,14 @@
 import enterEnvelopeKey from "./enterEnvelopeKey";
 import exchange from "./exchange.vue";
 import exchangeUsdtTrx from "./exchangeUsdtTrx.vue";
+import usdtToCop from "./usdtToCop.vue";
 export default {
   name: "menuList",
   components:{
     enterEnvelopeKey,
     exchange,
-    exchangeUsdtTrx
+    exchangeUsdtTrx,
+    usdtToCop
   },
   computed:{
     show_usdt_trading(){
@@ -171,6 +180,9 @@ export default {
     },
     showExchangeUsdtTrx(){
       this.$refs.exchangeUsdtTrxRef.handleOpen()
+    },
+    showUsdtToCop(){
+      this.$refs.usdtToCopRef.handleOpen()
     }
 
   }

@@ -654,4 +654,5 @@ export default {
     'red envelope record': "rekord czerwonej koperty",
     'Num': "Num",
     'Bonus': 'Bonus',
+    'USDT to COP':'USDT to COP',
 }
