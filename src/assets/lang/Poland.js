@@ -1,5 +1,5 @@
 export default {
-    'coin': '₺',
+    'coin': 'CLP',
     tel: 'Telefon',
     save: 'Zapisać',
     confirm: 'Potwierdzać',
