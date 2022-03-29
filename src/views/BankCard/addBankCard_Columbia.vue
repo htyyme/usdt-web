@@ -73,15 +73,17 @@
 
 
 
-        <!--<dl>-->
-        <!--  <dt>{{$t('Account type')}}</dt>-->
-        <!--  <dd style="display: flex;align-items: center;padding-left: 15px;">-->
-        <!--    <van-radio-group v-model="form.acc_type" direction="horizontal">-->
-        <!--      <van-radio name="AHORROS">{{$t('AHORROS')}}</van-radio>-->
-        <!--      <van-radio name="CORRIENTE">{{$t('CORRIENTE')}}</van-radio>-->
-        <!--    </van-radio-group>-->
-        <!--  </dd>-->
-        <!--</dl>-->
+        <dl>
+          <dt>{{$t('Account type')}}</dt>
+          <dd style="display: flex;align-items: center;padding-left: 15px;">
+            <van-radio-group v-model="form.acc_type" direction="horizontal">
+              <van-radio name="Corriente">{{$t('Corriente')}}</van-radio>
+              <van-radio name="Vista">{{$t('Vista')}}</van-radio>
+              <van-radio name="Ahorro">{{$t('Ahorro')}}</van-radio>
+              <van-radio name="Chequera electronica">{{$t('Chequera electronica')}}</van-radio>
+            </van-radio-group>
+          </dd>
+        </dl>
 
 
 
@@ -97,10 +99,10 @@
         <!--</dl>-->
 
 
-        <!--<dl>-->
-        <!--  <dt>{{$t('Identity no')}}</dt>-->
-        <!--  <dd><input type="text"  :placeholder="$t('Please select identity no')" v-model="form.identity_no" ></dd>-->
-        <!--</dl>-->
+        <dl>
+          <dt>{{$t('tax no')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter tax no')" v-model="form.identity_no" ></dd>
+        </dl>
 
       </template>
 
@@ -144,8 +146,9 @@ export default {
         sms_code:"",
         priority:1,
         opening_type:'bank',
-        acc_type:'AHORROS',
+        acc_type:'Corriente',
         identity_type:'CC',
+        identity_no:""
       },
       countdown: 0,
       timer:null,
