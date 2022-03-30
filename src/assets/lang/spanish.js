@@ -1,6 +1,7 @@
 
 export default {
-    'coin':               'COP',
+    // 'coin':               'COP',
+    'coin':               '₴',
     'tel':                'Teléfono',
     'save':               'Ahorrar',
     'confirm':            'Confirmar',
