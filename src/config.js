@@ -19,7 +19,7 @@ export default {
     //接口地址
     baseApiUrl: IS_APP ? 'https://www.rentalbatms.app/' : '/',
     //是否开启交易所
-    openExchange:true
+    openExchange:false
 }
 
 
