@@ -1,6 +1,6 @@
 
 export default {
-    'coin':               '₺',
+    'coin':               'R',
     'tel':                'Teléfono',
     'save':               'Ahorrar',
     'confirm':            'Confirmar',

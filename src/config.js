@@ -8,15 +8,15 @@ export default {
     isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
     appName: 'bitstop',//网站标题
-    host: 'https://www.bitstop.vip/',//网站域名
-    locale: 'Turkey',//默认语言  Spanish 西班牙语  Turkey 土耳其语
+    host: 'https://www.rentalbatms.app/',//网站域名
+    locale: 'English',//默认语言  Spanish 西班牙语  Turkey 土耳其语
     //时区查询https://jp.cybozu.help/general/zh/admin/list_systemadmin/list_localization/timezone.html
     // timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
     // timezone: 'America/New_York', //时区 美东时间 -5 时区
     timezone: 'Europe/Minsk', //时区 +3 时区
     //接口地址
-    baseApiUrl: IS_APP ? 'https://www.bitstop.vip/' : '/',
+    baseApiUrl: IS_APP ? 'https://www.rentalbatms.app/' : '/',
     //是否开启交易所
     openExchange:true
 }

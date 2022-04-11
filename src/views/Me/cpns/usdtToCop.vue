@@ -1,12 +1,12 @@
 <template>
   <van-popup v-model="show" round position="bottom" closeable >
 
-    <div class="title">{{$t('USDT to COP')}}</div>
+    <div class="title">{{$t('USDT to ')}}{{$t('coin')}}</div>
 
     <div class="form-wrapper">
       <field3 title="Exchange USDT" v-model="money"></field3>
 
-      <p class="tips">Exchange rate:1U ≈ {{dispayRate}}COP</p>
+      <p class="tips">Exchange rate:1U ≈ {{dispayRate}}{{$t('coin')}}</p>
     </div>
 
     <footer>
