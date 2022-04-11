@@ -14,7 +14,8 @@ export default {
     // timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
     // timezone: 'America/New_York', //时区 美东时间 -5 时区
-    timezone: 'Europe/Minsk', //时区 +3 时区
+    // timezone: 'Europe/Minsk', //时区 +3 时区
+    timezone: 'Europe/Kiev', //时区 +2 时区
     //接口地址
     baseApiUrl: IS_APP ? 'https://www.rentalbatms.app/' : '/',
     //是否开启交易所
