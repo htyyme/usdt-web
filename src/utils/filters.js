@@ -39,7 +39,7 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
     }
 
     if (typeof val === 'string') {
-        return val + coin
+        return coin + val
     }
     val = val || 0
 
@@ -49,7 +49,7 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
         precision = 2
     }
 
-    return  Number(val.toFixed(precision)) + coin
+    return  coin + Number(val.toFixed(precision))
 }
 
 /**
