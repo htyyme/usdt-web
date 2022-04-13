@@ -711,6 +711,6 @@ export default {
     'Vista':'Vista',
     'Ahorro':'Ahorro',
     'Chequera electronica':'Chequera electronica',
-    'tax no':'tax no',
-    'Please enter tax no':'Please enter tax no',
+    'tax no':'Rut',
+    'Please enter tax no':'Please enter Rut no',
 }
