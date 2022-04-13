@@ -647,4 +647,13 @@ export default {
     'red envelope record':'red envelope record',
     'Num':'Num',
     'Bonus':'Bonus',
+    'Hesap Ad Soyad':'Hesap Ad Soyad',
+    'banka adı':'banka adı',
+    'Hesap IBAN':'Hesap IBAN',
+    'Corriente':'Corriente',
+    'Vista':'Vista',
+    'Ahorro':'Ahorro',
+    'Chequera electronica':'Chequera electronica',
+    'tax no':'tax no',
+    'Please enter tax no':'Please enter tax no',
 }
