@@ -63,7 +63,7 @@
       <template v-if="form.opening_type==='bank'">
         <dl>
           <dt>{{$t('banka adı')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
+          <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" readonly @click="showPicker=true"></dd>
         </dl>
 
         <dl>
