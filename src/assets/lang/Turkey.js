@@ -1,5 +1,6 @@
 export default {
-    'coin':'₺',
+    // 'coin':'₺',
+    'coin':'₴',
     tel:'Telefon',
     save:'Kayıt etmek',
     confirm:'Teyit etmek',
@@ -660,7 +661,9 @@ export default {
     'Exchange USDT to TRX':'Exchange USDT to TRX',
     'Are you sure you want to undo?':'Are you sure you want to undo?',
     'Revoked successfully':'Revoked successfully',
-
+    'red envelope record':'red envelope record',
+    'Num':'Num',
+    'Bonus':'Bonus',
 
 
 
