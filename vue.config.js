@@ -5,6 +5,7 @@ const packageConf = require('./package.json')
 const path = require('path')
 
 module.exports = {
+    productionSourceMap: process.env.NODE_ENV !== 'production',
     assetsDir: './',
     publicPath: './',
     outputDir: 'index',
