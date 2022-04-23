@@ -1,4 +1,4 @@
-aexport default {
+export default {
     'coin': 'VNĐ',
     // vant
     tel: 'điện thoại',
@@ -208,7 +208,7 @@ aexport default {
     'withdrawTip': 'Nếu giao dịch rút tiền không đến nơi, vui lòng liên hệ với bộ phận chăm sóc khách hàng càng sớm càng tốt để cộng hưởng.',
 
 
-    'WISH online order': 'đơn hàng trực tuyến WISH',
+    'WISH online order': "đơn hàng trực tuyến WISH",
     'Invite more friends': 'Mời thêm bạn bè',
     'Financial product': 'Sản phẩm tài chính',
     'Recharge withdrawal': 'Nạp tiền rút tiền',
@@ -358,10 +358,10 @@ aexport default {
     'Participation Users': 'Người dùng tham gia',
     'Participation record': 'Hồ sơ tham gia',
     'Wining record': 'Kỷ lục chiến thắng',
-    'Payment Password': 'Mật khẩu thanh toán,
+    'Payment Password': 'Mật khẩu thanh toán',
     'Phone': 'Số điện thoại',
     'Rebate Record': 'Bản ghi giảm giá',
-    'Fill in the information': 'Điền thông tin',
+    'Fill in the information':'Điền thông tin',
     'Email': 'Email',
     'Recharge record': 'Bản ghi nạp tiền',
     'My balance': 'Số dư của tôi',
@@ -667,24 +667,5 @@ aexport default {
     'red envelope record':'hồ sơ lì xì',
     'Num':'Số',
     'Bonus':'Thưởng',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
