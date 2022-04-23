@@ -1,5 +1,5 @@
 aexport default {
-    'coin': 'COP',
+    'coin': 'VNĐ',
     // vant
     tel: 'điện thoại',
     save: 'Lưu',
