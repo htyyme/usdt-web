@@ -9,10 +9,10 @@ export default {
     apkVersion: '1.0.0', //版本
     appName: 'XXM',//网站标题
     host: 'https://www.usdtatm.net/',//网站域名
-    locale: 'Poland',//默认语言  Spanish 西班牙语
-    // timezone: 'Asia/Bangkok', //时区 泰国
+    locale: 'Vietnam',//默认语言  Spanish 西班牙语 //Vietnam  Poland 波兰
+    timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
-    timezone: 'America/New_York', //时区 美东时间 -5 时区
+    // timezone: 'America/New_York', //时区 美东时间 -5 时区
     //接口地址
     baseApiUrl: IS_APP ? 'https://www.usdtatm.net/' : '/',
     //是否开启交易所
