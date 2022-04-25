@@ -1,6 +1,11 @@
 <template>
   <div class="productList-cpn">
 
+    <van-tabs v-model="active" type="card" color="rgb(98, 106, 217)">
+      <van-tab v-for="item in classList" :key="item.id" :title="getClassName(item)"></van-tab>
+    </van-tabs>
+
+    <div style="height: 20px;"></div>
 
     <div class="prod-item" v-for="(item,index) in productList" :key="index" >
 
@@ -87,18 +92,53 @@ export default {
   data(){
     return {
       productList:[],
+      classList:[],
+      active:0
     }
   },
-  created() {
+  computed:{
+    currentClass(){
+      console.log(this.active,this.classList[this.active])
+      return this.classList[this.active]
+    },
+  },
+  async created() {
+    // this.loadProducts()
+    await this.getClassList()
     this.loadProducts()
   },
 
   methods:{
+    //获取分类列表
+    async getClassList() {
+      const res = await this.$http.post('/v1/service/goods/class')
+      this.classList = res.data || []
+    },
+    getClassName(classItem){
+      switch (this.$i18n.locale){
+        default:
+          return classItem.english
+        case 'Thailand':
+          return classItem.thai
+        case 'Spanish':
+          return classItem.spanish
+        case 'Turkey':
+          return classItem.turkey
+        case 'Poland':
+          return classItem.poland
+      }
+    },
+
     async loadProducts(){
+      if (!this.currentClass) {
+        return
+      }
+      const class_id = this.currentClass.id
       const resp = await this.$http.post('/v1/business/matches',{
         page:1,
         pageSize:30,
-        tp:10
+        tp:10,
+        class_id : class_id
       })
       let productList = resp.data.list || []
       productList.forEach(el => {
@@ -120,11 +160,21 @@ export default {
       this.$refs.productDetailRef.handleOpen(item,type)
     }
 
+  },
+  watch:{
+    active:{
+      handler(){
+        this.loadProducts()
+      },
+      // immediate:true
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
+
+
 
 .productList-cpn{
   padding-bottom: 30px;
