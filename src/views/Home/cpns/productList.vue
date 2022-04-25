@@ -126,6 +126,8 @@ export default {
           return classItem.turkey
         case 'Poland':
           return classItem.poland
+        case 'Vietnam':
+          return classItem.vietnam
       }
     },
 
