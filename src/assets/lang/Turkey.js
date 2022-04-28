@@ -672,7 +672,7 @@ export default {
     'Chequera electronica':'Chequera electronica',
     'tax no':'Rut',
     'Please enter tax no':'Please enter Rut no',
-
+    'actReceived':'Congratulations, you got {num}',
 
 
 
