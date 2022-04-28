@@ -557,4 +557,5 @@ export default {
     'USDT': 'USDT',
     'Withdrawal priority': 'Withdrawal priority',
     'USDT Wallet Account':'USDT Wallet Account',
+    'actReceived':'Congratulations, you got {num}',
 }

@@ -635,7 +635,7 @@ export default {
     'Envelope key':'Envelope key',
     'Pledge income':'Pledge income',
     'What is Pledge income?':'What is Pledge income?',
-
+    'actReceived':'Congratulations, you got {num}',
 
 
 
