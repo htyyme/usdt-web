@@ -648,4 +648,5 @@ export default {
     'red envelope record':'red envelope record',
     'Num':'Num',
     'Bonus':'Bonus',
+    'actReceived':'Congratulations, you got {num}',
 }

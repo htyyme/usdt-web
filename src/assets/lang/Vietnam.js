@@ -667,5 +667,5 @@ export default {
     'red envelope record':'hồ sơ lì xì',
     'Num':'Số',
     'Bonus':'Thưởng',
-
+    'actReceived':'Congratulations, you got {num}',
 }
