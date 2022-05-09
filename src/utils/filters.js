@@ -49,7 +49,10 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
         precision = 2
     }
 
-    return  Number(val.toFixed(precision)) + coin
+    // return  Number(val.toFixed(precision)) + coin
+
+    //符号在金额前面
+    return coin + Number(val.toFixed(precision))
 }
 
 /**

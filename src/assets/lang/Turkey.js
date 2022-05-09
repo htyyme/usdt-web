@@ -1,5 +1,5 @@
 export default {
-    'coin':'CLP',
+    'coin':'Bsf',
     tel:'Telefon',
     save:'Kayıt etmek',
     confirm:'Teyit etmek',

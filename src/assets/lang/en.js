@@ -1,5 +1,5 @@
 export default {
-    'coin': 'CLP',
+    'coin': 'Bsf',
     // vant
     tel: 'Phone',
     save: 'Save',
