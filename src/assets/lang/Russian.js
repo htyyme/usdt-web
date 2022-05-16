@@ -1,5 +1,5 @@
 export default {
-    'coin': '₸',
+    'coin': 'R',
 // vant
     tel: 'телефон',
     save: 'хранение',
