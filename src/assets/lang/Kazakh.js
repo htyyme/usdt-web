@@ -691,6 +691,6 @@ export default {
     'Revoked successfully': 'сәтті қайтарылды',
     'Exchange USDT to COP': 'ақшаға USDT айырбастау',
     'Exchange COP to USDT': 'USDT ақша айырбастау',
-
+    'Please bind your wallet first':'Алдымен әмияныңызды байлаңыз',
 
 }

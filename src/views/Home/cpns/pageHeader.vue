@@ -13,11 +13,11 @@
       <div class="balance">
         <dl>
           <dt>{{available_balance |moneyFormat(2,gcointype) }}</dt>
-          <dd>Your Total Assets</dd>
+          <dd>{{$t('yourTotalAssets')}}</dd>
         </dl>
         <dl>
           <dt>{{experience_amount | moneyFormat(2,gcointype)}}</dt>
-          <dd>Virtual currency</dd>
+          <dd>{{$t('virtualCurrency')}}</dd>
         </dl>
       </div>
     </div>
@@ -184,6 +184,7 @@ export default {
           display: flex;
           align-items: center;
           justify-content: center;
+          text-align: center;
         }
       }
     }

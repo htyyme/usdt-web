@@ -699,6 +699,6 @@ export default {
     'Revoked successfully': 'Отозвано успешно',
     'Exchange USDT to COP': 'Обменять USDT на деньги',
     'Exchange COP to USDT': 'Обменять деньги на USDT',
-
+    'Please bind your wallet first':'Сначала привяжите свой кошелек',
 
 }

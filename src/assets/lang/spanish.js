@@ -704,4 +704,5 @@ export default {
     'Exchange USDT to COP':'Exchange USDT to money',
     'Exchange COP to USDT':'Exchange money to USDT',
     'actReceived':'Congratulations, you got {num}',
+    'Please bind your wallet first':'Por favor, ate su billetera primero',
 }
