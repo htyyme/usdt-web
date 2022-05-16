@@ -1,6 +1,6 @@
 
 export default {
-    'coin':               'R',
+    'coin':               '₸',
     'tel':                'Teléfono',
     'save':               'Ahorrar',
     'confirm':            'Confirmar',

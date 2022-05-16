@@ -1,5 +1,5 @@
 export default {
-    'coin':'R',
+    'coin':'₸',
     tel:'Telefon',
     save:'Kayıt etmek',
     confirm:'Teyit etmek',
