@@ -59,6 +59,14 @@
           <dt>{{$t('Bank account')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
         </dl>
+
+
+<!--      powwi显示信息，自己新添加的  -->
+        <dl>
+          <dt>{{$t('tax no')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter tax no')" v-model="form.identity_no" ></dd>
+        </dl>
+
       </template>
 
       <template v-if="form.opening_type==='Banesco' || form.opening_type==='Venezuela'">
