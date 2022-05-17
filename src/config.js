@@ -1,6 +1,6 @@
 //是否为APP
 const IS_APP = false
-const IS_GOOGLE = false
+const IS_GOOGLE = true
 
 export default {
     env: 'prod',//dev/prod
@@ -9,7 +9,7 @@ export default {
     apkVersion: '1.0.0', //版本
     appName: 'bitstop',//网站标题
     host: 'https://www.rentalatms.top/',//网站域名
-    locale: 'Kazakh',//默认语言 English  Spanish 西班牙语  Turkey 土耳其语  Kazakh
+    locale: 'Kazakh',//默认语言 English  Spanish 西班牙语  Turkey 土耳其语  Kazakh Russian
     //时区查询https://jp.cybozu.help/general/zh/admin/list_systemadmin/list_localization/timezone.html
     // timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
