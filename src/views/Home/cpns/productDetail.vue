@@ -19,6 +19,12 @@
         <dt>{{$t('Total revenue')}}:</dt>
         <dd>{{totalRevenue}}</dd>
       </dl>
+
+      <dl>
+        <dt>{{$t('Total return')}}:</dt>
+        <dd>{{totalRevenue + price | moneyFix}}</dd>
+      </dl>
+
       <dl>
         <dt>{{$t('Cycle days')}}:</dt>
         <dd>{{cycle}}</dd>
@@ -96,6 +102,11 @@ export default {
 
       }
 
+    }
+  },
+  filters:{
+    moneyFix(n){
+      return n.toFixed(2) * 1
     }
   }
 }

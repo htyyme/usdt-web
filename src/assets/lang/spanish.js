@@ -714,4 +714,7 @@ export default {
     'tax no':'cedula',
     'Please enter tax no':'Please enter cedula no',
     'actReceived':'Congratulations, you got {num}',
+    'Total return':'regreso trotal',
+    'Withdraw fee':'Tarifa de retiro: {num}',
+    'viplimit':'Necesita {limit} subordinados comprar nuestros productos',
 }

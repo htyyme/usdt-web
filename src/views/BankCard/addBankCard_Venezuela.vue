@@ -230,7 +230,7 @@ export default {
     async handleSave(){
       if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
       if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
-      if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
+      // if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
       if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
       // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
       // if(this.isSendSms && !this.form.sms_code)  return this.$toast.fail(this.$t('Please enter sms code'))

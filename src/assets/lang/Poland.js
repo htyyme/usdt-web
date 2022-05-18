@@ -664,4 +664,7 @@ export default {
     'tax no':'CDI',
     'Please enter tax no':'Please enter CDI no',
     'actReceived':'Congratulations, you got {num}',
+    'Total return':'Total return',
+    'Withdraw fee':'Withdraw fee:{num}',
+    'viplimit':'Need {limit} subordinates buy our products',
 }
