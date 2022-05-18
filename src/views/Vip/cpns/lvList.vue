@@ -11,8 +11,8 @@
         <p>1.{{$t('vipinfo1',{num1:rateFormat(item.superior_rebate) ,num2:rateFormat(item.two_level_rebate) ,num3:rateFormat(item.three_level_rebate)})}}</p>
         <!--<p>2.{{$t('vipinfo2',{num:maxgrab})}}</p>-->
 
-        <p>2.{{$t("Withdraw fee")}}:{{item.withdrawal_fee}}</p>
-        <p>3.{{$t("Need")}} {{item.cond_limit}} {{$("subordinates buy our products")}}</p>
+        <p>2.{{$t('Withdraw fee',{num:item.withdrawal_fee})}}</p>
+        <p>3.{{$t('viplimit',{limit:item.cond_limit})}}</p>
 
       </div>
 

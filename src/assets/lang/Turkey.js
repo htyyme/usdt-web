@@ -664,7 +664,9 @@ export default {
     'Exchange COP to USDT':'Exchange money to USDT',
     'actReceived':'Congratulations, you got {num}',
     'Please bind your wallet first':'Lütfen önce cüzdanınızı bağlayın',
-
+    'Total return':'Total return',
+    'Withdraw fee':'Withdraw fee:{num}',
+    'viplimit':'Need {limit} subordinates buy our products',
 
 
 

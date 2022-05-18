@@ -552,7 +552,7 @@ export default {
     'Are you sure want to resume this item': 'Вы уверены, что хотите возобновить этот пункт',
     'Are you sure want to suspend this item': 'Вы уверены, что хотите приостановить действие этого элемента',
     'confirmUpdateApp': 'Последняя версия найдена, хочешь ее обновить',
-    'vipinfo1': 'Акционная скидка{num1} {num2} {num3}',
+    'vipinfo1': 'Скидки по акции составляют {num1} {num2} {num3}.',
     'vipinfo2': 'Количество заказов можно сдвинуть {num} раз',
     'udst': 'udst',
     'My wallet': 'Мой кошелек',
@@ -700,8 +700,7 @@ export default {
     'Exchange USDT to COP': 'Обменять USDT на деньги',
     'Exchange COP to USDT': 'Обменять деньги на USDT',
 
-    'Withdraw fee':"Жарнамалық жеңілдік",
-    'Need':'Ақшаны алу үшін комиссия: ',
-    'subordinates buy our products':"Біздің сатып алу үшін 0 бағынышты қажет өнім",
+    'Withdraw fee':'Комиссия за вывод:{num}',
+    'viplimit':'Нам нужно {limit} подчиненных, чтобы купить нашу продукцию.',
 
 }

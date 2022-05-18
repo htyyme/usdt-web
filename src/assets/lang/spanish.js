@@ -705,4 +705,7 @@ export default {
     'Exchange COP to USDT':'Exchange money to USDT',
     'actReceived':'Congratulations, you got {num}',
     'Please bind your wallet first':'Por favor, ate su billetera primero',
+    'Total return':'regreso trotal',
+    'Withdraw fee':'Tarifa de retiro: {num}',
+    'viplimit':'Necesita {limit} subordinados comprar nuestros productos',
 }

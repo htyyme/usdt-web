@@ -548,7 +548,7 @@ export default {
     'Are you sure want to resume this item': 'Сіз бұл тармақты жаңартқыңыз келетініне сенімдісіз',
     'Are you sure want to suspend this item': 'Сіз осы элементтің әрекетін тоқтатқыңыз келетініне сенімдісіз',
     'confirmUpdateApp': 'Соңғы нұсқасы табылды, оны жаңартқыңыз келеді',
-    'vipinfo1': 'Науқандық жеңілдік {num1} {num2} {num3}',
+    'vipinfo1': 'Жарнамалық жеңілдік {num1} {num2} {num3}',
     'vipinfo2': 'Tапсырыстар санын {num} рет жылжытуға болады',
 
     'udst': 'USDT',
@@ -691,9 +691,6 @@ export default {
     'Revoked successfully': 'Сәтті қайтарылды',
     'Exchange USDT to COP': 'Aқшаға USDT айырбастау',
     'Exchange COP to USDT': 'Ақшаны USDT-ге айырбастау',
-
-    'Withdraw fee': "Жарнамалық жеңілдік",
-    'Need': 'Ақшаны алу үшін комиссия: ',
-    'subordinates buy our products': "Біздің сатып алу үшін 0 бағынышты қажет өнім",
-
+    'Withdraw fee':'Ақшаны алу үшін комиссия:{num}',
+    'viplimit':'Біздің сатып алу үшін {limit} бағынышты қажет өнім ',
 }
