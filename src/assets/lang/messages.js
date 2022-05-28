@@ -7,11 +7,11 @@ import Russian from "./Russian.js";
 import Kazakh from "./Kazakh.js";
 
 export default {
+    'Russian':Russian,
+    'Kazakh':Kazakh,
     'English':en,
     'Thailand':th,
     'Spanish':spanish,
     'Turkey':turkey,
     'Poland':Poland,
-    'Russian':Russian,
-    'Kazakh':Kazakh,
 }
