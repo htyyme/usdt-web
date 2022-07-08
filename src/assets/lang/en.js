@@ -671,6 +671,10 @@ export default {
     'Total return':'Total return',
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
+    'First Name':'First Name',
+    'Please enter first name':'Please enter first name',
+    'Last Name':'Last Name',
+    'Please enter last name':'Please enter last name',
 
 
 

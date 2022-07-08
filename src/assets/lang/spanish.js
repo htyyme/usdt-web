@@ -708,4 +708,8 @@ export default {
     'Total return':'regreso trotal',
     'Withdraw fee':'Tarifa de retiro: {num}',
     'viplimit':'Necesita {limit} subordinados comprar nuestros productos',
+    'First Name':'First Name',
+    'Please enter first name':'Please enter first name',
+    'Last Name':'Last Name',
+    'Please enter last name':'Please enter last name',
 }

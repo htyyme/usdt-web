@@ -13,7 +13,7 @@ module.exports = {
         port: 12345,
         proxy: {
             '/v1': {
-                target: 'http://192.168.100.6:8087',
+                target: 'http://192.168.100.5:8087',
                 // target: 'http://usdt-power.6666.ml',
                 changeOrigin: true,
             },

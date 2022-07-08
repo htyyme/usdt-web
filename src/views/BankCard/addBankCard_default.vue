@@ -3,9 +3,24 @@
     <navbar :title="$t('Bank Card')"></navbar>
 
     <div class="wrapper">
+      <!--<dl>-->
+      <!--  <dt>{{$t('Account Name')}}</dt>-->
+      <!--  <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>-->
+      <!--</dl>-->
+
       <dl>
-        <dt>{{$t('Account Name')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+        <dt>{{$t('First Name')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter first name')" v-model="form.first_name"></dd>
+      </dl>
+
+      <dl>
+        <dt>{{$t('Last Name')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter last name')" v-model="form.last_name"></dd>
+      </dl>
+
+      <dl>
+        <dt>{{$t('Bank account')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter bank account')" v-model="form.routing_number"></dd>
       </dl>
 
       <dl>
@@ -91,7 +106,10 @@ export default {
         upi:"",
         mobile:"",
         sms_code:"",
-        priority:1
+        priority:1,
+        first_name:'',
+        last_name:'',
+        routing_number:'',
       },
       countdown: 0,
       timer:null,
@@ -162,7 +180,7 @@ export default {
     },
     //保存
     async handleSave(){
-      if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
+      // if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
       if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
       if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
       if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))

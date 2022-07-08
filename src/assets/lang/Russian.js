@@ -703,4 +703,9 @@ export default {
     'Withdraw fee':'Комиссия за вывод:{num}',
     'viplimit':'Нам нужно {limit} подчиненных, чтобы купить нашу продукцию.',
 
+    'First Name':'Имя',
+    'Please enter first name':'Пожалуйста, введите имя',
+    'Last Name':'Фамилия',
+    'Please enter last name':'Пожалуйста, введите фамилию',
+
 }
