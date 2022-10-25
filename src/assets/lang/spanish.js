@@ -1,6 +1,6 @@
 
 export default {
-    'coin':               'Bsf',
+    'coin':               '$',
     'tel':                'Teléfono',
     'save':               'Ahorrar',
     'confirm':            'Confirmar',

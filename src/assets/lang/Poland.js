@@ -1,5 +1,5 @@
 export default {
-    'coin': 'Bsf',
+    'coin': '$',
     tel: 'Telefon',
     save: 'Zapisać',
     confirm: 'Potwierdzać',

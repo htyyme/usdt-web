@@ -1,7 +1,7 @@
 <template>
   <div class="lvList">
 
-    <div class="item" v-for="(item,index) in viplist" :key="index" >
+    <div class="item" v-for="(item,index) in viplist" :key="index" @click="handleclick(item)">
       <van-image :src="getLvIcon(item.lv_id)" class="levelicon" fit="contain"></van-image>
       <div class="tit">LV.{{item.lv_id}}</div>
       <!--<div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>-->

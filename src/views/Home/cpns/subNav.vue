@@ -1,7 +1,7 @@
 <template>
   <ul>
     <router-link :to="{name:'OrderFinance'}" tag="li">
-      <van-image :src="require('@/assets/icon/order-finance.png')"></van-image>
+      <van-image :src="require('@/assets/icon/order-finance2.png')"></van-image>
       <span>{{$t('orderFinance')}}</span>
     </router-link>
     <router-link :to="{name:'FinanceProduct'}" tag="li">

@@ -1,5 +1,5 @@
 export default {
-    'coin': '₸',
+    'coin': '$',
 // vant
     tel: 'Телефоны',
     save: 'Сақтау',

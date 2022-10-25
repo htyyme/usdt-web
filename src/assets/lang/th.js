@@ -1,6 +1,6 @@
 export default {
     // 'coin': '฿',
-    'coin': 'Bsf',
+    'coin':'$',
     // vant
     tel: 'Phone',
     save: 'Save',
