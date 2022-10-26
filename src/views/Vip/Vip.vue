@@ -25,6 +25,8 @@ export default {
 
   created() {
     this.loadviplist()
+
+    this.$store.dispatch('user/loadUserInfo')
   },
   methods:{
     //获取等级列表
