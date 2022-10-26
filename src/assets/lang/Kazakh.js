@@ -693,4 +693,5 @@ export default {
     'Exchange COP to USDT': 'Ақшаны USDT-ге айырбастау',
     'Withdraw fee':'Ақшаны алу үшін комиссия:{num}',
     'viplimit':'Біздің сатып алу үшін {limit} бағынышты қажет өнім ',
+    'Upgrade price':'업그레이드 가격',
 }

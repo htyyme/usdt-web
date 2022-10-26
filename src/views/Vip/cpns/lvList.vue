@@ -14,6 +14,8 @@
         <p>2.{{$t('Withdraw fee',{num:item.withdrawal_fee})}}</p>
         <p>3.{{$t('viplimit',{limit:item.cond_limit})}}</p>
 
+        <p>4.{{$t('Upgrade price')}}:{{item.price | moneyFormat}}</p>
+
       </div>
 
       <!--<div class="shadow">{{$t('widthdrawfrequency',{num:item.lv_id})}}</div>-->

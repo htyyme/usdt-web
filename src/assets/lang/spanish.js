@@ -717,4 +717,5 @@ export default {
     'Total return':'regreso trotal',
     'Withdraw fee':'Tarifa de retiro: {num}',
     'viplimit':'Necesita {limit} subordinados comprar nuestros productos',
+    'Upgrade price':'Precio de actualización',
 }

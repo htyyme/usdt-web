@@ -660,4 +660,5 @@ export default {
     'Total return':'Total return',
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
+    'Upgrade price':'อัพเกรดราคา',
 }
