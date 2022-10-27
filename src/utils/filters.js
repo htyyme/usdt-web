@@ -30,7 +30,7 @@ export function dateFormat(date, format = 'MM-DD hh:mm A') {
  * @param val 金额
  * @param precision 精度
  */
-export function moneyFormat(val, precision = 2,cointype='coin') {
+export function moneyFormat(val, precision = 3,cointype='coin') {
     let coin = ''
     if (cointype=='coin'){
         coin = getLangField('coin')
@@ -46,7 +46,7 @@ export function moneyFormat(val, precision = 2,cointype='coin') {
     if (cointype == 'usdt') {
         precision = 5
     } else {
-        precision = 2
+        precision = 3
     }
 
     // return  Number(val.toFixed(precision)) + coin

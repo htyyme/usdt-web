@@ -49,11 +49,11 @@
               <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>
               <div class="content">
                 <dl>
-                  <dt>{{item.usdtAttr.unit_cost | moneyFormat(2,'usdt')}}</dt>
+                  <dt>{{item.usdtAttr.unit_cost | moneyFormat(3,'usdt')}}</dt>
                   <dd>{{$t('Price')}}</dd>
                 </dl>
                 <dl>
-                  <dt>{{item.usdtAttr.win_rate | moneyFormat(2,'usdt')}}</dt>
+                  <dt>{{item.usdtAttr.win_rate | moneyFormat(3,'usdt')}}</dt>
                   <dd>{{$t('Hourly earnings')}}</dd>
                 </dl>
               </div>

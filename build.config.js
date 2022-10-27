@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-    title: 'decurret',
+    title: 'ENI',
     baseCdnUrl: 'https://cdn.staticfile.org',
     // baseCdnUrl: '//cdnjs.cloudflare.com/ajax/libs/',
     cdns: [
