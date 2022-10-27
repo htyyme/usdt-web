@@ -1,6 +1,6 @@
 <template>
   <van-overlay :show="show" z-index="999" class-name="collar" >
-    <van-image class="collar-img" :src="require('@/assets/img/11.gif')">
+    <van-image class="collar-img" :src="require('@/assets/img/1.gif')">
       <!--<em>{{amount | moneyFormat}}</em>-->
       <!--<span class="collar-btn" @click="handleClose"></span>-->
     </van-image>
