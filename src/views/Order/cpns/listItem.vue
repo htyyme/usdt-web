@@ -38,15 +38,15 @@
     <div class="footer">
       <dl>
         <dt>{{$t('Cumulative earnings')}}({{order.coin_type == 1 ? $t('coin') : 'U' }})</dt>
-        <dd>{{order.win_amount}}</dd>
+        <dd>{{order.win_amount | numfix}}</dd>
       </dl>
       <dl>
         <dt>{{$t('Hourly earnings')}}({{order.coin_type == 1 ? $t('coin') : 'U' }})</dt>
-        <dd>{{order.end_result}}</dd>
+        <dd>{{order.end_result|numfix}}</dd>
       </dl>
       <dl :class="{zero:order.bonus_amount<=0}" @click="collect">
         <dt>{{$t('To be collected')}}</dt>
-        <dd>{{order.bonus_amount}}</dd>
+        <dd>{{order.bonus_amount|numfix}}</dd>
       </dl>
     </div>
 
@@ -96,6 +96,15 @@ export default {
   watch:{
 
 
+  },
+  filters:{
+    numfix(n){
+      if (n){
+        return (n * 1).toFixed(2)
+      } else{
+        return ''
+      }
+    }
   },
   methods: {
     async collect(){
