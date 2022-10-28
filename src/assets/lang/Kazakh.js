@@ -694,4 +694,5 @@ export default {
     'Withdraw fee':'Ақшаны алу үшін комиссия:{num}',
     'viplimit':'Біздің сатып алу үшін {limit} бағынышты қажет өнім ',
     'Upgrade price':'업그레이드 가격',
+    "vipIncomeRebate": "소득 리베이트는 {num1},{num2},{num3}입니다"
 }

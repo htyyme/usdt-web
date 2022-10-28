@@ -668,4 +668,5 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'Cena aktualizacji',
+    "vipIncomeRebate": "Rabat od dochodu wynosi {num1},{num2},{num3}"
 }

@@ -661,4 +661,5 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'อัพเกรดราคา',
+    "vipIncomeRebate": "เงินคืนรายได้ {num1},{num2},{num3}"
 }

@@ -9,12 +9,13 @@
 <!--        <p>1. Each withdrawal limit is 5000</p>-->
 <!--        <p>2. The number of orders can be swipe until 30 times</p>-->
         <p>1.{{$t('vipinfo1',{num1:rateFormat(item.superior_rebate) ,num2:rateFormat(item.two_level_rebate) ,num3:rateFormat(item.three_level_rebate)})}}</p>
+        <p>2.{{$t('vipIncomeRebate',{num1:rateFormat(item.superior_income_rebate) ,num2:rateFormat(item.two_level_income_rebate) ,num3:rateFormat(item.three_level_income_rebate)})}}</p>
         <!--<p>2.{{$t('vipinfo2',{num:maxgrab})}}</p>-->
 
-        <p>2.{{$t('Withdraw fee',{num:item.withdrawal_fee})}}</p>
-        <p>3.{{$t('viplimit',{limit:item.cond_limit})}}</p>
+        <p>3.{{$t('Withdraw fee',{num:item.withdrawal_fee})}}</p>
+        <p>4.{{$t('viplimit',{limit:item.cond_limit})}}</p>
 
-        <p>4.{{$t('Upgrade price')}}:{{item.price | moneyFormat}}</p>
+        <p>5.{{$t('Upgrade price')}}:{{item.price | moneyFormat}}</p>
 
       </div>
 
@@ -86,10 +87,10 @@ export default {
   padding: 0 13px 25px;
 
   .item{
-    height: 227px;
+    height: 285px;
     width: 167px;
     background: url(~assets/img/vip1-bg.png) no-repeat;
-    background-size: 167px;
+    background-size: 167px 285px;
     background-position: center bottom;
     position: relative;
     margin-bottom: 15px;
@@ -149,6 +150,7 @@ export default {
       color: #666;
       font-size: 12px;
       padding: 40px 10px 0;
+      word-break: break-all;
     }
     .shadow{
       position: absolute;

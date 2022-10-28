@@ -718,4 +718,5 @@ export default {
     'Withdraw fee':'Tarifa de retiro: {num}',
     'viplimit':'Necesita {limit} subordinados comprar nuestros productos',
     'Upgrade price':'Precio de actualización',
+    "vipIncomeRebate": "El reembolso de ingresos es {num1},{num2},{num3}"
 }

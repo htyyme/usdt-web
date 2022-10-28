@@ -32,7 +32,7 @@ export default {
     //获取等级列表
     async loadviplist(){
       const resp = await this.$http.post('/v1/vips')
-      // console.log(resp)
+      console.log(resp)
       this.viplist = resp.data || []
     }
   }

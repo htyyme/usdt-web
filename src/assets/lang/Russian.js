@@ -703,4 +703,5 @@ export default {
     'Withdraw fee':'Комиссия за вывод:{num}',
     'viplimit':'Нам нужно {limit} подчиненных, чтобы купить нашу продукцию.',
     'Upgrade price':'Цена обновления',
+    "vipIncomeRebate": "Скидка на доход составляет {num1}, {num2}, {num3}"
 }

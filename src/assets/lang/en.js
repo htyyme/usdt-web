@@ -681,4 +681,5 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'Upgrade price',
+    'vipIncomeRebate':'The income rebate is {num1} {num2} {num3}',
 }

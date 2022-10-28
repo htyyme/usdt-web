@@ -677,6 +677,7 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'Yükseltme fiyatı',
+    "vipIncomeRebate": "Gelir indirimi {num1}, {num2}, {num3}"
 
 
 
