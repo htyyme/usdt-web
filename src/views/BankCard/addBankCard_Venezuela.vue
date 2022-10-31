@@ -4,116 +4,29 @@
 
     <div class="wrapper">
       <dl>
-        <dt>{{$t('Hesap Ad Soyad')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+        <dt>Nombre:</dt>
+        <dd><input type="text"   v-model="form.username"></dd>
       </dl>
-
-      <!--<dl>-->
-      <!--  <dt>{{$t('Card Number')}}</dt>-->
-      <!--  <dd><input type="text"  :placeholder="$t('Please enter card number')" v-model="form.withdraw_deposit"></dd>-->
-      <!--</dl>-->
-
-      <!--<dl>-->
-      <!--  <dt>{{$t('Opening Bank')}}</dt>-->
-      <!--  <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>-->
-      <!--</dl>-->
 
       <dl>
-        <dt>{{$t('Mobile')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter mobile')" v-model="form.mobile" ></dd>
+        <dt>Cédula:</dt>
+        <dd><input type="text"   v-model="form.identity_no"></dd>
       </dl>
 
-      <dl  v-if="showIfsc">
-        <dt>{{$t('IFSC')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter IFSC code')" v-model="form.bank_code"></dd>
-      </dl>
-
-      <dl  v-if="showUpi">
-        <dt>{{$t('UPI')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter upi number')" v-model="form.upi"></dd>
-      </dl>
-
-      <dl v-if="form.id && isSendSms">
-        <dt>{{$t('Verification code')}}</dt>
-        <dd>
-          <input type="text"  :placeholder="$t('Verification code')" v-model="form.sms_code">
-          <van-button size="mini" :disabled="countdown>0" color="#ff1720" @click="getVerificationCode">{{sendBtnText}}</van-button>
-        </dd>
-      </dl>
-
-
-      <!--优先级-->
       <dl>
-        <dt>{{$t('Withdrawal priority')}}</dt>
-        <dd style="display: flex;align-items: center;padding-left: 15px;">
-          <van-radio-group v-model="form.opening_type" direction="horizontal" checked-color="#FF3364">
-            <van-radio name="Banesco">Banesco</van-radio>
-            <van-radio name="Venezuela">Venezuela</van-radio>
-            <van-radio name="powwi">{{$t('Powwi')}}</van-radio>
-          </van-radio-group>
-        </dd>
+        <dt>Número de cuenta:</dt>
+        <dd><input type="text"   v-model="form.withdraw_deposit"></dd>
       </dl>
 
-      <template v-if="form.opening_type==='powwi'">
-        <dl>
-          <dt>{{$t('Bank account')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
-        </dl>
+      <dl>
+        <dt>Tipo de banco:</dt>
+        <dd><input type="text"   v-model="form.acc_type"></dd>
+      </dl>
 
-
-<!--      powwi显示信息，自己新添加的  -->
-        <dl>
-          <dt>{{$t('tax no')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter tax no')" v-model="form.identity_no" ></dd>
-        </dl>
-
-      </template>
-
-      <template v-if="form.opening_type==='Banesco' || form.opening_type==='Venezuela'">
-        <!--<dl>-->
-        <!--  <dt>{{$t('banka adı')}}</dt>-->
-        <!--  <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>-->
-        <!--</dl>-->
-
-        <dl>
-          <dt>{{$t('Hesap IBAN')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter powwi account')" v-model="form.withdraw_deposit" ></dd>
-        </dl>
-
-
-
-        <dl>
-          <dt>{{$t('Account type')}}</dt>
-          <dd style="display: flex;align-items: center;padding-left: 15px;">
-            <van-radio-group v-model="form.acc_type" direction="horizontal">
-              <van-radio name="Corriente">{{$t('Corriente')}}</van-radio>
-              <van-radio name="Vista">{{$t('Vista')}}</van-radio>
-              <van-radio name="Ahorro">{{$t('Ahorro')}}</van-radio>
-              <van-radio name="Chequera electronica">{{$t('Chequera electronica')}}</van-radio>
-            </van-radio-group>
-          </dd>
-        </dl>
-
-
-
-        <!--<dl>-->
-        <!--  <dt>{{$t('Identity type')}}</dt>-->
-        <!--  <dd style="display: flex;align-items: center;padding-left: 15px;">-->
-        <!--    <van-radio-group v-model="form.identity_type" direction="horizontal">-->
-        <!--      <van-radio name="CC">{{$t('CC')}}</van-radio>-->
-        <!--      <van-radio name="CE">{{$t('CE')}}</van-radio>-->
-        <!--      <van-radio name="NT">{{$t('NT')}}</van-radio>-->
-        <!--    </van-radio-group>-->
-        <!--  </dd>-->
-        <!--</dl>-->
-
-
-        <dl>
-          <dt>{{$t('tax no')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter tax no')" v-model="form.identity_no" ></dd>
-        </dl>
-
-      </template>
+      <dl>
+        <dt>Nombre del banco:</dt>
+        <dd><input type="text"   v-model="form.opening_bank"></dd>
+      </dl>
 
 
       <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
@@ -154,9 +67,9 @@ export default {
         mobile:"",
         sms_code:"",
         priority:1,
-        opening_type:'bank',
-        acc_type:'Corriente',
-        identity_type:'CC',
+        opening_type:'',
+        acc_type:'',
+        identity_type:'',
         identity_no:""
       },
       countdown: 0,
@@ -228,10 +141,10 @@ export default {
     },
     //保存
     async handleSave(){
-      if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
-      if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
-      // if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
-      if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
+      // if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
+      // if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
+      // // if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
+      // if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
       // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
       // if(this.isSendSms && !this.form.sms_code)  return this.$toast.fail(this.$t('Please enter sms code'))
       const r = await this.$http.post('/v1/auth/card/bind',this.form)
