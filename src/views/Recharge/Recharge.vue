@@ -127,7 +127,7 @@ export default {
       let submitdata = {}
       submitdata.is_web = appConfig.isApp ? 0 : 1
       if (this.cointype === 'usdt'){
-        submitdata.coin_type = 'USD'
+        submitdata.coin_type = 'USDT'
       }else{
         submitdata.coin_type = ''
       }
