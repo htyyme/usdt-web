@@ -7,11 +7,11 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="showExchangeUsdtTrx" >
-        <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
-        <span>{{$t('Exchange USDT to TRX')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
+      <!--<li @click="showExchangeUsdtTrx" >-->
+      <!--  <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('Exchange USDT to TRX')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
 
       <li @click="showEnterEnvelopeKey" >
         <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>
