@@ -7,6 +7,8 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
+
+<!--      注释掉USDT对换TRX-->
       <!--<li @click="showExchangeUsdtTrx" >-->
       <!--  <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>-->
       <!--  <span>{{$t('Exchange USDT to TRX')}}</span>-->
