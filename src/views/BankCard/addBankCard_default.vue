@@ -32,10 +32,10 @@
 
 
       <!--姓-->
-      <dl>
-        <dt>{{$t('Last Name')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter last name')" v-model="form.last_name"></dd>
-      </dl>
+      <!--<dl>-->
+      <!--  <dt>{{$t('Last Name')}}</dt>-->
+      <!--  <dd><input type="text"  :placeholder="$t('Please enter last name')" v-model="form.last_name"></dd>-->
+      <!--</dl>-->
 
 
       <!--身份证号-->
