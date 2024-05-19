@@ -3,7 +3,7 @@ const IS_APP = false
 const IS_GOOGLE = false
 
 export default {
-    env: 'dev',//dev/prod
+    env: 'prod',//dev/prod
     isApp: IS_APP,
     isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
