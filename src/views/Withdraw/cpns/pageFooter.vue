@@ -107,8 +107,8 @@
   .pageFooter {
     .tip {
       font-size: 13px;
-      background-color: #C9E1FF;
-      color: #1849A1;
+      //background-color: #C9E1FF;
+      //color: #1849A1;
 
       p {
         margin: 8px 0;
