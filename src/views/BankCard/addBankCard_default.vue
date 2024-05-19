@@ -151,6 +151,30 @@ export default {
       // if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
       // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
       // if(this.isSendSms && !this.form.sms_code)  return this.$toast.fail(this.$t('Please enter sms code'))
+
+      /*
+        CPF（个人税号/类似身份证号）：11位纯数字；
+        PHONE（电话号码）：11位纯数字，如果加55共13位纯数字（+55非必须）；
+        E-MAIL（邮箱）：字母都必须要小写；
+      * */
+
+      if (this.form.acc_type === 'CPF') {
+        const reg = /^[0-9]{11}$/
+        if (!reg.test(this.form.withdraw_deposit)){
+          return  this.$toast(this.$t("The account format is incorrect"))
+        }
+      } else if (this.form.acc_type === 'PHONE'){
+        const reg = /^(\+55)?[0-9]{11}$/
+        if (!reg.test(this.form.withdraw_deposit)){
+          return  this.$toast(this.$t("The account format is incorrect"))
+        }
+      }else if (this.form.acc_type === 'EMAIL'){
+        const reg = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
+        if (!reg.test(this.form.withdraw_deposit)){
+          return  this.$toast(this.$t("The account format is incorrect"))
+        }
+      }
+
       const r = await this.$http.post('/v1/auth/card/bind',this.form)
 
       this.$toast.success({

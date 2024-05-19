@@ -704,4 +704,6 @@ export default {
     "Please enter last name": "성을 입력하세요.",
     "Please bind your wallet first":"먼저 지갑을 묶어주세요",
     "Save Image": "이미지를 저장",
+    "The account format is incorrect":"계정 형식이 잘못되었습니다.",
+    "Fund password":"펀드 비밀번호",
 }

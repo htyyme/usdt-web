@@ -671,4 +671,6 @@ export default {
     "Please enter last name": "กรุณากรอกนามสกุล",
     "Please bind your wallet first":"กรุณาผูกกระเป๋าเงินของคุณก่อน",
     "Save Image": "บันทึกภาพ",
+    "The account format is incorrect":"รูปแบบบัญชีไม่ถูกต้อง",
+    "Fund password":"รหัสผ่านกองทุน",
 }

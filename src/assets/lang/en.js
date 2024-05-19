@@ -692,6 +692,10 @@ export default {
     "Please enter identification number":"Please enter identification number",
     "Please bind your wallet first":"Please bind your wallet first",
     "Save Image":"Save Image",
+    "The account format is incorrect":"The account format is incorrect",
+    "Fund password":"Fund password",
+
+
 
 
 

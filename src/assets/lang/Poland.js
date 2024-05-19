@@ -678,4 +678,6 @@ export default {
     "Please enter last name": "Proszę wpisać nazwisko",
     "Please bind your wallet first":"Proszę najpierw zawiązać portfel",
     "Save Image": "Zapisać obraz",
+    "The account format is incorrect":"Format konta jest nieprawidłowy",
+    "Fund password":"Hasło funduszu",
 }

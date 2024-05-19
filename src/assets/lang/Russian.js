@@ -713,4 +713,6 @@ export default {
     "Please enter last name": "Пожалуйста, введите фамилию",
     "Please bind your wallet first":"Пожалуйста, сначала привяжите свой кошелек",
     "Save Image": "Сохранить изображение",
+    "The account format is incorrect":"Формат учетной записи неверен",
+    "Fund password":"Пароль фонда",
 }

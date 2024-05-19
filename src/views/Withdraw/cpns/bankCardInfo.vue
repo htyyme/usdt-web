@@ -6,20 +6,20 @@
         <dd>{{ bankcardinfo.username }}</dd>
       </dl>
 
-      <dl>
-        <dt>{{ $t('Mobile') }}</dt>
-        <dd>{{ bankcardinfo.mobile }}</dd>
-      </dl>
+      <!--<dl>-->
+      <!--  <dt>{{ $t('Mobile') }}</dt>-->
+      <!--  <dd>{{ bankcardinfo.mobile }}</dd>-->
+      <!--</dl>-->
 
       <dl>
         <dt>{{ $t('Bank Accounts') }}</dt>
         <dd>{{ bankcardinfo.withdraw_deposit }}</dd>
       </dl>
 
-      <dl v-if="showIfsc">
-        <dt>{{ $t('IFSC') }}</dt>
-        <dd>{{ bankcardinfo.bank_code }}</dd>
-      </dl>
+      <!--<dl v-if="showIfsc">-->
+      <!--  <dt>{{ $t('IFSC') }}</dt>-->
+      <!--  <dd>{{ bankcardinfo.bank_code }}</dd>-->
+      <!--</dl>-->
     </template>
 
     <template v-else>

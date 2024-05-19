@@ -728,4 +728,6 @@ export default {
     "Please enter last name": "Por favor ingrese el apellido",
     "Please bind your wallet first":"Por favor ata tu billetera primero",
     "Save Image": "Guardar imagen",
+    "The account format is incorrect":"El formato de la cuenta es incorrecto.",
+    "Fund password":"Contraseña del fondo",
 }

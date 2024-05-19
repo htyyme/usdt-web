@@ -687,7 +687,8 @@ export default {
     "Please enter last name": "Lütfen soyadınızı girin",
     "Please bind your wallet first":"Lütfen önce cüzdanınızı bağlayın",
     "Save Image": "Resmi Kaydet",
-
+    "The account format is incorrect":"Hesap biçimi yanlış",
+    "Fund password":"Fon şifresi",
 
 
 

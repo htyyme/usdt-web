@@ -692,4 +692,6 @@ export default {
     "Please enter last name": "Por favor insira o sobrenome",
     "Please bind your wallet first":"Por favor, vincule sua carteira primeiro",
     "Save Image": "Salvar imagem",
+    "The account format is incorrect":"O formato da conta está incorreto",
+    "Fund password":"código de saque",
 }
