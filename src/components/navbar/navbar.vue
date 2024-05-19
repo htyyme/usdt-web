@@ -36,7 +36,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/css/vars.scss";
 
-/deep/ .van-nav-bar {
+::v-deep  .van-nav-bar {
   background: linear-gradient( to top, $mainColor,$shallowMainColor);
   z-index: 9;
 

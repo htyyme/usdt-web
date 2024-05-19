@@ -45,7 +45,7 @@ export default {
 
     .content{
       padding: 10px 0;
-      /deep/img{
+      ::v-deep img{
         max-width: 100%;
         margin: 5px 0;
       }

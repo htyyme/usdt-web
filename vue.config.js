@@ -10,10 +10,11 @@ module.exports = {
     publicPath: './',
     outputDir: 'index',
     devServer: {
-        port: 12345,
+        port: 3000,
         proxy: {
             '/v1': {
-                target: 'http://192.168.100.5:8087',
+                target: 'http://127.0.0.1:4000',
+                // target: 'https://cloudcelular.com',
                 // target: 'http://usdt-power.6666.ml',
                 changeOrigin: true,
             },

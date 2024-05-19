@@ -54,7 +54,7 @@ export default {
 }
 
 //指示器颜色
-/deep/ .van-swipe__indicator--active {
+::v-deep  .van-swipe__indicator--active {
   background-color: #1989fa !important;
 }
 

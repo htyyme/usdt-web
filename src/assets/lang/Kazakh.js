@@ -694,5 +694,12 @@ export default {
     'Withdraw fee':'Ақшаны алу үшін комиссия:{num}',
     'viplimit':'Біздің сатып алу үшін {limit} бағынышты қажет өнім ',
     'Upgrade price':'업그레이드 가격',
-    "vipIncomeRebate": "소득 리베이트는 {num1},{num2},{num3}입니다"
+    "vipIncomeRebate": "소득 리베이트는 {num1},{num2},{num3}입니다",
+    "Account Number": "계좌 번호",
+    "Identification number": "식별 번호",
+    "Last Name": "성",
+    "Pix secret": "픽스의 비밀",
+    "Please enter account number": "계좌번호를 입력해주세요",
+    "Please enter identification number": "주민등록번호를 입력해주세요",
+    "Please enter last name": "성을 입력하세요.",
 }

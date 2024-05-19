@@ -718,5 +718,12 @@ export default {
     'Withdraw fee':'Tarifa de retiro: {num}',
     'viplimit':'Necesita {limit} subordinados comprar nuestros productos',
     'Upgrade price':'Precio de actualización',
-    "vipIncomeRebate": "El reembolso de ingresos es {num1},{num2},{num3}"
+    "vipIncomeRebate": "El reembolso de ingresos es {num1},{num2},{num3}",
+    "Account Number": "Número de cuenta",
+    "Identification number": "Número de identificación",
+    "Last Name": "Apellido",
+    "Pix secret": "Foto secreta",
+    "Please enter account number": "Por favor ingrese el número de cuenta",
+    "Please enter identification number": "Por favor ingrese el número de identificación",
+    "Please enter last name": "Por favor ingrese el apellido",
 }

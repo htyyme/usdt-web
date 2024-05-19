@@ -3,73 +3,52 @@
     <navbar :title="$t('Bank Card')"></navbar>
 
     <div class="wrapper">
+
+      <!--账号类型-->
+      <dl>
+        <dt>{{$t('Account type')}}</dt>
+        <dd style="padding-left: 15px;">
+          <van-radio-group v-model="form.acc_type"  checked-color="#FF3364">
+            <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>
+            <van-radio style="margin: 7px;" name="PHONE">PHONE</van-radio>
+            <van-radio style="margin: 7px;" name="EMAIL">EMAIL</van-radio>
+            <van-radio style="margin: 7px;" name="CHAVE">CHAVE</van-radio>
+          </van-radio-group>
+        </dd>
+      </dl>
+
+
+      <!--用户名-->
       <dl>
         <dt>{{$t('Account Name')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
       </dl>
 
+      <!--账号-->
       <dl>
-        <dt>{{$t('Card Number')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter card number')" v-model="form.withdraw_deposit"></dd>
+        <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
       </dl>
 
+      <!--姓-->
       <dl>
-        <dt>{{$t('Opening Bank')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please select opening bank')" v-model="form.opening_bank" ></dd>
+        <dt>{{$t('Last Name')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter last name')" v-model="form.last_name"></dd>
       </dl>
 
+
+      <!--身份证号-->
       <dl>
-        <dt>{{$t('Mobile')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter mobile')" v-model="form.mobile" ></dd>
+        <dt>{{$t('Identification number')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter identification number')" v-model="form.identity_no"></dd>
       </dl>
-
-      <dl  v-if="showIfsc">
-        <dt>{{$t('IFSC')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter IFSC code')" v-model="form.bank_code"></dd>
-      </dl>
-
-      <dl  v-if="showUpi">
-        <dt>{{$t('UPI')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter upi number')" v-model="form.upi"></dd>
-      </dl>
-
-      <dl v-if="form.id && isSendSms">
-        <dt>{{$t('Verification code')}}</dt>
-        <dd>
-          <input type="text"  :placeholder="$t('Verification code')" v-model="form.sms_code">
-          <van-button size="mini" :disabled="countdown>0" color="#ff1720" @click="getVerificationCode">{{sendBtnText}}</van-button>
-        </dd>
-      </dl>
-
-
-      <!--优先级-->
-      <dl>
-        <dt>{{$t('Withdrawal priority')}}</dt>
-        <dd style="display: flex;align-items: center;padding-left: 15px;">
-          <van-radio-group v-model="form.priority" direction="horizontal" checked-color="#FF3364">
-            <van-radio :name="1">{{$t('Bank Card')}}</van-radio>
-            <van-radio :name="2">{{$t('UPI')}}</van-radio>
-          </van-radio-group>
-        </dd>
-      </dl>
-
 
       <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
 
     </div>
 
 
-    <!--选择银行卡-->
-    <van-popup v-model="showPicker" position="bottom">
-      <van-picker
-          show-toolbar
-          :columns="gbanklist"
-          @confirm="confirmBank"
-          @cancel="showPicker = false"
-          :confirm-button-text="$t('Confirm')"
-          :cancel-button-text="$t('Cancel')"
-      />
-    </van-popup>
+
 
   </div>
 </template>
@@ -84,14 +63,17 @@ export default {
     return {
       id:"",
       form:{
-        username:"",
-        withdraw_deposit:"",
+        username:"",//用户名
+        withdraw_deposit:"", //账号
         opening_bank:"",
         bank_code:"",
         upi:"",
         mobile:"",
         sms_code:"",
-        priority:1
+        priority:1,
+        acc_type:"CPF",//账号类型
+        identity_no:"", //身份证
+        last_name:"",//姓
       },
       countdown: 0,
       timer:null,
@@ -164,9 +146,9 @@ export default {
     async handleSave(){
       if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
       if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
-      if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
-      if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
-      if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
+      // if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
+      // if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
+      // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
       // if(this.isSendSms && !this.form.sms_code)  return this.$toast.fail(this.$t('Please enter sms code'))
       const r = await this.$http.post('/v1/auth/card/bind',this.form)
 
@@ -205,7 +187,8 @@ export default {
       }
       dd{
         width: 310px;
-        height: 50px;
+        //height: 50px;
+        padding: 8px 0;
         background: #F9F9F9;
         border-radius: 10px;
         margin-top: 5px;
@@ -218,12 +201,7 @@ export default {
           height: 100%;
           padding-left: 15px;
         }
-        .van-button{
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 15px;
-        }
+
       }
     }
 

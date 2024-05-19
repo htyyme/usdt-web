@@ -28,7 +28,7 @@ export default {
 
 <style scoped lang="scss">
 
-/deep/ .van-tabs__wrap{
+::v-deep  .van-tabs__wrap{
   border: 1px solid #E7EBEE;
   .van-tab{
     flex: unset;

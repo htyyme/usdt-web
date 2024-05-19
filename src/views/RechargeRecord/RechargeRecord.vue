@@ -89,7 +89,7 @@ name: "RechargeRecord",
 </script>
 
 <style scoped lang="scss">
-/deep/.van-empty__image{
+::v-deep .van-empty__image{
   height: unset;
 }
 

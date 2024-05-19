@@ -35,7 +35,7 @@ export default {
 
 <style scoped lang="scss">
 .doubleConfirm {
-  /deep/ .van-overlay {
+  ::v-deep  .van-overlay {
     //background-color: rgba(0, 0, 0, .3);
     background-color: rgba(0, 0, 0, 0);
   }

@@ -668,5 +668,12 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'Cena aktualizacji',
-    "vipIncomeRebate": "Rabat od dochodu wynosi {num1},{num2},{num3}"
+    "vipIncomeRebate": "Rabat od dochodu wynosi {num1},{num2},{num3}",
+    "Account Number": "Numer konta",
+    "Identification number": "Numer identyfikacyjny",
+    "Last Name": "Nazwisko",
+    "Pix secret": "Sekret Pixa",
+    "Please enter account number": "Proszę podać numer konta",
+    "Please enter identification number": "Proszę podać numer identyfikacyjny",
+    "Please enter last name": "Proszę wpisać nazwisko",
 }

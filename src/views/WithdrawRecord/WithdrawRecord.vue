@@ -93,7 +93,7 @@ export default {
 
 <style scoped lang="scss">
 @import "src/assets/css/vars";
-/deep/.van-empty__image{
+::v-deep .van-empty__image{
   height: unset;
 }
 

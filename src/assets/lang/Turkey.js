@@ -677,7 +677,14 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'Yükseltme fiyatı',
-    "vipIncomeRebate": "Gelir indirimi {num1}, {num2}, {num3}"
+    "vipIncomeRebate": "Gelir indirimi {num1}, {num2}, {num3}",
+    "Account Number": "Hesap numarası",
+    "Identification number": "Kimlik Numarası",
+    "Last Name": "Soy isim",
+    "Pix secret": "Pix'in sırrı",
+    "Please enter account number": "Lütfen hesap numarasını girin",
+    "Please enter identification number": "Lütfen kimlik numarasını giriniz",
+    "Please enter last name": "Lütfen soyadınızı girin",
 
 
 

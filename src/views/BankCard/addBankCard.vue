@@ -22,7 +22,7 @@ export default {
     },
     cpn(){
       // return this.language === 'Columbia' ? 'addBankCard_Columbia' : 'addBankCard_default'
-      return 'addBankCard_Venezuela'
+      return 'addBankCard_default'
     }
   }
 }

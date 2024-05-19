@@ -190,7 +190,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/.van-uploader__upload-icon{
+::v-deep .van-uploader__upload-icon{
   width: 100%;
   height: 100%;
   display: flex;
@@ -225,7 +225,7 @@ export default {
       }
     }
     dd{
-      /deep/.van-uploader__preview{
+      ::v-deep .van-uploader__preview{
         overflow: hidden;
         border-radius: 5px;
       }

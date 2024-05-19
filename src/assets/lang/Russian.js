@@ -703,5 +703,12 @@ export default {
     'Withdraw fee':'Комиссия за вывод:{num}',
     'viplimit':'Нам нужно {limit} подчиненных, чтобы купить нашу продукцию.',
     'Upgrade price':'Цена обновления',
-    "vipIncomeRebate": "Скидка на доход составляет {num1}, {num2}, {num3}"
+    "vipIncomeRebate": "Скидка на доход составляет {num1}, {num2}, {num3}",
+    "Account Number": "Номер счета",
+    "Identification number": "Идентификационный номер",
+    "Last Name": "Фамилия",
+    "Pix secret": "Пикс секрет",
+    "Please enter account number": "Пожалуйста, введите номер счета",
+    "Please enter identification number": "Пожалуйста, введите идентификационный номер",
+    "Please enter last name": "Пожалуйста, введите фамилию",
 }

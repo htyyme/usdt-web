@@ -30,7 +30,7 @@
     <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" :disabled="submitDisabled" @click="handleSubmit">{{$t('recharge')}}</van-button>
 
     <!--收集信息的组件-->
-    <createinfo_forcoin  v-if="cointype==='coin'"/>
+    <!--<createinfo_forcoin  v-if="cointype==='coin'"/>-->
 
 <!--    <createinfo_forusdt v-if="cointype==='usdt'" />-->
 

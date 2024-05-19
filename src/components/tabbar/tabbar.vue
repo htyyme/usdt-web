@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/ .van-tabbar {
+::v-deep  .van-tabbar {
 
   height: 49px;
   //background: linear-gradient(180deg, #FFFFFF 0%, #E9FFF5 100%);
@@ -59,11 +59,11 @@ export default {
   border-radius: 10px 10px 0px 0px;
 }
 
-/deep/ .van-tabbar-item--active {
+::v-deep  .van-tabbar-item--active {
   background-color: transparent;
 }
 
-/deep/ .van-tabbar-item__icon {
+::v-deep  .van-tabbar-item__icon {
   width: 22px;
   height: 22px;
 
@@ -78,7 +78,7 @@ export default {
   }
 }
 
-/deep/ .van-tabbar-item__text {
+::v-deep  .van-tabbar-item__text {
   text-transform: capitalize;
 }
 </style>

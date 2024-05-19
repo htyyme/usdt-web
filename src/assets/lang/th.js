@@ -661,5 +661,12 @@ export default {
     'Withdraw fee':'Withdraw fee:{num}',
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'อัพเกรดราคา',
-    "vipIncomeRebate": "เงินคืนรายได้ {num1},{num2},{num3}"
+    "vipIncomeRebate": "เงินคืนรายได้ {num1},{num2},{num3}",
+    "Account Number": "หมายเลขบัญชี",
+    "Identification number": "หมายเลขประจำตัว",
+    "Last Name": "นามสกุล",
+    "Pix secret": "ความลับของพิค",
+    "Please enter account number": "กรุณากรอกหมายเลขบัญชี",
+    "Please enter identification number": "กรุณากรอกหมายเลขประจำตัว",
+    "Please enter last name": "กรุณากรอกนามสกุล",
 }

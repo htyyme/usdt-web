@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/ .van-cell__title.van-field__label {
+::v-deep  .van-cell__title.van-field__label {
   width: 5.8em;
 }
 </style>

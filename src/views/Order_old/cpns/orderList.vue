@@ -116,7 +116,7 @@ export default {
 
 <style scoped lang="scss">
 .orderList{
-  /deep/.van-empty{
+  ::v-deep .van-empty{
     .van-empty__image{
       height: unset;
     }

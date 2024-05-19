@@ -74,7 +74,7 @@ export default {
     border-radius: 13px;
     padding: 10px 14px 26px;
 
-    /deep/ .van-empty {
+    ::v-deep  .van-empty {
       .van-empty__image {
         height: unset;
       }

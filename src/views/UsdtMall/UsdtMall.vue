@@ -130,7 +130,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/deep/.van-empty{
+::v-deep .van-empty{
   .van-empty__image{
     height: unset;
   }
@@ -140,7 +140,7 @@ export default {
   min-height: 100vh;
   background-color: #f4f4f4;
 
-  /deep/ .van-search {
+  ::v-deep  .van-search {
     background: linear-gradient(180deg, #41AAED 0%, #2F8DE6 100%);
   }
 

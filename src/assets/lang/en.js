@@ -682,4 +682,12 @@ export default {
     'viplimit':'Need {limit} subordinates buy our products',
     'Upgrade price':'Upgrade price',
     'vipIncomeRebate':'The income rebate is {num1} {num2} {num3}',
+    "Pix secret":"Pix secret",
+    "Account Number":"Account Number",
+    "Please enter account number":"Please enter account number",
+    "Last Name":"Last Name",
+    "Please enter last name":"Please enter last name",
+    "Identification number":"Identification number",
+    "Please enter identification number":"Please enter identification number",
+
 }
