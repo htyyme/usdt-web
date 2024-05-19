@@ -711,4 +711,5 @@ export default {
     "Please enter account number": "Пожалуйста, введите номер счета",
     "Please enter identification number": "Пожалуйста, введите идентификационный номер",
     "Please enter last name": "Пожалуйста, введите фамилию",
+    "Please bind your wallet first":"Пожалуйста, сначала привяжите свой кошелек",
 }

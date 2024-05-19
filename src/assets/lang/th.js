@@ -669,4 +669,5 @@ export default {
     "Please enter account number": "กรุณากรอกหมายเลขบัญชี",
     "Please enter identification number": "กรุณากรอกหมายเลขประจำตัว",
     "Please enter last name": "กรุณากรอกนามสกุล",
+    "Please bind your wallet first":"กรุณาผูกกระเป๋าเงินของคุณก่อน",
 }

@@ -702,4 +702,5 @@ export default {
     "Please enter account number": "계좌번호를 입력해주세요",
     "Please enter identification number": "주민등록번호를 입력해주세요",
     "Please enter last name": "성을 입력하세요.",
+    "Please bind your wallet first":"먼저 지갑을 묶어주세요",
 }

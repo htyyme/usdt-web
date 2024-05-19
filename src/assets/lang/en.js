@@ -690,5 +690,7 @@ export default {
     "Please enter last name":"Please enter last name",
     "Identification number":"Identification number",
     "Please enter identification number":"Please enter identification number",
+    "Please bind your wallet first":"Please bind your wallet first",
+
 
 }

@@ -690,4 +690,5 @@ export default {
     "Please enter account number": "Por favor insira o número da conta",
     "Please enter identification number": "Por favor insira o número de identificação",
     "Please enter last name": "Por favor insira o sobrenome",
+    "Please bind your wallet first":"Por favor, vincule sua carteira primeiro",
 }

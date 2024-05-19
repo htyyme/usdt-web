@@ -685,6 +685,7 @@ export default {
     "Please enter account number": "Lütfen hesap numarasını girin",
     "Please enter identification number": "Lütfen kimlik numarasını giriniz",
     "Please enter last name": "Lütfen soyadınızı girin",
+    "Please bind your wallet first":"Lütfen önce cüzdanınızı bağlayın",
 
 
 
