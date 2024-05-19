@@ -10,7 +10,7 @@
         <dd>{{$t('comulativeIncome')}}</dd>
       </dl>
       <dl>
-        <dt>{{countdata.totalincome | moneyFormat(2,gcointype)}}</dt>
+        <dt>{{countdata.todayincome | moneyFormat(2,gcointype)}}</dt>
         <dd>{{$t('todaysEarning')}}</dd>
       </dl>
     </div>
