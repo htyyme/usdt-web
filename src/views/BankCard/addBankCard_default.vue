@@ -12,16 +12,9 @@
             <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>
             <van-radio style="margin: 7px;" name="PHONE">PHONE</van-radio>
             <van-radio style="margin: 7px;" name="EMAIL">EMAIL</van-radio>
-            <van-radio style="margin: 7px;" name="CHAVE">CHAVE</van-radio>
+            <!--<van-radio style="margin: 7px;" name="CHAVE">CHAVE</van-radio>-->
           </van-radio-group>
         </dd>
-      </dl>
-
-
-      <!--用户名-->
-      <dl>
-        <dt>{{$t('Account Name')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
       </dl>
 
       <!--账号-->
@@ -29,6 +22,14 @@
         <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
       </dl>
+
+      <!--用户名-->
+      <dl>
+        <dt>{{$t('Account Name')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+      </dl>
+
+
 
       <!--姓-->
       <dl>
@@ -38,10 +39,10 @@
 
 
       <!--身份证号-->
-      <dl>
-        <dt>{{$t('Identification number')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter identification number')" v-model="form.identity_no"></dd>
-      </dl>
+      <!--<dl>-->
+      <!--  <dt>{{$t('Identification number')}}</dt>-->
+      <!--  <dd><input type="text"  :placeholder="$t('Please enter identification number')" v-model="form.identity_no"></dd>-->
+      <!--</dl>-->
 
       <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
 

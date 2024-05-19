@@ -12,7 +12,7 @@
       <div class="lst" v-else>
         <div class="item" v-for="item in bankCardList" :key="item.id">
           <div class="line">
-            <div class="tit">{{item.opening_bank}}</div>
+            <!--<div class="tit">{{item.opening_bank}}</div>-->
             <div class="card-number">{{item.withdraw_deposit | cardNoFormat}}</div>
           </div>
 
