@@ -28,8 +28,9 @@
       </div>
 
       <div class="options">
-        <van-button @click="toRechargePage('usdt')">USDT</van-button>
+
         <van-button @click="toRechargePage('coin')">CURRENCY</van-button>
+        <van-button @click="toRechargePage('usdt')">USDT</van-button>
       </div>
 
     </div>
