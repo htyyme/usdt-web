@@ -691,6 +691,8 @@ export default {
     "Identification number":"Identification number",
     "Please enter identification number":"Please enter identification number",
     "Please bind your wallet first":"Please bind your wallet first",
+    "Save Image":"Save Image",
+
 
 
 }

@@ -727,4 +727,5 @@ export default {
     "Please enter identification number": "Por favor ingrese el número de identificación",
     "Please enter last name": "Por favor ingrese el apellido",
     "Please bind your wallet first":"Por favor ata tu billetera primero",
+    "Save Image": "Guardar imagen",
 }
