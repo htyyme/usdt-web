@@ -683,4 +683,11 @@ export default {
     'viplimit':'Precisa de {limit} subordinados para comprar nossos produtos',
     'Upgrade price':'Preço de atualização',
     'vipIncomeRebate':'O desconto de renda é {num1} {num2} {num3}',
+    "Account Number": "Número de conta",
+    "Identification number": "Número de identificação",
+    "Last Name": "Sobrenome",
+    "Pix secret": "Segredo Pix",
+    "Please enter account number": "Por favor insira o número da conta",
+    "Please enter identification number": "Por favor insira o número de identificação",
+    "Please enter last name": "Por favor insira o sobrenome",
 }
