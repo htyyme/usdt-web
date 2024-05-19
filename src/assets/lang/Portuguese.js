@@ -41,7 +41,7 @@ export default {
     'todaysEarning': "O ganho de hoje",
     'recharge': 'Recarrega',
     'withdraw': 'Retirar',
-    'orderFinance': 'encomendar financiamento',
+    'orderFinance': 'Aluguel de celular',
     'financeProduct': 'produto financeiro',
     'inviteFriends': 'convide amigos',
     'mission': 'missão',
