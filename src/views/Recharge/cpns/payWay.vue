@@ -5,7 +5,6 @@
       <ul>
         <li v-for="(item,index) in channellist"
             :key="index"
-            :style="{color:getColor(item.payChannelName)}"
             :class="{active:item.payChannelName===activeChannel.payChannelName}"
             @click="chooseChannel(item)"
         >{{item.payChannelName}}</li>
@@ -74,8 +73,10 @@ export default {
       height: 45px;
       background-color: #f5f5f5;
       font-family: imbplex;
-      font-size: 15px;
-      padding: 4px 20px;
+      font-size: 12px;
+      text-align: center;
+      word-break: break-all;
+      padding: 4px 15px;
       font-weight: 700;
       border-radius: 7px;
       display: flex;
@@ -87,12 +88,14 @@ export default {
       margin-right: 12px;
       margin-bottom: 8px;
       text-align: center;
+
+
       &:nth-child(3n){
         margin-right: 0;
       }
       &.active{
-        background-color: $mainColor;
-        color: #fff !important;
+        color: #FF3364FF;
+        background: #333;
       }
     }
   }

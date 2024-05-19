@@ -38,10 +38,12 @@ export default {
     },
   },
   created() {
-    //默认选择第一个金额
-    if (this.amountList.length > 0){
-      this.chooseAmount(this.amountList[0])
-    }
+    setTimeout(()=>{
+      //默认选择第一个金额
+      if (this.amountList.length > 0){
+        this.chooseAmount(this.amountList[0])
+      }
+    },50)
   },
   methods:{
     //选择金额
@@ -88,8 +90,8 @@ export default {
       font-weight: 700;
 
       &.active {
-        background-color:  #F8868C;
-        color: #fff;
+        color: #FF3364FF;
+        background: #333;
       }
     }
   }
