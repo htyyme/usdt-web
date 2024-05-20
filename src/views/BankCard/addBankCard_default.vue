@@ -23,6 +23,11 @@
           <dt>{{$t('Account Name')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
         </dl>
+        <!--账号-->
+        <dl style="display: none">
+          <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
+        </dl>
         <!--cpf/cnpj-->
         <dl v-if="form.acc_type === 'CPF'">
           <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
@@ -132,6 +137,7 @@ export default {
       const resp = await this.$http.post('/v1/auth/user/card',{
         id : this.id
       })
+      console.log('resp.data',resp.data)
       this.form = resp.data
     },
     //发送验证码
