@@ -17,37 +17,41 @@
         </dd>
       </dl>
 
-      <!--账号-->
-      <dl v-if="form.acc_type !== 'CPF'">
-        <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
-      </dl>
+      <template v-if="form.acc_type==='CPF'">
+        <!--用户名-->
+        <dl>
+          <dt>{{$t('Account Name')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+        </dl>
+        <!--cpf/cnpj-->
+        <dl v-if="form.acc_type === 'CPF'">
+          <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
+        </dl>
+      </template>
 
-      <!--用户名-->
-      <dl>
-        <dt>{{$t('Account Name')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
-      </dl>
+      <template v-else>
+        <!--名字-->
+        <dl>
+          <dt>{{$t('Account Name')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+        </dl>
+        <!--账号-->
+        <dl>
+          <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
+        </dl>
+        <!--cpf/cnpj-->
+        <dl v-if="form.acc_type === 'CPF'">
+          <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
+          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
+        </dl>
+      </template>
 
 
-      <!--税号-->
-      <dl v-if="form.acc_type === 'CPF'">
-        <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
-        <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
-      </dl>
-
-      <!--姓-->
-      <!--<dl>-->
-      <!--  <dt>{{$t('Last Name')}}</dt>-->
-      <!--  <dd><input type="text"  :placeholder="$t('Please enter last name')" v-model="form.last_name"></dd>-->
-      <!--</dl>-->
 
 
-      <!--身份证号-->
-      <!--<dl>-->
-      <!--  <dt>{{$t('Identification number')}}</dt>-->
-      <!--  <dd><input type="text"  :placeholder="$t('Please enter identification number')" v-model="form.identity_no"></dd>-->
-      <!--</dl>-->
+
 
       <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
 
