@@ -18,7 +18,7 @@
       </dl>
 
       <!--账号-->
-      <dl>
+      <dl v-if="form.acc_type !== 'CPF'">
         <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
       </dl>
@@ -31,8 +31,8 @@
 
 
       <!--税号-->
-      <dl>
-        <dt>{{$t('Tax number')}}</dt>
+      <dl v-if="form.acc_type === 'CPF'">
+        <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
         <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
       </dl>
 
@@ -151,8 +151,8 @@ export default {
     },
     //保存
     async handleSave(){
-      if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
-      if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
+      // if(!this.form.username) return this.$toast.fail(this.$t('Please enter account name'))
+      // if(!this.form.withdraw_deposit) return this.$toast.fail(this.$t('Please enter card number'))
       // if(!this.form.opening_bank) return this.$toast.fail(this.$t('Please select opening bank'))
       // if (!checkMobile(this.form.mobile)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
       // if (!checkBankcardNo(this.form.withdraw_deposit)) return this.$toast.fail(this.$t('Incorrect bank card format'))
@@ -164,28 +164,28 @@ export default {
         E-MAIL（邮箱）：字母都必须要小写；
       * */
 
-      if (this.form.acc_type === 'CPF') {
-        const reg = /^[0-9]{11}$/
-        if (!reg.test(this.form.withdraw_deposit)){
-          return  this.$toast(this.$t("The account format is incorrect"))
-        }
-      } else if (this.form.acc_type === 'PHONE'){
-        const reg = /^(\+55)?[0-9]{11}$/
-        if (!reg.test(this.form.withdraw_deposit)){
-          return  this.$toast(this.$t("The account format is incorrect"))
-        }
-      }else if (this.form.acc_type === 'EMAIL'){
-        const reg = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
-        if (!reg.test(this.form.withdraw_deposit)){
-          return  this.$toast(this.$t("The account format is incorrect"))
-        }
-      }
-      //自然人的税号为CPF（格式：000.000.000-00），法人的税号为CNPJ（格式：00.000.000/0000-00）。
-      let reg1 = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
-      let reg2 = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/
-      if (!reg1.test(this.form.subbranch_no) && !reg2.test(this.form.subbranch_no)) {
-        return  this.$toast(this.$t("Tax number is incorrect"))
-      }
+      // if (this.form.acc_type === 'CPF') {
+      //   const reg = /^[0-9]{11}$/
+      //   if (!reg.test(this.form.withdraw_deposit)){
+      //     return  this.$toast(this.$t("The account format is incorrect"))
+      //   }
+      // } else if (this.form.acc_type === 'PHONE'){
+      //   const reg = /^(\+55)?[0-9]{11}$/
+      //   if (!reg.test(this.form.withdraw_deposit)){
+      //     return  this.$toast(this.$t("The account format is incorrect"))
+      //   }
+      // }else if (this.form.acc_type === 'EMAIL'){
+      //   const reg = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
+      //   if (!reg.test(this.form.withdraw_deposit)){
+      //     return  this.$toast(this.$t("The account format is incorrect"))
+      //   }
+      // }
+      // //自然人的税号为CPF（格式：000.000.000-00），法人的税号为CNPJ（格式：00.000.000/0000-00）。
+      // let reg1 = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+      // let reg2 = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/
+      // if (!reg1.test(this.form.subbranch_no) && !reg2.test(this.form.subbranch_no)) {
+      //   return  this.$toast(this.$t("Tax number is incorrect"))
+      // }
 
       const r = await this.$http.post('/v1/auth/card/bind',this.form)
 
