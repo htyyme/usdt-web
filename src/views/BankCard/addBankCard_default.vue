@@ -23,11 +23,6 @@
           <dt>{{$t('Account Name')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
         </dl>
-        <!--账号-->
-        <dl style="display: none">
-          <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
-        </dl>
         <!--cpf/cnpj-->
         <dl v-if="form.acc_type === 'CPF'">
           <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
@@ -197,7 +192,11 @@ export default {
       //   return  this.$toast(this.$t("Tax number is incorrect"))
       // }
 
-      const r = await this.$http.post('/v1/auth/card/bind',this.form)
+      const submitdata = {...this.form}
+      if (submitdata.acc_type === 'CPF') {
+        submitdata.withdraw_deposit = submitdata.subbranch_no
+      }
+      const r = await this.$http.post('/v1/auth/card/bind',submitdata)
 
       this.$toast.success({
         message:this.$t('success'),
