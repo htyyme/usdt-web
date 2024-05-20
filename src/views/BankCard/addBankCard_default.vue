@@ -42,7 +42,7 @@
           <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
         </dl>
         <!--cpf/cnpj-->
-        <dl v-if="form.acc_type === 'CPF'">
+        <dl>
           <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
           <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
         </dl>
