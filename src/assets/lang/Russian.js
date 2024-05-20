@@ -715,4 +715,7 @@ export default {
     "Save Image": "Сохранить изображение",
     "The account format is incorrect":"Формат учетной записи неверен",
     "Fund password":"Пароль фонда",
+    "Please enter tax number": "Пожалуйста, введите налоговый номер",
+    "Tax number": "Налоговый номер",
+    "Tax number is incorrect":"Налоговый номер неверен",
 }

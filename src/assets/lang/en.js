@@ -694,6 +694,9 @@ export default {
     "Save Image":"Save Image",
     "The account format is incorrect":"The account format is incorrect",
     "Fund password":"Fund password",
+    "Tax number":"Tax number",
+    "Please enter tax number":"Please enter tax number",
+    "Tax number is incorrect":"Tax number is incorrect",
 
 
 

@@ -680,4 +680,8 @@ export default {
     "Save Image": "Zapisać obraz",
     "The account format is incorrect":"Format konta jest nieprawidłowy",
     "Fund password":"Hasło funduszu",
+    "Please enter tax number": "Proszę podać numer podatkowy",
+    "Tax number": "Numer identyfikacji podatkowej",
+    "Tax number is incorrect":"Numer podatkowy jest nieprawidłowy",
+
 }

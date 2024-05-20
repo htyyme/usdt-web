@@ -689,6 +689,11 @@ export default {
     "Save Image": "Resmi Kaydet",
     "The account format is incorrect":"Hesap biçimi yanlış",
     "Fund password":"Fon şifresi",
+    "Please enter tax number": "Lütfen vergi numarasını girin",
+    "Tax number": "Vergi numarası",
+    "Tax number is incorrect":"Vergi numarası yanlış",
+
+
 
 
 

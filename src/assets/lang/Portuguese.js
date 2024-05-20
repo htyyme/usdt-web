@@ -694,4 +694,7 @@ export default {
     "Save Image": "Salvar imagem",
     "The account format is incorrect":"O formato da conta está incorreto",
     "Fund password":"código de saque",
+    "Please enter tax number": "Por favor insira o número fiscal",
+    "Tax number": "Número de identificação fiscal",
+    "Tax number is incorrect":"O número fiscal está incorreto",
 }

@@ -730,4 +730,7 @@ export default {
     "Save Image": "Guardar imagen",
     "The account format is incorrect":"El formato de la cuenta es incorrecto.",
     "Fund password":"Contraseña del fondo",
+    "Please enter tax number": "Por favor ingrese el número de impuesto",
+    "Tax number": "Número de impuesto",
+    "Tax number is incorrect":"El número de impuesto es incorrecto",
 }

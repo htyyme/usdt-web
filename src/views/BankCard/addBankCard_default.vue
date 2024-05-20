@@ -30,6 +30,11 @@
       </dl>
 
 
+      <!--税号-->
+      <dl>
+        <dt>{{$t('Tax number')}}</dt>
+        <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
+      </dl>
 
       <!--姓-->
       <!--<dl>-->
@@ -75,6 +80,7 @@ export default {
         acc_type:"CPF",//账号类型
         identity_no:"", //身份证
         last_name:"",//姓
+        subbranch_no:""
       },
       countdown: 0,
       timer:null,
@@ -173,6 +179,12 @@ export default {
         if (!reg.test(this.form.withdraw_deposit)){
           return  this.$toast(this.$t("The account format is incorrect"))
         }
+      }
+      //自然人的税号为CPF（格式：000.000.000-00），法人的税号为CNPJ（格式：00.000.000/0000-00）。
+      let reg1 = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+      let reg2 = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/
+      if (!reg1.test(this.form.subbranch_no) && !reg2.test(this.form.subbranch_no)) {
+        return  this.$toast(this.$t("Tax number is incorrect"))
       }
 
       const r = await this.$http.post('/v1/auth/card/bind',this.form)

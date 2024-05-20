@@ -673,4 +673,7 @@ export default {
     "Save Image": "บันทึกภาพ",
     "The account format is incorrect":"รูปแบบบัญชีไม่ถูกต้อง",
     "Fund password":"รหัสผ่านกองทุน",
+    "Please enter tax number": "กรุณากรอกหมายเลขภาษี",
+    "Tax number": "หมายเลขภาษี",
+    "Tax number is incorrect":"หมายเลขภาษีไม่ถูกต้อง",
 }
