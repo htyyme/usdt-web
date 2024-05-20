@@ -11,19 +11,21 @@
     </div>
 
     <div class="box">
-      <div class="typ">
-        <van-image :src="require('@/assets/icon/rechargeusdt.png')"></van-image>
-        <div class="info">
-          <div class="tit">USDT</div>
-          <p>{{usdtChargeInfo}}</p>
-        </div>
-      </div>
+
 
       <div class="typ">
         <van-image :src="require('@/assets/icon/rechargecoin.png')"></van-image>
         <div class="info">
           <div class="tit">Common currency</div>
           <p>{{coinChargeInfo}}</p>
+        </div>
+      </div>
+
+      <div class="typ">
+        <van-image :src="require('@/assets/icon/rechargeusdt.png')"></van-image>
+        <div class="info">
+          <div class="tit">USDT</div>
+          <p>{{usdtChargeInfo}}</p>
         </div>
       </div>
 
