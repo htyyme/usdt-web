@@ -197,12 +197,12 @@ export default {
           if (!reg.test(this.form.withdraw_deposit)){
             return  this.$toast(this.$t("The account format is incorrect"))
           }
-      } else if (this.form.acc_type === 'CPF') {
+      }
         let reg = /^\d{11}$/
         if (!reg.test(this.form.subbranch_no)){
           return  this.$toast(this.$t("Tax number is incorrect"))
         }
-      }
+
 
       const submitdata = {...this.form}
       if (submitdata.acc_type === 'CPF') {
