@@ -24,9 +24,9 @@
           <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
         </dl>
         <!--cpf/cnpj-->
-        <dl v-if="form.acc_type === 'CPF'">
+        <dl>
           <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''"></dd>
         </dl>
       </template>
 
@@ -44,7 +44,7 @@
         <!--cpf/cnpj-->
         <dl>
           <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''"></dd>
         </dl>
       </template>
 
