@@ -192,6 +192,18 @@ export default {
       //   return  this.$toast(this.$t("Tax number is incorrect"))
       // }
 
+      if (this.form.acc_type === 'EMAIL'){
+          const reg = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
+          if (!reg.test(this.form.withdraw_deposit)){
+            return  this.$toast(this.$t("The account format is incorrect"))
+          }
+      } else if (this.form.acc_type === 'CPF') {
+        let reg = /^\d{11}$/
+        if (!reg.test(this.form.subbranch_no)){
+          return  this.$toast(this.$t("Tax number is incorrect"))
+        }
+      }
+
       const submitdata = {...this.form}
       if (submitdata.acc_type === 'CPF') {
         submitdata.withdraw_deposit = submitdata.subbranch_no
