@@ -1,4 +1,4 @@
-//是否为APP
+//是否为APP 这个是支付接口 要传是否为web
 const IS_APP = false
 const IS_GOOGLE = false
 
