@@ -3,7 +3,7 @@
     <div class="invite">
       <div id="qrcode"></div>
 
-      <div class="line"></div>
+      <!--<div class="line"></div>-->
 
       <div class="info">
         <div class="tit">{{$t('invitationCode')}}</div>
@@ -86,8 +86,8 @@ export default {
     generateQrcode() {
       console.log(new QRCode(document.getElementById("qrcode"), {
         text: this.link,
-        width: 150,
-        height: 150,
+        width: 180,
+        height: 180,
       }))
     },
     saveImage(){
@@ -117,41 +117,23 @@ export default {
 <style scoped lang="scss">
 @import "src/assets/css/vars.scss";
 .invite{
-  height: 622px;
-  background: url(~assets/img/invitebg.jpg) no-repeat;
+  background: url(~assets/img/img.png) no-repeat;
   background-position: top center;
   background-size: 100vw;
   position: relative;
   #qrcode{
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     //border: 1px solid red;
-    top: 190px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .line{
-    width: 273px;
-    height: 1px;
-    background-color: #707070;
-    opacity: 0.3;
-    position: absolute;
-    top: 379px;
+    top: 210px;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .info{
-    position: absolute;
-    //border: 1px solid red;
-    width: 316px;
-    height: 195px;
-    bottom: 29px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 0 0  27px;
+    padding: 520px 0 25px 27px;
+
     .tit{
       font-size: 14px;
       font-weight: bold;
