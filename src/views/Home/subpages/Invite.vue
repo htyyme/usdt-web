@@ -92,7 +92,10 @@ export default {
     },
     saveImage(){
       html2canvas(document.querySelector('.bg')).then(canvas=>{
-        var url = canvas.toDataURL()
+        var url = canvas.toDataURL("image/webp", 0.5)
+
+        console.log(url.length / 1024 + "k")
+
         var xiazai = document.querySelector('#xiazai')
         xiazai.setAttribute('href',url)
         xiazai.click()
