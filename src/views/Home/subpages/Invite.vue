@@ -86,8 +86,8 @@ export default {
     generateQrcode() {
       console.log(new QRCode(document.getElementById("qrcode"), {
         text: this.link,
-        width: 180,
-        height: 180,
+        width: 190,
+        height: 190,
       }))
     },
     saveImage(){
@@ -129,11 +129,11 @@ export default {
     position: relative;
     #qrcode{
       position: absolute;
-      width: 180px;
-      height: 180px;
+      width: 190px;
+      height: 190px;
       //border: 1px solid red;
       top: 210px;
-      left: 50%;
+      left: 51%;
       transform: translateX(-50%);
 
     }
