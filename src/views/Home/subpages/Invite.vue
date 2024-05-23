@@ -120,7 +120,7 @@ export default {
   .bg{
     width: 100%;
     height: 500px;
-    background: url(~assets/img/img.png) no-repeat;
+    background: url(~assets/img/img.jpg) no-repeat;
     background-position: top center;
     background-size: 100vw;
     position: relative;
