@@ -1,9 +1,9 @@
 <template>
   <div >
     <div class="invite">
-      <div id="qrcode"></div>
-
-      <!--<div class="line"></div>-->
+      <div class="bg">
+        <div id="qrcode"></div>
+      </div>
 
       <div class="info">
         <div class="tit">{{$t('invitationCode')}}</div>
@@ -91,7 +91,7 @@ export default {
       }))
     },
     saveImage(){
-      html2canvas(document.querySelector('.invite')).then(canvas=>{
+      html2canvas(document.querySelector('.bg')).then(canvas=>{
         var url = canvas.toDataURL()
         var xiazai = document.querySelector('#xiazai')
         xiazai.setAttribute('href',url)
@@ -117,22 +117,28 @@ export default {
 <style scoped lang="scss">
 @import "src/assets/css/vars.scss";
 .invite{
-  background: url(~assets/img/img.png) no-repeat;
-  background-position: top center;
-  background-size: 100vw;
-  position: relative;
-  #qrcode{
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    //border: 1px solid red;
-    top: 210px;
-    left: 50%;
-    transform: translateX(-50%);
+  .bg{
+    width: 100%;
+    height: 500px;
+    background: url(~assets/img/img.png) no-repeat;
+    background-position: top center;
+    background-size: 100vw;
+    position: relative;
+    #qrcode{
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      //border: 1px solid red;
+      top: 210px;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
   }
 
+
   .info{
-    padding: 520px 0 25px 27px;
+    padding: 10px 0 25px 27px;
 
     .tit{
       font-size: 14px;
