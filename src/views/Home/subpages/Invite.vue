@@ -92,7 +92,7 @@ export default {
     },
     saveImage(){
       html2canvas(document.querySelector('.bg')).then(canvas=>{
-        var url = canvas.toDataURL("image/webp", 0.5)
+        var url = canvas.toDataURL("image/jpeg", 0.5)
 
         console.log(url.length / 1024 + "k")
 
