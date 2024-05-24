@@ -138,6 +138,7 @@ export default {
       const submitdata = {}
       submitdata.money = Number(formData.amount)
       submitdata.password = formData.password
+      submitdata.verification_code = formData.verification_code
       if (this.cointype === 'usdt'){
         submitdata.bank_id = 0
         submitdata.coin_type = 2
