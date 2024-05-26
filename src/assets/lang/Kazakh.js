@@ -396,6 +396,7 @@ export default {
     'Register': 'Tіркеу',
     'Please enter mobile number': 'ұялы телефон нөмірін енгізіңіз',
     'Password length must be at least 6 characters': 'Парольдің ұзындығы кемінде 6 таңбадан тұруы керек',
+    'Password length must be at least 5 characters': 'Парольдің ұзындығы кемінде 5 таңбадан тұруы керек',
     'Nickname': 'лақап аты',
     'Real Name': 'Шын аты',
     'Login Password': 'Кіру паролі',

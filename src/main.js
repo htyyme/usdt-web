@@ -19,6 +19,7 @@ import '@/assets/css/base.css'
 import '@/assets/css/common.scss'
 import '@/utils/vant'
 import '@/utils/commonCpns'
+import '@/components/jconfirm2/install'
 import service from "@/utils/request"
 import * as tools from '@/utils/tools'
 import * as filters from '@/utils/filters'
@@ -52,6 +53,9 @@ Vue.prototype.$tools = tools
 Vue.prototype.$http = service
 import {payNotify} from "@/utils/pay";
 window.payNotify = payNotify
+
+import noMoreClick from "@/directive/noMoreClick";
+noMoreClick(Vue)
 
 //插件
 import jconfirm from "@/components/jconfirm/jconfirm";

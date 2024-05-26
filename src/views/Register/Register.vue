@@ -131,7 +131,7 @@ export default {
     async doRegister(){
       if (!checkMobile(this.registerForm.username)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
 
-      if (this.registerForm.password.length<6) return this.$toast.fail(this.$t('Password length must be at least 6 characters'))
+      if (this.registerForm.password.length<5) return this.$toast.fail(this.$t('Password length must be at least 5 characters'))
       if (this.registerForm.password !== this.registerForm.repeatPassword)  return this.$toast.fail(this.$t('The two passwords are inconsistent'))
 
       let appId = '1000001';

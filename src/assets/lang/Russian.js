@@ -396,7 +396,7 @@ export default {
     'Login Now': 'Войдите сейчас',
     'Register': 'Регистрация',
     'Please enter mobile number': 'Введите номер мобильного телефона',
-    'Password length must be at least 6 characters': 'Длина пароля должна составлять не менее 6 символов',
+    'Password length must be at least 5 characters': 'Длина пароля должна составлять не менее 5 символов',
     'Nickname': 'Никнейм',
     'Real Name': 'Настоящее имя',
     'Login Password': 'Пароль доступа',

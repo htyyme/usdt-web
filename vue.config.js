@@ -13,8 +13,8 @@ module.exports = {
         port: 3000,
         proxy: {
             '/v1': {
-                // target: 'http://127.0.0.1:4000',
-                target: 'https://cloudcelular.com',
+                target: 'http://127.0.0.1:4000',
+                // target: 'https://cloudcelular.com',
                 // target: 'http://usdt-power.6666.ml',
                 changeOrigin: true,
             },

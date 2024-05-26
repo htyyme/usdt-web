@@ -89,7 +89,7 @@ export default {
      */
     async onSubmit(values) {
       if (!this.ori_password) return this.$toast.fail(this.$t('Please enter the original password'))
-      if (this.password.length < 6) return this.$toast.fail(this.$t('Password length is at least 6 characters'))
+      if (this.password.length < 5) return this.$toast.fail(this.$t('Password length must be at least 5 characters'))
       if (this.password !== this.confirmPassword) return this.$toast.fail(this.$t('The two passwords are inconsistent'))
       const formData = {
         ori_password: this.ori_password,

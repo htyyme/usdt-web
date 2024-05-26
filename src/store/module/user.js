@@ -46,5 +46,6 @@ export default {
         userInfo: state => state.userInfo,
         usdtAccount: state => state.usdtAccount,
         coinAccount: state => state.coinAccount,
+        islogin: state => !!state.token,
     }
 }

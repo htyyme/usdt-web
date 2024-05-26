@@ -1,0 +1,20 @@
+/*
+文字流光效果
+*/
+@keyframes huerotate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*
+边框流动
+*/
+@keyframes border_huerotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rorate(360deg);
+  }
+}

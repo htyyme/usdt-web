@@ -11,6 +11,9 @@ import avatarUploader from "@/components/avatarUploader/avatarUploader";
 import announce from "@/components/announce/announce";
 import backTop from "@/components/backTop/backTop";
 import floatBall from "@/components/floatBall/floatBall";
+import JEmpty from "@/components/JEmpty/JEmpty.vue";
+import JForm from "@/components/JForm/JForm.vue";
+import JFormItem from "@/components/JForm/JFormItem.vue";
 
 
 Vue.component('field',field)
@@ -22,3 +25,6 @@ Vue.component('avatarUploader',avatarUploader)
 Vue.component('announce',announce)
 Vue.component('backTop',backTop)
 Vue.component('floatBall',floatBall)
+Vue.component('JEmpty',JEmpty)
+Vue.component('JForm',JForm)
+Vue.component('JFormItem',JFormItem)

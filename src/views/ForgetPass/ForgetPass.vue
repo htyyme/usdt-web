@@ -128,7 +128,7 @@ export default {
      */
     async onSubmit() {
       if (!checkMobile(this.phone)) return this.$toast.fail(this.$t('Phone number format is incorrect'))
-      if (this.password.length < 6) return this.$toast.fail(this.$t('Password length is at least 6 characters'))
+      if (this.password.length < 5) return this.$toast.fail(this.$t('Password length must be at least 5 characters'))
       if (this.password !== this.confirmPassword) return this.$toast.fail(this.$t('The two passwords are inconsistent'))
       if (this.verify_code.length === 0) return this.$toast.fail(this.$t('Please enter sms code'))
       const formData = {

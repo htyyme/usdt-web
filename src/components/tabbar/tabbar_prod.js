@@ -18,6 +18,13 @@ const tabbarList =  [
         url: '/Order'
     },
 
+    {
+        name: 'Lottery',
+        title: getLangField('Lottery'),
+        icon: require('@/assets/tabbar/transhall.png'),
+        activeIcon: require('@/assets/tabbar/transhall-active.png'),
+        url: '/Lottery'
+    },
 
     // {
     //     name: 'Usdt',

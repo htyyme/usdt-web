@@ -90,6 +90,15 @@ const routes = [
         }
     },
     {
+        path:"/Lottery",
+        name:'Lottery',
+        component:()=>import('@/views/lottery/lottery.vue'),
+        meta:{
+            title:"Lottery",
+            showTabbar:true
+        }
+    },
+    {
         path:"/Usdt",
         name:'Usdt',
         component:()=>import('@/views/Usdt/Usdt'),
@@ -461,7 +470,15 @@ const routes = [
         meta:{
             title:'Red Envelope'
         }
-    }
+    },
+    {
+        name: 'address',
+        path: '/address',
+        component: () => import('@/views/address/address'),
+        meta: {
+            title:'Address'
+        }
+    },
 ]
 
 const router = new VueRouter({
@@ -487,7 +504,7 @@ function setTitle(route) {
 
 //保存tabbar
 function setTabbar(route) {
-    const names = ['Home','Order','Team','Me','Usdt',"Mall",'MallSearch']
+    const names = ['Home','Order','Team','Me','Usdt',"Mall",'MallSearch',"Lottery"]
     // console.log('-------',route)
 
     if (route.matched[0] && names.indexOf(route.matched[0].name) !== -1) {

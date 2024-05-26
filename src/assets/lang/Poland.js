@@ -367,6 +367,7 @@ export default {
     'Register': "Rejestr",
     'Please enter mobile number': "Proszę podać numer telefonu komórkowego",
     'Password length must be at least 6 characters': "Długość hasła musi wynosić co najmniej sześć znaków",
+    'Password length must be at least 5 characters': "Długość hasła musi wynosić co najmniej sześć znaków",
     'Nickname': "pseudonim",
     'Real Name': "Prawdziwe imię",
     'Login Password': "Hasło logowania",
