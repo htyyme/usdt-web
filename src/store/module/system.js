@@ -11,7 +11,8 @@ export default {
         banners1:[],
         gcointype:'coin',
         banklist:[],
-        billDictionaries:{}
+        billDictionaries:{},
+        showLucky:false
     },
     mutations: {
         setLocale(state, payload) {
@@ -40,6 +41,9 @@ export default {
         },
         setBillDictionaries(state,payload){
             state.billDictionaries = payload
+        },
+        setShowLucky(state,payload){
+            state.showLucky = payload
         }
     },
     actions: {
@@ -105,6 +109,15 @@ export default {
                 obj[String(el.id)] = el
             })
             commit('setBillDictionaries',obj)
+        },
+
+        async loadShowLucky({commit, state}, payload){
+           const res =  await request.post("/v1/lucky/turntable/list")
+            if(res.data && res.data.length > 0 && res.data[0].state === 1) {
+                commit("setShowLucky" , true )
+            } else {
+                commit("setShowLucky" , false )
+            }
         }
     },
     getters: {
@@ -117,6 +130,7 @@ export default {
         gcointype: state => state.gcointype,
         banklist: state => state.banklist,
         billDictionaries: state => state.billDictionaries,
+        showLucky: state => state.showLucky,
 
     },
 }

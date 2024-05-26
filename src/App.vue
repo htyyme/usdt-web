@@ -32,7 +32,9 @@ export default {
     }
   },
   async mounted() {
-    await this.$store.dispatch('system/loadConfig')
+    // await this.$store.dispatch('system/loadShowLucky')
+
+
     //根据版本信息 判断是否需要更新App
     await this.updateApp()
 

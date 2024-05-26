@@ -1,8 +1,8 @@
 import {getLangField} from "@/utils/tools";
 import config from "../../config.js";
+import store from "@/store";
 
-
-const tabbarList =  [
+const tabbarList = [
     {
         name: 'Home',
         title: getLangField('tabBarHome'),
@@ -18,13 +18,6 @@ const tabbarList =  [
         url: '/Order'
     },
 
-    {
-        name: 'Lottery',
-        title: getLangField('Lottery'),
-        icon: require('@/assets/tabbar/transhall.png'),
-        activeIcon: require('@/assets/tabbar/transhall-active.png'),
-        url: '/Lottery'
-    },
 
     // {
     //     name: 'Usdt',
@@ -59,8 +52,24 @@ const exchangeTabbar = {
     url: '/Usdt'
 }
 
-if (config.openExchange){
-    tabbarList.splice(2,0,exchangeTabbar)
+if (config.openExchange) {
+    tabbarList.splice(2, 0, exchangeTabbar)
 }
+
+const luckyTabbar = {
+    name: 'Lottery',
+    title: getLangField('Lottery'),
+    icon: require('@/assets/tabbar/transhall.png'),
+    activeIcon: require('@/assets/tabbar/transhall-active.png'),
+    url: '/Lottery'
+}
+
+store.dispatch('system/loadShowLucky').then((res)=>{
+    console.log(res)
+    if (store.getters['system/showLucky']) {
+        tabbarList.splice(2, 0,luckyTabbar)
+    }
+})
+
 
 export default tabbarList
