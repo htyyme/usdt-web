@@ -706,7 +706,7 @@ export default {
     "Load more": "Carregue mais",
     "Lottery name": "Nome da loteria",
     "Lottery order number": "Número do pedido de loteria",
-    "Lottery records": "Registros de loteria",
+    "Lottery records": "Recorde premiado",
     "Mail pictures": "Enviar fotos",
     "Mailing number": "Número de correspondência",
     "No": "Não",
