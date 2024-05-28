@@ -427,7 +427,7 @@ export default {
     'Bank Accounts': 'Contas bancárias',
     'Modify': 'Modificar',
     'Choose bank card': 'Escolha cartão bancário',
-    'You should bind the bank card first': 'Você deve vincular o cartão do banco primeiro',
+    'You should bind the bank card first': 'Vincular CPF ou seu PIX',
     'Withdrawal Time': 'Tempo de retirada',
     'Withdrawal amount': 'Quantidade retirada',
     'Enter the withdrawal amount': 'Insira o valor da retirada',
