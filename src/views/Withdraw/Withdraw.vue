@@ -6,11 +6,14 @@
     <record />
     <withdrawForm ref="withdrawFormRef"/>
 
+    <van-button  block  class="withdraw-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Withdraw')}}</van-button>
+
+
     <!--<van-notice-bar scrollable :text="$t('handlefeetip',{num:fee})" color="#CF182C" background="#e5e5e5"/>-->
     <!--<bankCardInfo :bankcardinfo="bankcardinfo" :cointype="cointype" :e_wallet_key="e_wallet_key"/>-->
     <pageFooter />
 
-    <van-button  block  class="withdraw-btn" :loading="$store.getters['system/gloading']" @click="handleSubmit">{{$t('Withdraw')}}</van-button>
+
   </div>
 </template>
 
