@@ -10,8 +10,8 @@
         <dd style="padding-left: 15px;">
           <van-radio-group v-model="form.acc_type"  checked-color="#FF3364">
             <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>
-            <van-radio style="margin: 7px;" name="PHONE">PHONE</van-radio>
-            <van-radio style="margin: 7px;" name="EMAIL">EMAIL</van-radio>
+            <van-radio style="margin: 7px;" name="PHONE">número de telefone celular</van-radio>
+            <van-radio style="margin: 7px;" name="EMAIL">E-mail</van-radio>
             <!--<van-radio style="margin: 7px;" name="CHAVE">CHAVE</van-radio>-->
           </van-radio-group>
         </dd>
