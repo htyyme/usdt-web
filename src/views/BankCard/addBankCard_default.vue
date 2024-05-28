@@ -42,7 +42,10 @@
         </dl>
         <!--账号-->
         <dl>
-          <dt>{{form.acc_type === 'CHAVE' ? $t('Pix secret') : $t('Account Number')}}</dt>
+          <dt v-if="form.acc_type === 'CHAVE'">{{$t('Pix secret')}}</dt>
+          <dt v-if="form.acc_type === 'PHONE'">{{$t('Account Number')}}</dt>
+          <dt v-if="form.acc_type === 'EMAIL'">E-mall</dt>
+
           <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
         </dl>
         <!--cpf/cnpj-->
