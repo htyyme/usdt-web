@@ -25,9 +25,13 @@
         </dl>
         <!--cpf/cnpj-->
         <dl>
-          <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
+          <dt>{{$t('Tax number')}}</dt>
+          <p class="dt-notice">
+            Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.
+          </p>
           <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''"></dd>
         </dl>
+
       </template>
 
       <template v-else>
@@ -43,7 +47,10 @@
         </dl>
         <!--cpf/cnpj-->
         <dl>
-          <dt STYLE="text-transform: uppercase">{{$t('Tax number')}}</dt>
+          <dt>{{$t('Tax number')}}</dt>
+          <p class="dt-notice">
+            Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.
+          </p>
           <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''"></dd>
         </dl>
       </template>
@@ -242,6 +249,11 @@ export default {
       dt{
         font-size: 18px;
         color:  $shallowMainColor;
+      }
+      .dt-notice{
+        font-size: 12px;
+        color:  $shallowMainColor;
+        padding: 5px 0;
       }
       dd{
         width: 310px;
