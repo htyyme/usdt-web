@@ -25,7 +25,7 @@ export default {
   },
 
   mounted() {
-
+    this.$store.dispatch('user/loadUserInfo')
   }
 }
 </script>
