@@ -2,6 +2,7 @@
 const IS_APP = false
 const IS_GOOGLE = false
 
+
 export default {
     env: 'prod',//dev/prod
     isApp: IS_APP,
