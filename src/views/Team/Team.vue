@@ -9,21 +9,22 @@
       <section>
         <div class="num">{{size}}</div>
         <div class="dt tsdt">
-          <van-icon :name="require('@/assets/icon/teamsize.png')" size="20" class="tsicon"></van-icon>
+          <!--<van-icon :name="require('@/assets/icon/teamsize.png')" size="20" class="tsicon"></van-icon>-->
           <span class="ts">{{$t('size')}}</span>
         </div>
       </section>
+
       <section>
         <div class="num">{{usdtpromote | moneyFormat(5,'usdt')}}</div>
         <div class="dt">
-          <van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>
+          <!--<van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>-->
           <span>{{$t('rebate')}}(U)</span>
         </div>
       </section>
       <section>
         <div class="num">{{coinpremote  | moneyFormat(2,'coin')}}</div>
         <div class="dt">
-          <van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>
+          <!--<van-icon :name="require('@/assets/icon/withdraw.png')" size="20"></van-icon>-->
           <span>{{$t('rebate')}}({{$t('coin')}})</span>
         </div>
       </section>
@@ -137,14 +138,18 @@ export default {
   }
 
   .counter{
-    width: 306px;
-    height: 96px;
+    width: 330px;
+    padding-bottom: 20px;
     background: #FFFFFF;
     border-radius: 13px;
     margin: -65px auto 0;
     display: flex;
     section{
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       .num{
         text-align: center;
         color: $mainColor;
@@ -161,23 +166,14 @@ export default {
         align-items: center;
         justify-content: center;
         text-transform: capitalize;
-        //&.tsdt{
-        //  position: relative;
-        //  top: 5px;
-        //}
+
         .tsicon{
           position: relative;
           right: -7px;
         }
-        .ts{
-          //font-size: 18px;
-        }
         .van-icon{
           padding-right: 3px;
 
-        }
-        span{
-          width: 50%;
         }
       }
     }
