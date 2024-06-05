@@ -718,4 +718,9 @@ export default {
     "Please enter tax number": "Пожалуйста, введите налоговый номер",
     "Tax number": "Налоговый номер",
     "Tax number is incorrect":"Налоговый номер неверен",
+    "Confirm withdrawal": "Подтвердить вывод",
+    "Please enter the withdrawal amount": "Пожалуйста, введите сумму вывода",
+    "Please set the withdrawal password first": "Пожалуйста, сначала установите пароль для вывода средств",
+    "The mobile phone number can only be 11 digits.": "Номер мобильного телефона может состоять только из 11 цифр.",
+
 }

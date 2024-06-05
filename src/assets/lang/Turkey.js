@@ -723,6 +723,11 @@ export default {
     "To be delivered": "Teslim edilecek",
     "We will mail it to your delivery address as soon as possible": "En kısa sürede teslimat adresinize göndereceğiz",
     "Yes": "Evet",
+    "Confirm withdrawal": "Para çekme işlemini onaylayın",
+    "Please enter the withdrawal amount": "Lütfen çekim tutarını giriniz",
+    "Please set the withdrawal password first": "Lütfen önce para çekme şifresini belirleyin",
+    "The mobile phone number can only be 11 digits.": "Cep telefonu numarası yalnızca 11 haneli olabilir.",
+
 
 
 

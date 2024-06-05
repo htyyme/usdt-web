@@ -14,6 +14,7 @@
     <pageFooter />
 
 
+    <ConfirmPopup ref="ConfirmPopupRef"/>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import record from "./cpns/record";
 import withdrawForm from "./cpns/withdrawForm";
 import bankCardInfo from "./cpns/bankCardInfo";
 import pageFooter from "./cpns/pageFooter";
+import ConfirmPopup from "@/views/Withdraw/cpns/confirmPopup.vue";
 export default {
   name: "Withdraw",
   components:{
@@ -30,7 +32,8 @@ export default {
     record,
     withdrawForm,
     bankCardInfo,
-    pageFooter
+    pageFooter,
+    ConfirmPopup
   },
   data(){
     return {
@@ -134,13 +137,32 @@ export default {
     //提交提现
     async handleSubmit(){
       const formData = this.$refs.withdrawFormRef.form
-      if (!formData.amount || !formData.password){
+      if (!formData.amount){
+        return this.$toast(this.$t('Please enter the withdrawal amount'))
+      }
+
+      // 判断是否设置提现密码
+      await this.$store.dispatch('user/loadUserInfo')
+      if (!this.$store.getters['user/userInfo'].withdwraw_password){
+        const confirmres = await this.$dialog.confirm({
+          message:this.$t('Please set the withdrawal password first'),
+          cancelButtonText:this.$t('Cancel'),
+          confirmButtonText:this.$t('Confirm'),
+        }).catch(err => err)
+        if (confirmres !== "confirm"){
+          return
+        } else {
+          this.$router.push("/PaymentPassword")
+        }
         return
       }
 
-      const submitdata = {}
+      //打开确认提交的弹窗
+      this.$refs.ConfirmPopupRef.handleOpen(formData.amount,formData.verification_code,this.bankcardinfo.id)
+
+     /* const submitdata = {}
       submitdata.money = Number(formData.amount)
-      submitdata.password = formData.password
+      // submitdata.password = formData.password
       submitdata.verification_code = formData.verification_code
       if (this.cointype === 'usdt'){
         submitdata.bank_id = 0
@@ -150,22 +172,6 @@ export default {
         submitdata.coin_type = 1
       }
 
-      //如果是usdt提现 判断是否绑定了绑定账户信息
-      // let userinfo = this.$store.getters['user/userInfo']
-      // let trx_account = userinfo.trx_account
-      // if (this.cointype === 'usdt' && !trx_account){
-      //   const confirmres = await this.$dialog.confirm({
-      //     message: this.$t('You must fill in the usdt account first')
-      //   }).catch(err=>err)
-      //   if (confirmres !== 'confirm'){
-      //     return
-      //   }else{
-      //     this.$router.push({
-      //       name:'TrxAccount'
-      //     })
-      //     return
-      //   }
-      // }
 
       let url = '/v1/auth/user/withdraw'
       if (this.$route.query.order_type == 4){
@@ -185,7 +191,7 @@ export default {
         this.$toast({
           message: resp.message,
         })
-      }
+      }*/
 
 
 

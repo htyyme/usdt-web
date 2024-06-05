@@ -763,6 +763,11 @@ export default {
     "To be delivered": "Para ser entregado",
     "We will mail it to your delivery address as soon as possible": "Se lo enviaremos a su dirección de entrega lo antes posible.",
     "Yes": "Sí",
+    "Confirm withdrawal": "Confirmar retiro",
+    "Please enter the withdrawal amount": "Por favor ingrese el monto del retiro",
+    "Please set the withdrawal password first": "Primero establezca la contraseña de retiro",
+    "The mobile phone number can only be 11 digits.": "El número de teléfono móvil sólo puede tener 11 dígitos.",
+
 
 
 }

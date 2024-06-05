@@ -13,10 +13,10 @@
     </div>
 
 
-    <div class="card-val">
-      <input type="password" :placeholder="$t('Enter the fund password')" v-model="form.password" autocomplete="off"/>
-      <van-button color="#FF3364" round size="normal" :to="{name:'PaymentPassword'}" >{{$t('Fund password')}}</van-button>
-    </div>
+    <!--<div class="card-val">-->
+    <!--  <input type="password" :placeholder="$t('Enter the fund password')" v-model="form.password" autocomplete="off"/>-->
+    <!--  <van-button color="#FF3364" round size="normal" :to="{name:'PaymentPassword'}" >{{$t('Fund password')}}</van-button>-->
+    <!--</div>-->
 
   </section>
 </template>

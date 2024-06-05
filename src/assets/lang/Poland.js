@@ -684,5 +684,11 @@ export default {
     "Please enter tax number": "Proszę podać numer podatkowy",
     "Tax number": "Numer identyfikacji podatkowej",
     "Tax number is incorrect":"Numer podatkowy jest nieprawidłowy",
+    "Confirm withdrawal": "Potwierdź wypłatę",
+    "Please enter the withdrawal amount": "Proszę wpisać kwotę wypłaty",
+    "Please set the withdrawal password first": "Najpierw ustaw hasło do wypłaty",
+    "The mobile phone number can only be 11 digits.": "Numer telefonu komórkowego może składać się tylko z 11 cyfr.",
+
+
 
 }

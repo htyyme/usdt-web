@@ -208,6 +208,15 @@ export default {
             return  this.$toast(this.$t("The account format is incorrect"))
           }
       }
+
+      if (this.form.acc_type === 'PHONE') {
+        const reg = /^(\+55)?[0-9]{11}$/
+        if (!reg.test(this.form.withdraw_deposit)) {
+          return this.$toast(this.$t("The mobile phone number can only be 11 digits."))
+        }
+      }
+
+
         let reg = /^\d{11}$/
         if (!reg.test(this.form.subbranch_no)){
           return  this.$toast(this.$t("Tax number is incorrect"))

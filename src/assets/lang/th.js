@@ -706,6 +706,11 @@ export default {
     "To be delivered": "ที่จะส่งมอบ",
     "We will mail it to your delivery address as soon as possible": "เราจะส่งทางไปรษณีย์ไปยังที่อยู่จัดส่งของคุณโดยเร็วที่สุด",
     "Yes": "ใช่",
+    "Confirm withdrawal": "ยืนยันการถอนเงิน",
+    "Please enter the withdrawal amount": "กรุณากรอกจำนวนเงินที่ถอน",
+    "Please set the withdrawal password first": "กรุณาตั้งรหัสผ่านการถอนเงินก่อน",
+    "The mobile phone number can only be 11 digits.": "หมายเลขโทรศัพท์มือถือสามารถมีได้เพียง 11 หลักเท่านั้น",
+
 
 
 }

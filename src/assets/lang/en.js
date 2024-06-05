@@ -730,6 +730,11 @@ export default {
     "Points remaining":"Points remaining",
 
 
+    "Confirm withdrawal":"Confirm withdrawal",
+    "Please set the withdrawal password first":"Please set the withdrawal password first",
+    "Please enter the withdrawal amount":"Please enter the withdrawal amount",
+    "The mobile phone number can only be 11 digits.":"The mobile phone number can only be 11 digits.",
+
 
 
 }

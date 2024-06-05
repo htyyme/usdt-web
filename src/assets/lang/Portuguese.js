@@ -727,6 +727,12 @@ export default {
     "To be delivered": "A ser entregue",
     "We will mail it to your delivery address as soon as possible": "Enviaremos para seu endereço de entrega o mais rápido possível",
     "Yes": "Sim",
+    "Confirm withdrawal": "Confirmar retirada",
+    "Please enter the withdrawal amount": "Por favor insira o valor do saque",
+    "Please set the withdrawal password first": "Por favor, defina a senha de retirada primeiro",
+    "The mobile phone number can only be 11 digits.": "O número do celular pode ter apenas 11 dígitos.",
+
+
 
 
 }
