@@ -154,7 +154,7 @@ export default {
       margin-top: 13px;
       .de{
         color: #fff;
-        width: 160px;
+        width: 185px;
         height: 29px;
         background: $shallowMainColor;
         border-radius: 7px;
@@ -167,7 +167,7 @@ export default {
         font-size: 12px;
       }
       .van-button{
-        width: 57px;
+        min-width: 57px;
         height: 29px;
         background: #FFC543;
         border-radius: 6px;
@@ -185,7 +185,7 @@ export default {
   padding-bottom: 30px;
   .save-image{
     border-radius: 10px;
-    height: 30px;
+    height: 35px;
     width: 90%;
     margin: 15px auto 0px;
 
