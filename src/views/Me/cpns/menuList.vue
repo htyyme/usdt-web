@@ -1,11 +1,11 @@
 <template>
   <div class="menuList">
     <ul>
-      <li @click="showExchange" >
-        <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>
-        <span>{{$t('Exchange')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
+      <!--<li @click="showExchange" >-->
+      <!--  <van-icon :name="require('@/assets/icon/exchange.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('Exchange')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
 
 
 <!--      注释掉USDT对换TRX-->
@@ -39,11 +39,11 @@
         <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
       </li>
 
-      <li @click="toTaxaccountPage" v-if="three_service_address.length>0">
-        <van-icon :name="require('@/assets/icon/trx.png')" size="40"></van-icon>
-        <span>{{$t('USDT Wallet Account')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
+      <!--<li @click="toTaxaccountPage" v-if="three_service_address.length>0">-->
+      <!--  <van-icon :name="require('@/assets/icon/trx.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('USDT Wallet Account')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
 
       <li @click="toWithdrawRecordPage" v-if="three_service_address.length>0">
         <van-icon :name="require('@/assets/icon/withdrawrecord.png')" size="40"></van-icon>

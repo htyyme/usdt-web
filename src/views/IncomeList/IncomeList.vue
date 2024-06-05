@@ -2,16 +2,19 @@
   <div>
     <navbar :title="$t('Income List')"></navbar>
 
-    <van-tabs v-model="activeName" sticky animated line-width="100px" color=" #F8868C">
-      <van-tab title="USDT" name="USDT">
-        <usdt_incomelist />
-      </van-tab>
+    <!--<van-tabs v-model="activeName" sticky animated line-width="100px" color=" #F8868C">-->
+    <!--  <van-tab title="USDT" name="USDT">-->
+    <!--    <usdt_incomelist />-->
+    <!--  </van-tab>-->
 
-      <van-tab title="CURRENCY" name="CURRENCY">
-        <coin_incomelist />
-      </van-tab>
+    <!--  <van-tab title="CURRENCY" name="CURRENCY">-->
+    <!--    <coin_incomelist />-->
+    <!--  </van-tab>-->
 
-    </van-tabs>
+    <!--</van-tabs>-->
+
+
+    <coin_incomelist />
   </div>
 </template>
 

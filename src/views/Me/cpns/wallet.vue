@@ -1,11 +1,11 @@
 <template>
   <div class="wallet">
 
-    <router-link :to="{name:'RechargeType'}">
+    <router-link to="/Recharge?cointype=coin">
       <van-icon :name="require('@/assets/icon/recharge.png')" size="26"></van-icon>
       <span>{{$t('recharge')}}</span>
     </router-link>
-    <router-link :to="{name:'WithdrawType'}">
+    <router-link to="/Withdraw?cointype=coin">
       <van-icon :name="require('@/assets/icon/withdraw.png')" size="26"></van-icon>
       <span>{{$t('withdraw')}}</span>
     </router-link>

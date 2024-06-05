@@ -2,17 +2,19 @@
   <div class="RebateRecord">
     <navbar :title="$t('Rebate Record')"></navbar>
 
-    <van-tabs v-model="activeName" line-width="100px" color=" #F8868C">
-      <van-tab title="USDT" name="USDT">
-        <usdt_rebaterecord />
-      </van-tab>
+    <!--<van-tabs v-model="activeName" line-width="100px" color=" #F8868C">-->
+    <!--  <van-tab title="USDT" name="USDT">-->
+    <!--    <usdt_rebaterecord />-->
+    <!--  </van-tab>-->
 
-      <van-tab title="CURRENCY" name="CURRENCY">
-        <coin_rebaterecord />
-      </van-tab>
+    <!--  <van-tab title="CURRENCY" name="CURRENCY">-->
+    <!--    <coin_rebaterecord />-->
+    <!--  </van-tab>-->
 
-    </van-tabs>
+    <!--</van-tabs>-->
 
+
+    <coin_rebaterecord />
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default {
   },
   data(){
     return {
-      activeName:'USDT'
+      activeName:'CURRENCY'
     }
   }
 }

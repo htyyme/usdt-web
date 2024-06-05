@@ -16,11 +16,11 @@
     </div>
 
     <div class="option">
-      <router-link :to="{name:'RechargeType'}">
+      <router-link to="/Recharge?cointype=coin">
         <van-icon :name="require('@/assets/icon/recharge.png')" size="23"></van-icon>
         <span>{{$t('recharge')}}</span>
       </router-link>
-      <router-link :to="{name:'WithdrawType'}">
+      <router-link to="/Withdraw?cointype=coin">
         <van-icon :name="require('@/assets/icon/withdraw.png')" size="23"></van-icon>
         <span>{{$t('withdraw')}}</span>
       </router-link>
@@ -68,7 +68,7 @@ export default {
 @import "src/assets/css/vars";
 .wallet{
   width: 350px;
-  height: 113px;
+  //height: 113px;
   background: rgba(255, 255, 255, 0.99);
   border-radius: 11px;
   margin: -6px auto 10px;
@@ -102,7 +102,8 @@ export default {
     justify-content: space-between;
     a{
       width: 146px;
-      height: 37px;
+      //height: 37px;
+      padding: 12px 0;
       background: #F4F4F4;
       border-radius: 8px;
       color: $mainColor;
