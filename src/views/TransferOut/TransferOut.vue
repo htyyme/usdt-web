@@ -3,15 +3,17 @@
     <navbar :title="$t('interestRecord')"></navbar>
 
 
-    <van-tabs v-model="activeName" animated sticky line-width="100px" color="#3596E8">
-      <van-tab title="USDT" name="USDT">
-        <usdtorder />
-      </van-tab>
-      <van-tab title="CURRENCY" name="CURRENCY">
-        <coinorder />
-      </van-tab>
-    </van-tabs>
+    <!--<van-tabs v-model="activeName" animated sticky line-width="100px" color="#3596E8">-->
+    <!--  <van-tab title="USDT" name="USDT">-->
+    <!--    <usdtorder />-->
+    <!--  </van-tab>-->
+    <!--  <van-tab title="CURRENCY" name="CURRENCY">-->
+    <!--    <coinorder />-->
+    <!--  </van-tab>-->
+    <!--</van-tabs>-->
 
+
+    <coinorder />
 
   </div>
 </template>
