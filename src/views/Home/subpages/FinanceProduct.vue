@@ -55,6 +55,7 @@
             <!--</div>-->
 
             <div class="typ type-coin" v-if="show_coin_finance">
+              <div class="productname">{{item.financial_name}}</div>
               <div class="tit">{{ $t('oneDay') }} :</div>
               <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
               <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
@@ -329,7 +330,7 @@ export default {
             border-radius: 5px;
           }
         }
-        .type-usdt{
+        .type-usdt,.type-coin{
           .productname{
             position: absolute;
             width: 85px;
