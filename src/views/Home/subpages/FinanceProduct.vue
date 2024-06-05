@@ -39,32 +39,35 @@
       <div class="type-list">
         <div class="title">{{$t('Pledge income')}}</div>
 
-        <div class="type-item" v-for="item in productList" :key="item.id">
-          <div class="typ type-usdt" v-if="show_usdt_finance">
-            <div class="productname">{{item.financial_name}}</div>
-            <div class="tit">{{ $t('oneDay') }} :</div>
-            <div class="irate">{{ $t('interestRate') }}+{{ item.usdt_interest_rate | rateFormat }}</div>
-            <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
-            <div class="totalrate">+{{ totalUsdtRate(item) }}</div>
-            <div class="desc">{{item.usdt_desc}}</div>
-            <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>
-            <div  class="lock-img" v-if="item.state === 2">
-              <img :src="require('@/assets/icon/lock.png')" alt="">
-            </div>
-          </div>
+        <div class="products">
+          <div class="type-item" v-for="item in productList" :key="item.id">
+            <!--<div class="typ type-usdt" v-if="show_usdt_finance">-->
+            <!--  <div class="productname">{{item.financial_name}}</div>-->
+            <!--  <div class="tit">{{ $t('oneDay') }} :</div>-->
+            <!--  <div class="irate">{{ $t('interestRate') }}+{{ item.usdt_interest_rate | rateFormat }}</div>-->
+            <!--  <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>-->
+            <!--  <div class="totalrate">+{{ totalUsdtRate(item) }}</div>-->
+            <!--  <div class="desc">{{item.usdt_desc}}</div>-->
+            <!--  <div class="bot-btn" @click="openBuy(item,'usdt')">USDT</div>-->
+            <!--  <div  class="lock-img" v-if="item.state === 2">-->
+            <!--    <img :src="require('@/assets/icon/lock.png')" alt="">-->
+            <!--  </div>-->
+            <!--</div>-->
 
-          <div class="typ type-coin" v-if="show_coin_finance">
-            <div class="tit">{{ $t('oneDay') }} :</div>
-            <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
-            <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
-            <div class="totalrate">+{{ totalRate(item) }}</div>
-            <div class="desc">{{item.coin_desc}}</div>
-            <div class="bot-btn"  @click="openBuy(item,'coin')">COIN</div>
-            <div  class="lock-img" v-if="item.state === 2">
-              <img :src="require('@/assets/icon/lock.png')" alt="">
+            <div class="typ type-coin" v-if="show_coin_finance">
+              <div class="tit">{{ $t('oneDay') }} :</div>
+              <div class="irate">{{ $t('interestRate') }}+{{ item.interest_rate | rateFormat }}</div>
+              <div class="setdat">[{{ $t('set') }}] {{ item.hold_cycle }} {{ $t('days') }}</div>
+              <div class="totalrate">+{{ totalRate(item) }}</div>
+              <div class="desc">{{item.coin_desc}}</div>
+              <div class="bot-btn"  @click="openBuy(item,'coin')">COIN</div>
+              <div  class="lock-img" v-if="item.state === 2">
+                <img :src="require('@/assets/icon/lock.png')" alt="">
+              </div>
             </div>
           </div>
         </div>
+
 
       </div>
 
@@ -235,109 +238,116 @@ export default {
       margin-bottom: 12px;
     }
 
-    .type-item{
-      height: 212px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      .typ{
-        height: 100%;
-        width: 165px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        position: relative;
-        overflow: hidden;
-        .lock-img{
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: rgba(0,0,0,.33);
-          img{
-            width: 70px;
+    .products{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      column-gap: 15px;
+      .type-item{
+        height: 212px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        .typ{
+          height: 100%;
+          //width: 165px;
+          width: 100%;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          position: relative;
+          overflow: hidden;
+          .lock-img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,.33);
+            img{
+              width: 70px;
+              position: relative;
+              z-index: 9;
+            }
+          }
+          .tit{
+            font-size: 13px;
+            color: #333333;
+            text-align: center;
+            padding-top: 53px;
+            font-weight: 700;
+          }
+          .irate{
+            font-size: 13px;
+            font-weight: 800;
+            color: $shallowMainColor;
+            padding-top: 4px;
+            text-align: center;
+          }
+          .setdat{
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 13px;
+            color: #333333;
+            text-align: center;
+            margin-top: 8px;
+          }
+          .totalrate{
+            min-width: 65px;
+            height: 25px;
+            background: $shallowMainColor;
+            border-radius: 13px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 9px auto 0;
+            padding: 0 20px;
+            color: #fff;
             position: relative;
-            z-index: 9;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          .desc{
+            font-size: 12px;
+            text-align: center;
+            margin-top: 3px;
+            font-weight: 700;
+            color: $shallowMainColor;
+          }
+          .bot-btn{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-color: $shallowMainColor;
+            border-radius: 5px;
           }
         }
-        .tit{
-          font-size: 13px;
-          color: #333333;
-          text-align: center;
-          padding-top: 53px;
-          font-weight: 700;
-        }
-        .irate{
-          font-size: 13px;
-          font-weight: 800;
-          color: $shallowMainColor;
-          padding-top: 4px;
-          text-align: center;
-        }
-        .setdat{
-          font-size: 15px;
-          font-weight: 700;
-          line-height: 13px;
-          color: #333333;
-          text-align: center;
-          margin-top: 8px;
-        }
-        .totalrate{
-          min-width: 65px;
-          height: 25px;
-          background: $shallowMainColor;
-          border-radius: 13px;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          margin: 9px auto 0;
-          padding: 0 20px;
-          color: #fff;
-          position: relative;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        .desc{
-          font-size: 12px;
-          text-align: center;
-          margin-top: 3px;
-          font-weight: 700;
-          color: $shallowMainColor;
-        }
-        .bot-btn{
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          height: 36px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #fff;
-          background-color: $shallowMainColor;
-          border-radius: 5px;
-        }
-      }
-      .type-usdt{
-        .productname{
-          position: absolute;
-          width: 85px;
-          height: 48px;
-          background: url(~assets/icon/typeA.png) no-repeat;
-          background-size: 85px;
-          top: 10px;
-          left: -9px;
-          color: #fff;
-          //padding: 7px 0 0 10px;
-          display: flex;
-          justify-content: center;
-          padding-top: 9px;
+        .type-usdt{
+          .productname{
+            position: absolute;
+            width: 85px;
+            height: 48px;
+            background: url(~assets/icon/typeA.png) no-repeat;
+            background-size: 85px;
+            top: 10px;
+            left: -9px;
+            color: #fff;
+            //padding: 7px 0 0 10px;
+            display: flex;
+            justify-content: center;
+            padding-top: 9px;
+          }
         }
       }
     }
+
 
     .type-item:nth-child(n){
       .totalrate{
