@@ -696,7 +696,7 @@ export default {
     "The account format is incorrect":"O formato da conta está incorreto",
     "Fund password":"Código de retirada",
     "Please enter tax number": "Por favor insira o número fiscal",
-    "Tax number": "Fundo de Previdência/CNPJ",
+    "Tax number": "Fundo de Previdência/CPF",
     "Tax number is incorrect":"O número fiscal está incorreto",
     "Congratulations on winning the prize": "Parabéns por ganhar o prêmio",
     "Current status": "Status atual",
