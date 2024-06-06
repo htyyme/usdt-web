@@ -694,7 +694,7 @@ export default {
     "Please bind your wallet first":"Por favor, vincule sua carteira primeiro",
     "Save Image": "Salvar imagem",
     "The account format is incorrect":"O formato da conta está incorreto",
-    "Fund password":"código de saque",
+    "Fund password":"Código de retirada",
     "Please enter tax number": "Por favor insira o número fiscal",
     "Tax number": "Fundo de Previdência/CNPJ",
     "Tax number is incorrect":"O número fiscal está incorreto",
