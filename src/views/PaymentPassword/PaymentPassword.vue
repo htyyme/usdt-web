@@ -5,11 +5,11 @@
     <van-form @submit="onSubmit">
       <van-cell :title="$t('Phone')" :value="userInfo.member_name"></van-cell>
 
-      <van-field v-if="isSendSms" :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code" v-model="verify_code" :rules="[{ required: true }]">
-        <template #button>
-          <van-button size="mini" color="#ff1720" :disabled="countdown>0" @click="sendOtp">{{sendBtnText}}</van-button>
-        </template>
-      </van-field>
+      <!--<van-field v-if="isSendSms" :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code" v-model="verify_code" :rules="[{ required: true }]">-->
+      <!--  <template #button>-->
+      <!--    <van-button size="mini" color="#ff1720" :disabled="countdown>0" @click="sendOtp">{{sendBtnText}}</van-button>-->
+      <!--  </template>-->
+      <!--</van-field>-->
 
       <van-field v-model="password" type="password" name="password" :label="$t('Payment Password')" :placeholder="$t('Payment Password')" :rules="[{ required: true }]"/>
       <van-field v-model="confirmPassword" type="password" name="confirmPassword" :label="$t('Confirm Password')" :placeholder="$t('Confirm Password')" :rules="[{ required: true }]"/>
