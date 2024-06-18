@@ -767,7 +767,7 @@ export default {
     "Please enter the withdrawal amount": "Por favor ingrese el monto del retiro",
     "Please set the withdrawal password first": "Primero establezca la contraseña de retiro",
     "The mobile phone number can only be 11 digits.": "El número de teléfono móvil sólo puede tener 11 dígitos.",
-
+    "Total earnings":"Ganancias Totales",
 
 
 }

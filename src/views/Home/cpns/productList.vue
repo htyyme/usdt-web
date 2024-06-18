@@ -27,8 +27,8 @@
                   <dd>{{$t('Price')}}</dd>
                 </dl>
                 <dl>
-                  <dt>{{item.coinAttr.win_rate | moneyFormat}}</dt>
-                  <dd>{{$t('Hourly earnings')}}</dd>
+                  <dt>{{getExpectedReturn(item) | moneyFormat}}</dt>
+                  <dd>{{$t('Total earnings')}}</dd>
                 </dl>
               </div>
             </div>
@@ -96,6 +96,13 @@ export default {
   },
 
   methods:{
+    // 总收益
+    getExpectedReturn(item){
+      console.log(item.coinAttr)
+      const { win_rate,mold } = item.coinAttr
+      return win_rate * mold * 24
+    },
+
     async loadProducts(){
       const resp = await this.$http.post('/v1/business/matches',{
         page:1,

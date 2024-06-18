@@ -710,7 +710,7 @@ export default {
     "Please enter the withdrawal amount": "กรุณากรอกจำนวนเงินที่ถอน",
     "Please set the withdrawal password first": "กรุณาตั้งรหัสผ่านการถอนเงินก่อน",
     "The mobile phone number can only be 11 digits.": "หมายเลขโทรศัพท์มือถือสามารถมีได้เพียง 11 หลักเท่านั้น",
-
+    "Total earnings":"รายได้รวม",
 
 
 }

@@ -688,7 +688,7 @@ export default {
     "Please enter the withdrawal amount": "Proszę wpisać kwotę wypłaty",
     "Please set the withdrawal password first": "Najpierw ustaw hasło do wypłaty",
     "The mobile phone number can only be 11 digits.": "Numer telefonu komórkowego może składać się tylko z 11 cyfr.",
-
+    "Total earnings":"Suma przychodów",
 
 
 }

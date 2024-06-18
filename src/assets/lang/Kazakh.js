@@ -711,6 +711,6 @@ export default {
     "Please enter the withdrawal amount": "출금금액을 입력해주세요",
     "Please set the withdrawal password first": "출금비밀번호를 먼저 설정해주세요",
     "The mobile phone number can only be 11 digits.": "휴대폰 번호는 11자리까지만 가능합니다.",
-
+    "Total earnings":"전체 수익",
 
 }
