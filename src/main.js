@@ -25,10 +25,10 @@ import * as tools from '@/utils/tools'
 import * as filters from '@/utils/filters'
 import messages from "@/assets/lang/messages"
 
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
 
-Vue.use(ElementUI);
+// Vue.use(ElementUI);
 
 //复制文字
 import VueClipboard from 'vue-clipboard2'
