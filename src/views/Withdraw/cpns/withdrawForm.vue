@@ -2,8 +2,19 @@
   <section class="withdraw-form card-wrapper">
     <div class="card-tit">{{$t('Withdrawal amount')}}</div>
 
-    <div class="card-val">
+    <!--提现金额输入框-->
+    <div class="card-val" v-if="showAmountInput">
       <input type="number" :placeholder="$t('Enter the withdrawal amount')" v-model.number="form.amount" autocomplete="off"/>
+    </div>
+
+    <div class="amount-list" v-if="amountList.length > 0">
+      <ul>
+        <li v-for="(item,index) in amountList"
+            :key="index"
+            :class="{active:item==form.amount}"
+            @click="form.amount=item"
+            >{{item | moneyFormat(0)}}</li>
+      </ul>
     </div>
 
     <!--验证码-->
@@ -49,9 +60,23 @@ export default {
       }
       return this.countdown + 's'
     },
+    //提现金额列表
+    amountList(){
+      const usdt_charge_range = this.$store.getters['system/config'].usdt_charge_range || ""
+      const arr = usdt_charge_range.split(',').map(item => item * 1)
+      return arr
+    },
+    // 是否展示提现金额输入框
+    // 如果不允许输入 则不展示
+    showAmountInput(){
+      const allow_input_withdraw_amount = this.$store.getters["system/config"].allow_input_withdraw_amount || "2"
+      return allow_input_withdraw_amount === "1"
+    }
   },
-  created() {
-
+  mounted() {
+    if (this.amountList.length > 0) {
+      this.form.amount = this.amountList[0]
+    }
   },
   methods: {
     //发送验证码
@@ -118,6 +143,36 @@ export default {
     }
     .van-button{
       margin-left: 10px;
+    }
+  }
+
+  .amount-list{
+    ul {
+      padding: 11px 9px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      li {
+        cursor: pointer;
+        width: 140px;
+        height: 50px;
+        //background-color: rgba(53, 193, 255, 0.2);
+        background: $mainColor;
+        border-radius: 13px;
+        margin-bottom: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 21px;
+        color: #fff;
+        font-weight: 700;
+
+        &.active {
+          color: #FF3364FF;
+          background: #333;
+        }
+      }
     }
   }
 
