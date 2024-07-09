@@ -63,6 +63,9 @@ export default {
     //提现金额列表
     amountList(){
       const usdt_charge_range = this.$store.getters['system/config'].usdt_charge_range || ""
+      if (usdt_charge_range == "") {
+        return []
+      }
       const arr = usdt_charge_range.split(',').map(item => item * 1)
       return arr
     },
