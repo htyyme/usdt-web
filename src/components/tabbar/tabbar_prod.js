@@ -65,7 +65,7 @@ const luckyTabbar = {
 }
 
 store.dispatch('system/loadShowLucky').then((res)=>{
-    console.log(res)
+    // console.log(res)
     if (store.getters['system/showLucky']) {
         tabbarList.splice(2, 0,luckyTabbar)
     }

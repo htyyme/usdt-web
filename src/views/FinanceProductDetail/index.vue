@@ -85,7 +85,7 @@ export default {
       const productList = r.data || []
       const id = this.$route.params.id  * 1
       const p = productList.find(item => item.id === id )
-      console.log('p',p)
+      // console.log('p',p)
       if (p) {
         this.hasProduct = true
         this.product = p
@@ -110,7 +110,7 @@ export default {
       const r = await this.$http.post('/v1/auth/finance/buy', submitData)
 
 
-      console.log("r",r)
+      // console.log("r",r)
       this.$toast.success({
         message: 'Success',
         onClose:()=>{

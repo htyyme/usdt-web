@@ -61,7 +61,7 @@ name: "coinorder",
     //获取服务器时间
     async getServerTime(){
       const res = await this.$http.post("/v1/getServerTime",{})
-      console.log(res)
+      // console.log(res)
       this.servertime = res.data.nowTs
     },
     async loadData(){

@@ -98,7 +98,7 @@ export default {
   methods:{
     // 总收益
     getExpectedReturn(item){
-      console.log(item.coinAttr)
+      // console.log(item.coinAttr)
       const { win_rate,mold } = item.coinAttr
       return win_rate * mold * 24
     },

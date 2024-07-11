@@ -113,7 +113,7 @@ export default {
       const r = await this.$http.post('/v1/auth/finance/products')
       this.productList = r.data || []
 
-      console.log('productList', this.productList)
+      // console.log('productList', this.productList)
     },
     //查询收益信息
     async queryProfitInfo() {

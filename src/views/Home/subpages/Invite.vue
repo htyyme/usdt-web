@@ -84,17 +84,17 @@ export default {
      * 生成二维码
      */
     generateQrcode() {
-      console.log(new QRCode(document.getElementById("qrcode"), {
+      new QRCode(document.getElementById("qrcode"), {
         text: this.link,
         width: 190,
         height: 190,
-      }))
+      })
     },
     saveImage(){
       html2canvas(document.querySelector('.bg')).then(canvas=>{
         var url = canvas.toDataURL("image/jpeg", 0.5)
 
-        console.log(url.length / 1024 + "k")
+        // console.log(url.length / 1024 + "k")
 
         var xiazai = document.querySelector('#xiazai')
         xiazai.setAttribute('href',url)
