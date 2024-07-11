@@ -106,7 +106,7 @@ name: "coinorder",
         //已经取出过
         return false
       }
-      let now = Math.floor(new Date().getTime() / 1000)
+      let now =this.servertime
       let expire = item.expire
       if (now > expire){
         return true
