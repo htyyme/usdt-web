@@ -97,11 +97,20 @@ export default {
         amount: this.amount * 1,
         coin_type:1
       }
+
+      if (!submitData.amount ||submitData.amount<=0 ){
+        return
+      }
+
       this.loading = true
+
       setTimeout(()=>{
         this.loading=false
       },1500)
       const r = await this.$http.post('/v1/auth/finance/buy', submitData)
+
+
+      console.log("r",r)
       this.$toast.success({
         message: 'Success',
         onClose:()=>{
