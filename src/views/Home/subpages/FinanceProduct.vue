@@ -46,6 +46,10 @@
           <div class="product-cycle">{{item.hold_cycle}} day</div>
           <div class="product-profit">Profit {{item.interest_rate*100}}%</div>
         </div>
+
+        <div class="lock" v-if="!isAvailable(item)">
+          <img :src="require('@/assets/img/lock_white.png')" alt="">
+        </div>
       </div>
     </div>
 
@@ -129,11 +133,23 @@ export default {
       return n + '%'
     },
 
+    // 判断是否可以进去详情页面
+    isAvailable(item){
+      //判断等级是否满足
+      const myLv = this.$store.getters['user/userInfo'].lv_id
+      const lvList = item.lv || []
+      const lvFlag = lvList.some(el => el.LvId === myLv)
+      return lvFlag
+    },
+
     //展示什么是质押收益
     showDesc() {
       this.$refs.financeDescPopRef.handleOpen()
     },
     toFinanceDetail(item) {
+      if (!this.isAvailable(item)){
+        return
+      }
       this.$router.push({
         name:'FinanceProductDetail',
         params:{
@@ -224,6 +240,8 @@ export default {
       border: 1px solid #FA3061;
       border-radius: 8px;
       display: flex;
+      position: relative;
+      overflow: hidden;
       .product-img{
         width: 128px;
         height: 150px;
@@ -239,6 +257,23 @@ export default {
         font-weight: 700;
         .product-name{
 
+        }
+      }
+      .lock{
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        background: #FA3061;
+        right: 0;
+        bottom: 0;
+        transform: rotate(-45deg) translateY(150px);
+        img{
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 5px;
+          left: 44%;
+          transform: rotate(45deg);
         }
       }
     }

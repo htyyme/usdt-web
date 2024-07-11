@@ -26,7 +26,7 @@
     </div>
     <div class="revenue">revenue: {{revenue}}BRL</div>
 
-    <van-button round color="#FA3061" block class="submit-btn"  :loading="loading" @click="handleSubmit">Submit</van-button>
+    <van-button round color="#FA3061" block class="submit-btn"  :loading="loading" @click="handleSubmit" :disabled="!isAvailable(product)">Submit</van-button>
   </div>
 </div>
 </template>
@@ -52,25 +52,33 @@ export default {
       let n = interest_rate * hold_cycle * this.amount
       return n.toFixed(2)
     },
-    //提交按钮是否禁用
-    isDisable(){
-      if (!this.hasProduct){
-        return true
-      }
-      if (this.product.state !== 1){
-        return true
-      }
-      if (!this.amount || this.amount <= 0) {
-        return  true
-      }
-      return  false
-    }
+    // //提交按钮是否禁用
+    // isDisable(){
+    //   if (!this.hasProduct){
+    //     return true
+    //   }
+    //   if (this.product.state !== 1){
+    //     return true
+    //   }
+    //   if (!this.amount || this.amount <= 0) {
+    //     return  true
+    //   }
+    //   return  false
+    // }
   },
   mounted() {
     this.queryProducts()
   },
 
   methods:{
+    // 判断是否可以进去详情页面
+    isAvailable(item){
+      //判断等级是否满足
+      const myLv = this.$store.getters['user/userInfo'].lv_id
+      const lvList = item.lv || []
+      const lvFlag = lvList.some(el => el.LvId === myLv)
+      return lvFlag
+    },
     //查询理财产品列表
     async queryProducts() {
       const r = await this.$http.post('/v1/auth/finance/products')
