@@ -479,6 +479,15 @@ const routes = [
             title:'Address'
         }
     },
+    {
+        path:'/finance/product/:id',
+        name:'FinanceProductDetail',
+        component:()=>import('@/views/FinanceProductDetail'),
+        meta:{
+            title:"Finance Product",
+            showTabbar:false
+        },
+    },
 ]
 
 const router = new VueRouter({
