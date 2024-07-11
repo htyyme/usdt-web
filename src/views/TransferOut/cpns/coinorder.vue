@@ -29,9 +29,9 @@
         </div>
 
         <!--提前取出-->
-        <van-button class="takeout" v-if="canTakeout(item)" @click="takeOut(item)">{{$t('takeOut')}}</van-button>
+        <!--<van-button class="takeout" v-if="canTakeout(item)" @click="takeOut(item)">{{$t('takeOut')}}</van-button>-->
         <!--到期取出  -->
-        <van-button class="Extracted" v-else-if="canExtract(item)" @click="extract(item)">{{$t('Extracted')}}</van-button>
+        <van-button class="Extracted" v-if="canExtract(item)" @click="extract(item)">{{$t('Extracted')}}</van-button>
 
       </div>
     </van-list>
@@ -51,9 +51,19 @@ name: "coinorder",
       list: [],
       loading: false,
       finished: false,
+      servertime:0,//服务器时间戳（秒）
     }
   },
+  mounted() {
+    this.getServerTime()
+  },
   methods:{
+    //获取服务器时间
+    async getServerTime(){
+      const res = await this.$http.post("/v1/getServerTime",{})
+      console.log(res)
+      this.servertime = res.data.nowTs
+    },
     async loadData(){
       this.queryInfo.page++
       try {
@@ -80,7 +90,8 @@ name: "coinorder",
         return false
       }
 
-      let now = Math.floor(new Date().getTime() / 1000)
+      // let now = Math.floor(new Date().getTime() / 1000)
+      let now =this.servertime
       let expire = item.expire
       if (now < expire) {
         return true
