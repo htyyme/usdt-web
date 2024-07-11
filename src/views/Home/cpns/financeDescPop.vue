@@ -49,6 +49,8 @@ export default {
     line-height: 1.3;
     background-color: #fff;
     font-family: "Courier";
+    max-height: 60vh;
+    overflow: auto;
 
   }
 

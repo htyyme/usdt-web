@@ -32,7 +32,8 @@
 
     <div class="sub-title" @click="showDesc">
 
-      {{ $t('What is Pledge income?') }}
+      <!--{{ $t('What is Pledge income?') }}-->
+      {{ $store.getters['system/config'].guide }}
       <van-icon name="question-o"/>
     </div>
 
