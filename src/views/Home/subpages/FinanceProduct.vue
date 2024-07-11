@@ -51,12 +51,13 @@
 
     <van-button class="transfer" :to="{name:'TransferOut'}">{{ $t('transferOut') }}</van-button>
     <!--<buyPopup/>-->
-    <!--<financeDescPop ref="financeDescPopRef"/>-->
+    <financeDescPop ref="financeDescPopRef"/>
   </div>
 </template>
 
 <script>
 import vars from "@/assets/css/vars.scss";
+import financeDescPop from "@/views/Home/cpns/financeDescPop.vue";
 import {
 
   RELOAD_PROFIT_INFO
@@ -65,6 +66,7 @@ import {
 export default {
   name: "FinanceProduct",
   components: {
+    financeDescPop
   },
   data() {
     return {
