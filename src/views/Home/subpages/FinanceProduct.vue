@@ -217,7 +217,8 @@ export default {
     .finance-item{
       padding: 8px;
       margin-bottom: 10px;
-      border: 1px solid #757485;
+      //border: 1px solid #757485;
+      border: 1px solid #FA3061;
       border-radius: 8px;
       display: flex;
       .product-img{
