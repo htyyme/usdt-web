@@ -635,7 +635,7 @@ export default {
     'Red Envelope':'Envelope vermelho',
     'Envelope key':'Chave de envelope',
     'Pledge income':'Produtos de rendimento a prazo',
-    'What is Pledge income?':'O que é um produto de renda regular?',
+    'What is Pledge income?':'O que é Produtos de rendimento a prazo',
     'Novice guide':'Guia novato',
     'I want to buy':'comprar',
     'I want to sell':'vender',
