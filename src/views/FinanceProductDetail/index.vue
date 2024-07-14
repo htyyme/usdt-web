@@ -10,8 +10,8 @@
       <van-image :src="$tools.getImage(product.img)" class="product-img" lazy-load></van-image>
       <div class="product-details">
         <div class="product-name">{{product.financial_name}}</div>
-        <div class="product-cycle">{{product.hold_cycle}} day</div>
-        <div class="product-profit">Profit {{product.interest_rate*100}}%</div>
+        <div class="product-cycle">{{product.hold_cycle}} dias</div>
+        <div class="product-profit">Lucro {{product.interest_rate*100}}%</div>
       </div>
     </div>
 

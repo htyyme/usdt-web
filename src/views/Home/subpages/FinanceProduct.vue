@@ -43,8 +43,8 @@
         <van-image :src="$tools.getImage(item.img)" class="product-img" lazy-load></van-image>
         <div class="product-details">
           <div class="product-name">{{item.financial_name}}</div>
-          <div class="product-cycle">{{item.hold_cycle}} day</div>
-          <div class="product-profit">Profit {{item.interest_rate*100}}%</div>
+          <div class="product-cycle">{{item.hold_cycle}} dias</div>
+          <div class="product-profit">Lucro {{item.interest_rate*100}}%</div>
         </div>
 
         <div class="lock" v-if="!isAvailable(item)">
