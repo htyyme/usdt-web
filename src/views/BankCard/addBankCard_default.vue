@@ -114,7 +114,6 @@ export default {
 
     // 获取是否允许绑卡
     this.$http.post("/v1/auth/card/allowUpdateBankcard").then(res=>{
-      console.log(111,res)
       this.allow = res.data.allow
     })
   },
