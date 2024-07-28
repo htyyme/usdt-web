@@ -8,7 +8,7 @@
       <dl>
         <dt>{{$t('Account type')}}</dt>
         <dd style="padding-left: 15px;">
-          <van-radio-group v-model="form.acc_type"  checked-color="#FF3364">
+          <van-radio-group v-model="form.acc_type"  checked-color="#FF3364" :disabled="!allow">
             <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>
             <van-radio style="margin: 7px;" name="PHONE">número de telefone celular</van-radio>
             <van-radio style="margin: 7px;" name="EMAIL">E-mail</van-radio>
@@ -21,7 +21,7 @@
         <!--用户名-->
         <dl>
           <dt>{{$t('Account Name')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username" :readonly="!allow"></dd>
         </dl>
         <!--cpf/cnpj-->
         <dl>
@@ -29,7 +29,7 @@
           <p class="dt-notice">
             Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.
           </p>
-          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''" :readonly="!allow"></dd>
         </dl>
 
       </template>
@@ -38,7 +38,7 @@
         <!--名字-->
         <dl>
           <dt>{{$t('Account Name')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username" :readonly="!allow"></dd>
         </dl>
         <!--账号-->
         <dl>
@@ -46,7 +46,7 @@
           <dt v-if="form.acc_type === 'PHONE'">{{$t('Account Number')}}</dt>
           <dt v-if="form.acc_type === 'EMAIL'">E-mall</dt>
 
-          <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit" :readonly="!allow"></dd>
         </dl>
         <!--cpf/cnpj-->
         <dl>
@@ -54,7 +54,7 @@
           <p class="dt-notice">
             Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.
           </p>
-          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''"></dd>
+          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''" :readonly="!allow"></dd>
         </dl>
       </template>
 
@@ -63,7 +63,7 @@
 
 
 
-      <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave">{{$t('Submit')}}</van-button>
+      <van-button block class="submit-btn" :loading="$store.getters['system/gloading']" @click="handleSave" v-if="allow">{{$t('Submit')}}</van-button>
 
     </div>
 
@@ -99,6 +99,7 @@ export default {
       countdown: 0,
       timer:null,
       showPicker: false,
+      allow:false
     }
   },
   created() {
@@ -110,6 +111,12 @@ export default {
     if (this.gbanklist.length === 0 ){
       this.$store.dispatch('system/loadBankList')
     }
+
+    // 获取是否允许绑卡
+    this.$http.post("/v1/auth/card/allowUpdateBankcard").then(res=>{
+      console.log(111,res)
+      this.allow = res.data.allow
+    })
   },
   computed:{
     //是否发送短信
