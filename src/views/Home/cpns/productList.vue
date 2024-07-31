@@ -158,7 +158,7 @@ export default {
         color: $mainColor;
         font-size: 12px;
         margin-top: 10px;
-        width: 20px;
+        width: 30px;
         height: 34px;
         text-align: center;
         padding-top: 3px;
@@ -167,8 +167,8 @@ export default {
         overflow: hidden;
         &::after{
           content: "";
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
           background: linear-gradient( to top, $shallowMainColor,$mainColor);
           position: absolute;
           transform: rotate(45deg) ;
