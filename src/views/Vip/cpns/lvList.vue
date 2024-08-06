@@ -5,17 +5,8 @@
       <van-image :src="getLvIcon(item.lv_id)" class="levelicon" fit="contain"></van-image>
       <div class="tit">LV.{{item.lv_id}}</div>
       <!--<div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>-->
-      <div class="content">
-<!--        <p>1. Each withdrawal limit is 5000</p>-->
-<!--        <p>2. The number of orders can be swipe until 30 times</p>-->
-        <p>1.{{$t('vipinfo1',{num1:rateFormat(item.superior_rebate) ,num2:rateFormat(item.two_level_rebate) ,num3:rateFormat(item.three_level_rebate)})}}</p>
-        <p>2.{{$t('vipIncomeRebate',{num1:rateFormat(item.superior_income_rebate) ,num2:rateFormat(item.two_level_income_rebate) ,num3:rateFormat(item.three_level_income_rebate)})}}</p>
-        <!--<p>2.{{$t('vipinfo2',{num:maxgrab})}}</p>-->
+      <div class="content" v-html="item.description">
 
-        <p>3.{{$t('Withdraw fee',{num:item.withdrawal_fee})}}</p>
-        <p>4.{{$t('viplimit',{limit:item.cond_limit})}}</p>
-
-        <p>5.{{$t('Upgrade price')}}:{{item.price | moneyFormat}}</p>
 
       </div>
 
@@ -84,7 +75,7 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 13px 25px;
+  padding: 0 13px 10px;
 
   .item{
     height: 285px;
@@ -147,7 +138,7 @@ export default {
       padding: 0px 5px 0 0;
     }
     .content{
-      color: #666;
+      color: #000;
       font-size: 12px;
       padding: 40px 10px 0;
       word-break: break-all;
