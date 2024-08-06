@@ -543,7 +543,7 @@ export default {
     'GET':'PEGAR',
     'To invite friends':'Para convidar amigos',
     'Received the amount':'Recebeu o valor',
-    'Activity bonus':'Bônus de atividade',
+    'Activity bonus':'Atividades da plataforma',
     'It is not open for the time being.':'Não está aberto por enquanto.',
     'USDT':'USDT',
     'Withdrawal priority':'Prioridade de retirada',
