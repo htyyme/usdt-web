@@ -18,7 +18,8 @@ export default new Vuex.Store({
 
   plugins: [
     createPersistedState({
-      storage: window.localStorage
+      storage: window.localStorage,
+      key:"power_chile_notusdt_v2_store"
     })
   ]
 })

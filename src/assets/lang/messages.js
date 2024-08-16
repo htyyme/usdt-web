@@ -4,8 +4,10 @@ import spanish from './spanish.js'
 import turkey from './Turkey.js'
 import Portuguese from './Portuguese.js'
 // import Poland from "./Poland.js";
+import French from "./French";
 
 export default {
+    'French':French,
     'English':en,
     'Portuguese':Portuguese,
     'Thailand':th,

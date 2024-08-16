@@ -10,7 +10,7 @@ export default {
     apkVersion: '1.0.0', //版本
     appName: 'cloudcelular',//网站标题
     host: 'https://www.cloudcelular.com/',//网站域名
-    locale: 'Portuguese',//默认语言  Spanish 西班牙语  Turkey 土耳其语
+    locale: 'French',//默认语言  Spanish 西班牙语  Turkey 土耳其语
     //时区查询https://jp.cybozu.help/general/zh/admin/list_systemadmin/list_localization/timezone.html
     // timezone: 'Asia/Bangkok', //时区 泰国
     // timezone: 'Asia/Kolkata', //时区 印度
