@@ -155,7 +155,7 @@ export default {
 .list-item {
   width: 345px;
   //height: 210px;
-  background: #282828;
+  background: linear-gradient(to left top,$mainColor,$shallowMainColor);
   border-radius: 10px;
   margin: 15px auto;
   display: flex;
@@ -225,7 +225,7 @@ export default {
       transform:  rotate(90deg);
       transform-origin: right top;
       //background: linear-gradient(to right,#9b59b6,#8e44ad);
-      background: $mainColor;
+      background: linear-gradient($mainColor,$shallowMainColor);
       color: #fff;
       font-size: 13px;
       padding: 5px 6px;
@@ -318,7 +318,7 @@ export default {
       }
 
       &:last-child {
-        background-color:  #000;
+        background-color:  $shallowMainColor;
 
         border-radius: 0 0 10px 10px;
         border: 1px solid #fff;
@@ -329,9 +329,9 @@ export default {
         }
 
         &.zero {
-          //background-color: $mainColor;
+          background-color: $mainColor;
           dd, dt {
-            color: #aaa;
+            //color: #ddd;
           }
         }
       }

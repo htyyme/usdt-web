@@ -8,7 +8,7 @@
       <dl>
         <dt>{{$t('Account type')}}</dt>
         <dd style="padding-left: 15px;">
-          <van-radio-group v-model="form.acc_type"  checked-color="#282828" :disabled="!allow">
+          <van-radio-group v-model="form.acc_type"  checked-color="#ff9023" :disabled="!allow">
             <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>
             <van-radio style="margin: 7px;" name="PHONE">número de telefone celular</van-radio>
             <van-radio style="margin: 7px;" name="EMAIL">E-mail</van-radio>

@@ -18,7 +18,7 @@
         </dt>
         <dd>
           <input type="text" :placeholder="$t('smsCode')" v-model="verify_code">
-          <van-button size="mini" color="#282828" class="sendcode" @click="sendOtp" :disabled="countdown>0">
+          <van-button size="mini" color="#ff9023" class="sendcode" @click="sendOtp" :disabled="countdown>0">
             {{ sendBtnText }}
           </van-button>
         </dd>

@@ -89,6 +89,7 @@ name: "RechargeRecord",
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/css/vars";
 ::v-deep .van-empty__image{
   height: unset;
 }
@@ -112,7 +113,7 @@ name: "RechargeRecord",
       left: 0;
       height: 100%;
       width: 12px;
-      background-color:  #282828;
+      background-color:  $mainColor;
     }
     &.success::before{
       background-color: #22BF3C;

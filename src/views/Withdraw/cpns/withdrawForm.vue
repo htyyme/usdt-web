@@ -20,7 +20,7 @@
     <!--验证码-->
     <div class="card-val" v-if="withdraw_verify===1 || withdraw_verify === '1'">
       <input type="text" :placeholder="$t('smsCode')" v-model="form.verification_code" autocomplete="off"/>
-      <van-button color="#FF3364"  size="normal" round :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
+      <van-button color="#ff9023"  size="normal" round :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
     </div>
 
 
@@ -172,8 +172,8 @@ export default {
         font-weight: 700;
 
         &.active {
-          color: #FF3364FF;
-          background: #333;
+          background:  $shallowMainColor;
+          //background: #333;
         }
       }
     }

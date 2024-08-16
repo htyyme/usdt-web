@@ -116,7 +116,7 @@ export default {
       left: 0;
       height: 100%;
       width: 12px;
-      background-color:  #282828;
+      background-color:  $mainColor;
     }
     //&.success::before{
     //  background-color: #22BF3C;
