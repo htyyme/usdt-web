@@ -122,7 +122,7 @@ export default {
   .van-image{
     width: 80px;
     height: 80px;
-    border: 1px solid #ff1720;
+    border: 1px solid #282828;
     border-radius: 13px;
     overflow: hidden;
     display: block;
@@ -176,7 +176,8 @@ export default {
     width: 192px;
     height: 40px;
     margin: 25px auto 10px;
-    background: linear-gradient( to top, #F8868C,#ff1720);
+    //background: linear-gradient( to top, #F8868C,#ff1720);
+    background: linear-gradient( to top, #282828,transparentize(#282828,.25));
     color: #fff;
   }
 

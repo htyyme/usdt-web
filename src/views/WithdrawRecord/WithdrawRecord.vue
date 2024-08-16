@@ -116,15 +116,15 @@ export default {
       left: 0;
       height: 100%;
       width: 12px;
-      background-color:  #F8868C;
+      background-color:  #282828;
     }
-    &.success::before{
-      background-color: #22BF3C;
-    }
-    &.fail::before{
-      background-color: #CF182C;
-
-    }
+    //&.success::before{
+    //  background-color: #22BF3C;
+    //}
+    //&.fail::before{
+    //  background-color: #CF182C;
+    //
+    //}
     &::after{
       content: "";
       position: absolute;

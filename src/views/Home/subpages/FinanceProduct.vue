@@ -237,7 +237,7 @@ export default {
       padding: 8px;
       margin-bottom: 10px;
       //border: 1px solid #757485;
-      border: 1px solid #FA3061;
+      border: 1px solid #282828;
       border-radius: 8px;
       display: flex;
       position: relative;
@@ -263,7 +263,7 @@ export default {
         position: absolute;
         width: 160px;
         height: 160px;
-        background: #FA3061;
+        background: #282828;
         right: 0;
         bottom: 0;
         transform: rotate(-45deg) translateY(150px);

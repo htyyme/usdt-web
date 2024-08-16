@@ -17,7 +17,7 @@
           <div class="swipe-box">
             <div class="item-head">
               <span class="title">{{item.goods_name}}</span>
-              <van-button size="mini" round color="#FA3061">Details</van-button>
+              <van-button size="mini" round color="#282828">Details</van-button>
             </div>
             <div class="item-bd">
               <van-image :src="$tools.getImage(item.show_pic)" class="prod-img"></van-image>

@@ -62,10 +62,11 @@ export default {
   margin: 10px 15px;
   padding: 13px 15px 5px;
   border-radius: 13px;
+  background: linear-gradient( to top, $shallowMainColor,$mainColor);
 
   .title {
     font-size: 17px;
-    color: #333;
+    color: #fff;
     font-weight: 700;
   }
 
@@ -79,19 +80,20 @@ export default {
       width: 140px;
       height: 50px;
       //background-color: rgba(53, 193, 255, 0.2);
-      background: $mainColor;
+      //background: $mainColor;
+      background-color: rgba(255,255,255,.65);
       border-radius: 13px;
       margin-bottom: 13px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 21px;
-      color: #fff;
+      //color: #fff;
       font-weight: 700;
 
       &.active {
         color: #FF3364FF;
-        background: #333;
+        background: #fff;
       }
     }
   }

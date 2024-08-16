@@ -71,7 +71,7 @@ export default {
     li{
       width: 93px;
       height: 45px;
-      background-color: #f5f5f5;
+      background-color: rgba(255,255,255,.65);
       font-family: imbplex;
       font-size: 12px;
       text-align: center;
@@ -95,7 +95,7 @@ export default {
       }
       &.active{
         color: #FF3364FF;
-        background: #333;
+        background: #fff;
       }
     }
   }

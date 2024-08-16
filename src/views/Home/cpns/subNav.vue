@@ -47,7 +47,8 @@ ul{
     text-align: center;
     padding: 10px 0;
     &.router-link-active{
-      color: $mainColor;
+      //color: $mainColor;
+      color: deeppink;
     }
     .van-image{
       width: 46px;

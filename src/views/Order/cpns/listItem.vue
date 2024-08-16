@@ -99,10 +99,11 @@ export default {
   },
   filters:{
     numfix(n){
+      // console.log(11111,n)
       if (n){
         return (n * 1).toFixed(2)
       } else{
-        return ''
+        return '0'
       }
     }
   },
@@ -154,13 +155,14 @@ export default {
 .list-item {
   width: 345px;
   //height: 210px;
-  background: #F8868C;
+  background: #282828;
   border-radius: 10px;
   margin: 15px auto;
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 1px 1px 1px rgba(100,100,100,.3);
+  border: 1px solid #fff;
 
   .goodstag{
     width: 59px;
@@ -316,7 +318,7 @@ export default {
       }
 
       &:last-child {
-        background-color:  #F8868C;
+        background-color:  #000;
 
         border-radius: 0 0 10px 10px;
         border: 1px solid #fff;
@@ -327,7 +329,10 @@ export default {
         }
 
         &.zero {
-          background-color: $mainColor;
+          //background-color: $mainColor;
+          dd, dt {
+            color: #aaa;
+          }
         }
       }
     }

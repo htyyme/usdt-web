@@ -9,7 +9,7 @@
       <!--验证码-->
       <field4 v-if="isSendSms" v-model="registerForm.sms_code" :left-icon="require('@/assets/icon/sms-icon.png')" :placeholder="$t('smsCode')">
         <template #right>
-          <van-button color="#FF3364" class="otp" size="mini" :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
+          <van-button color="#282828" class="otp" size="mini" :disabled="countdown>0" @click="getVerificationCode">{{sendBtnText}}</van-button>
         </template>
       </field4>
 

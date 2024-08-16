@@ -1,6 +1,6 @@
 
-$mainColor: #FF3364;
-$shallowMainColor:#FA3061;
+$mainColor: #282828;
+$shallowMainColor:transparentize(#282828,.1);
 
 :export {
   mainColor:$mainColor;

@@ -3,7 +3,7 @@
     <van-notice-bar
         left-icon="volume-o"
         :text="noticeText"
-        background="#FF3364"
+        background="#282828"
         color="#fff"
         :left-icon="require('@/assets/icon/horn.png')"
         @click="showAnnounce"
