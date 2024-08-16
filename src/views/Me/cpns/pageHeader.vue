@@ -98,7 +98,7 @@ export default {
         font-weight: 700;
       }
       .num{
-        color: #ff1720;
+        color: #00ba5a;
         font-size: 21px;
         font-weight: 700;
         display: flex;

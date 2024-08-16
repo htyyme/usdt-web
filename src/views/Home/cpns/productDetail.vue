@@ -165,7 +165,7 @@ export default {
         color: #000;
       }
       dd{
-       color: #ff9023;
+       color: #00ba5a;
         font-size: 17px;
         font-weight: 700;
       }
@@ -177,7 +177,7 @@ export default {
     height: 40px;
     margin: 25px auto 10px;
     //background: linear-gradient( to top, #F8868C,#ff1720);
-    background: linear-gradient( to top, #fdb529,#ff9023);
+    background: linear-gradient( to top, #85e665,#00ba5a);
     color: #fff;
   }
 

@@ -120,7 +120,7 @@ export default {
   }
 
   .submit-btn{
-    background: #ff9023;
+    background: #00ba5a;
     color: #fff;
     border-radius: 5px;
   }

@@ -8,7 +8,7 @@
       <van-field v-if="isSendSms" :label="$t('Verification code')" :placeholder="$t('Verification code')" name="verify_code"
                  v-model="verify_code" :rules="[{ required: true }]">
         <template #button>
-          <van-button size="mini" color="#ff9023" :disabled="countdown>0" @click="sendOtp">{{ sendBtnText }}</van-button>
+          <van-button size="mini" color="#00ba5a" :disabled="countdown>0" @click="sendOtp">{{ sendBtnText }}</van-button>
         </template>
       </van-field>
 

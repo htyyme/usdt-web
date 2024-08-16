@@ -48,7 +48,7 @@ ul{
     padding: 10px 0;
     &.router-link-active{
       //color: $mainColor;
-      color: #ff9023;
+      color: #00ba5a;
     }
     .van-image{
       width: 46px;

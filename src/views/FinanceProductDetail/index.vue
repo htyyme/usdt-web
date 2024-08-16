@@ -26,7 +26,7 @@
     </div>
     <div class="revenue">revenue: {{revenue}}BRL</div>
 
-    <van-button round color="#ff9023" block class="submit-btn"  :loading="loading" @click="handleSubmit" :disabled="!isAvailable(product)">Submit</van-button>
+    <van-button round color="#00ba5a" block class="submit-btn"  :loading="loading" @click="handleSubmit" :disabled="!isAvailable(product)">Submit</van-button>
   </div>
 </div>
 </template>
