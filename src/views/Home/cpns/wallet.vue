@@ -85,14 +85,14 @@ export default {
       dt {
         font-size: 16px;
         font-weight: 700;
-        color: $mainColor;
+        color: #00BA5A;
         padding-bottom: 6px;
 
       }
 
       dd {
         font-size: 12px;
-        color: $mainColor;
+        color: #00BA5A;
       }
     }
   }
@@ -106,7 +106,7 @@ export default {
       padding: 12px 0;
       background: #F4F4F4;
       border-radius: 8px;
-      color: $mainColor;
+      color: #F97D1D;
       font-size: 17px;
       display: flex;
       justify-content: center;

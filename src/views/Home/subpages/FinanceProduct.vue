@@ -187,7 +187,7 @@ export default {
     }
 
     .sub-title {
-      color: $mainColor;
+      color: #1D6FDF;
       text-align: center;
       font-weight: 700;
       margin-top: 8px;
@@ -218,7 +218,7 @@ export default {
 
         span:nth-child(2), span:nth-child(3) {
           font-size: 13px;
-          color: $mainColor;
+          color: #1D6FDF;
           text-align: center;
           margin-top: 2px;
         }
@@ -284,7 +284,7 @@ export default {
     width: 250px;
     height: 50px;
     //background: $mainColor;
-    background: linear-gradient(to top, $shallowMainColor, $mainColor);
+    background: linear-gradient( 180deg, rgba(133,230,101,0.99) 0%, rgba(0,186,90,0.99) 100%);
     border-radius: 27px;
     display: flex;
     justify-content: center;

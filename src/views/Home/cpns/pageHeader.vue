@@ -102,7 +102,7 @@ export default {
   }
   header {
     height: 185px;
-    background: linear-gradient( to top, $mainColor,$shallowMainColor);
+    background: #00BA5A;
     position: relative;
 
     .user {
@@ -153,10 +153,10 @@ export default {
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(255, 255, 255, 0.2) url(~assets/img/usdtbg.png) no-repeat;
+      //background: rgba(255, 255, 255, 0.2) url(~assets/img/usdtbg.png) no-repeat;
       background-size: cover;
       &.type-coin{
-        background-image: url(~assets/img/coinbg.png);
+        //background-image: url(~assets/img/coinbg.png);
       }
       .toggle{
         position: absolute;
@@ -179,7 +179,7 @@ export default {
         dd {
           width: 125px;
           height: 22px;
-          background: $mainColor;
+          background: linear-gradient( 180deg, rgba(133,230,101,0.99) 0%, rgba(0,186,90,0.99) 100%);
 
           border-radius: 11px;
           font-size: 12px;

@@ -1,6 +1,6 @@
 export default {
     // 'coin': '$',
-    'coin': 'R$',
+    'coin': '$',
     // vant
     tel: 'Telefone',
     save: 'Salvar',

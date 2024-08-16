@@ -33,7 +33,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $shallowMainColor;
+    color: #F97D1D;
     span{
       font-size: 18px;
       font-weight: 700;
