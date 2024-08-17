@@ -41,7 +41,7 @@ export default {
     'todaysEarning': 'Gains d’aujourd’hui',
     'recharge': 'Recharger',
     'withdraw': 'Retirer',
-    'orderFinance': 'Finance de commande',
+    'orderFinance': 'énergie éolienne',
     'financeProduct': 'Produit financier',
     'inviteFriends': 'Inviter des amis',
     'mission': 'Mission',
@@ -629,7 +629,7 @@ export default {
     'Enter envelope key':'Entrer la clé de l\'enveloppe',
     'Red Envelope':'Enveloppe rouge',
     'Envelope key':'Clé de l\'enveloppe',
-    'Pledge income':'Revenu de gage',
+    'Pledge income':'Panneaux solaires',
     'What is Pledge income?':'Qu\'est-ce que le revenu de gage?',
     'Novice guide':'Guide pour les novices',
     'I want to buy':'acheter',
@@ -728,6 +728,9 @@ export default {
     "Please set the withdrawal password first":"Veuillez d\'abord définir le mot de passe de retrait",
     "Please enter the withdrawal amount":"Veuillez entrer le montant du retrait",
     "The mobile phone number can only be 11 digits.":"Le numéro de téléphone mobile ne peut comporter que 11 chiffres.",
-    "Total earnings":"Gains totaux"
+    "Total earnings":"Gains totaux",
+    "Your Total Assets":"Votre actif total",
+    "Virtual currency":"Monnaie virtuelle",
+
 }
 

@@ -3,7 +3,7 @@
     <pageHeader/>
     <wallet/>
     <subNav/>
-    <noticeBar/>
+    <!--<noticeBar/>-->
 
     <router-view/>
   </div>

@@ -728,7 +728,8 @@ export default {
     "Please set the withdrawal password first": "Lütfen önce para çekme şifresini belirleyin",
     "The mobile phone number can only be 11 digits.": "Cep telefonu numarası yalnızca 11 haneli olabilir.",
     "Total earnings":"Toplam kazanç",
-
+    "Your Total Assets":"Your Total Assets",
+    "Virtual currency":"Virtual currency",
 
 
 

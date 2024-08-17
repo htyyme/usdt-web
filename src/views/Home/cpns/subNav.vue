@@ -58,7 +58,7 @@ ul{
     span{
       font-size: 12px;
       padding: 0 5px;
-      text-transform: capitalize;
+      //text-transform: capitalize;
     }
   }
 }

@@ -300,6 +300,7 @@ export default {
   text-align: center;
   color: $shallowMainColor;
   cursor: pointer;
+  padding: 0 25px;
 }
 
 </style>
