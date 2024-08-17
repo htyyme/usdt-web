@@ -6,7 +6,7 @@
     <van-image :src="curlvicon" class="level-icon" fit="contain"></van-image>
 
     <van-steps :active="active" active-color="#FEDF72" >
-      <van-step v-for="(item,index) in viplist" :key="index">LV.{{index+1}}</van-step>
+      <van-step v-for="(item,index) in viplist" :key="index">{{item.title}}</van-step>
     </van-steps>
 
     <span class="cnt">Invite members:{{$store.getters['user/coinAccount'].limit_buy}}</span>

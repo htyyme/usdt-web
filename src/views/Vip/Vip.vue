@@ -38,6 +38,7 @@ export default {
       const resp = await this.$http.post('/v1/vips')
       console.log(resp)
       this.viplist = resp.data || []
+      console.log(this.viplist[0].state)
     }
   }
 }

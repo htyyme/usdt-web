@@ -192,7 +192,7 @@ export default {
     'vipInfo2': 'Le nombre de commandes peut être balayé jusqu’à {num} fois',
     'vipInfo3': 'Le rabais de promotion est de {num1}% {num2}% {num3}%',
     'vipInfo4': 'Retirer {num} fois par jour',
-    'lvNum': 'Niveau {num}',
+    'lvNum': 'T{num}',
     'Member': 'Membre',
     'gotIt': 'Compris',
     'howToMakeMoney': 'Comment gagner de l\'argent',
