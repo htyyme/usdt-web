@@ -37,7 +37,7 @@
         <dt>{{$t('Verification code')}}</dt>
         <dd>
           <input type="text"  :placeholder="$t('Verification code')" v-model="form.sms_code">
-          <van-button size="mini" :disabled="countdown>0" color="#ff1720" @click="getVerificationCode">{{sendBtnText}}</van-button>
+          <van-button size="mini" :disabled="countdown>0" color="#00ba5a" @click="getVerificationCode">{{sendBtnText}}</van-button>
         </dd>
       </dl>
 
