@@ -44,7 +44,7 @@ export default {
 .topinfo {
   width: 344px;
   height: 100px;
-  background: linear-gradient( to top, #F8868C,#ff1720);
+  background: linear-gradient( to top, #85e665,#00ba5a);
   border-radius: 11px 11px 0 0;
   margin: 13px 15px 0;
 

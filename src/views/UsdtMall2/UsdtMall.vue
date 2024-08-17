@@ -89,7 +89,7 @@ export default  {
   .usdtmall-page{
     header{
       height: 145px;
-      background: linear-gradient( to top, #F8868C,#ff1720);
+      background: linear-gradient( to top, #85e665,#00ba5a);
       color: #fff;
       display: flex;
       align-items: flex-end;

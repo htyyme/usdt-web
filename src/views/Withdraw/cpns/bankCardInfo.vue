@@ -140,7 +140,7 @@ export default {
     dt {
 
       font-size: 17px;
-      color: #ff1720;
+      color: #00ba5a;
     }
 
     dd {
