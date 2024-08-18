@@ -155,7 +155,7 @@ export default {
       color: #fff;
       text-align: center;
       padding: 55px 0 5px 0;
-      text-transform: uppercase;
+      //text-transform: uppercase;
     }
 
     .submit-btn {
