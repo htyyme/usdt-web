@@ -8,7 +8,7 @@ export default {
     isApp: IS_APP,
     isGoogle: IS_GOOGLE,
     apkVersion: '1.0.0', //版本
-    appName: 'VIyour',//网站标题
+    appName: 'VenturaInvest',//网站标题
     // host: 'https://www.cloudcelular.com/',//网站域名
     host: 'https://www.VIyour.com',//网站域名
     locale: 'French',//默认语言  Spanish 西班牙语  Turkey 土耳其语
