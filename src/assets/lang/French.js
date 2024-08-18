@@ -494,7 +494,7 @@ export default {
     'Order number':'Numéro de commande',
     'Transfer information':'Informations de transfert',
     'Shop name':'Nom du magasin',
-    'Bank card':'Retrait Information Contraignante',
+    'Bank card':'Liaison des informations de retrait',
     'invitationLink':'lien d\'invitation',
     'Edit bank card':'modifications',
     'Order details':'Détails de la commande',
