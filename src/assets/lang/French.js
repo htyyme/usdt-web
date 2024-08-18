@@ -736,6 +736,8 @@ export default {
     "Tron address":"Lier l'adresse de la crypto-monnaie",
     "Please enter tron address":"Veuillez saisir votre adresse de crypto-monnaie",
     "Tron address is incorrect":"Tron address is incorrect",
+    "Are you sure to withdraw the balance?":"Êtes-vous sûr de vouloir retirer ce montant ?",
+
 
 }
 

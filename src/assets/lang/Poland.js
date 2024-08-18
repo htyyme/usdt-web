@@ -697,6 +697,7 @@ export default {
     "Tron address":"Tron address",
     "Please enter tron address":"Please enter tron address",
     "Tron address is incorrect":"Tron address is incorrect",
+    "Are you sure to withdraw the balance?":"Are you sure to withdraw the balance?",
 
 
 }
