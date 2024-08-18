@@ -42,25 +42,25 @@ export default {
     },
 
     async handleclick(item){
-      let lvid = item.lv_id
-      if (lvid <= this.curlv){
-        return
-      }
-      const confirmRes = await this.$dialog.confirm({
-        message: `Are you sure to buy this level`,
-      }).catch(err=>err)
-      if (confirmRes !== 'confirm') return
-
-      const resp = await this.$http.post('/v1/auth/membership/buy', {
-        id: item.level_id,
-        coin_type:1
-      })
-      this.$toast.success({
-        message:this.$t('success'),
-        onClose:()=>{
-          this.$store.dispatch('user/loadUserInfo')
-        }
-      })
+      // let lvid = item.lv_id
+      // if (lvid <= this.curlv){
+      //   return
+      // }
+      // const confirmRes = await this.$dialog.confirm({
+      //   message: `Are you sure to buy this level`,
+      // }).catch(err=>err)
+      // if (confirmRes !== 'confirm') return
+      //
+      // const resp = await this.$http.post('/v1/auth/membership/buy', {
+      //   id: item.level_id,
+      //   coin_type:1
+      // })
+      // this.$toast.success({
+      //   message:this.$t('success'),
+      //   onClose:()=>{
+      //     this.$store.dispatch('user/loadUserInfo')
+      //   }
+      // })
     },
 
     rateFormat(val){
