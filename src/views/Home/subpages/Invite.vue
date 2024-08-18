@@ -86,8 +86,8 @@ export default {
     generateQrcode() {
       new QRCode(document.getElementById("qrcode"), {
         text: this.link,
-        width: 190,
-        height: 190,
+        width: 160,
+        height: 160,
       })
     },
     saveImage(){
@@ -123,19 +123,23 @@ export default {
   .bg{
     width: 100%;
     height: 500px;
-    background: url(~assets/img/img.jpg) no-repeat;
+    background: url(~assets/img/photo_2024-08-18_12-39-39.jpg) no-repeat;
     background-position: top center;
     background-size: 100vw;
     position: relative;
     #qrcode{
       position: absolute;
-      width: 190px;
-      height: 190px;
+      width: 160px;
+      height: 160px;
       //border: 1px solid red;
-      top: 210px;
+      top: 220px;
       left: 51%;
       transform: translateX(-50%);
-
+      ::v-deep img,
+      ::v-deep canvas{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
