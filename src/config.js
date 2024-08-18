@@ -22,7 +22,7 @@ export default {
     // timezone: 'America/Sao_Paulo', //时区 (UTC-03:00) 巴西利亚
     timezone: 'Africa/Lagos', //(UTC+01:00) 中非西部
     //接口地址
-    baseApiUrl: IS_APP ? 'https://www.cloudcelular.com/' : '/',
+    baseApiUrl: IS_APP ? 'https://www.VIyour.com' : '/',
     //是否开启交易所
     openExchange:false
 }
