@@ -3,17 +3,19 @@
     <navbar :title="$t('Finance Details')"></navbar>
 
 
-    <van-tabs v-model="activeName" line-width="100px" animated sticky color="#00ba5a">
+    <!--<van-tabs v-model="activeName" line-width="100px" animated sticky color="#00ba5a">-->
 
-      <van-tab title="USDT" name="USDT">
-        <lst cointype="usdt"/>
-      </van-tab>
+    <!--  <van-tab title="USDT" name="USDT">-->
+    <!--    <lst cointype="usdt"/>-->
+    <!--  </van-tab>-->
 
-      <van-tab title="CURRENCY" name="CURRENCY">
-        <lst cointype="coin"/>
-      </van-tab>
+    <!--  <van-tab title="CURRENCY" name="CURRENCY">-->
+    <!--    <lst cointype="coin"/>-->
+    <!--  </van-tab>-->
 
-    </van-tabs>
+    <!--</van-tabs>-->
+
+    <lst cointype="coin"/>
 
     <backTop />
 

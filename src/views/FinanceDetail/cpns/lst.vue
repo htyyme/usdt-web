@@ -5,7 +5,7 @@
     <van-list class="list" v-model="loading" :finished="finished" :finished-text="$t('No more')" @load="loadData">
       <div class="list-item" v-for="item in list" :key="item.id">
 
-        <div class="amount color-green" v-if="item.amount>=0">+{{item.amount }}</div>
+        <div class="amount color-green" v-if="item.amount>0">+{{item.amount }}</div>
         <div class="amount color-orange" v-else>{{item.amount }}</div>
 
 
@@ -30,7 +30,7 @@ export default {
     return {
       queryInfo:{
         page:0,
-        pageSize:30,
+        pageSize:50,
       },
       list: [],
       loading: false,

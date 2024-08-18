@@ -106,8 +106,9 @@ export default {
             const resp = await request.post('/v1/service/billcode')
             const obj = {}
             resp.data.forEach(el => {
-                obj[String(el.id)] = el
+                obj[String(el.no)] = el
             })
+            // console.log(1111,resp.data)
             commit('setBillDictionaries',obj)
         },
 

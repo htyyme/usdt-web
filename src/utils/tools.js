@@ -257,7 +257,7 @@ export function getBillType(no){
     let locale = (store.getters['system/locale'] || appConfig.locale).toLowerCase()
     let billDictionaries = store.getters['system/billDictionaries']
     if (!billDictionaries[no]){
-        console.log(no)
+        // console.log(billDictionaries,no)
         return ""
     }
     return billDictionaries[no][locale] ? billDictionaries[no][locale] : billDictionaries[no].english
