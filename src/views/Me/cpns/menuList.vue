@@ -15,11 +15,11 @@
       <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
       <!--</li>-->
 
-      <li @click="showEnterEnvelopeKey" >
-        <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>
-        <span>{{$t('Red Envelope')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
+      <!--<li @click="showEnterEnvelopeKey" >-->
+      <!--  <van-icon :name="require('@/assets/icon/redenvelope.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('Red Envelope')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
 
       <li @click="toVipPage" >
         <van-icon :name="require('@/assets/icon/membersystem.png')" size="40"></van-icon>
@@ -64,11 +64,11 @@
       </li>
 
 
-      <li  @click="$router.push('/address')">
-        <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>
-        <span>{{$t('Shipping address')}}</span>
-        <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>
-      </li>
+      <!--<li  @click="$router.push('/address')">-->
+      <!--  <van-icon :name="require('@/assets/icon/Businessinfo.png')" size="40"></van-icon>-->
+      <!--  <span>{{$t('Shipping address')}}</span>-->
+      <!--  <van-icon :name="require('@/assets/icon/more.png')" class="more"></van-icon>-->
+      <!--</li>-->
 
 
       <!--<li @click="toBusinessPage" v-if="show_usdt_trading!='0' && three_service_address.length>0" >-->

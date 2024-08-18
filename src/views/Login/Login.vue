@@ -18,7 +18,7 @@
       <van-button class="submit-btn" block @click="doLogin" :disabled="btnDisabled" :loading="$store.getters['system/gloading']">{{$t('Login')}}</van-button>
 
       <div class="bottom-info">
-        <p>
+        <p class="p1">
           <span>{{$t('Not have account yet?')}}</span>
           <router-link :to="{name:'Register'}" >{{$t('Register Now')}}</router-link>
         </p>
@@ -182,6 +182,11 @@ export default {
       }
       p{
         line-height: 1.7;
+      }
+
+      .p1{
+        display: flex;
+        flex-direction: column;
       }
     }
   }
