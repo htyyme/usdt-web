@@ -33,7 +33,14 @@ export default {
     },
     //当前等级的图标
     curlvicon(){
-      return getLvIcon(this.curlv)
+      // return getLvIcon(this.curlv)
+
+      let vipinfo = this.viplist.find(item=>item.lv_id == this.curlv);
+      if (vipinfo && vipinfo.icon) {
+        return this.$tools.getImage(vipinfo.icon)
+      } else {
+        return getLvIcon(this.curlv)
+      }
     }
   },
   mounted() {
