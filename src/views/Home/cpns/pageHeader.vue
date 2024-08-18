@@ -16,8 +16,8 @@
           <dd>{{$t("Your Total Assets")}}</dd>
         </dl>
         <dl>
-          <dt>{{experience_amount | moneyFormat(2,gcointype)}}</dt>
-          <dd>{{$t("Virtual currency")}}</dd>
+          <dt>{{coinCountData.totalincome | moneyFormat(2,gcointype) }}</dt>
+          <dd>{{$t("comulativeIncome")}}</dd>
         </dl>
       </div>
     </div>
@@ -29,6 +29,14 @@
 
 export default {
   name: "pageHeader",
+  props:{
+    coinCountData:{
+      type:Object,
+      default(){
+        return {}
+      }
+    }
+  },
   computed:{
     userInfo(){
       return this.$store.getters['user/userInfo']

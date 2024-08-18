@@ -5,10 +5,10 @@
         <dt>{{countdata.yesterdayearn | moneyFormat(2,gcointype)}}</dt>
         <dd>{{$t('yesterdaysEarning')}}</dd>
       </dl>
-      <dl>
-        <dt>{{countdata.totalincome | moneyFormat(2,gcointype) }}</dt>
-        <dd>{{$t('comulativeIncome')}}</dd>
-      </dl>
+      <!--<dl>-->
+      <!--  <dt>{{countdata.totalincome | moneyFormat(2,gcointype) }}</dt>-->
+      <!--  <dd>{{$t('comulativeIncome')}}</dd>-->
+      <!--</dl>-->
       <dl>
         <dt>{{countdata.todayincome | moneyFormat(2,gcointype)}}</dt>
         <dd>{{$t('todaysEarning')}}</dd>
@@ -33,12 +33,26 @@
 export default {
   name: "wallet",
   created() {
-    this.loadData()
+    // this.loadData()
   },
   data(){
     return {
-      usdtCountData:{},
-      coinCountData:{}
+      // usdtCountData:{},
+      // coinCountData:{}
+    }
+  },
+  props:{
+    usdtCountData:{
+      type:Object,
+      default(){
+        return {}
+      }
+    },
+    coinCountData:{
+      type:Object,
+      default(){
+        return {}
+      }
     }
   },
   computed:{
@@ -54,12 +68,12 @@ export default {
     }
   },
   methods:{
-    async loadData(){
-      const resp = await this.$http.post('/v1/auth/user/shuadan/income')
-      // console.log(resp)
-      this.usdtCountData = resp.data.usdt
-      this.coinCountData = resp.data.coin
-    }
+    // async loadData(){
+    //   const resp = await this.$http.post('/v1/auth/user/shuadan/income')
+    //   // console.log(resp)
+    //   this.usdtCountData = resp.data.usdt
+    //   this.coinCountData = resp.data.coin
+    // }
   }
 }
 </script>

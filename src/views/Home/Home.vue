@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <pageHeader/>
-    <wallet/>
+    <pageHeader :coinCountData="coinCountData"/>
+    <wallet :usdtCountData="usdtCountData" :coinCountData="coinCountData"/>
     <subNav/>
     <!--<noticeBar/>-->
 
@@ -24,8 +24,24 @@ export default {
     wallet
   },
 
+  data(){
+    return {
+      usdtCountData:{},
+      coinCountData:{}
+    }
+  },
   mounted() {
     this.$store.dispatch('user/loadUserInfo')
+
+    this.loadData()
+  },
+  methods:{
+    async loadData(){
+      const resp = await this.$http.post('/v1/auth/user/shuadan/income')
+      console.log(resp)
+      this.usdtCountData = resp.data.usdt
+      this.coinCountData = resp.data.coin
+    }
   }
 }
 </script>
