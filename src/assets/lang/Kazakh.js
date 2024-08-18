@@ -714,5 +714,8 @@ export default {
     "Total earnings":"전체 수익",
     "Your Total Assets":"Your Total Assets",
     "Virtual currency":"Virtual currency",
+    "Deposit amount":"Deposit amount",
+    "Please input the deposit amount":"Please input the deposit amount",
+    "revenue":"revenue",
 
 }

@@ -723,7 +723,6 @@ export default {
     "Yes":"Oui",
     "No":"Non",
     "Points remaining":"Points restants",
-
     "Confirm withdrawal":"Confirmer le retrait",
     "Please set the withdrawal password first":"Veuillez d\'abord définir le mot de passe de retrait",
     "Please enter the withdrawal amount":"Veuillez entrer le montant du retrait",
@@ -731,6 +730,9 @@ export default {
     "Total earnings":"Gains totaux",
     "Your Total Assets":"Votre actif total",
     "Virtual currency":"Monnaie virtuelle",
+    "Deposit amount":"Deposit amount",
+    "Please input the deposit amount":"Please input the deposit amount",
+    "revenue":"revenue",
 
 }
 

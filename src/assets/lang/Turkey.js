@@ -730,6 +730,9 @@ export default {
     "Total earnings":"Toplam kazanç",
     "Your Total Assets":"Your Total Assets",
     "Virtual currency":"Virtual currency",
+    "Deposit amount":"Deposit amount",
+    "Please input the deposit amount":"Please input the deposit amount",
+    "revenue":"revenue",
 
 
 

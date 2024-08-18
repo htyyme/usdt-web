@@ -10,8 +10,8 @@
       <van-image :src="$tools.getImage(product.img)" class="product-img" lazy-load></van-image>
       <div class="product-details">
         <div class="product-name">{{product.financial_name}}</div>
-        <div class="product-cycle">{{product.hold_cycle}} dias</div>
-        <div class="product-profit">Lucro {{product.interest_rate*100}}%</div>
+        <div class="product-cycle">{{product.hold_cycle}} jour</div>
+        <div class="product-profit">{{product.interest_rate*100}}% de profit par jour</div>
       </div>
     </div>
 
@@ -20,13 +20,13 @@
     </div>
 
     <div class="input-field">
-      <div class="lable">Deposit amount</div>
-      <input v-model.number="amount"  onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1')" type="text" maxlength="12" placeholder="Please input the deposit amount" >
-      <div class="coin">BRL</div>
+      <div class="lable">{{$t("Deposit amount")}}</div>
+      <input v-model.number="amount"  onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1')" type="text" maxlength="12" :placeholder="$t('Please input the deposit amount')" >
+      <div class="coin">$</div>
     </div>
-    <div class="revenue">revenue: {{revenue}}BRL</div>
+    <div class="revenue">{{$t('revenue')}}: ${{revenue}}</div>
 
-    <van-button round color="#00ba5a" block class="submit-btn"  :loading="loading" @click="handleSubmit" :disabled="!isAvailable(product)">Submit</van-button>
+    <van-button round color="#00ba5a" block class="submit-btn"  :loading="loading" @click="handleSubmit" :disabled="!isAvailable(product)">{{$t("Submit")}}</van-button>
   </div>
 </div>
 </template>

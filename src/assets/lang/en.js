@@ -735,6 +735,9 @@ export default {
     "Total earnings":"Total earnings",
     "Your Total Assets":"Your Total Assets",
     "Virtual currency":"Virtual currency",
+    "Deposit amount":"Deposit amount",
+    "Please input the deposit amount":"Please input the deposit amount",
+    "revenue":"revenue",
 
 
 }
