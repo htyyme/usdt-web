@@ -2,7 +2,7 @@
   <div class="lvList">
 
     <div class="item" v-for="(item,index) in viplist" :key="index" @click="handleclick(item)">
-      <van-image :src="getLvIcon(item.lv_id)" class="levelicon" fit="contain"></van-image>
+      <van-image :src="getLvIcon(item)" class="levelicon" fit="contain"></van-image>
       <div class="tit">{{item.title}}</div>
       <!--<div class="sub-tit">{{item.cond_limit | moneyFormat(0,'coin')}}</div>-->
       <div class="content" v-html="item.description">
@@ -37,8 +37,13 @@ export default {
     }
   },
   methods:{
-    getLvIcon(lv_id){
-      return getLvIcon(lv_id)
+    getLvIcon(item){
+      if (item.icon){
+        return this.$tools.getImage(item.icon)
+      } else {
+        return getLvIcon(item.lv_id)
+      }
+
     },
 
     async handleclick(item){
@@ -85,25 +90,25 @@ export default {
     background-position: center bottom;
     position: relative;
     margin-bottom: 15px;
-    &:nth-child(2){
+    &:nth-child(2n){
       background-image: url(~assets/img/vip2-bg.png);
       .shadow{
         background-color: #F3B511;
       }
     }
-    &:nth-child(3){
+    &:nth-child(3n){
       background-image: url(~assets/img/vip3-bg.png);
       .shadow{
         background-color: #7187FB;
       }
     }
-    &:nth-child(4){
+    &:nth-child(4n){
       background-image: url(~assets/img/vip4-bg.png);
       .shadow{
         background-color: #FF7783;
       }
     }
-    &:nth-child(5){
+    &:nth-child(5n){
       background-image: url(~assets/img/vip5-bg.png);
       .shadow{
         background-color: #FF7783;
