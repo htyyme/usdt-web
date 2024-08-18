@@ -15,8 +15,15 @@
 
         <van-swipe-item @click="showDetail(item,'coin')">
           <div class="swipe-box">
+
+
             <div class="item-head">
-              <span class="title">{{item.goods_name}}</span>
+              <span class="title">{{item.goods_name}}
+
+                <strong class="vip" v-if="item.min_vip_level>0">
+                  <img :src="require('@/assets/img/vip.png')" alt="">
+                  T{{item.min_vip_level}}</strong>
+              </span>
               <van-button size="mini" round color="#00ba5a">Details</van-button>
             </div>
             <div class="item-bd">
@@ -120,12 +127,21 @@ export default {
         })
       })
       this.productList = productList
+
+      console.log('this.productList',this.productList)
     },
 
     showDetail(item,type){
       if (item.state !== 1){
         return
       }
+
+      // let memberinfo = this.$store.getters['user/userInfo']
+      // console.log(memberinfo.lv_id,item.min_vip_level)
+      // if (memberinfo.lv_id < item.min_vip_level) {
+      //   return;
+      // }
+
       this.$refs.productDetailRef.handleOpen(item,type)
     }
 
@@ -135,6 +151,14 @@ export default {
 
 <style scoped lang="scss">
 @import "src/assets/css/vars.scss";
+@keyframes viplight {
+  0%{
+    box-shadow:  0 0 0px #66ff00;
+  }
+  100%{
+    box-shadow:  0 0 15px #66ff00;
+  }
+}
 .productList-cpn{
   padding-bottom: 30px;
 
@@ -176,6 +200,7 @@ export default {
           left: 0;
           right: 0;
           margin: auto;
+
         }
 
       }
@@ -200,6 +225,7 @@ export default {
           border-top: 3px solid currentColor;
           border-right: 3px solid currentColor;
           transform: rotate(45deg) translate(4px,1px);
+
         }
       }
     }
@@ -238,6 +264,23 @@ export default {
             .title{
               font-weight: 700;
               font-size: 14px;
+              .vip{
+                //background: #00ba5a;
+                color: #00ba5a;
+                font-size: 10px;
+                padding: 1px 6px;
+                border-radius: 5px;
+                margin-left: 4px;
+                text-align: center;
+                min-width: 26px;
+                display: inline-block;
+                box-shadow:  0 0 15px #66ff00;
+                animation: viplight 1.5s infinite  alternate;
+                img{
+                  width: 15px;
+                  height: 15px;
+                }
+              }
             }
             .van-button{
               padding: 0 8px;

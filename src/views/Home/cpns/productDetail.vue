@@ -31,7 +31,7 @@
       </dl>
     </div>
 
-    <van-button  round block class="rent-btn" :loading="$store.getters['system/gloading']" @click="purchase">{{$t('Rent')}}</van-button>
+    <van-button  round block class="rent-btn" :loading="$store.getters['system/gloading']" @click="purchase" :disabled="btnDisabled">{{$t('Rent')}}</van-button>
 
   </van-popup>
 
@@ -66,6 +66,15 @@ export default {
     },
     totalRevenue(){
       return Number((this.hourIncome * this.cycle * 24).toFixed(2))
+    },
+    btnDisabled(){
+      let memberinfo = this.$store.getters['user/userInfo']
+      let mylv = memberinfo.lv_id
+      if (mylv < this.item.min_vip_level) {
+        return true
+      } else {
+        return false
+      }
     }
   },
   methods:{
