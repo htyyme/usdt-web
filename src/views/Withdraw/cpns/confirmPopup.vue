@@ -22,7 +22,7 @@
       />
 
       <div style="margin: 16px;">
-        <van-button round block type="info" :disabled="!password" color="#FF3364" @click="onSubmit" v-no-more-click>{{$t("Submit")}}</van-button>
+        <van-button round block type="info" :disabled="!password" color="#00ba5a" @click="onSubmit" v-no-more-click>{{$t("Submit")}}</van-button>
       </div>
     </van-form>
 
