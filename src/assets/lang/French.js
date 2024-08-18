@@ -733,8 +733,8 @@ export default {
     "Deposit amount":"Deposit amount",
     "Please input the deposit amount":"Please input the deposit amount",
     "revenue":"revenue",
-    "Tron address":"Tron address",
-    "Please enter tron address":"Please enter tron address",
+    "Tron address":"Lier l'adresse de la crypto-monnaie",
+    "Please enter tron address":"Veuillez saisir votre adresse de crypto-monnaie",
     "Tron address is incorrect":"Tron address is incorrect",
 
 }
