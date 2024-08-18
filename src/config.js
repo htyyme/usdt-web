@@ -19,7 +19,8 @@ export default {
     // timezone: 'Europe/Minsk', //时区 +3 时区
     // timezone: 'America/Halifax', //时区 美东时间 -4 时区 智利
     // timezone: 'America/Caracas', //时区 美东时间 (UTC-04:30) 加拉加斯	 委内瑞拉
-    timezone: 'America/Sao_Paulo', //时区 (UTC-03:00) 巴西利亚
+    // timezone: 'America/Sao_Paulo', //时区 (UTC-03:00) 巴西利亚
+    timezone: 'Europe/Paris', //(UTC+01:00) 布鲁塞尔,哥本哈根,马德里,巴黎
     //接口地址
     baseApiUrl: IS_APP ? 'https://www.cloudcelular.com/' : '/',
     //是否开启交易所
