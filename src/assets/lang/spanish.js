@@ -773,5 +773,8 @@ export default {
     "Deposit amount":"Deposit amount",
     "Please input the deposit amount":"Please input the deposit amount",
     "revenue":"revenue",
+    "Tron address":"Tron address",
+    "Please enter tron address":"Please enter tron address",
+    "Tron address is incorrect":"Tron address is incorrect",
 
 }

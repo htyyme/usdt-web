@@ -5,60 +5,67 @@
     <div class="wrapper">
 
       <!--账号类型-->
+      <!--<dl>-->
+      <!--  <dt>{{$t('Account type')}}</dt>-->
+      <!--  <dd style="padding-left: 15px;">-->
+      <!--    <van-radio-group v-model="form.acc_type"  checked-color="#00ba5a" :disabled="!allow">-->
+      <!--      <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>-->
+      <!--      <van-radio style="margin: 7px;" name="PHONE">número de telefone celular</van-radio>-->
+      <!--      <van-radio style="margin: 7px;" name="EMAIL">E-mail</van-radio>-->
+      <!--      &lt;!&ndash;<van-radio style="margin: 7px;" name="CHAVE">CHAVE</van-radio>&ndash;&gt;-->
+      <!--    </van-radio-group>-->
+      <!--  </dd>-->
+      <!--</dl>-->
+
+      <!--<template v-if="form.acc_type==='CPF'">-->
+      <!--  &lt;!&ndash;用户名&ndash;&gt;-->
+      <!--  <dl>-->
+      <!--    <dt>{{$t('Account Name')}}</dt>-->
+      <!--    <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username" :readonly="!allow"></dd>-->
+      <!--  </dl>-->
+      <!--  &lt;!&ndash;cpf/cnpj&ndash;&gt;-->
+      <!--  <dl>-->
+      <!--    <dt>{{$t('Tax number')}}</dt>-->
+      <!--    <p class="dt-notice">-->
+      <!--      Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.-->
+      <!--    </p>-->
+      <!--    <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''" :readonly="!allow"></dd>-->
+      <!--  </dl>-->
+
+      <!--</template>-->
+
+      <!--<template v-else>-->
+      <!--  &lt;!&ndash;名字&ndash;&gt;-->
+      <!--  <dl>-->
+      <!--    <dt>{{$t('Account Name')}}</dt>-->
+      <!--    <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username" :readonly="!allow"></dd>-->
+      <!--  </dl>-->
+      <!--  &lt;!&ndash;账号&ndash;&gt;-->
+      <!--  <dl>-->
+      <!--    <dt v-if="form.acc_type === 'CHAVE'">{{$t('Pix secret')}}</dt>-->
+      <!--    <dt v-if="form.acc_type === 'PHONE'">{{$t('Account Number')}}</dt>-->
+      <!--    <dt v-if="form.acc_type === 'EMAIL'">E-mall</dt>-->
+
+      <!--    <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit" :readonly="!allow"></dd>-->
+      <!--  </dl>-->
+      <!--  &lt;!&ndash;cpf/cnpj&ndash;&gt;-->
+      <!--  <dl>-->
+      <!--    <dt>{{$t('Tax number')}}</dt>-->
+      <!--    <p class="dt-notice">-->
+      <!--      Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.-->
+      <!--    </p>-->
+      <!--    <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''" :readonly="!allow"></dd>-->
+      <!--  </dl>-->
+      <!--</template>-->
+
+
       <dl>
-        <dt>{{$t('Account type')}}</dt>
-        <dd style="padding-left: 15px;">
-          <van-radio-group v-model="form.acc_type"  checked-color="#00ba5a" :disabled="!allow">
-            <van-radio style="margin: 7px;" name="CPF">CPF</van-radio>
-            <van-radio style="margin: 7px;" name="PHONE">número de telefone celular</van-radio>
-            <van-radio style="margin: 7px;" name="EMAIL">E-mail</van-radio>
-            <!--<van-radio style="margin: 7px;" name="CHAVE">CHAVE</van-radio>-->
-          </van-radio-group>
+        <dt>{{$t('Tron address')}}</dt>
+        <!--<dd><input type="text"  :placeholder="$t('Please enter tron address')" v-model="form.tron_address" :readonly="!allow"></dd>-->
+        <dd>
+          <textarea :placeholder="$t('Please enter tron address')" v-model.trim="form.tron_address" :readonly="!allow" rows="2"></textarea>
         </dd>
       </dl>
-
-      <template v-if="form.acc_type==='CPF'">
-        <!--用户名-->
-        <dl>
-          <dt>{{$t('Account Name')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username" :readonly="!allow"></dd>
-        </dl>
-        <!--cpf/cnpj-->
-        <dl>
-          <dt>{{$t('Tax number')}}</dt>
-          <p class="dt-notice">
-            Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.
-          </p>
-          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''" :readonly="!allow"></dd>
-        </dl>
-
-      </template>
-
-      <template v-else>
-        <!--名字-->
-        <dl>
-          <dt>{{$t('Account Name')}}</dt>
-          <dd><input type="text"  :placeholder="$t('Please enter account name')" v-model="form.username" :readonly="!allow"></dd>
-        </dl>
-        <!--账号-->
-        <dl>
-          <dt v-if="form.acc_type === 'CHAVE'">{{$t('Pix secret')}}</dt>
-          <dt v-if="form.acc_type === 'PHONE'">{{$t('Account Number')}}</dt>
-          <dt v-if="form.acc_type === 'EMAIL'">E-mall</dt>
-
-          <dd><input type="text"  :placeholder="$t('Please enter account number')" v-model="form.withdraw_deposit" :readonly="!allow"></dd>
-        </dl>
-        <!--cpf/cnpj-->
-        <dl>
-          <dt>{{$t('Tax number')}}</dt>
-          <p class="dt-notice">
-            Observação: Preencha o número real da conta de CPF. Se você cometer um erro, não poderá sacar o dinheiro.
-          </p>
-          <dd><input type="text"  :placeholder="$t('Please enter tax number')" v-model="form.subbranch_no" oninput="this.value=this.value?this.value.replace(/[^\d]/g,''):''" :readonly="!allow"></dd>
-        </dl>
-      </template>
-
-
 
 
 
@@ -94,7 +101,8 @@ export default {
         acc_type:"CPF",//账号类型
         identity_no:"", //身份证
         last_name:"",//姓
-        subbranch_no:""
+        subbranch_no:"",
+        tron_address:""
       },
       countdown: 0,
       timer:null,
@@ -208,30 +216,37 @@ export default {
       //   return  this.$toast(this.$t("Tax number is incorrect"))
       // }
 
-      if (this.form.acc_type === 'EMAIL'){
-          const reg = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
-          if (!reg.test(this.form.withdraw_deposit)){
-            return  this.$toast(this.$t("The account format is incorrect"))
-          }
-      }
-
-      if (this.form.acc_type === 'PHONE') {
-        const reg = /^(\+55)?[0-9]{11}$/
-        if (!reg.test(this.form.withdraw_deposit)) {
-          return this.$toast(this.$t("The mobile phone number can only be 11 digits."))
-        }
-      }
-
-
-        let reg = /^\d{11}$/
-        if (!reg.test(this.form.subbranch_no)){
-          return  this.$toast(this.$t("Tax number is incorrect"))
-        }
-
+      // if (this.form.acc_type === 'EMAIL'){
+      //     const reg = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/
+      //     if (!reg.test(this.form.withdraw_deposit)){
+      //       return  this.$toast(this.$t("The account format is incorrect"))
+      //     }
+      // }
+      //
+      // if (this.form.acc_type === 'PHONE') {
+      //   const reg = /^(\+55)?[0-9]{11}$/
+      //   if (!reg.test(this.form.withdraw_deposit)) {
+      //     return this.$toast(this.$t("The mobile phone number can only be 11 digits."))
+      //   }
+      // }
+      //
+      //
+      //   let reg = /^\d{11}$/
+      //   if (!reg.test(this.form.subbranch_no)){
+      //     return  this.$toast(this.$t("Tax number is incorrect"))
+      //   }
+      //
+      //
+      // const submitdata = {...this.form}
+      // if (submitdata.acc_type === 'CPF') {
+      //   submitdata.withdraw_deposit = submitdata.subbranch_no
+      // }
 
       const submitdata = {...this.form}
-      if (submitdata.acc_type === 'CPF') {
-        submitdata.withdraw_deposit = submitdata.subbranch_no
+      if (!/^\w+$/.test(submitdata.tron_address)){
+        return this.$toast.fail({
+          message:this.$t('Tron address is incorrect')
+        })
       }
       const r = await this.$http.post('/v1/auth/card/bind',submitdata)
 
@@ -282,12 +297,13 @@ export default {
         margin-top: 5px;
         margin-bottom: 10px;
         position: relative;
-        input{
+        input,textarea{
           background-color: transparent;
           border: none;
           width: 100%;
           height: 100%;
           padding-left: 15px;
+          font-size: 12px;
         }
 
       }

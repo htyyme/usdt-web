@@ -13,7 +13,8 @@
         <div class="item" v-for="item in bankCardList" :key="item.id">
           <div class="line">
             <!--<div class="tit">{{item.opening_bank}}</div>-->
-            <div class="card-number">{{item.withdraw_deposit | cardNoFormat}}</div>
+            <!--<div class="card-number">{{item.withdraw_deposit | cardNoFormat}}</div>-->
+            <div class="card-number">{{item.tron_address}}</div>
           </div>
 
           <div class="line line2">
@@ -93,9 +94,14 @@ export default {
     .lst{
       .item{
         width: 319px;
-        height: 100px;
+        //height: 100px;
+        min-height: 80px;
+        padding-bottom: 10px;
         background: linear-gradient( to top, $shallowMainColor,$mainColor);
         border-radius: 13px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .line{
           padding: 12px 30px 0 24px;
           font-size: 18px;
@@ -105,12 +111,12 @@ export default {
           justify-content: space-between;
           align-items: center;
           &.line2{
-            position: relative;
-            top: -5px;
+
           }
           .card-number{
             font-size: 12px;
             font-weight: 400;
+            word-break: break-all;
           }
           .bank-code{
             font-size: 12px;
