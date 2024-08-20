@@ -553,7 +553,7 @@ export default {
     'Total revenue':'Revenu total',
     'Cycle days':'Jours de cycle',
     'Rent':'Louer',
-    'Rent Success':'Location réussie',
+    'Rent Success':'Félicitations',
     'Hourly income':'Revenu horaire',
     "Welcome To Login": "Bienvenue à la connexion",
     "Please enter your phone": "Veuillez entrer votre téléphone",

@@ -20,7 +20,8 @@ export default {
     // timezone: 'America/Halifax', //时区 美东时间 -4 时区 智利
     // timezone: 'America/Caracas', //时区 美东时间 (UTC-04:30) 加拉加斯	 委内瑞拉
     // timezone: 'America/Sao_Paulo', //时区 (UTC-03:00) 巴西利亚
-    timezone: 'Africa/Lagos', //(UTC+01:00) 中非西部
+    // timezone: 'Africa/Lagos', //(UTC+01:00) 中非西部
+    timezone: 'Europe/Paris', //(UTC+01:00) 巴黎
     //接口地址
     baseApiUrl: IS_APP ? 'https://www.VIyour.com' : '/',
     //是否开启交易所
